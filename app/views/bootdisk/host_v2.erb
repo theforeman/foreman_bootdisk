@@ -1,0 +1,38 @@
+#!ipxe
+# Example foreman_bootdisk host template
+# This template is rendered for use inside a host-specific boot disk.
+#
+# Copy this template to customize it, the original is read-only.
+
+# loop over net* until the host's MAC matches
+<% (0..32).each do |i| -%>
+:net<%= i %>
+isset ${net<%= i -%>/mac} || goto no_nic
+echo net<%= i -%> is a ${net<%= i -%>/chip} with MAC ${net<%= i -%>/mac}
+iseq ${net<%= i -%>/mac} <%= @host.mac -%> || goto net<%= i+1 %>
+ifopen net<%= i %>
+set idx:int32 <%= i %>
+goto loop_success
+<% end -%>
+
+:loop_success
+echo Configuring net${idx} for static IP address
+ifopen net${idx}
+set netX/ip <%= @host.ip %>
+set netX/netmask <%= @host.subnet.mask %>
+set netX/gateway <%= @host.subnet.gateway %>
+route
+
+# Note, iPXE can only use one DNS server
+set dns <%= @host.subnet.dns_primary %> <%= @host.subnet.dns_secondary %>
+set domain <%= @host.domain.to_s %>
+
+# Chainload from Foreman rather than embedding OS info here, so the behaviour
+# is entirely dynamic.
+chain <%= foreman_url("gPXE") %>
+exit 0
+
+:no_nic
+echo Cannot find interface with MAC <%= @host.mac %>
+sleep 30
+exit 1

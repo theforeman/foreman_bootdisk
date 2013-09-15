@@ -50,11 +50,10 @@ The templates used on the boot disks themselves are read-only so they can be
 updated in new versions of the plugin.  To customise, copy the contents to a
 new template and set the name in More>Settings>Bootdisk.
 
-An OS gPXE provisioning template is required, e.g. "Kickstart default gPXE"
-(as supplied by Foreman).  Ensure the OSes are ticked under the Associations
-tab and that the gPXE template is selected under the Templates tab on the OS.
-
-TODO: missing Debian template, kickstart gPXE template assumes `net0`
+An OS gPXE provisioning template is required, preferably "Kickstart boot disk
+gPXE" (as supplied by this plugin).  Ensure the OSes are ticked under the
+Associations tab and that the gPXE template is selected under the Templates tab
+on the OS.
 
 Lastly, the OS provision template (i.e. kickstart/preseed) should provide the
 static IP details required to configure the OS.  For a kickstart file, the
@@ -96,7 +95,6 @@ Report issues on the Redmine project: [foreman_bootdisk](http://projects.thefore
 
 ## Known issues
 
-* Templates only support first NIC
 * No Debian guidance or templates
 * No SELinux policy support
 
