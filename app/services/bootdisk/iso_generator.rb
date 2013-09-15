@@ -1,6 +1,6 @@
-# Generates an iPXE ISO image
+# Generates an iPXE ISO hybrid image
 #
-# requires syslinux, ipxe/ipxe-bootimgs, mkisofs
+# requires syslinux, ipxe/ipxe-bootimgs, mkisofs, isohybrid
 class Bootdisk::ISOGenerator
   attr_reader :script
 
@@ -25,6 +25,11 @@ EOF
       iso = File.join(wd, 'output.iso')
       unless system("mkisofs -o #{iso} -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
         raise ::Foreman::Exception.new(N_("ISO build failed"))
+      end
+
+      # Make the ISO bootable as a HDD/USB disk too
+      unless system("isohybrid", iso)
+        raise ::Foreman::Exception.new(N_("ISO hybrid conversion failed"))
       end
 
       yield iso

@@ -5,9 +5,9 @@ DHCP and TFTP services.  However many users don't have these available, so
 foreman_bootdisk provides both a per-host and generic boot disks to enable
 deployments in datacentres without these capabilities.
 
-Boot images can be written as ISO images or for USB disks (TODO), and booted
-either from physical media or virtual disk/CDROM (via a lights out management
-device).
+Boot images are written as hybrid ISO images (usable as ISOs or USB disks),
+and booted either from physical media or virtual disk/CDROM (via a lights out
+management device).
 
 # Installation
 
@@ -25,6 +25,7 @@ RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
 
 * iPXE images are required
 * syslinux is required
+* mkisofs and isohybrid are required
 
 gPXE images are unsupported due to lack of initrd support, but the name will
 crop up as Foreman's script support is still named after the project.
@@ -61,6 +62,14 @@ following configuration will do this:
 
     network --bootproto <%= @static ? "static" : "dhcp" %> --hostname <%= @host %> <%= "--ip=#{@host.ip} --netmask=#{@host.subnet.mask} --gateway=#{@host.subnet.gateway} --nameserver=#{@host.subnet.dns_primary},#{@host.subnet.dns_secondary}" if @static %>
 
+## USB images
+
+The ISO images generated are run through `isohybrid` which makes them bootable
+as disks too, suitable for copying to a USB device.
+
+Use `dd if=fqdn.iso of=/dev/sdb` or similar to copy the image to a USB disk.
+Ensure the device name is correct to avoid writing over the wrong disk.
+
 ## Per-host images
 
 Using the host and subnet data in Foreman, per-host images can be created with
@@ -68,15 +77,14 @@ fully static networking.  The behaviour is dynamic, as the image chainloads
 from Foreman, so the current OS and build state will be provided by Foreman
 instead of being stored in the image.
 
-To generate the image from the web interface, view the host page, click the
-"Boot disk" button and select the image type from the menu.
+To generate the image from the web interface, view the host page and click the
+"Boot disk" button.
 
 To generate from the command line:
 
     foreman-rake bootdisk:generate:host NAME=foo.example.com
 
-Optionally set `TYPE=iso` or `TYPE=usb` to change the image type, or
-`OUTPUT=/path/foo.iso` to change the output destination.
+Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
 
 ## Generic host group images
 
@@ -88,7 +96,6 @@ Report issues on the Redmine project: [foreman_bootdisk](http://projects.thefore
 
 ## Known issues
 
-* USB support not implemented
 * Templates only support first NIC
 * No Debian guidance or templates
 * No SELinux policy support
