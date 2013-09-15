@@ -2,6 +2,8 @@ require 'foreman_bootdisk'
 
 module Bootdisk
   class Engine < ::Rails::Engine
+    engine_name Bootdisk::ENGINE_NAME
+
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
@@ -19,6 +21,7 @@ module Bootdisk
       Host::Managed.send(:include, Bootdisk::HostExt)
       HostsController.send(:include, Bootdisk::HostsControllerExt)
       HostsHelper.send(:include, Bootdisk::HostsHelperExt)
+      UnattendedController.send(:include, Bootdisk::UnattendedControllerExt)
     end
   end
 end

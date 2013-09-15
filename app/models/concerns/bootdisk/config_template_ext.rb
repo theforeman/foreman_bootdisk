@@ -20,7 +20,7 @@ module Bootdisk::ConfigTemplateExt
     c = changes
 
     # ignore CRLF changes
-    if c['template'] && c['template'][0].gsub("\n", "\r\n") == c['template'][1]
+    if c['template'] && (c['template'][0].nil? || c['template'][0].gsub("\n", "\r\n") == c['template'][1])
       c.delete 'template'
     end
 

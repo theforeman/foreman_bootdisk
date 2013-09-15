@@ -61,23 +61,45 @@ following configuration will do this:
 
     network --bootproto <%= @static ? "static" : "dhcp" %> --hostname <%= @host %> <%= "--ip=#{@host.ip} --netmask=#{@host.subnet.mask} --gateway=#{@host.subnet.gateway} --nameserver=#{@host.subnet.dns_primary},#{@host.subnet.dns_secondary}" if @static %>
 
-## USB images
+## Available images
 
-The ISO images generated are run through `isohybrid` which makes them bootable
-as disks too, suitable for copying to a USB device.
+The image types have trade-offs, but are all meant for environments without
+total control over the network infrastructure - so no DHCP reservations or
+TFTP settings are needed.
 
-Use `dd if=fqdn.iso of=/dev/sdb` or similar to copy the image to a USB disk.
-Ensure the device name is correct to avoid writing over the wrong disk.
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Generic</th>
+    <th>DHCP required</th>
+    <th>DHCP reservation</th>
+    <th>Pre-register host</th>
+  </tr>
+  <tr>
+    <td>Per-host image</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Generic image</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>Yes</td>
+  </tr>
+</table>
 
-## Per-host images
+### Per-host images
 
 Using the host and subnet data in Foreman, per-host images can be created with
 fully static networking.  The behaviour is dynamic, as the image chainloads
 from Foreman, so the current OS and build state will be provided by Foreman
 instead of being stored in the image.
 
-To generate the image from the web interface, view the host page and click the
-"Boot disk" button.
+To generate the image from the web interface, view the host page, click the
+"Boot disk" button and select "Host 'FQDN' image".
 
 To generate from the command line:
 
@@ -85,9 +107,37 @@ To generate from the command line:
 
 Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
 
-## Generic host group images
+### Generic image
+
+This provides a single ISO that can be used by all hosts, but since IP details
+can't be stored inside, it requires a DHCP pool on the network to bootstrap.
+It will boot and contact Foreman for template of a registered host matching a
+MAC address or the IP the host was assigned by DHCP.
+
+The installation can continue on either the DHCP or static IP depending on how
+the OS gPXE template is configured, and could configure the assigned IP
+address statically for the installed system via the kickstart file.
+
+To generate the image from the web interface, view a host page, click the
+"Boot disk" button and select "Generic image".
+
+To generate from the command line:
+
+    foreman-rake bootdisk:generate:generic
+
+Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
+
+### Host group images
 
 TODO
+
+### USB images
+
+The ISO images generated are run through `isohybrid` which makes them bootable
+as disks too, suitable for copying to a USB device.
+
+Use `dd if=fqdn.iso of=/dev/sdb` or similar to copy the image to a USB disk.
+Ensure the device name is correct to avoid writing over the wrong disk.
 
 # Issues
 
