@@ -1,8 +1,9 @@
+require 'date'
 Gem::Specification.new do |s|
   s.name = "foreman_bootdisk"
 
-  s.version = "1.0.0"
-  s.date = "2013-08-29"
+  s.version = "1.1.0"
+  s.date = Date.today.to_s
 
   s.summary = "Create boot disks to provision hosts with Foreman"
   s.description = "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
@@ -14,6 +15,7 @@ Gem::Specification.new do |s|
   s.email = "dcleal@redhat.com"
 
   s.extra_rdoc_files = [
+    "CHANGES.md",
     "LICENSE",
     "README.md",
   ]
