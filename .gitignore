@@ -1,0 +1,11 @@
+*~
+.bundle
+Gemfile.lock
+*.sw?
+.idea
+*.pyc
+.DS_Store
+.rbenv*
+.rvmrc*
+.ruby-*
+pkg/
