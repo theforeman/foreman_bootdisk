@@ -11,16 +11,18 @@ class Bootdisk::ISOGenerator
   def generate(&block)
     Dir.mktmpdir('bootdisk') do |wd|
       Dir.mkdir(File.join(wd, 'build'))
-      File.write(File.join(wd, 'build', 'isolinux.cfg'), <<EOF)
+      File.open(File.join(wd, 'build', 'isolinux.cfg'),'w') do |file|
+        file.write(<<EOF)
 default ipxe
 label ipxe
 kernel /ipxe
 initrd /script
 EOF
+      end
 
       FileUtils.cp(File.join(Setting[:bootdisk_syslinux_dir], 'isolinux.bin'), File.join(wd, 'build', 'isolinux.bin'))
       FileUtils.cp(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn'), File.join(wd, 'build', 'ipxe'))
-      File.write(File.join(wd, 'build', 'script'), script)
+      File.open(File.join(wd, 'build', 'script'),'w') { |file| file.write(script) }
 
       iso = File.join(wd, 'output.iso')
       unless system("mkisofs -o #{iso} -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
