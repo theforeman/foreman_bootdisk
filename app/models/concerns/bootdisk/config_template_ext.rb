@@ -17,7 +17,19 @@ module Bootdisk::ConfigTemplateExt
   end
 
   def bootdisk_readonly
-    if BOOTDISK_TMPLS.include? name_was
+    c = changes
+
+    # ignore CRLF changes
+    if c['template'] && c['template'][0].gsub("\n", "\r\n") == c['template'][1]
+      c.delete 'template'
+    end
+
+    # ignore nil to false changes
+    c.delete 'snippet' if c['snippet'] == [nil, false]
+
+    # allow the user to associate it, just not change the content
+    other_attrs = c.keys.find { |f| !['template_combinations', 'template_associations'].include? f }
+    if BOOTDISK_TMPLS.include?(name_was) && other_attrs
       errors.add(:base, _("Template is read-only as it's supplied in foreman_bootdisk.  Please copy it to a new template to customize."))
     end
   end
