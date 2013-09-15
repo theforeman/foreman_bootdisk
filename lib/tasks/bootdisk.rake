@@ -6,7 +6,18 @@ namespace :bootdisk do
       tmpl = host.bootdisk_template_render
 
       Bootdisk::ISOGenerator.new(tmpl).generate do |image|
-        output = ENV['OUTPUT'] || "#{host.name}.#{type}"
+        output = ENV['OUTPUT'] || "#{host.name}.iso"
+        FileUtils.cp image, output
+        puts "Wrote #{output}"
+      end
+    end
+
+    desc 'Generate a generic boot disk.  OUTPUT=path'
+    task :generic => :environment do
+      tmpl = Bootdisk::Renderer.new.generic_template_render
+
+      Bootdisk::ISOGenerator.new(tmpl).generate do |image|
+        output = ENV['OUTPUT'] || "bootdisk_#{Setting[:foreman_url]}.iso"
         FileUtils.cp image, output
         puts "Wrote #{output}"
       end

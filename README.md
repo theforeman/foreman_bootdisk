@@ -39,6 +39,7 @@ Some configuration is set under More>Settings>Bootdisk in the Foreman UI.
 * `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
 * `bootdisk_syslinux_dir` points to the directory containing syslinux images
 * `bootdisk_host_template` is the name of the per-host boot disk template
+* `bootdisk_generic_host_template` is the name of the generic boot disk template
 
 For per-host images, ensure host IP addresses and subnets are populated, and
 the subnet's gateway, subnet mask and DNS resolver(s) are correctly configured
