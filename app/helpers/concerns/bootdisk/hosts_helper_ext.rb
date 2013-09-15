@@ -10,7 +10,7 @@ module Bootdisk::HostsHelperExt
       button_group(
         select_action_button(_('Boot disk'),
           display_link_if_authorized(_("ISO image"), hash_for_bootdisk_iso_host_path(:id => @host), :class=>'btn'),
-          display_link_if_authorized(_("USB image"), hash_for_bootdisk_iso_host_path(:id => @host), :class=>'btn'),
+          display_link_if_authorized(_("USB image"), hash_for_bootdisk_iso_host_path(:id => @host), :class=>'btn')
         )
       )
     )
