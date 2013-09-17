@@ -1,8 +1,10 @@
+require File.expand_path('../lib/bootdisk/version', __FILE__)
 require 'date'
+
 Gem::Specification.new do |s|
   s.name = "foreman_bootdisk"
 
-  s.version = "1.1.0"
+  s.version = Bootdisk::VERSION
   s.date = Date.today.to_s
 
   s.summary = "Create boot disks to provision hosts with Foreman"
