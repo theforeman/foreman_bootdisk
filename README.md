@@ -45,6 +45,9 @@ For per-host images, ensure host IP addresses and subnets are populated, and
 the subnet's gateway, subnet mask and DNS resolver(s) are correctly configured
 under More>Provisioning>Subnets in Foreman.
 
+To permit access to images for non-admin users, add the "Boot disk access" role
+to a user or the "download_bootdisk" permission to an existing role.
+
 ### Templates
 
 The templates used on the boot disks themselves are read-only so they can be
