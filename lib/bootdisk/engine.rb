@@ -17,11 +17,15 @@ module Bootdisk
     end
 
     config.to_prepare do
-      ConfigTemplate.send(:include, Bootdisk::ConfigTemplateExt)
-      Host::Managed.send(:include, Bootdisk::HostExt)
-      HostsController.send(:include, Bootdisk::HostsControllerExt)
-      HostsHelper.send(:include, Bootdisk::HostsHelperExt)
-      UnattendedController.send(:include, Bootdisk::UnattendedControllerExt)
+      begin
+        ConfigTemplate.send(:include, Bootdisk::ConfigTemplateExt)
+        Host::Managed.send(:include, Bootdisk::HostExt)
+        HostsController.send(:include, Bootdisk::HostsControllerExt)
+        HostsHelper.send(:include, Bootdisk::HostsHelperExt)
+        UnattendedController.send(:include, Bootdisk::UnattendedControllerExt)
+      rescue => e
+        puts "#{Bootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
+      end
     end
   end
 end
