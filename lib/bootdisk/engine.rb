@@ -1,4 +1,6 @@
 require 'foreman_bootdisk'
+require 'fast_gettext'
+require 'gettext_i18n_rails'
 
 module Bootdisk
   class Engine < ::Rails::Engine
@@ -16,7 +18,7 @@ module Bootdisk
       app.config.paths['db/migrate'] += Bootdisk::Engine.paths['db/migrate'].existent
     end
 
-    initializer 'my_plugin.register_plugin', :after=> :finisher_hook do |app|
+    initializer 'foreman_bootdisk.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
         requires_foreman '>= 1.4'
 
@@ -27,6 +29,12 @@ module Bootdisk
 
         role "Boot disk access", [:download_bootdisk] unless (Role.count rescue nil).nil?
       end
+    end
+
+    initializer 'foreman_bootdisk.register_gettext', :after => :load_config_initializers do |app|
+      locale_dir = File.join(File.expand_path('../../..', __FILE__), 'locale')
+      locale_domain = 'bootdisk'
+      Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
 
     config.to_prepare do

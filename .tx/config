@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[foreman.bootdisk]
+file_filter = locale/<lang>/bootdisk.po
+source_file = locale/bootdisk.pot
+source_lang = en
+type = PO

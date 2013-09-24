@@ -9,3 +9,9 @@ Gemfile.lock
 .rvmrc*
 .ruby-*
 pkg/
+locale/*.mo
+locale/*/*.pox
+locale/*/LC_MESSAGES
+tags
+TAGS
+.foreman_app
