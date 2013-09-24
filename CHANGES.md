@@ -1,10 +1,14 @@
 # Changelog
 
+## v1.2.1
+* add permission and default role for non-admin users
+* fix DB migration from clean install
+
 ## v1.2.0
 * add generic image, relying on DHCP and a MAC/IP search
 * fix inability to associate provided templates with OSes
 
-# v1.1.0
+## v1.1.0
 * per-host USB image support using isohybrid
 * templates updated for multi-NIC support
 * Ruby 1.8.7 fixes
