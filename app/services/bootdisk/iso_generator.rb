@@ -20,6 +20,11 @@ initrd /script
 EOF
       end
 
+      unless (File.exists?(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn')) &&
+              (File.exists?(File.join(Setting[:bootdisk_syslinux_dir], 'isolinux.bin'))))
+        raise ::Foreman::Exception.new(N_("Please ensure the ipxe-bootimgs and syslinux packages are installed."))
+      end
+
       FileUtils.cp(File.join(Setting[:bootdisk_syslinux_dir], 'isolinux.bin'), File.join(wd, 'build', 'isolinux.bin'))
       FileUtils.cp(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn'), File.join(wd, 'build', 'ipxe'))
       File.open(File.join(wd, 'build', 'script'),'w') { |file| file.write(script) }
