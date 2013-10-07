@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.2
+* check ipxe/syslinux are present when generating images (#3195)
+* fix RHN_PROVISIONING_MAC_0 error on template retrieval
+
 ## v1.2.1
 * add permission and default role for non-admin users
 * fix DB migration from clean install
