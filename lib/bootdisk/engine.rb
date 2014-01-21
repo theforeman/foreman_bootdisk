@@ -27,5 +27,11 @@ module Bootdisk
         puts "#{Bootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
       end
     end
+
+    rake_tasks do
+      Rake::Task['db:seed'].enhance do
+        Bootdisk::Engine.load_seed
+      end
+    end
   end
 end

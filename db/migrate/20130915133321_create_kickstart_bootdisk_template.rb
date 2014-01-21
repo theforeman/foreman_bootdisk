@@ -3,6 +3,5 @@ class CreateKickstartBootdiskTemplate < ActiveRecord::Migration
   end
 
   def self.down
-    ConfigTemplate.destroy_all(:name => 'Kickstart boot disk gPXE')
   end
 end
