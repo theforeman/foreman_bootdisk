@@ -16,6 +16,19 @@ module Bootdisk
       app.config.paths['db/migrate'] += Bootdisk::Engine.paths['db/migrate'].existent
     end
 
+    initializer 'my_plugin.register_plugin', :after=> :finisher_hook do |app|
+      Foreman::Plugin.register :foreman_bootdisk do
+        requires_foreman '>= 1.4'
+
+        security_block :bootdisk do |map|
+          permission :download_bootdisk, {:hosts => [:bootdisk_iso],
+                                          :'bootdisk/disks' => [:generic_iso, :index]}
+        end
+
+        role "Boot disk access", [:download_bootdisk] unless (Role.count rescue nil).nil?
+      end
+    end
+
     config.to_prepare do
       begin
         ConfigTemplate.send(:include, Bootdisk::ConfigTemplateExt)
