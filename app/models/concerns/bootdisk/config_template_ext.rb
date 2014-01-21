@@ -3,7 +3,7 @@
 module Bootdisk::ConfigTemplateExt
   extend ActiveSupport::Concern
 
-  BOOTDISK_TMPLS = ['Boot disk gPXE - host', 'Kickstart boot disk gPXE']
+  BOOTDISK_TMPLS = ['Boot disk iPXE - host', 'Kickstart boot disk iPXE']
 
   included do
     before_destroy :bootdisk_destroy?

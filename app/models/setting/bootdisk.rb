@@ -10,8 +10,8 @@ class Setting::Bootdisk< ::Setting
       [
         self.set('bootdisk_ipxe_dir', _('Path to directory containing iPXE images'), ipxe),
         self.set('bootdisk_syslinux_dir', _('Path to directory containing syslinux images'), syslinux),
-        self.set('bootdisk_host_template', _('gPXE template to use for host-specific boot disks'), 'Boot disk gPXE - host'),
-        self.set('bootdisk_generic_host_template', _('gPXE template to use for generic host boot disks'), 'Boot disk gPXE - generic host'),
+        self.set('bootdisk_host_template', _('iPXE template to use for host-specific boot disks'), 'Boot disk iPXE - host'),
+        self.set('bootdisk_generic_host_template', _('iPXE template to use for generic host boot disks'), 'Boot disk iPXE - generic host'),
       ].compact.each { |s| self.create s.update(:category => "Setting::Bootdisk") }
     end
 

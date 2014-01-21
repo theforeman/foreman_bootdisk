@@ -27,14 +27,13 @@ RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
 * syslinux is required
 * mkisofs and isohybrid are required
 
-gPXE images are unsupported due to lack of initrd support, but the name will
-crop up as Foreman's script support is still named after the project.
+gPXE images are unsupported due to lack of initrd support.
 
 # Usage
 
 ## Configuration
 
-Some configuration is set under More>Settings>Bootdisk in the Foreman UI.
+Some configuration is set under Administer>Settings>Bootdisk in the Foreman UI.
 
 * `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
 * `bootdisk_syslinux_dir` points to the directory containing syslinux images
@@ -43,7 +42,7 @@ Some configuration is set under More>Settings>Bootdisk in the Foreman UI.
 
 For per-host images, ensure host IP addresses and subnets are populated, and
 the subnet's gateway, subnet mask and DNS resolver(s) are correctly configured
-under More>Provisioning>Subnets in Foreman.
+under Infrastructure>Subnets in Foreman.
 
 To permit access to images for non-admin users, add the "Boot disk access" role
 to a user or the "download_bootdisk" permission to an existing role.
@@ -52,18 +51,19 @@ to a user or the "download_bootdisk" permission to an existing role.
 
 The templates used on the boot disks themselves are read-only so they can be
 updated in new versions of the plugin.  To customise, copy the contents to a
-new template and set the name in More>Settings>Bootdisk.
+new template and set the name in Administer>Settings>Bootdisk.
 
-An OS gPXE provisioning template is required, preferably "Kickstart boot disk
-gPXE" (as supplied by this plugin).  Ensure the OSes are ticked under the
-Associations tab and that the gPXE template is selected under the Templates tab
-on the OS.
+An OS iPXE provisioning template is required, preferably "Kickstart default
+iPXE".  Ensure the OSes are ticked under the Associations tab and that the
+iPXE template is selected under the Templates tab on the OS.
 
 Lastly, the OS provision template (i.e. kickstart/preseed) should provide the
 static IP details required to configure the OS.  For a kickstart file, the
 following configuration will do this:
 
     network --bootproto <%= @static ? "static" : "dhcp" %> --hostname <%= @host %> <%= "--ip=#{@host.ip} --netmask=#{@host.subnet.mask} --gateway=#{@host.subnet.gateway} --nameserver=#{@host.subnet.dns_primary},#{@host.subnet.dns_secondary}" if @static %>
+
+Foreman's default kickstart file is ready to use.
 
 ## Available images
 
@@ -119,7 +119,7 @@ It will boot and contact Foreman for template of a registered host matching a
 MAC address or the IP the host was assigned by DHCP.
 
 The installation can continue on either the DHCP or static IP depending on how
-the OS gPXE template is configured, and could configure the assigned IP
+the OS iPXE template is configured, and could configure the assigned IP
 address statically for the installed system via the kickstart file.
 
 To generate the image from the web interface, view a host page, click the
