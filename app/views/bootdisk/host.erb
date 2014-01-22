@@ -4,6 +4,14 @@
 #
 # Copy this template to customize it, the original is read-only.
 
+<%
+raise ::Foreman::Exception.new(N_('Host has no IP address defined')) if @host.ip.empty?
+raise ::Foreman::Exception.new(N_('Host has no subnet defined')) if @host.subnet.nil?
+raise ::Foreman::Exception.new(N_('Host has no domain defined')) if @host.domain.nil?
+raise ::Foreman::Exception.new(N_('Subnet (%s) has no gateway defined'), @host.subnet) if @host.subnet.gateway.empty?
+raise ::Foreman::Exception.new(N_('Subnet (%s) has no primary DNS server defined'), @host.subnet) if @host.subnet.dns_primary.empty?
+%>
+
 # loop over net* until the host's MAC matches
 <% (0..32).each do |i| -%>
 :net<%= i %>

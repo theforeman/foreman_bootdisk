@@ -7,7 +7,15 @@ module Bootdisk::HostsControllerExt
   end
 
   def bootdisk_iso
-    Bootdisk::ISOGenerator.new(@host.bootdisk_template_render).generate do |iso|
+    begin
+      tmpl = @host.bootdisk_template_render
+    rescue => e
+      error _('Failed to render boot disk template: %s') % e
+      redirect_to :back
+      return
+    end
+
+    Bootdisk::ISOGenerator.new(tmpl).generate do |iso|
       send_data File.read(iso), :filename => "#{@host.name}.iso"
     end
   end
