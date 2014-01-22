@@ -29,6 +29,13 @@ RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
 
 gPXE images are unsupported due to lack of initrd support.
 
+## Compatibility
+
+| Foreman Version | Plugin Version |
+| --------------- | --------------:|
+| <= 1.3          | ~> 1.0         |
+| >= 1.4          | ~> 2.0         |
+
 # Usage
 
 ## Configuration

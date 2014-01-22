@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.0
+* compatible with Foreman 1.4 (only), uses new plugin registration system
+* add validation of host and subnet data to host template
+* remove kickstart iPXE, use the one supplied in Foreman 1.4
+
 ## v1.2.3
 * remove secondary DNS server from iPXE template (#3558)
 
