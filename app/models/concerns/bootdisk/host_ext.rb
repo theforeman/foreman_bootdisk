@@ -6,6 +6,9 @@ module Bootdisk::HostExt
   end
 
   def bootdisk_template_render
+    # Waiting on additional whitelisted items, #2948
+    Setting[:safemode_render] && raise(::Foreman::Exception.new(N_('Bootdisk is not supported with safemode rendering, please disable safemode_render under Adminster>Settings')))
+
     @host = self
     pxe_render(bootdisk_template.template)
   end
