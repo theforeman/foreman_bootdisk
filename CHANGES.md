@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.1
+* use genisoimage instead of mkisofs by default, added setting to control
+* fix translation extraction of setting descriptions
+
 ## v2.0.0
 * compatible with Foreman 1.4 (only), uses new plugin registration system
 * add validation of host and subnet data to host template
