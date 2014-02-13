@@ -3,7 +3,7 @@
 module Bootdisk::ConfigTemplateExt
   extend ActiveSupport::Concern
 
-  BOOTDISK_TMPLS = ['Boot disk iPXE - host', 'Kickstart boot disk iPXE']
+  BOOTDISK_TMPLS = ['Boot disk iPXE - host', 'Boot disk iPXE - generic host']
 
   included do
     before_destroy :bootdisk_destroy?
@@ -12,8 +12,8 @@ module Bootdisk::ConfigTemplateExt
 
   def bootdisk_destroy?
     return true if ARGV.find { |a| a.start_with? "db:migrate" }
-    bootdisk_readonly
-    errors.empty?
+    bootdisk_add_error if BOOTDISK_TMPLS.include?(name)
+    false
   end
 
   def bootdisk_readonly
@@ -29,8 +29,10 @@ module Bootdisk::ConfigTemplateExt
 
     # allow the user to associate it, just not change the content
     other_attrs = c.keys.find { |f| !['template_combinations', 'template_associations'].include? f }
-    if BOOTDISK_TMPLS.include?(name_was) && other_attrs
-      errors.add(:base, _("Template is read-only as it's supplied in foreman_bootdisk.  Please copy it to a new template to customize."))
-    end
+    bootdisk_add_error if BOOTDISK_TMPLS.include?(name_was) && other_attrs
+  end
+
+  def bootdisk_add_error
+    errors.add(:base, _("Template is read-only as it's supplied in foreman_bootdisk.  Please copy it to a new template to customize."))
   end
 end
