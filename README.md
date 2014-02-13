@@ -21,6 +21,8 @@ The gem name is "foreman_bootdisk".  Run `foreman-rake db:migrate`,
 RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
 "rubygem-foreman_bootdisk" packages.
 
+Debian users can install the "ruby-foreman-bootdisk" package.
+
 ## Dependencies
 
 * iPXE images are required
@@ -61,9 +63,12 @@ The templates used on the boot disks themselves are read-only so they can be
 updated in new versions of the plugin.  To customise, copy the contents to a
 new template and set the name in Administer>Settings>Bootdisk.
 
-An OS iPXE provisioning template is required, preferably "Kickstart default
-iPXE".  Ensure the OSes are ticked under the Associations tab and that the
+An OS iPXE provisioning template is required, see the list below for the name.
+Ensure the OSes are ticked under the Associations tab and that the
 iPXE template is selected under the Templates tab on the OS.
+
+* Kickstart (EL/Fedora) OSes, use "Kickstart default iPXE"
+* Preseed (Debian/Ubuntu) OSes, use "Preseed default iPXE"
 
 Lastly, the OS provision template (i.e. kickstart/preseed) should provide the
 static IP details required to configure the OS.  For a kickstart file, the
@@ -71,7 +76,7 @@ following configuration will do this:
 
     network --bootproto <%= @static ? "static" : "dhcp" %> --hostname <%= @host %> <%= "--ip=#{@host.ip} --netmask=#{@host.subnet.mask} --gateway=#{@host.subnet.gateway} --nameserver=#{@host.subnet.dns_primary},#{@host.subnet.dns_secondary}" if @static %>
 
-Foreman's default kickstart file is ready to use.
+Foreman's default kickstart and preseed files are ready to use.
 
 ## Available images
 
@@ -157,7 +162,6 @@ Report issues on the Redmine project: [foreman_bootdisk](http://projects.thefore
 
 ## Known issues
 
-* No Debian guidance or templates
 * No SELinux policy support
 
 # Copyright
