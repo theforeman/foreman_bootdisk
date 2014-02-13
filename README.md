@@ -15,8 +15,8 @@ Please see the Foreman wiki for appropriate instructions:
 
 * [Foreman: How to Install a Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
 
-The gem name is "foreman_bootdisk".  Run `foreman-rake db:migrate` after
-installation.
+The gem name is "foreman_bootdisk".  Run `foreman-rake db:migrate`,
+`foreman-rake db:seed` after installation.
 
 RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
 "rubygem-foreman_bootdisk" packages.
@@ -25,7 +25,7 @@ RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
 
 * iPXE images are required
 * syslinux is required
-* mkisofs and isohybrid are required
+* genisoimage/mkisofs and isohybrid are required
 
 gPXE images are unsupported due to lack of initrd support.
 
@@ -46,6 +46,7 @@ Some configuration is set under Administer>Settings>Bootdisk in the Foreman UI.
 * `bootdisk_syslinux_dir` points to the directory containing syslinux images
 * `bootdisk_host_template` is the name of the per-host boot disk template
 * `bootdisk_generic_host_template` is the name of the generic boot disk template
+* `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
 
 For per-host images, ensure host IP addresses and subnets are populated, and
 the subnet's gateway, subnet mask and DNS resolver(s) are correctly configured

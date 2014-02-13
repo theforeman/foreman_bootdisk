@@ -1,6 +1,6 @@
 # Generates an iPXE ISO hybrid image
 #
-# requires syslinux, ipxe/ipxe-bootimgs, mkisofs, isohybrid
+# requires syslinux, ipxe/ipxe-bootimgs, genisoimage, isohybrid
 class Bootdisk::ISOGenerator
   attr_reader :script
 
@@ -30,7 +30,7 @@ EOF
       File.open(File.join(wd, 'build', 'script'),'w') { |file| file.write(script) }
 
       iso = File.join(wd, 'output.iso')
-      unless system("mkisofs -o #{iso} -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
+      unless system("#{Setting[:bootdisk_mkiso_command]} -o #{iso} -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
         raise ::Foreman::Exception.new(N_("ISO build failed"))
       end
 
