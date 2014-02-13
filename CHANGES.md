@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.2
+* add MAC address to iPXE chain request for NAT (#3562, Jon Fautley)
+* raise friendly error if safemode is enabled (#4184, #2948)
+* add i18n framework and en_GB translation (#3981)
+* fix filename of generic ISO image
+* fix template deletion blocking
+* update instructions for Debian
+
 ## v2.0.1
 * use genisoimage instead of mkisofs by default, added setting to control
 * fix translation extraction of setting descriptions
