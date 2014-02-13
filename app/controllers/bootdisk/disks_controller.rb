@@ -1,3 +1,5 @@
+require 'uri'
+
 module Bootdisk
   class DisksController < ::ApplicationController
     def generic_iso
@@ -10,7 +12,7 @@ module Bootdisk
       end
 
       Bootdisk::ISOGenerator.new(tmpl).generate do |iso|
-        send_data File.read(iso), :filename => "bootdisk_#{Setting[:foreman_url]}.iso"
+        send_data File.read(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
       end
     end
   end
