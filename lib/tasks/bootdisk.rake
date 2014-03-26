@@ -17,7 +17,7 @@ namespace :bootdisk do
       tmpl = Bootdisk::Renderer.new.generic_template_render
 
       Bootdisk::ISOGenerator.new(tmpl).generate do |image|
-        output = ENV['OUTPUT'] || "bootdisk_#{Setting[:foreman_url]}.iso"
+        output = ENV['OUTPUT'] || "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
         FileUtils.cp image, output
         puts "Wrote #{output}"
       end
