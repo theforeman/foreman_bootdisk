@@ -15,5 +15,16 @@ module Bootdisk
         send_data File.read(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
       end
     end
+
+    private
+
+    def action_permission
+      case params[:action]
+        when 'generic_iso'
+          :download
+      else
+        super
+      end
+    end
   end
 end
