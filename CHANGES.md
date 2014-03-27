@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.3
+* fix Foreman 1.5 auth system compatibility (#4893)
+* fix filename of generic ISO image in rake task
+
 ## v2.0.2
 * add MAC address to iPXE chain request for NAT (#3562, Jon Fautley)
 * raise friendly error if safemode is enabled (#4184, #2948)
