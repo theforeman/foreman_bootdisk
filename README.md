@@ -42,6 +42,10 @@ gPXE images are unsupported due to lack of initrd support.
 
 ## Configuration
 
+With all image types, hosts have to be registered to Foreman prior to booting
+the image.  Hosts will be identified by their MAC or IP address to provide
+the correct provisioning template if the host is in build mode.
+
 For per-host images, ensure host IP addresses and subnets are populated, and
 the subnet's gateway, subnet mask and DNS resolver(s) are correctly configured
 under Infrastructure>Subnets in Foreman.
@@ -49,7 +53,7 @@ under Infrastructure>Subnets in Foreman.
 To permit access to images for non-admin users, add the "Boot disk access" role
 to a user or the "download_bootdisk" permission to an existing role.
 
-### Templates
+## Templates
 
 An OS iPXE provisioning template is required, see the list below for the name.
 Ensure the OSes are ticked under the Associations tab and that the
@@ -63,7 +67,7 @@ still need to be associated, as bootdisk only handles bootstrapping.
 
 * EL clones or Fedora should use "Kickstart default" as the "provision"
   template
-* RHEL should use "Kickstart RHEL default" as the "provision "template
+* RHEL should use "Kickstart RHEL default" as the "provision" template
 * Preseed (Debian/Ubuntu) OSes, use "Preseed default" as the
   "provision" template and "Preseed default finish" as the "finish" template
 
@@ -76,7 +80,7 @@ this:
 
 Foreman's default kickstart and preseed files are ready to use.
 
-#### Customising boot disk templates
+### Customising boot disk templates
 
 The templates used on the boot disks themselves are read-only so they can be
 updated in new versions of the plugin.  To customise, copy the contents to a
@@ -88,15 +92,13 @@ new template and set the name in Administer>Settings>Bootdisk.
 These templates are baked into the downloaded ISO files and generally don't
 need to be modified.
 
-### Settings
+## Settings
 
-Some advanced settings are available under Administer>Settings>Bootdisk in the
-Foreman UI.
+Some more advanced settings are available under Administer>Settings>Bootdisk in
+the Foreman UI.
 
 * `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
 * `bootdisk_syslinux_dir` points to the directory containing syslinux images
-* `bootdisk_host_template` is the name of the per-host boot disk template
-* `bootdisk_generic_host_template` is the name of the generic boot disk template
 * `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
 
 ## Available images
@@ -147,10 +149,10 @@ Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
 
 ### Generic image
 
-This provides a single ISO that can be used by all hosts, but since IP details
-can't be stored inside, it requires a DHCP pool on the network to bootstrap.
-It will boot and contact Foreman for template of a registered host matching a
-MAC address or the IP the host was assigned by DHCP.
+This provides a single ISO that can be used by all registered hosts, but since
+IP details can't be stored inside, it requires a DHCP pool on the network to
+bootstrap.  It will boot and contact Foreman for template of a registered host
+matching a MAC address or the IP the host was assigned by DHCP.
 
 The installation can continue on either the DHCP or static IP depending on how
 the OS iPXE template is configured, and could configure the assigned IP
