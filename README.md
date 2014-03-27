@@ -42,14 +42,6 @@ gPXE images are unsupported due to lack of initrd support.
 
 ## Configuration
 
-Some configuration is set under Administer>Settings>Bootdisk in the Foreman UI.
-
-* `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
-* `bootdisk_syslinux_dir` points to the directory containing syslinux images
-* `bootdisk_host_template` is the name of the per-host boot disk template
-* `bootdisk_generic_host_template` is the name of the generic boot disk template
-* `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
-
 For per-host images, ensure host IP addresses and subnets are populated, and
 the subnet's gateway, subnet mask and DNS resolver(s) are correctly configured
 under Infrastructure>Subnets in Foreman.
@@ -59,10 +51,6 @@ to a user or the "download_bootdisk" permission to an existing role.
 
 ### Templates
 
-The templates used on the boot disks themselves are read-only so they can be
-updated in new versions of the plugin.  To customise, copy the contents to a
-new template and set the name in Administer>Settings>Bootdisk.
-
 An OS iPXE provisioning template is required, see the list below for the name.
 Ensure the OSes are ticked under the Associations tab and that the
 iPXE template is selected under the Templates tab on the OS.
@@ -70,13 +58,46 @@ iPXE template is selected under the Templates tab on the OS.
 * Kickstart (EL/Fedora) OSes, use "Kickstart default iPXE"
 * Preseed (Debian/Ubuntu) OSes, use "Preseed default iPXE"
 
-Lastly, the OS provision template (i.e. kickstart/preseed) should provide the
-static IP details required to configure the OS.  For a kickstart file, the
-following configuration will do this:
+Standard templates for the kickstart/preseed and optionally finish script
+still need to be associated, as bootdisk only handles bootstrapping.
+
+* EL clones or Fedora should use "Kickstart default" as the "provision"
+  template
+* RHEL should use "Kickstart RHEL default" as the "provision "template
+* Preseed (Debian/Ubuntu) OSes, use "Preseed default" as the
+  "provision" template and "Preseed default finish" as the "finish" template
+
+If you're not using Foreman's default kickstart or preseed provisioning
+templates, then ensure your versions provide the static IP details required to
+configure the OS.  For a kickstart file, the following configuration will do
+this:
 
     network --bootproto <%= @static ? "static" : "dhcp" %> --hostname <%= @host %> <%= "--ip=#{@host.ip} --netmask=#{@host.subnet.mask} --gateway=#{@host.subnet.gateway} --nameserver=#{@host.subnet.dns_primary},#{@host.subnet.dns_secondary}" if @static %>
 
 Foreman's default kickstart and preseed files are ready to use.
+
+#### Customising boot disk templates
+
+The templates used on the boot disks themselves are read-only so they can be
+updated in new versions of the plugin.  To customise, copy the contents to a
+new template and set the name in Administer>Settings>Bootdisk.
+
+* `bootdisk_host_template` is the name of the per-host boot disk template
+* `bootdisk_generic_host_template` is the name of the generic boot disk template
+
+These templates are baked into the downloaded ISO files and generally don't
+need to be modified.
+
+### Settings
+
+Some advanced settings are available under Administer>Settings>Bootdisk in the
+Foreman UI.
+
+* `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
+* `bootdisk_syslinux_dir` points to the directory containing syslinux images
+* `bootdisk_host_template` is the name of the per-host boot disk template
+* `bootdisk_generic_host_template` is the name of the generic boot disk template
+* `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
 
 ## Available images
 
