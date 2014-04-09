@@ -5,7 +5,7 @@ module Bootdisk::HostsHelperExt
     alias_method_chain :host_title_actions, :bootdisk
   end
 
-  def host_title_actions_with_bootdisk(host, vm)
+  def host_title_actions_with_bootdisk(*args)
     title_actions(
       button_group(
         select_action_button(_('Boot disk'), {},
@@ -14,7 +14,7 @@ module Bootdisk::HostsHelperExt
         )
       )
     )
-    host_title_actions_without_bootdisk(host, vm)
+    host_title_actions_without_bootdisk(*args)
   end
 
 end
