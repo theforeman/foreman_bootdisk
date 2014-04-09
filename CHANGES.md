@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.4
+* fix Foreman 1.5 host show page compatibility
+* updates to README
+
 ## v2.0.3
 * fix Foreman 1.5 auth system compatibility (#4893)
 * fix filename of generic ISO image in rake task
