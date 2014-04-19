@@ -28,6 +28,8 @@ module Bootdisk
         end
 
         role "Boot disk access", [:download_bootdisk] unless (Role.count rescue nil).nil?
+
+        allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise if respond_to? :allowed_template_helpers
       end
     end
 

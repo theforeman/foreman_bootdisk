@@ -1,3 +1,5 @@
+require 'uri'
+
 module Bootdisk::HostExt
   extend ActiveSupport::Concerns
 
@@ -6,10 +8,22 @@ module Bootdisk::HostExt
   end
 
   def bootdisk_template_render
-    # Waiting on additional whitelisted items, #2948
-    Setting[:safemode_render] && raise(::Foreman::Exception.new(N_('Bootdisk is not supported with safemode rendering, please disable safemode_render under Adminster>Settings')))
+    if (Gem::Version.new(SETTINGS[:version].notag) < Gem::Version.new('1.5')) && Setting[:safemode_render]
+      raise(::Foreman::Exception.new(N_('Bootdisk is not supported with safemode rendering, please disable safemode_render under Adminster>Settings')))
+    end
 
     @host = self
     pxe_render(bootdisk_template.template)
+  end
+
+  def bootdisk_chain_url(mac = self.mac, action = 'iPXE')
+    u = URI.parse(foreman_url(action))
+    u.query = "#{u.query}&mac=#{mac}"
+    u.fragment = nil
+    u.to_s
+  end
+
+  def bootdisk_raise(*args)
+    raise ::Foreman::Exception.new(*args)
   end
 end

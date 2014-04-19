@@ -5,11 +5,11 @@
 # Copy this template to customize it, the original is read-only.
 
 <%
-raise ::Foreman::Exception.new(N_('Host has no IP address defined')) if @host.ip.empty?
-raise ::Foreman::Exception.new(N_('Host has no subnet defined')) if @host.subnet.nil?
-raise ::Foreman::Exception.new(N_('Host has no domain defined')) if @host.domain.nil?
-raise ::Foreman::Exception.new(N_('Subnet (%s) has no gateway defined'), @host.subnet) if @host.subnet.gateway.empty?
-raise ::Foreman::Exception.new(N_('Subnet (%s) has no primary DNS server defined'), @host.subnet) if @host.subnet.dns_primary.empty?
+bootdisk_raise(N_('Host has no IP address defined')) if @host.ip.empty?
+bootdisk_raise(N_('Host has no subnet defined')) unless @host.subnet
+bootdisk_raise(N_('Host has no domain defined')) unless @host.domain
+bootdisk_raise(N_('Subnet (%s) has no gateway defined'), @host.subnet) if @host.subnet.gateway.empty?
+bootdisk_raise(N_('Subnet (%s) has no primary DNS server defined'), @host.subnet) if @host.subnet.dns_primary.empty?
 %>
 
 # loop over net* until the host's MAC matches
@@ -37,7 +37,7 @@ set domain <%= @host.domain.to_s %>
 
 # Chainload from Foreman rather than embedding OS info here, so the behaviour
 # is entirely dynamic.
-chain <%= (u = URI.parse(foreman_url("iPXE")); u.query ="#{u.query}&mac=#{@host.mac}"; u.to_s) %>
+chain <%= bootdisk_chain_url %>
 exit 0
 
 :no_nic
