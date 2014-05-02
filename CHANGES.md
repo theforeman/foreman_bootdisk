@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.5
+* safemode compatibility under Foreman 1.5
+
 ## v2.0.4
 * fix Foreman 1.5 host show page compatibility
 * updates to README
