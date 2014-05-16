@@ -12,8 +12,12 @@ module Bootdisk::ConfigTemplateExt
 
   def bootdisk_destroy?
     return true if ARGV.find { |a| a.start_with? "db:migrate" }
-    bootdisk_add_error if BOOTDISK_TMPLS.include?(name)
-    false
+    if BOOTDISK_TMPLS.include?(name)
+      bootdisk_add_error
+      false
+    else
+      true
+    end
   end
 
   def bootdisk_readonly
