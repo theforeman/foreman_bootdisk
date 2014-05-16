@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.6
+* fix deletion of non-bootdisk config templates
+
 ## v2.0.5
 * safemode compatibility under Foreman 1.5
 
