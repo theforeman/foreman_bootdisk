@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.7
+* change 'kind' of templates to Bootdisk to avoid confusion
+
 ## v2.0.6
 * fix deletion of non-bootdisk config templates
 
