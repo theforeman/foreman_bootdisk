@@ -183,13 +183,9 @@ Ensure the device name is correct to avoid writing over the wrong disk.
 
 Report issues on the Redmine project: [foreman_bootdisk](http://projects.theforeman.org/projects/bootdisk/issues/new)
 
-## Known issues
-
-* No SELinux policy support
-
 # Copyright
 
-Copyright (c) 2013 Red Hat Inc.
+Copyright (c) 2013-2014 Red Hat Inc.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
