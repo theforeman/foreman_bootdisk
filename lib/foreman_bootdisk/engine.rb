@@ -4,11 +4,15 @@ require 'gettext_i18n_rails'
 
 module ForemanBootdisk
   class Engine < ::Rails::Engine
-    engine_name ForemanBootdisk::ENGINE_NAME
+    isolate_namespace ForemanBootdisk
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
+
+    initializer 'foreman_bootdisk.mount_engine', :after=> :build_middleware_stack do |app|
+      app.routes_reloader.paths << "#{ForemanBootdisk::Engine.root}/config/routes/mount_engine.rb"
+    end
 
     initializer 'foreman_bootdisk.load_default_settings', :before => :load_config_initializers do |app|
       require_dependency File.expand_path("../../../app/models/setting/bootdisk.rb", __FILE__) if (Setting.table_exists? rescue(false))
@@ -18,18 +22,23 @@ module ForemanBootdisk
       app.config.paths['db/migrate'] += ForemanBootdisk::Engine.paths['db/migrate'].existent
     end
 
+    initializer "foreman_bootdisk.apipie" do
+      Apipie.configuration.api_controllers_matcher << "#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"
+      Apipie.configuration.checksum_path += ['/bootdisk/api/']
+    end
+
     initializer 'foreman_bootdisk.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
         requires_foreman '>= 1.6'
 
         security_block :bootdisk do |map|
-          permission :download_bootdisk, {:hosts => [:bootdisk_iso],
-                                          :'bootdisk/disks' => [:generic_iso, :index]}
+          permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host],
+                                          :'foreman_bootdisk/api/v2/disks' => [:generic, :host]}
         end
 
-        role "Boot disk access", [:download_bootdisk] unless (Role.count rescue nil).nil?
+        role "Boot disk access", [:download_bootdisk]
 
-        allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise if respond_to? :allowed_template_helpers
+        allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
       end
     end
 
@@ -42,7 +51,6 @@ module ForemanBootdisk
     config.to_prepare do
       begin
         Host::Managed.send(:include, ForemanBootdisk::HostExt)
-        HostsController.send(:include, ForemanBootdisk::HostsControllerExt)
         HostsHelper.send(:include, ForemanBootdisk::HostsHelperExt)
         UnattendedController.send(:include, ForemanBootdisk::UnattendedControllerExt)
       rescue => e

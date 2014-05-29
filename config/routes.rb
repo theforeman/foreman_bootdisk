@@ -1,12 +1,16 @@
-Rails.application.routes.draw do
-  resources :disks, :module => 'foreman_bootdisk', :only => :index do
-    get 'generic_iso', :on => :collection
+ForemanBootdisk::Engine.routes.draw do
+  resources :disks, :only => [] do
+    get 'generic', :on => :collection
+    constraints(:id => /[^\/]+/) do
+      get 'hosts/:id', :on => :collection, :to => 'disks#host'
+    end
   end
 
-  constraints(:id => /[^\/]+/) do
-    resources :hosts do
-      member do
-        get 'bootdisk_iso'
+  namespace :api, :defaults => {:format => 'json'} do
+    scope "(:apiv)", :module => :v2, :defaults => {:apiv => 'v2'}, :apiv => /v1|v2/, :constraints => ApiConstraints.new(:version => 2) do
+      get 'generic', :to => 'disks#generic'
+      constraints(:id => /[^\/]+/) do
+        get 'hosts/:id', :to => 'disks#host'
       end
     end
   end
