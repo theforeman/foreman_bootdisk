@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.8
+* fix DB migration when setting when using empty database (#5970)
+* updates to README
+
 ## v2.0.7
 * change 'kind' of templates to Bootdisk to avoid confusion
 
