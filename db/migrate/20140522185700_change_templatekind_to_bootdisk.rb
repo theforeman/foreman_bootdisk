@@ -1,8 +1,12 @@
 class ChangeTemplatekindToBootdisk < ActiveRecord::Migration
   def self.up
     kind = TemplateKind.find_or_create_by_name('Bootdisk')
-    ConfigTemplate.unscoped.where('name LIKE ? OR name = ? OR name = ?', '%Boot disk%',
-        Setting[:bootdisk_host_template], Setting[:bootdisk_generic_host_template]).each do |tmpl|
+
+    tmpl_h = Setting.find_by_name('bootdisk_host_template').try(:value)
+    tmpl_g = Setting.find_by_name('bootdisk_generic_host_template').try(:value)
+
+    (ConfigTemplate.unscoped.where('name LIKE ?', '%Boot disk%') |
+      ConfigTemplate.unscoped.where(:name => [tmpl_h, tmpl_g].compact)).each do |tmpl|
       tmpl.update_attribute(:template_kind_id, kind.id)
     end
   end
