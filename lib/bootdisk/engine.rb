@@ -41,7 +41,6 @@ module Bootdisk
 
     config.to_prepare do
       begin
-        ConfigTemplate.send(:include, Bootdisk::ConfigTemplateExt)
         Host::Managed.send(:include, Bootdisk::HostExt)
         HostsController.send(:include, Bootdisk::HostsControllerExt)
         HostsHelper.send(:include, Bootdisk::HostsHelperExt)

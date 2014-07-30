@@ -12,7 +12,10 @@ ConfigTemplate.without_auditing do
     :template_kind_id => kind.id,
     :snippet => false,
     :template => content
-  ).update_attribute(:template, content)
+  ).update_attributes(:template => content,
+                      :default  => true,
+                      :vendor   => "Foreman boot disk",
+                      :locked   => true)
 
   content = File.read(File.join(Bootdisk::Engine.root, 'app', 'views', 'bootdisk', 'generic_host.erb'))
   ConfigTemplate.find_or_create_by_name(
@@ -20,5 +23,8 @@ ConfigTemplate.without_auditing do
     :template_kind_id => kind.id,
     :snippet => false,
     :template => content
-  ).update_attribute(:template, content)
+  ).update_attributes(:template => content,
+                      :default  => true,
+                      :vendor   => "Foreman boot disk",
+                      :locked   => true)
 end
