@@ -20,7 +20,7 @@ module Bootdisk
 
     initializer 'foreman_bootdisk.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 1.4'
+        requires_foreman '>= 1.6'
 
         security_block :bootdisk do |map|
           permission :download_bootdisk, {:hosts => [:bootdisk_iso],
