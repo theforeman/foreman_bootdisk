@@ -1,7 +1,7 @@
 # Generates an iPXE ISO hybrid image
 #
 # requires syslinux, ipxe/ipxe-bootimgs, genisoimage, isohybrid
-class Bootdisk::ISOGenerator
+class ForemanBootdisk::ISOGenerator
   attr_reader :script
 
   def initialize(script, opts = {})

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :disks, :module => 'bootdisk', :only => :index do
+  resources :disks, :module => 'foreman_bootdisk', :only => :index do
     get 'generic_iso', :on => :collection
   end
 

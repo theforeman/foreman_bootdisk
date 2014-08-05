@@ -1,6 +1,6 @@
 require 'uri'
 
-module Bootdisk
+module ForemanBootdisk
   class Renderer
     include ::Foreman::Renderer
     include Rails.application.routes.url_helpers

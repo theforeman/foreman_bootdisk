@@ -1,7 +1,7 @@
-require 'bootdisk/version'
+require 'foreman_bootdisk/version'
 
-module Bootdisk
-  ENGINE_NAME = 'bootdisk'
+module ForemanBootdisk
+  ENGINE_NAME = 'foreman_bootdisk'
 
-  require 'bootdisk/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
+  require 'foreman_bootdisk/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
 end

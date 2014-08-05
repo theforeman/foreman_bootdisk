@@ -1,4 +1,4 @@
-module Bootdisk::UnattendedControllerExt
+module ForemanBootdisk::UnattendedControllerExt
   extend ActiveSupport::Concern
 
   included do

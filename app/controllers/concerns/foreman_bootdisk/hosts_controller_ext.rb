@@ -1,4 +1,4 @@
-module Bootdisk::HostsControllerExt
+module ForemanBootdisk::HostsControllerExt
   extend ActiveSupport::Concern
 
   included do
@@ -16,7 +16,7 @@ module Bootdisk::HostsControllerExt
       return
     end
 
-    Bootdisk::ISOGenerator.new(tmpl).generate do |iso|
+    ForemanBootdisk::ISOGenerator.new(tmpl).generate do |iso|
       send_data File.read(iso), :filename => "#{@host.name}.iso"
     end
   end

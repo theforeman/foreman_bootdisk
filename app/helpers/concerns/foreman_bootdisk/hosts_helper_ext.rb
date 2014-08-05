@@ -1,4 +1,4 @@
-module Bootdisk::HostsHelperExt
+module ForemanBootdisk::HostsHelperExt
   extend ActiveSupport::Concern
 
   included do

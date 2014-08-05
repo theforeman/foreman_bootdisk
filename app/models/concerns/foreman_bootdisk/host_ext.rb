@@ -1,6 +1,6 @@
 require 'uri'
 
-module Bootdisk::HostExt
+module ForemanBootdisk::HostExt
   extend ActiveSupport::Concerns
 
   def bootdisk_template

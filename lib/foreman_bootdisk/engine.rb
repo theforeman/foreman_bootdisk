@@ -2,9 +2,9 @@ require 'foreman_bootdisk'
 require 'fast_gettext'
 require 'gettext_i18n_rails'
 
-module Bootdisk
+module ForemanBootdisk
   class Engine < ::Rails::Engine
-    engine_name Bootdisk::ENGINE_NAME
+    engine_name ForemanBootdisk::ENGINE_NAME
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
@@ -15,7 +15,7 @@ module Bootdisk
     end
 
     initializer "foreman_bootdisk.load_app_instance_data" do |app|
-      app.config.paths['db/migrate'] += Bootdisk::Engine.paths['db/migrate'].existent
+      app.config.paths['db/migrate'] += ForemanBootdisk::Engine.paths['db/migrate'].existent
     end
 
     initializer 'foreman_bootdisk.register_plugin', :after=> :finisher_hook do |app|
@@ -41,18 +41,12 @@ module Bootdisk
 
     config.to_prepare do
       begin
-        Host::Managed.send(:include, Bootdisk::HostExt)
-        HostsController.send(:include, Bootdisk::HostsControllerExt)
-        HostsHelper.send(:include, Bootdisk::HostsHelperExt)
-        UnattendedController.send(:include, Bootdisk::UnattendedControllerExt)
+        Host::Managed.send(:include, ForemanBootdisk::HostExt)
+        HostsController.send(:include, ForemanBootdisk::HostsControllerExt)
+        HostsHelper.send(:include, ForemanBootdisk::HostsHelperExt)
+        UnattendedController.send(:include, ForemanBootdisk::UnattendedControllerExt)
       rescue => e
-        puts "#{Bootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
-      end
-    end
-
-    rake_tasks do
-      Rake::Task['db:seed'].enhance do
-        Bootdisk::Engine.load_seed
+        puts "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
       end
     end
   end
