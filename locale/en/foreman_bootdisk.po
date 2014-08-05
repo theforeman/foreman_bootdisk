@@ -1,0 +1,75 @@
+# foreman_bootdisk
+#
+# This file is distributed under the same license as foreman_bootdisk.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: version 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-05 10:56+0100\n"
+"PO-Revision-Date: 2014-02-13 12:09+0000\n"
+"Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
+"Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Boot disk"
+msgstr ""
+
+msgid "Bootdisk is not supported with safemode rendering, please disable safemode_render under Adminster>Settings"
+msgstr ""
+
+msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgstr ""
+
+msgid "Failed to render boot disk template: %s"
+msgstr ""
+
+msgid "Generic image"
+msgstr ""
+
+msgid "Host '%s' image"
+msgstr ""
+
+msgid "Host has no IP address defined"
+msgstr ""
+
+msgid "Host has no domain defined"
+msgstr ""
+
+msgid "Host has no subnet defined"
+msgstr ""
+
+msgid "ISO build failed"
+msgstr ""
+
+msgid "ISO hybrid conversion failed"
+msgstr ""
+
+msgid "Path to directory containing iPXE images"
+msgstr ""
+
+msgid "Path to directory containing syslinux images"
+msgstr ""
+
+msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
+msgstr ""
+
+msgid "Subnet (%s) has no gateway defined"
+msgstr ""
+
+msgid "Subnet (%s) has no primary DNS server defined"
+msgstr ""
+
+msgid "Unable to find template specified by %s setting"
+msgstr ""
+
+msgid "iPXE template to use for generic host boot disks"
+msgstr ""
+
+msgid "iPXE template to use for host-specific boot disks"
+msgstr ""

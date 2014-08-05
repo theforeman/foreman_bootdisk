@@ -1,0 +1,83 @@
+# foreman_bootdisk
+# 
+# This file is distributed under the same license as foreman_bootdisk.
+# 
+# Translators:
+# Sergio Ocón <sergio@redhat.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Foreman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-13 12:18+0000\n"
+"PO-Revision-Date: 2014-05-21 10:02+0000\n"
+"Last-Translator: Sergio Ocón <sergio@redhat.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/foreman/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Boot disk"
+msgstr "Disco de arranque"
+
+msgid ""
+"Bootdisk is not supported with safemode rendering, please disable "
+"safemode_render under Adminster>Settings"
+msgstr "No se soporta un disco de arranque en el modo seguro de representación, deshabilite safemode_render bajo Administración>Configuración"
+
+msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgstr "Comando para generar una imagen ISO, use genisoimage o mkisofs"
+
+msgid "Failed to render boot disk template: %s"
+msgstr "Fallo en la entrega de la plantilla del disco de arranque: %s"
+
+msgid "Generic image"
+msgstr "Imagen genérica"
+
+msgid "Host '%s' image"
+msgstr "Imagen del host '%s'"
+
+msgid "Host has no IP address defined"
+msgstr "El host no tiene dirección IP definida"
+
+msgid "Host has no domain defined"
+msgstr "El host no tiene dominio definido"
+
+msgid "Host has no subnet defined"
+msgstr "El host no tiene subred definida"
+
+msgid "ISO build failed"
+msgstr "Error en la construcción del ISO"
+
+msgid "ISO hybrid conversion failed"
+msgstr "Error en la conversión del ISO Híbrido"
+
+msgid "Path to directory containing iPXE images"
+msgstr "Ruta al directorio que contiene las imágenes iPXE"
+
+msgid "Path to directory containing syslinux images"
+msgstr "Ruta al directorio que contiene las imágenes syslinux"
+
+msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
+msgstr "Asegúrese de que los paquetes ipxe-bootimgs y syslinux están instalados."
+
+msgid "Subnet (%s) has no gateway defined"
+msgstr "La subred (%s) no tiene gateway definida"
+
+msgid "Subnet (%s) has no primary DNS server defined"
+msgstr "La subred (%s) no tiene servidor DNS primario definido"
+
+msgid ""
+"Template is read-only as it's supplied in foreman_bootdisk.  Please copy it "
+"to a new template to customize."
+msgstr "La plantilla es de solo lectura al proporcionarse en foreman_bootdisk. Cópiela en una nueva plantilla para customizarla"
+
+msgid "Unable to find template specified by %s setting"
+msgstr "No ha sido posible encontrar la plantilla especificada por el parámetro de configuración %s"
+
+msgid "iPXE template to use for generic host boot disks"
+msgstr "Plantilla iPXE para usar en discos de arranque de host genéricos"
+
+msgid "iPXE template to use for host-specific boot disks"
+msgstr "Plantilla iPXE para usar en discos de arranque de hosts particulares"
