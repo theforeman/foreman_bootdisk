@@ -11,9 +11,9 @@ management device).
 
 # Installation
 
-Please see the Foreman wiki for appropriate instructions:
+Please see the Foreman manual for appropriate instructions:
 
-* [Foreman: How to Install a Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
+* [Foreman: How to Install a Plugin](http://theforeman.org/manuals/latest/index.html#6.Plugins)
 
 The gem name is "foreman_bootdisk".  Run `foreman-rake db:migrate`,
 `foreman-rake db:seed` after installation.
@@ -37,6 +37,7 @@ gPXE images are unsupported due to lack of initrd support.
 | --------------- | --------------:|
 | <= 1.3          | ~> 1.0         |
 | >= 1.4          | ~> 2.0         |
+| >= 1.6          | ~> 3.0         |
 
 # Usage
 

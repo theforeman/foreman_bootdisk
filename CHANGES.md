@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.0
+* modernised to use Foreman 1.6 features, no new functionality
+* use template locking mechanism from Foreman 1.6 (#6843, Stephen Benjamin)
+* use seeds.d mechanism instead of extending db:seed
+* add de, es, fr, pt_BR, sv_SE translations (thanks to the translator teams)
+
 ## v2.0.8
 * fix DB migration when setting when using empty database (#5970)
 * updates to README
