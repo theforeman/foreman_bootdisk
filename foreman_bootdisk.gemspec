@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.date = Date.today.to_s
 
   s.summary = "Create boot disks to provision hosts with Foreman"
+  # duplicated in locale/gemspec.rb
   s.description = "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
   s.homepage = "http://github.com/theforeman/foreman_bootdisk"
   s.licenses = ["GPL-3"]

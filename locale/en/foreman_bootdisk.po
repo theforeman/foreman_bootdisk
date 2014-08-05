@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-05 10:56+0100\n"
+"POT-Creation-Date: 2014-08-05 17:10+0100\n"
 "PO-Revision-Date: 2014-02-13 12:09+0000\n"
 "Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
 "Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
@@ -57,6 +57,9 @@ msgid "Path to directory containing syslinux images"
 msgstr ""
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
+msgstr ""
+
+msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr ""
 
 msgid "Subnet (%s) has no gateway defined"
