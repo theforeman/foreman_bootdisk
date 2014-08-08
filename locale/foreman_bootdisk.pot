@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-05 17:10+0100\n"
+"POT-Creation-Date: 2014-08-08 13:53+0100\n"
 "PO-Revision-Date: 2014-02-13 12:09+0000\n"
 "Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
 "Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
@@ -20,10 +20,19 @@ msgstr ""
 msgid "Boot disk"
 msgstr ""
 
+msgid "Boot disks"
+msgstr ""
+
 msgid "Bootdisk is not supported with safemode rendering, please disable safemode_render under Adminster>Settings"
 msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgstr ""
+
+msgid "Download generic image"
+msgstr ""
+
+msgid "Download host image"
 msgstr ""
 
 msgid "Failed to render boot disk template: %s"
