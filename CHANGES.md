@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.0
+* added API:
+    * /bootdisk/api/v2/generic to download the generic ISO
+    * /bootdisk/api/v2/hosts/:id to download the per-host ISO
+* refactored plugin to be an isolated engine
+
 ## v3.0.0
 * modernised to use Foreman 1.6 features, no new functionality
 * use template locking mechanism from Foreman 1.6 (#6843, Stephen Benjamin)
