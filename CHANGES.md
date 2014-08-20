@@ -1,5 +1,8 @@
 # Changelog
 
+## v3.1.1
+* package .mo files for i18n support (#7153)
+
 ## v3.1.0
 * added API:
     * /bootdisk/api/v2/generic to download the generic ISO
