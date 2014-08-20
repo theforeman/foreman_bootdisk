@@ -1,6 +1,7 @@
 ForemanBootdisk::Engine.routes.draw do
   resources :disks, :only => [] do
     get 'generic', :on => :collection
+    get 'help', :on => :collection
     constraints(:id => /[^\/]+/) do
       get 'hosts/:id', :on => :collection, :to => 'disks#host'
     end

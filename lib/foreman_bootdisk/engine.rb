@@ -32,7 +32,7 @@ module ForemanBootdisk
         requires_foreman '>= 1.6'
 
         security_block :bootdisk do |map|
-          permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host],
+          permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :help],
                                           :'foreman_bootdisk/api/v2/disks' => [:generic, :host]}
         end
 

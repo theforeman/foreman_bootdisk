@@ -33,6 +33,9 @@ module ForemanBootdisk
       end
     end
 
+    def help
+    end
+
     private
 
     def resource_base
