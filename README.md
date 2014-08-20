@@ -81,27 +81,6 @@ this:
 
 Foreman's default kickstart and preseed files are ready to use.
 
-### Customising boot disk templates
-
-The templates used on the boot disks themselves are read-only so they can be
-updated in new versions of the plugin.  To customise, copy the contents to a
-new template and set the name in Administer>Settings>Bootdisk.
-
-* `bootdisk_host_template` is the name of the per-host boot disk template
-* `bootdisk_generic_host_template` is the name of the generic boot disk template
-
-These templates are baked into the downloaded ISO files and generally don't
-need to be modified.
-
-## Settings
-
-Some more advanced settings are available under Administer>Settings>Bootdisk in
-the Foreman UI.
-
-* `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
-* `bootdisk_syslinux_dir` points to the directory containing syslinux images
-* `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
-
 ## Available images
 
 The image types have trade-offs, but are all meant for environments without
@@ -193,6 +172,29 @@ as disks too, suitable for copying to a USB device.
 
 Use `dd if=fqdn.iso of=/dev/sdb` or similar to copy the image to a USB disk.
 Ensure the device name is correct to avoid writing over the wrong disk.
+
+## Advanced configuration
+
+### Customising boot disk templates
+
+The templates used on the boot disks themselves are read-only so they can be
+updated in new versions of the plugin.  To customise, copy the contents to a
+new template and set the name in Administer>Settings>Bootdisk.
+
+* `bootdisk_host_template` is the name of the per-host boot disk template
+* `bootdisk_generic_host_template` is the name of the generic boot disk template
+
+These templates are baked into the downloaded ISO files and generally don't
+need to be modified.
+
+### Settings
+
+Some more advanced settings are available under Administer>Settings>Bootdisk in
+the Foreman UI.
+
+* `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
+* `bootdisk_syslinux_dir` points to the directory containing syslinux images
+* `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
 
 # Issues
 
