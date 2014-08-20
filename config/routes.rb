@@ -4,6 +4,7 @@ ForemanBootdisk::Engine.routes.draw do
     get 'help', :on => :collection
     constraints(:id => /[^\/]+/) do
       get 'hosts/:id', :on => :collection, :to => 'disks#host'
+      get 'full_hosts/:id', :on => :collection, :to => 'disks#full_host'
     end
   end
 

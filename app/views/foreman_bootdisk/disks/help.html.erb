@@ -17,6 +17,11 @@
     <%= _("Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman.") %>
   </p>
 
+  <h2><%= _('Full host image') %></h2>
+  <p>
+    <%= _('A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or templates.') %>
+  </p>
+
   <h2><%= _('Generic image') %></h2>
   <p>
     <%= _('Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses.') %>

@@ -2,7 +2,7 @@ require 'uri'
 
 module ForemanBootdisk
   class DisksController < ::ApplicationController
-    before_filter :find_by_name, :only => %w[host]
+    before_filter :find_by_name, :only => %w[host, full_host]
 
     def generic
       begin
@@ -13,7 +13,7 @@ module ForemanBootdisk
         return
       end
 
-      ForemanBootdisk::ISOGenerator.new(tmpl).generate do |iso|
+      ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
         send_data File.read(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
       end
     end
@@ -28,8 +28,15 @@ module ForemanBootdisk
         return
       end
 
-      ForemanBootdisk::ISOGenerator.new(tmpl).generate do |iso|
+      ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
         send_data File.read(iso), :filename => "#{host.name}.iso"
+      end
+    end
+
+    def full_host
+      host = @disk
+      ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
+        send_data File.read(iso), :filename => "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
       end
     end
 

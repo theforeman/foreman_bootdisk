@@ -94,12 +94,22 @@ TFTP settings are needed.
     <th>DHCP required</th>
     <th>DHCP reservation</th>
     <th>Pre-register host</th>
+    <th>OS-specific</th>
   </tr>
   <tr>
     <td>Per-host image</td>
     <td>No</td>
     <td>No</td>
     <td>No</td>
+    <td>Yes</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Full host image</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>Yes</td>
     <td>Yes</td>
   </tr>
   <tr>
@@ -108,6 +118,7 @@ TFTP settings are needed.
     <td>Yes</td>
     <td>No</td>
     <td>Yes</td>
+    <td>No</td>
   </tr>
 </table>
 
@@ -131,6 +142,32 @@ To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](http
 plugin and run:
 
     hammer bootdisk host --host client.example.com
+
+See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
+
+### Per-host full images
+
+A variant of the per-host image, this version doesn't chainload from Foreman,
+but contains the initial OS bootloader.  It can be useful for hosts that fail
+to chainload correctly, but has the downsides that it may become out of date
+if the host OS, bootloader or templates change, or build tokens are required
+and expire.
+
+To generate the image from the web interface, view the host page, click the
+"Boot disk" button and select "Full host 'FQDN' image".  This image may take
+a while to generate, as it downloads the OS bootloaders which can be
+considerable in size.
+
+To generate from the command line on the Foreman server:
+
+    foreman-rake bootdisk:generate:full_host NAME=foo.example.com
+
+Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
+
+To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
+plugin and run:
+
+    hammer bootdisk host --host client.example.com --full true
 
 See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
 
@@ -186,6 +223,9 @@ new template and set the name in Administer>Settings>Bootdisk.
 
 These templates are baked into the downloaded ISO files and generally don't
 need to be modified.
+
+Full host images boot directly into the OS PXELinux template via ISOLinux,
+with no intermediate template or bootloader.
 
 ### Settings
 

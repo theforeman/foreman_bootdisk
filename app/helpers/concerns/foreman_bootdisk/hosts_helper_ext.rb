@@ -10,6 +10,7 @@ module ForemanBootdisk::HostsHelperExt
       button_group(
         select_action_button(_('Boot disk'), {},
           display_bootdisk_link_if_authorized(_("Host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'host', :id => @host}, :class=>'btn'),
+          display_bootdisk_link_if_authorized(_("Full host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'full_host', :id => @host}, :class=>'btn'),
           display_bootdisk_link_if_authorized(_("Generic image"), {:controller => 'foreman_bootdisk/disks', :action => 'generic'}, :class=>'btn'),
           display_bootdisk_link_if_authorized(_("Help"), {:controller => 'foreman_bootdisk/disks', :action => 'help'}, :class=>'btn')
         )

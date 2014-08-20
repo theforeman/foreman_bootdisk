@@ -20,18 +20,25 @@ module ForemanBootdisk
         api :GET, '/generic', N_('Download generic image')
         def generic
           tmpl = ForemanBootdisk::Renderer.new.generic_template_render
-          ForemanBootdisk::ISOGenerator.new(tmpl).generate do |iso|
+          ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
             send_data File.read(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
           end
         end
 
         api :GET, '/hosts/:host_id', N_('Download host image')
+        param :full, :bool, :required => false, :desc => N_('True for full, false for basic reusable image')
         param :host_id, :identifier_dottable, :required => true
         def host
           host = @disk
-          tmpl = host.bootdisk_template_render
-          ForemanBootdisk::ISOGenerator.new(tmpl).generate do |iso|
-            send_data File.read(iso), :filename => "#{host.name}.iso"
+          if params[:full]
+            ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
+              send_data File.read(iso), :filename => "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
+            end
+          else
+            tmpl = host.bootdisk_template_render
+            ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
+              send_data File.read(iso), :filename => "#{host.name}.iso"
+            end
           end
         end
 
