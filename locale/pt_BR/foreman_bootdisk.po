@@ -5,11 +5,11 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 3.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-05 17:10+0100\n"
-"PO-Revision-Date: 2014-08-06 08:59+0000\n"
-"Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
+"POT-Creation-Date: 2014-08-08 13:53+0100\n"
+"PO-Revision-Date: 2014-08-09 08:59+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/foreman/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,6 +20,9 @@ msgstr ""
 msgid "Boot disk"
 msgstr "Disco de boot"
 
+msgid "Boot disks"
+msgstr ""
+
 msgid ""
 "Bootdisk is not supported with safemode rendering, please disable "
 "safemode_render under Adminster>Settings"
@@ -27,6 +30,12 @@ msgstr "Disco de boot não e suportado com o modo seguro de interpretação, por
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Comando para gerar imagem ISO usar genisoimage ou mkisofs"
+
+msgid "Download generic image"
+msgstr ""
+
+msgid "Download host image"
+msgstr ""
 
 msgid "Failed to render boot disk template: %s"
 msgstr "Falha ro interpretar o template de disco de boot: %s"
