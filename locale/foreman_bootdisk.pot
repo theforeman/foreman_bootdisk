@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-08 13:53+0100\n"
+"POT-Creation-Date: 2014-09-03 12:20+0100\n"
 "PO-Revision-Date: 2014-02-13 12:09+0000\n"
 "Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
 "Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
@@ -16,6 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
+msgstr ""
+
+msgid "Back"
+msgstr ""
 
 msgid "Boot disk"
 msgstr ""
@@ -41,6 +47,12 @@ msgstr ""
 msgid "Generic image"
 msgstr ""
 
+msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
 msgid "Host '%s' image"
 msgstr ""
 
@@ -53,16 +65,25 @@ msgstr ""
 msgid "Host has no subnet defined"
 msgstr ""
 
+msgid "Host image"
+msgstr ""
+
 msgid "ISO build failed"
 msgstr ""
 
 msgid "ISO hybrid conversion failed"
 msgstr ""
 
+msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
+msgstr ""
+
 msgid "Path to directory containing iPXE images"
 msgstr ""
 
 msgid "Path to directory containing syslinux images"
+msgstr ""
+
+msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr ""
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
@@ -77,7 +98,13 @@ msgstr ""
 msgid "Subnet (%s) has no primary DNS server defined"
 msgstr ""
 
+msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
+msgstr ""
+
 msgid "Unable to find template specified by %s setting"
+msgstr ""
+
+msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"

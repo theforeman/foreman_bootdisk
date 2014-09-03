@@ -6,11 +6,11 @@
 # johnny.westerlund <johnny.westerlund@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 3.1.0\n"
+"Project-Id-Version: foreman_bootdisk 3.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-08 13:53+0100\n"
-"PO-Revision-Date: 2014-08-09 08:59+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2014-08-26 11:41+0000\n"
+"Last-Translator: johnny.westerlund <johnny.westerlund@gmail.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/foreman/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgid "Boot disk"
 msgstr "Startdisk"
 
 msgid "Boot disks"
-msgstr ""
+msgstr "Startdiskar"
 
 msgid ""
 "Bootdisk is not supported with safemode rendering, please disable "
@@ -33,10 +33,10 @@ msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Kommando för att generera ISO-avbildningar, använd genisoimage eller mkisofs"
 
 msgid "Download generic image"
-msgstr ""
+msgstr "Ladda ner generisk avbildning"
 
 msgid "Download host image"
-msgstr ""
+msgstr "Ladda ner värd avbildning"
 
 msgid "Failed to render boot disk template: %s"
 msgstr "Misslyckades att tolka startdiskmallen: %s"
@@ -74,7 +74,7 @@ msgstr "Vär vänlig och säkerställ att ipxe-startavbildningarna och syslinux 
 msgid ""
 "Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
 "without the need for PXE infrastructure."
-msgstr ""
+msgstr "Plugin för Foreman som skapar iPXE-baserad start disk för att provisionera värdar utan en existerande PXE-infrastruktur."
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "Subnät (%s) har ingen nätsluss definierad"
