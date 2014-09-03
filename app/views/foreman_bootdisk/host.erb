@@ -5,11 +5,11 @@
 # Copy this template to customize it, the original is read-only.
 
 <%
-bootdisk_raise(N_('Host has no IP address defined')) if @host.ip.empty?
+bootdisk_raise(N_('Host has no IP address defined')) if @host.ip.nil? || @host.ip.empty?
 bootdisk_raise(N_('Host has no subnet defined')) unless @host.subnet
 bootdisk_raise(N_('Host has no domain defined')) unless @host.domain
-bootdisk_raise(N_('Subnet (%s) has no gateway defined'), @host.subnet) if @host.subnet.gateway.empty?
-bootdisk_raise(N_('Subnet (%s) has no primary DNS server defined'), @host.subnet) if @host.subnet.dns_primary.empty?
+bootdisk_raise(N_('Subnet (%s) has no gateway defined'), @host.subnet) if @host.subnet.gateway.nil? || @host.subnet.gateway.empty?
+bootdisk_raise(N_('Subnet (%s) has no primary DNS server defined'), @host.subnet) if @host.subnet.dns_primary.nil? || @host.subnet.dns_primary.empty?
 %>
 
 # loop over net* until the host's MAC matches
