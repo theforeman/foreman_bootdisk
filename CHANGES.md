@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.2
+* add help page
+* rearrange README to be clearer about basic vs advanced config
+* fix safemode error when IP/subnet details were nil, not empty strings
+* disable debug logging of disk download responses
+
 ## v3.1.1
 * package .mo files for i18n support (#7153)
 
