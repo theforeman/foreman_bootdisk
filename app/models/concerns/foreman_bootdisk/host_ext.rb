@@ -8,10 +8,6 @@ module ForemanBootdisk::HostExt
   end
 
   def bootdisk_template_render
-    if (Gem::Version.new(SETTINGS[:version].notag) < Gem::Version.new('1.5')) && Setting[:safemode_render]
-      raise(::Foreman::Exception.new(N_('Bootdisk is not supported with safemode rendering, please disable safemode_render under Adminster>Settings')))
-    end
-
     @host = self
     pxe_render(bootdisk_template.template)
   end
