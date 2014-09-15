@@ -7,10 +7,10 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 3.1.1\n"
+"Project-Id-Version: foreman_bootdisk 3.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-08 13:53+0100\n"
-"PO-Revision-Date: 2014-08-19 15:21+0000\n"
+"POT-Creation-Date: 2014-09-03 12:20+0100\n"
+"PO-Revision-Date: 2014-09-08 10:06+0000\n"
 "Last-Translator: Claer <transiblu@claer.hammock.fr>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/foreman/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid ""
+"All images are usable as either ISOs or as disk images, including being "
+"written to a USB disk with `dd`."
+msgstr "Toutes les images sont utilisables soit comme ISO soit comme images disque, y compris pour écriture sur disque USB avec 'dd'"
+
+msgid "Back"
+msgstr "Retour"
 
 msgid "Boot disk"
 msgstr "Disque de démarrage"
@@ -45,6 +53,16 @@ msgstr "Impossible d'appliquer le modèle de disque : %s"
 msgid "Generic image"
 msgstr "Image générique"
 
+msgid ""
+"Generic images are a reusable disk image that works for any host registered "
+"in Foreman.  It requires a basic DHCP and DNS service to function and "
+"contact the server, but does not require DHCP reservations or static IP "
+"addresses."
+msgstr "Les images génériques correspondent à une image disque réutilisable qui fonctionne pour tout hôte enregistré dans Foreman. Cela demande les services DHCP et DNS fonctionnels mais ne requiert pas de réservation DHCP ni d'adresse IP statique."
+
+msgid "Help"
+msgstr "Aide"
+
 msgid "Host '%s' image"
 msgstr "Image de l'hôte '%s'"
 
@@ -57,17 +75,33 @@ msgstr "L'hôte n'a aucun domaine défini"
 msgid "Host has no subnet defined"
 msgstr "L'hôte n'a aucun sous réseau défini"
 
+msgid "Host image"
+msgstr "Image hôte"
+
 msgid "ISO build failed"
 msgstr "La création de l'image ISO a échoué"
 
 msgid "ISO hybrid conversion failed"
 msgstr "La conversion de l'image ISO hybride a échoué"
 
+msgid ""
+"Once chainloaded, the OS bootloader and installer are downloaded directly "
+"from the installation media configured in Foreman, and the provisioning "
+"script (kickstart/preseed) is downloaded from Foreman."
+msgstr "Une fois liés, le chargeur de démarrage (bootloader) du système et l'installeur sont téléchargés directement depuis le media d'installation configuré dans Foreman. Le script de provisionnement (kickstart/preseed) est également téléchargé depuis Foreman."
+
 msgid "Path to directory containing iPXE images"
 msgstr "Emplacement du répertoire contenant les images iPXE"
 
 msgid "Path to directory containing syslinux images"
 msgstr "Emplacement du répertoire contenant les images syslinux"
+
+msgid ""
+"Per-host images contain data about a particular host registered in Foreman "
+"and set up fully static networking, avoiding the requirement for DHCP.  "
+"After networking is configured, they chainload from Foreman, picking up the "
+"current OS configuration and build state from the server."
+msgstr "Les images par hôte contiennent des données spécifiques pour un hôte donné enregistré dans Foreman et configurent de manière statique les paramètres réseau, ce qui permet de s'affranchir d'un serveur DHCP. Une fois le réseau configuré, ils sont liés depuis Foreman, récupérant la configuration du système d'exploitation et l'état de construction du serveur."
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
 msgstr "Merci de vérifier que les paquets ipxe-bootimgs et syslinux soient installés."
@@ -83,8 +117,21 @@ msgstr "Le sous réseau (%s) n'a pas de passerelle définie"
 msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "Le sous réseau (%s) n'a pas de serveur DNS primaire défini"
 
+msgid ""
+"The OS install continues using the installation media configured in Foreman,"
+" and it will typically configure static networking, depending on how the OS "
+"iPXE template is configured."
+msgstr "L'installation du système d'exploitation continue en utilisant le media d'installation configuré dans Foreman. Cela va généralement configurer le réseau selon la configuration du modèle iPXE du système d'exploitation."
+
 msgid "Unable to find template specified by %s setting"
 msgstr "Impossible de trouver un modèle spécifié par le paramètre %s"
+
+msgid ""
+"Various types of boot disks can be created to provision hosts without the "
+"need for PXE services.  Boot disks can be attached to the host (physical or "
+"virtual) which boots from the disk, contacts Foreman and begins the OS "
+"installation."
+msgstr "Différents types de disques de démarrage peuvent être créés pour provisionner les hôtes sans requérir à PXE. Les disques de démarrages peuvent être attachés à un hôte (physique ou virtuel) qui démarre depuis le disque, contacte Foreman puis démarre l'installation du système d'exploitation."
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Modèle iPXE à appliquer pour les disques de boot génériques"
