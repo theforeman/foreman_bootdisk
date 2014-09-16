@@ -1,0 +1,138 @@
+# foreman_bootdisk
+# 
+# This file is distributed under the same license as foreman_bootdisk.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: foreman_bootdisk 3.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-03 12:20+0100\n"
+"PO-Revision-Date: 2014-09-16 13:31+0000\n"
+"Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/foreman/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"All images are usable as either ISOs or as disk images, including being "
+"written to a USB disk with `dd`."
+msgstr ""
+
+msgid "Back"
+msgstr "Indietro"
+
+msgid "Boot disk"
+msgstr "Disco d'avvio"
+
+msgid "Boot disks"
+msgstr ""
+
+msgid ""
+"Bootdisk is not supported with safemode rendering, please disable "
+"safemode_render under Adminster>Settings"
+msgstr "Bootdisk non è supportato con il rendering in modalità sicura, disabilitare safemode_render in Amministrazione>Impostazioni"
+
+msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgstr "Comando per generare l'immagine ISO, usare genisoimage o mkisofs"
+
+msgid "Download generic image"
+msgstr ""
+
+msgid "Download host image"
+msgstr ""
+
+msgid "Failed to render boot disk template: %s"
+msgstr "Visualizzazione modello del disco d'avvio fallita: %s"
+
+msgid "Generic image"
+msgstr "Immagine generica"
+
+msgid ""
+"Generic images are a reusable disk image that works for any host registered "
+"in Foreman.  It requires a basic DHCP and DNS service to function and "
+"contact the server, but does not require DHCP reservations or static IP "
+"addresses."
+msgstr ""
+
+msgid "Help"
+msgstr "Aiuto"
+
+msgid "Host '%s' image"
+msgstr "Immagine '%s' dell'host"
+
+msgid "Host has no IP address defined"
+msgstr "L'host non presenta alcun indirizzo IP"
+
+msgid "Host has no domain defined"
+msgstr "L'host non presenta alcun dominio"
+
+msgid "Host has no subnet defined"
+msgstr "L'host non presenta alcuna sottorete"
+
+msgid "Host image"
+msgstr ""
+
+msgid "ISO build failed"
+msgstr "compilazione ISO fallita"
+
+msgid "ISO hybrid conversion failed"
+msgstr "Conversione ISO hybrid fallita"
+
+msgid ""
+"Once chainloaded, the OS bootloader and installer are downloaded directly "
+"from the installation media configured in Foreman, and the provisioning "
+"script (kickstart/preseed) is downloaded from Foreman."
+msgstr ""
+
+msgid "Path to directory containing iPXE images"
+msgstr "Percorso per la directory contentente le immagini iPXE"
+
+msgid "Path to directory containing syslinux images"
+msgstr "Percorso per la directory contentente le immagini syslinux"
+
+msgid ""
+"Per-host images contain data about a particular host registered in Foreman "
+"and set up fully static networking, avoiding the requirement for DHCP.  "
+"After networking is configured, they chainload from Foreman, picking up the "
+"current OS configuration and build state from the server."
+msgstr ""
+
+msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
+msgstr "Assicurarsi di aver installato i pacchetti syslinux e ipxe-bootimgs."
+
+msgid ""
+"Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
+"without the need for PXE infrastructure."
+msgstr ""
+
+msgid "Subnet (%s) has no gateway defined"
+msgstr "La sottorete (%s) non presenta alcun gateway"
+
+msgid "Subnet (%s) has no primary DNS server defined"
+msgstr "La sottorete (%s) non presenta alcun server DNS primario"
+
+msgid ""
+"The OS install continues using the installation media configured in Foreman,"
+" and it will typically configure static networking, depending on how the OS "
+"iPXE template is configured."
+msgstr ""
+
+msgid "Unable to find template specified by %s setting"
+msgstr "Impossibile trovare il template usando l'impostazione %s"
+
+msgid ""
+"Various types of boot disks can be created to provision hosts without the "
+"need for PXE services.  Boot disks can be attached to the host (physical or "
+"virtual) which boots from the disk, contacts Foreman and begins the OS "
+"installation."
+msgstr ""
+
+msgid "iPXE template to use for generic host boot disks"
+msgstr "Template iPXE da usare per i dischi d'avvio degli host generici"
+
+msgid "iPXE template to use for host-specific boot disks"
+msgstr "Template iPXE da usare per i dischi d'avvio degli host specifici"
