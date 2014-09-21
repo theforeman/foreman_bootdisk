@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-03 12:20+0100\n"
+"POT-Creation-Date: 2014-09-21 15:30+0100\n"
 "PO-Revision-Date: 2014-02-13 12:09+0000\n"
 "Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
 "Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
@@ -16,6 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or templates."
+msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr ""
@@ -44,6 +47,12 @@ msgstr ""
 msgid "Failed to render boot disk template: %s"
 msgstr ""
 
+msgid "Full host '%s' image"
+msgstr ""
+
+msgid "Full host image"
+msgstr ""
+
 msgid "Generic image"
 msgstr ""
 
@@ -68,10 +77,16 @@ msgstr ""
 msgid "Host image"
 msgstr ""
 
+msgid "Host is not in build mode, so the template cannot be rendered"
+msgstr ""
+
 msgid "ISO build failed"
 msgstr ""
 
 msgid "ISO hybrid conversion failed"
+msgstr ""
+
+msgid "Installation media files will be cached for full host images"
 msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
@@ -101,7 +116,13 @@ msgstr ""
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr ""
 
+msgid "True for full, false for basic reusable image"
+msgstr ""
+
 msgid "Unable to find template specified by %s setting"
+msgstr ""
+
+msgid "Unable to generate disk template: %s"
 msgstr ""
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
