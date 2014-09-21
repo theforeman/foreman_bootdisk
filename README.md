@@ -235,6 +235,8 @@ the Foreman UI.
 * `bootdisk_ipxe_dir` points to the directory containing ipxe.lkrn
 * `bootdisk_syslinux_dir` points to the directory containing syslinux images
 * `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
+* `bootdisk_cache_media` controls whether to cache OS boot files from
+  installation media for full host images
 
 # Issues
 
