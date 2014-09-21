@@ -92,18 +92,33 @@ class ForemanBootdisk::ISOGenerator
     dir = File.dirname(path)
     FileUtils.mkdir_p(dir) unless File.exist?(dir)
 
-    uri = URI(uri)
-    Net::HTTP.start(uri.host, uri.port) do |http|
-      request = Net::HTTP::Get.new uri
+    use_cache = !!Setting[:bootdisk_cache_media]
+    write_cache = false
+    File.open(path, 'w') do |file|
+      file.binmode
 
-      http.request request do |response|
-        File.open(path, 'w') do |file|
-          file.binmode
-          response.read_body do |chunk|
-            file.write chunk
+      if use_cache && !(contents = Rails.cache.fetch(uri, :raw => true)).nil?
+        Rails.logger.info("Retrieved #{uri} from local cache (use foreman-rake tmp:cache:clear to empty)")
+        file.write(contents)
+      else
+        Rails.logger.info("Fetching #{uri}")
+        write_cache = use_cache
+        uri = URI(uri)
+        Net::HTTP.start(uri.host, uri.port) do |http|
+          request = Net::HTTP::Get.new uri
+
+          http.request request do |response|
+            response.read_body do |chunk|
+              file.write chunk
+            end
           end
         end
       end
+    end
+
+    if write_cache
+      Rails.logger.debug("Caching contents of #{uri}")
+      Rails.cache.write(uri, File.read(path), :raw => true)
     end
   end
 

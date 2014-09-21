@@ -13,6 +13,7 @@ class Setting::Bootdisk< ::Setting
         self.set('bootdisk_host_template', N_('iPXE template to use for host-specific boot disks'), 'Boot disk iPXE - host'),
         self.set('bootdisk_generic_host_template', N_('iPXE template to use for generic host boot disks'), 'Boot disk iPXE - generic host'),
         self.set('bootdisk_mkiso_command', N_('Command to generate ISO image, use genisoimage or mkisofs'), 'genisoimage'),
+        self.set('bootdisk_cache_media', N_('Installation media files will be cached for full host images'), true),
       ].compact.each { |s| self.create s.update(:category => "Setting::Bootdisk") }
     end
 
