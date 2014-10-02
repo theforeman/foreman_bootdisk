@@ -2,7 +2,7 @@ require 'uri'
 
 module ForemanBootdisk
   class DisksController < ::ApplicationController
-    before_filter :find_by_name, :only => %w[host, full_host]
+    before_filter :find_by_name, :only => %w[host full_host]
 
     def generic
       begin
