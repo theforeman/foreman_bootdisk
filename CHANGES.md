@@ -1,5 +1,8 @@
 # Changelog
 
+## v4.0.0
+* fix controller compatibility with Foreman 1.7
+
 ## v3.2.0
 * add full host image containing OS bootloader for hosts that fail to
   chainload with isolinux and iPXE (#7046)
