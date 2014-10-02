@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.2.0
+* add full host image containing OS bootloader for hosts that fail to
+  chainload with isolinux and iPXE (#7046)
+* partial it, zh_CN, zh_TW, ru, ja, ko translations added
+
 ## v3.1.2
 * add help page
 * rearrange README to be clearer about basic vs advanced config
