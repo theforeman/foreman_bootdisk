@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 3.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-03 12:20+0100\n"
-"PO-Revision-Date: 2014-09-14 00:40+0000\n"
+"POT-Creation-Date: 2014-09-21 15:30+0100\n"
+"PO-Revision-Date: 2014-09-22 11:21+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"A variant of the per-host image which contains the OS bootloader embedded "
+"inside the disk.  This may be useful if chainloading fails on certain "
+"hardware, but has the downside that the image must be regenerated for any "
+"change in the OS, bootloader or templates."
+msgstr ""
 
 msgid ""
 "All images are usable as either ISOs or as disk images, including being "
@@ -51,6 +58,12 @@ msgstr "Host-Abbild herunterladen"
 msgid "Failed to render boot disk template: %s"
 msgstr "Fehler beim Abbilden der Startmedium-Vorlage: %s"
 
+msgid "Full host '%s' image"
+msgstr "Vollständiges Host \"%s\"-Abbild"
+
+msgid "Full host image"
+msgstr "Vollständiges Host-Abbild"
+
 msgid "Generic image"
 msgstr "Generisches Abbild"
 
@@ -79,11 +92,17 @@ msgstr "Host hat kein Subnetz definiert"
 msgid "Host image"
 msgstr "Host-Abbild"
 
+msgid "Host is not in build mode, so the template cannot be rendered"
+msgstr ""
+
 msgid "ISO build failed"
 msgstr "ISO-Erstellung fehlgeschlagen"
 
 msgid "ISO hybrid conversion failed"
 msgstr "ISO hybrid Konvertierung fehlgeschlagen"
+
+msgid "Installation media files will be cached for full host images"
+msgstr ""
 
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly "
@@ -124,8 +143,14 @@ msgid ""
 "iPXE template is configured."
 msgstr ""
 
+msgid "True for full, false for basic reusable image"
+msgstr ""
+
 msgid "Unable to find template specified by %s setting"
 msgstr "Konnte Vorlage mit der %s-Einstellung nicht finden"
+
+msgid "Unable to generate disk template: %s"
+msgstr ""
 
 msgid ""
 "Various types of boot disks can be created to provision hosts without the "

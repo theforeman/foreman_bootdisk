@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 3.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-03 12:20+0100\n"
-"PO-Revision-Date: 2014-09-08 10:06+0000\n"
+"POT-Creation-Date: 2014-09-21 15:30+0100\n"
+"PO-Revision-Date: 2014-09-23 09:52+0000\n"
 "Last-Translator: Claer <transiblu@claer.hammock.fr>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/foreman/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid ""
+"A variant of the per-host image which contains the OS bootloader embedded "
+"inside the disk.  This may be useful if chainloading fails on certain "
+"hardware, but has the downside that the image must be regenerated for any "
+"change in the OS, bootloader or templates."
+msgstr "Une variante des images par hôte qui contient le chargeur de démarrage de l'OS dans le disque. Cela peut être utile si le chainage échoue sur certains matériels, mais l'inconvénient est que l'image doit être régénérée à chaque changement dans l'OS, le chargeur de démarrage ou les modèles. "
 
 msgid ""
 "All images are usable as either ISOs or as disk images, including being "
@@ -50,6 +57,12 @@ msgstr "Télécharger une image d'hôte"
 msgid "Failed to render boot disk template: %s"
 msgstr "Impossible d'appliquer le modèle de disque : %s"
 
+msgid "Full host '%s' image"
+msgstr "Image complète de l'hôte '%s'"
+
+msgid "Full host image"
+msgstr "Image complète de l'hôte"
+
 msgid "Generic image"
 msgstr "Image générique"
 
@@ -78,11 +91,17 @@ msgstr "L'hôte n'a aucun sous réseau défini"
 msgid "Host image"
 msgstr "Image hôte"
 
+msgid "Host is not in build mode, so the template cannot be rendered"
+msgstr "L'hôte n'est pas en mode construction, c'est pourquoi le modèle ne peut être rendu"
+
 msgid "ISO build failed"
 msgstr "La création de l'image ISO a échoué"
 
 msgid "ISO hybrid conversion failed"
 msgstr "La conversion de l'image ISO hybride a échoué"
+
+msgid "Installation media files will be cached for full host images"
+msgstr "Les fichiers du media d'installation vont être cachés pour les images complètes d'hôtes"
 
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly "
@@ -123,8 +142,14 @@ msgid ""
 "iPXE template is configured."
 msgstr "L'installation du système d'exploitation continue en utilisant le media d'installation configuré dans Foreman. Cela va généralement configurer le réseau selon la configuration du modèle iPXE du système d'exploitation."
 
+msgid "True for full, false for basic reusable image"
+msgstr "Vrai pour complète, faux pour une image basique réutilisable"
+
 msgid "Unable to find template specified by %s setting"
 msgstr "Impossible de trouver un modèle spécifié par le paramètre %s"
+
+msgid "Unable to generate disk template: %s"
+msgstr "Impossible de générer le modèle de disque : %s"
 
 msgid ""
 "Various types of boot disks can be created to provision hosts without the "

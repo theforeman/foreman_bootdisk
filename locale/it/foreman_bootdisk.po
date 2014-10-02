@@ -7,15 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 3.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-03 12:20+0100\n"
-"PO-Revision-Date: 2014-09-16 13:31+0000\n"
-"Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
+"POT-Creation-Date: 2014-09-21 15:30+0100\n"
+"PO-Revision-Date: 2014-09-22 09:47+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/foreman/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"A variant of the per-host image which contains the OS bootloader embedded "
+"inside the disk.  This may be useful if chainloading fails on certain "
+"hardware, but has the downside that the image must be regenerated for any "
+"change in the OS, bootloader or templates."
+msgstr ""
 
 msgid ""
 "All images are usable as either ISOs or as disk images, including being "
@@ -48,6 +55,12 @@ msgstr ""
 msgid "Failed to render boot disk template: %s"
 msgstr "Visualizzazione modello del disco d'avvio fallita: %s"
 
+msgid "Full host '%s' image"
+msgstr ""
+
+msgid "Full host image"
+msgstr ""
+
 msgid "Generic image"
 msgstr "Immagine generica"
 
@@ -76,11 +89,17 @@ msgstr "L'host non presenta alcuna sottorete"
 msgid "Host image"
 msgstr ""
 
+msgid "Host is not in build mode, so the template cannot be rendered"
+msgstr ""
+
 msgid "ISO build failed"
 msgstr "compilazione ISO fallita"
 
 msgid "ISO hybrid conversion failed"
 msgstr "Conversione ISO hybrid fallita"
+
+msgid "Installation media files will be cached for full host images"
+msgstr ""
 
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly "
@@ -121,8 +140,14 @@ msgid ""
 "iPXE template is configured."
 msgstr ""
 
+msgid "True for full, false for basic reusable image"
+msgstr ""
+
 msgid "Unable to find template specified by %s setting"
 msgstr "Impossibile trovare il template usando l'impostazione %s"
+
+msgid "Unable to generate disk template: %s"
+msgstr ""
 
 msgid ""
 "Various types of boot disks can be created to provision hosts without the "
