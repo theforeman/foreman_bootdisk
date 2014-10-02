@@ -2,7 +2,7 @@ require 'uri'
 
 module ForemanBootdisk
   class DisksController < ::ApplicationController
-    before_filter :find_by_name, :only => %w[host full_host]
+    before_filter :find_resource, :only => %w[host full_host]
 
     def generic
       begin
@@ -45,7 +45,7 @@ module ForemanBootdisk
 
     private
 
-    def resource_base
+    def resource_scope(controller = controller_name)
       Host::Managed.authorized(:view_hosts)
     end
   end
