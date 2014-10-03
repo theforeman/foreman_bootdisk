@@ -1,11 +1,13 @@
 require 'net/http'
+require 'tempfile'
+require 'tmpdir'
 require 'uri'
 
 # Generates an iPXE ISO hybrid image
 #
 # requires syslinux, ipxe/ipxe-bootimgs, genisoimage, isohybrid
 class ForemanBootdisk::ISOGenerator
-  def self.generate_full_host(host, &block)
+  def self.generate_full_host(host, opts = {}, &block)
     raise ::Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
     tmpl = host.send(:generate_pxe_template)
@@ -26,7 +28,7 @@ class ForemanBootdisk::ISOGenerator
       end
     end
 
-    generate({ :isolinux => tmpl, :files => files }, &block)
+    generate(opts.merge(:isolinux => tmpl, :files => files), &block)
   end
 
   def self.generate(opts = {}, &block)
@@ -66,7 +68,11 @@ class ForemanBootdisk::ISOGenerator
         end if opts[:files].respond_to? :each
       end
 
-      iso = File.join(wd, 'output.iso')
+      iso = if opts[:dir]
+              Tempfile.new(['bootdisk', '.iso'], opts[:dir]).path
+            else
+              File.join(wd, 'output.iso')
+            end
       unless system("#{Setting[:bootdisk_mkiso_command]} -o #{iso} -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
         raise ::Foreman::Exception.new(N_("ISO build failed"))
       end

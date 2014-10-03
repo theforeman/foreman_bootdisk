@@ -133,18 +133,19 @@ instead of being stored in the image.
 To generate the image from the web interface, view the host page, click the
 "Boot disk" button and select "Host 'FQDN' image".
 
-To generate from the command line on the Foreman server:
-
-    foreman-rake bootdisk:generate:host NAME=foo.example.com
-
-Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
-
 To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
 plugin and run:
 
     hammer bootdisk host --host client.example.com
 
 See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
+
+To generate from the command line on the Foreman server:
+
+    foreman-rake bootdisk:generate:host NAME=foo.example.com OUTPUT=/tmp
+
+Set `OUTPUT=/path` to change the output destination path (directory or file).
+It must be writable by the 'foreman' user.
 
 ### Per-host full images
 
@@ -159,18 +160,19 @@ To generate the image from the web interface, view the host page, click the
 a while to generate, as it downloads the OS bootloaders which can be
 considerable in size.
 
-To generate from the command line on the Foreman server:
-
-    foreman-rake bootdisk:generate:full_host NAME=foo.example.com
-
-Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
-
 To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
 plugin and run:
 
     hammer bootdisk host --host client.example.com --full true
 
 See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
+
+To generate from the command line on the Foreman server:
+
+    foreman-rake bootdisk:generate:full_host NAME=foo.example.com
+
+Set `OUTPUT=/path` to change the output destination path (directory or file).
+It must be writable by the 'foreman' user.
 
 ### Generic image
 
@@ -186,18 +188,19 @@ address statically for the installed system via the kickstart file.
 To generate the image from the web interface, view a host page, click the
 "Boot disk" button and select "Generic image".
 
-To generate from the command line on the Foreman server:
-
-    foreman-rake bootdisk:generate:generic
-
-Optionally set `OUTPUT=/path/foo.iso` to change the output destination.
-
 To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
 plugin and run:
 
     hammer bootdisk generic
 
 See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
+
+To generate from the command line on the Foreman server:
+
+    foreman-rake bootdisk:generate:generic
+
+Set `OUTPUT=/path` to change the output destination path (directory or file).
+It must be writable by the 'foreman' user.
 
 ### Host group images
 
