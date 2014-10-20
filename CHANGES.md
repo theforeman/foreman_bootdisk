@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.2.1
+* fix empty? error when generating full host image on Ruby 1.8/1.9 (#7812,
+  Ronald van Zantvoort)
+
 ## v3.2.0
 * add full host image containing OS bootloader for hosts that fail to
   chainload with isolinux and iPXE (#7046)
