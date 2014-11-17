@@ -1,7 +1,15 @@
 # Changelog
 
+## v4.0.1
+* rake task accepts a dir for the output path, and falls back to a temporary
+  directory if the cwd is not writable (#7370)
+
 ## v4.0.0
 * fix controller compatibility with Foreman 1.7
+
+## v3.2.1
+* fix empty? error when generating full host image on Ruby 1.8/1.9 (#7812,
+  Ronald van Zantvoort)
 
 ## v3.2.0
 * add full host image containing OS bootloader for hosts that fail to
