@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.2
+* fix controller compatibility with Foreman 1.7
+* fix foreman_url error when building generic ISO
+* add functional tests
+* fix seed idempotency test
+
 ## v4.0.1
 * rake task accepts a dir for the output path, and falls back to a temporary
   directory if the cwd is not writable (#7370)
