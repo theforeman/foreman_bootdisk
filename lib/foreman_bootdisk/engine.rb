@@ -23,13 +23,12 @@ module ForemanBootdisk
     end
 
     initializer "foreman_bootdisk.apipie" do
-      Apipie.configuration.api_controllers_matcher << "#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"
       Apipie.configuration.checksum_path += ['/bootdisk/api/']
     end
 
     initializer 'foreman_bootdisk.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 1.7'
+        requires_foreman '>= 1.8'
 
         security_block :bootdisk do |map|
           permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :help],
@@ -39,6 +38,7 @@ module ForemanBootdisk
         role "Boot disk access", [:download_bootdisk]
 
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
+        apipie_documented_controllers ["#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"]
       end
     end
 
