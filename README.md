@@ -109,7 +109,7 @@ TFTP settings are needed.
   <tr>
     <td>Full host image</td>
     <td>No</td>
-    <td>No</td>
+    <td>Yes</td>
     <td>No</td>
     <td>Yes</td>
     <td>Yes</td>
