@@ -8,7 +8,7 @@
 # simon11 <simon.stieger.98@live.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 3.1.2\n"
+"Project-Id-Version: foreman_bootdisk 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-21 15:30+0100\n"
 "PO-Revision-Date: 2014-09-22 11:21+0000\n"

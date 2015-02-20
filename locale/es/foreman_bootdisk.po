@@ -3,14 +3,14 @@
 # This file is distributed under the same license as foreman_bootdisk.
 # 
 # Translators:
-# Sergio Ocón <sergio@redhat.com>, 2014
+# Sergio Ocón <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 3.1.2\n"
+"Project-Id-Version: foreman_bootdisk 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-21 15:30+0100\n"
-"PO-Revision-Date: 2014-09-22 09:47+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2014-10-16 14:51+0000\n"
+"Last-Translator: Sergio Ocón <sergio.ocon@redhat.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/foreman/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgid ""
 "inside the disk.  This may be useful if chainloading fails on certain "
 "hardware, but has the downside that the image must be regenerated for any "
 "change in the OS, bootloader or templates."
-msgstr ""
+msgstr "Una variante de la imagen por host que contiene el bootloader del SO embebido en el disco. Esto puede ser útil si la carga en cadena falla en un hardware determinado, pero tiene la desventaja de que se debe regenerar la imagen para cualquier cambio en el SO, el bootloader o las plantillas."
 
 msgid ""
 "All images are usable as either ISOs or as disk images, including being "
@@ -57,10 +57,10 @@ msgid "Failed to render boot disk template: %s"
 msgstr "Fallo en la entrega de la plantilla del disco de arranque: %s"
 
 msgid "Full host '%s' image"
-msgstr ""
+msgstr "Imagen completa de host '%s'"
 
 msgid "Full host image"
-msgstr ""
+msgstr "Imagen completa de host"
 
 msgid "Generic image"
 msgstr "Imagen genérica"
@@ -91,7 +91,7 @@ msgid "Host image"
 msgstr "Imágen de host"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
-msgstr ""
+msgstr "El host no está en modo build, así que no se puede producir la plantilla"
 
 msgid "ISO build failed"
 msgstr "Error en la construcción del ISO"
@@ -100,7 +100,7 @@ msgid "ISO hybrid conversion failed"
 msgstr "Error en la conversión del ISO Híbrido"
 
 msgid "Installation media files will be cached for full host images"
-msgstr ""
+msgstr "Archivos de medios de instalación se almacenarán en caché para imágenes completas de host"
 
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly "
@@ -142,13 +142,13 @@ msgid ""
 msgstr "La instalación del SO sigue usando el medio de instalación configurado en Foreman, y típicamente configura red estática, según como se configura la plantilla iPXE del SO."
 
 msgid "True for full, false for basic reusable image"
-msgstr ""
+msgstr "Verdadero para completo, falso para imagen básica reutilizable"
 
 msgid "Unable to find template specified by %s setting"
 msgstr "No ha sido posible encontrar la plantilla especificada por el parámetro de configuración %s"
 
 msgid "Unable to generate disk template: %s"
-msgstr ""
+msgstr "No se pudo generar la plantilla de disco: %s"
 
 msgid ""
 "Various types of boot disks can be created to provision hosts without the "
