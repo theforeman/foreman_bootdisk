@@ -1,5 +1,13 @@
 # Changelog
 
+## v5.0.0
+* configure host provisioning interface in host ISO, not primary
+* syslinux v6 compatibility, include ldlinux.c32
+* register APIs with Foreman 1.8 apipie support (#8921)
+* fix tests on Foreman 1.8 (#9252)
+* documentation fix, DHCP currently required for full host image
+* requires Foreman 1.8+
+
 ## v4.0.2
 * fix controller compatibility with Foreman 1.7
 * fix foreman_url error when building generic ISO
