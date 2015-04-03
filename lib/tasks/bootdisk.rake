@@ -45,6 +45,18 @@ namespace :bootdisk do
         puts "Wrote #{output}"
       end
     end
+
+    desc 'Generate a subnet disk for a specific subnet. NAME=subnet, OUTPUT=path'
+    task :subnet => :environment do
+      subnet = Subnet.find_by_name(ENV['NAME']) || raise("cannot find subnet '#{ENV['NAME']}', specify NAME=subnet")
+      subnet.tftp || raise(::Foreman::Exception.new(N_("TFTP feature not enabled for subnet %s"), subnet.name))
+      tmpl = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
+      ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
+        output = ENV['OUTPUT'] || File.join(outputdir, "bootdisk_subnet_#{subnet.name}.iso")
+        FileUtils.cp image, output
+        puts "Wrote #{output}"
+      end
+    end
   end
 end
 

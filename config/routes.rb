@@ -14,6 +14,7 @@ ForemanBootdisk::Engine.routes.draw do
       get 'generic', :to => 'disks#generic'
       constraints(:id => /[^\/]+/) do
         get 'hosts/:id', :to => 'disks#host'
+        get 'subnets/:id', :to => 'subnet_disks#subnet'
       end
     end
   end

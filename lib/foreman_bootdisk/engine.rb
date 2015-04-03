@@ -31,7 +31,7 @@ module ForemanBootdisk
         requires_foreman '>= 1.9'
 
         security_block :bootdisk do |map|
-          permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :help],
+          permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :subnet, :help],
                                           :'foreman_bootdisk/api/v2/disks' => [:generic, :host]}
         end
 
@@ -57,5 +57,9 @@ module ForemanBootdisk
         puts "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
       end
     end
+  end
+
+  def self.logger
+    Foreman::Logging.logger('foreman_bootdisk')
   end
 end

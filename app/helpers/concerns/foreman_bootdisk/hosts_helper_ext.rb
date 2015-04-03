@@ -11,8 +11,10 @@ module ForemanBootdisk::HostsHelperExt
         select_action_button(_('Boot disk'), {},
           display_bootdisk_link_if_authorized(_("Host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'host', :id => @host}, :class=>'btn'),
           display_bootdisk_link_if_authorized(_("Full host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'full_host', :id => @host}, :class=>'btn'),
-          display_bootdisk_for_subnet,
+          content_tag(:li, "", :class => "divider"),
           display_bootdisk_link_if_authorized(_("Generic image"), {:controller => 'foreman_bootdisk/disks', :action => 'generic'}, :class=>'btn'),
+          display_bootdisk_for_subnet,
+          content_tag(:li, "", :class => "divider"),
           display_bootdisk_link_if_authorized(_("Help"), {:controller => 'foreman_bootdisk/disks', :action => 'help'}, :class=>'btn')
         )
       )
@@ -22,8 +24,8 @@ module ForemanBootdisk::HostsHelperExt
 
   # need to wrap this one in a test for template proxy presence
   def display_bootdisk_for_subnet
-    if (proxy = @host.try(:subnet).try(:tftp)) && proxy.features.map(&:name).include?('Templates')
-      display_bootdisk_link_if_authorized(_("Subnet '%s' image") % @host.subnet.name, {:controller => 'foreman_bootdisk/disks', :action => 'subnet', :id => @host}, :class=>'btn')
+    if (proxy = @host.try(:subnet).try(:tftp)) && proxy.has_feature?('Templates')
+      display_bootdisk_link_if_authorized(_("Subnet '%s' generic image") % @host.subnet.name, {:controller => 'foreman_bootdisk/disks', :action => 'subnet', :id => @host}, :class=>'btn')
     else
       ""
     end
