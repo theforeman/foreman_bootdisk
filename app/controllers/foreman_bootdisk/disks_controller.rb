@@ -8,7 +8,7 @@ module ForemanBootdisk
       begin
         tmpl = ForemanBootdisk::Renderer.new.generic_template_render
       rescue => e
-        error _('Failed to render boot disk template: %s') % e
+        error_rendering(e)
         redirect_to :back
         return
       end
@@ -23,7 +23,7 @@ module ForemanBootdisk
       begin
         tmpl = host.bootdisk_template_render
       rescue => e
-        error _('Failed to render boot disk template: %s') % e
+        error_rendering(e)
         redirect_to :back
         return
       end
@@ -41,19 +41,19 @@ module ForemanBootdisk
     end
 
     def subnet
+      host = @disk
       begin
-        subnet = @disk.try(:subnet)
-        fail unless subnet && subnet.try(:tftp)
+        subnet = host.try(:subnet) || raise(::Foreman::Exception.new(N_("Subnet is not assigned to the host %s"), host.name))
+        subnet.tftp || raise(::Foreman::Exception.new(N_("TFTP feature not enabled for subnet %s"), subnet.name))
         tmpl = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
       rescue => e
-        error _('Failed to render boot disk template: %s') % e
+        error_rendering(e)
         redirect_to :back
         return
       end
 
       ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
-        name=subnet.try(:name)
-        send_data File.read(iso), :filename => "bootdisk_subnet_#{name}.iso"
+        send_data File.read(iso), :filename => "bootdisk_subnet_#{subnet.name}.iso"
       end
     end
 
@@ -64,6 +64,12 @@ module ForemanBootdisk
 
     def resource_scope(controller = controller_name)
       Host::Managed.authorized(:view_hosts)
+    end
+
+    def error_rendering(e)
+      msg = _('Failed to render boot disk template')
+      error("#{msg}: #{e.message}")
+      ::Foreman::Logging.exception(msg, e)
     end
   end
 end

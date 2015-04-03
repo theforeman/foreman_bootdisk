@@ -123,6 +123,14 @@ TFTP settings are needed.
     <td>Yes</td>
     <td>No</td>
   </tr>
+  <tr>
+    <td>Subnet image</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>Yes</td>
+    <td>No</td>
+  </tr>
 </table>
 
 ### Per-host images
@@ -204,6 +212,33 @@ To generate from the command line on the Foreman server:
 Set `OUTPUT=/path` to change the output destination path (directory or file).
 It must be writable by the 'foreman' user.
 
+### Subnet images
+
+Subnet images are similar to generic images, but chain-loading is done via the
+TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have
+the "Templates" module enabled and configured.
+
+This image is generic for all hosts with a provisioning NIC on that subnet.
+
+To generate the image from the web interface, view a host page, click the
+"Boot disk" button and select "Subnet image".
+
+To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
+plugin and run:
+
+    hammer bootdisk subnet --subnet local.lan
+
+See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
+
+To generate from the command line on the Foreman server:
+
+    foreman-rake bootdisk:generate:subnet NAME=subnet-name
+
+Note that foreman-rake does connect to the foreman-proxy.
+
+Set `OUTPUT=/path` to change the output destination path (directory or file).
+It must be writable by the 'foreman' user.
+
 ### Host group images
 
 TODO
@@ -243,6 +278,14 @@ the Foreman UI.
 * `bootdisk_mkiso_command` is the name of genisoimage/mkisofs on your OS
 * `bootdisk_cache_media` controls whether to cache OS boot files from
   installation media for full host images
+
+### RBAC
+
+This plugin provides "Boot disk access" role which requires the following
+permissions to be present to allow host and subnet image downloading:
+
+* `view_hosts`
+* `view_subnets`
 
 # Issues
 

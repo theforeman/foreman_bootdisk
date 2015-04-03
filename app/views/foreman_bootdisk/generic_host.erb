@@ -10,12 +10,13 @@
 # Copy this template to customize it, the original is read-only.
 
 # loop over net* until we can get a template
+<% url = bootdisk_chain_url %>
 <% (0..32).each do |i| -%>
 :net<%= i %>
 isset ${net<%= i -%>/mac} || goto no_nic
 echo net<%= i -%> is a ${net<%= i -%>/chip} with MAC ${net<%= i -%>/mac}
 dhcp net<%= i %> || goto net<%= i+1 %>
-chain <%= bootdisk_chain_url %>${net<%= i -%>/mac} || goto net<%= i+1 %>
+chain <%= url %>${net<%= i -%>/mac} || goto net<%= i+1 %>
 exit 0
 <% end -%>
 

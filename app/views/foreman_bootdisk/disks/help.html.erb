@@ -29,4 +29,12 @@
   <p>
     <%= _('The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured.') %>
   </p>
+
+  <h2><%= _('Subnet image') %></h2>
+  <p>
+    <%= _('Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the "Templates" module enabled and configured.') %>
+  </p>
+  <p>
+    <%= _('This image is generic for all hosts with a provisioning NIC on that subnet.') %>
+  </p>
 </div>
