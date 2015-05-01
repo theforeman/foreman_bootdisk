@@ -21,7 +21,8 @@ class ActionController::TestCase
 
   def setup_host
     disable_orchestration
-    subnet = FactoryGirl.create(:subnet, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8')
-    @host = FactoryGirl.create(:host, :managed, :subnet => subnet, :ip => subnet.network.sub(/0$/, '4'))
+    org, loc = FactoryGirl.create(:organization), FactoryGirl.create(:location)
+    subnet = FactoryGirl.create(:subnet, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [org], :locations => [loc])
+    @host = FactoryGirl.create(:host, :managed, :subnet => subnet, :ip => subnet.network.sub(/0$/, '4'), :organization => org, :location => loc)
   end
 end
