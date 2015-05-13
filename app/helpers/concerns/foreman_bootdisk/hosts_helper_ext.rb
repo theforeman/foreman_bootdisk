@@ -29,7 +29,7 @@ module ForemanBootdisk::HostsHelperExt
   end
 
   def bootdisk_url(options)
-    ForemanBootdisk::Engine.routes.url_for(options.merge(:only_path => true))
+    ForemanBootdisk::Engine.routes.url_for(options.merge(:only_path => true, :script_name => foreman_bootdisk_path))
   end
 
   def bootdisk_authorized_for(options)
