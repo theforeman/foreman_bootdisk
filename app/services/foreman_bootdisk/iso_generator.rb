@@ -17,9 +17,15 @@ class ForemanBootdisk::ISOGenerator
     # aim to convert filenames to something usable under ISO 9660, update the template to match
     # and then still ensure that the fetch() process stores them under the same name
     files = host.operatingsystem.pxe_files(host.medium, host.architecture, host)
+    # add templates
+    host.operatingsystem.config_templates.each do |t|
+      files << {'unattended/template_'.to_sym => "http://#{host.puppetmaster}/unattended/#{t.template_kind}?token=#{host.token}"}
+    end
     files.map! do |bootfile_info|
       bootfile_info.map do |f|
         suffix = f[1].split('/').last
+        # remove query string from the file name
+        suffix = suffix.split(/[?]/).first
         iso_suffix = iso9660_filename(suffix)
         iso_f0 = iso9660_filename(f[0].to_s) + '_' + iso_suffix
         tmpl.gsub!(f[0].to_s + '-' + suffix, iso_f0)
