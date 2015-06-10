@@ -1,4 +1,6 @@
 class ChangeTemplatekindToBootdisk < ActiveRecord::Migration
+  class ConfigTemplate < ActiveRecord::Base; end
+
   def self.up
     kind = TemplateKind.find_or_create_by_name('Bootdisk')
 
