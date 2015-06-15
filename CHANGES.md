@@ -1,5 +1,12 @@
 # Changelog
 
+## v6.0.0
+* compatibility with Foreman 1.9 template changes (#10773)
+* generate correct links under sub-URI (#10494)
+* fix tests on Foreman 1.9
+* remove old compatibility warning
+* requires Foreman 1.9+
+
 ## v5.0.0
 * configure host provisioning interface in host ISO, not primary
 * syslinux v6 compatibility, include ldlinux.c32
