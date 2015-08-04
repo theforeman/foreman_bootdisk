@@ -8,12 +8,12 @@
 # the interface with.
 #
 
-# loop over net* 
+# loop over net*
 <% (0..32).each do |i| -%>
 :net<%= i %>
 isset ${net<%= i -%>/mac} || goto no_nic
 echo net<%= i -%> is a ${net<%= i -%>/chip} with MAC ${net<%= i -%>/mac}
-echo -n Enter this interface name to boot from it (net<%= i -%>|n): ${} && read interface
+echo -n Enter this interface name to boot from it (net<%= i -%>|n):  && read interface
 iseq ${interface} net<%= i -%> && goto get_static_ip
 goto net<%= i+1 %>
 <% end -%>
@@ -25,7 +25,7 @@ exit 1
 :get_static_ip
 ifopen ${interface}
 echo Please enter IP details for ${interface}
-echo 
+echo
 
 echo -n IP address      :  && read ${interface}/ip
 echo -n Subnet mask     :  && read ${interface}/netmask
@@ -34,7 +34,6 @@ echo -n DNS server      :  && read dns
 
 chain <%= bootdisk_chain_url %>${${interface}/mac} || goto boot_failure
 exit 0
-
 
 :boot_failure
 echo Failed to boot from ${interface}
