@@ -3,17 +3,18 @@
 # This file is distributed under the same license as foreman_bootdisk.
 # 
 # Translators:
+# Christina Gurski <Gurski_christina@yahoo.de>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2014
 # Paul Puschmann, 2014
 # simon11 <simon.stieger.98@live.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 4.0.2\n"
+"Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 11:19+0000\n"
-"PO-Revision-Date: 2015-02-20 11:24+0000\n"
-"Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/foreman/language/de/)\n"
+"PO-Revision-Date: 2015-07-25 00:01+0000\n"
+"Last-Translator: Christina Gurski <Gurski_christina@yahoo.de>\n"
+"Language-Team: German (http://www.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,12 +26,12 @@ msgid ""
 "inside the disk.  This may be useful if chainloading fails on certain "
 "hardware, but has the downside that the image must be regenerated for any "
 "change in the OS, bootloader or templates."
-msgstr ""
+msgstr "Eine Variante des Pro-Host-Abbilds, die den Betriebssystem-Bootloader enthält, der in die Festplatte eingebettet ist. Dies könnte hilfreich sein, wenn das Chainloading auf bestimmter Hardware fehlschlägt, hat jedoch den Nachteil, dass das Abbild bei jeder Änderung in Betriebssystem, Bootloader oder Vorlagen erneuert werden muss."
 
 msgid ""
 "All images are usable as either ISOs or as disk images, including being "
 "written to a USB disk with `dd`."
-msgstr ""
+msgstr "Alle Abbilder können entweder als ISOs oder als Festplattenabbilder verwendet werden und auch mit `dd` auf eine USB-Festplatte geschrieben."
 
 msgid "Back"
 msgstr "Zurück"
@@ -72,7 +73,7 @@ msgid ""
 "in Foreman.  It requires a basic DHCP and DNS service to function and "
 "contact the server, but does not require DHCP reservations or static IP "
 "addresses."
-msgstr ""
+msgstr "Generische Abbilder sind wiederverwendbare Festplattenabbilder die für beliebige in Foreman registrierte Hosts funktionieren. Sie erfordern einen einfachen DHCP- und DNS-Service, um zu funktionieren und den Server zu kontaktieren. Jedoch benötigen sie keinerlei DHCP-Reservierungen oder statische IP-Adressen."
 
 msgid "Help"
 msgstr "Hilfe"
@@ -87,7 +88,7 @@ msgid "Host has no domain defined"
 msgstr "Host hat keine Domäne definiert"
 
 msgid "Host has no provisioning interface defined"
-msgstr ""
+msgstr "Keine Bereitstellungsschnittstelle  für Host definiert"
 
 msgid "Host has no subnet defined"
 msgstr "Host hat kein Subnetz definiert"
@@ -96,7 +97,7 @@ msgid "Host image"
 msgstr "Host-Abbild"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
-msgstr ""
+msgstr "Host ist nicht im Buildmodus. Daher kann die Vorlage nicht erstellt werden."
 
 msgid "ISO build failed"
 msgstr "ISO-Erstellung fehlgeschlagen"
@@ -105,13 +106,13 @@ msgid "ISO hybrid conversion failed"
 msgstr "ISO hybrid Konvertierung fehlgeschlagen"
 
 msgid "Installation media files will be cached for full host images"
-msgstr ""
+msgstr "Installationsmedien-Dateien werden für vollständige Host-Images zwischengespeichert."
 
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly "
 "from the installation media configured in Foreman, and the provisioning "
 "script (kickstart/preseed) is downloaded from Foreman."
-msgstr ""
+msgstr "Sobald sie nacheinander geladen (Chainloading) sind, werden der OS-Bootloader und das OS-Installationsprogramm direkt von den in Foreman konfigurierten Installationsmedien heruntergeladen, und das Bereitstellungsskript (kickstart/preseed) wird von Foreman heruntergeladen."
 
 msgid "Path to directory containing iPXE images"
 msgstr "Pfad zum Verzeichnis mit iPXE-Abbildern"
@@ -124,7 +125,7 @@ msgid ""
 "and set up fully static networking, avoiding the requirement for DHCP.  "
 "After networking is configured, they chainload from Foreman, picking up the "
 "current OS configuration and build state from the server."
-msgstr ""
+msgstr "\"Pro-Host\"-Abbilder enthalten Daten über einen bestimmten Host, der in Foreman registriert ist, und richten eine vollständig statische Verbindung ein, wobei die Notwendigkeit von DHCP vermieden wird. Nach der Konfiguration der Verbindung werden sie nacheinander von Foreman geladen (Chainloading) und nehmen die gegenwärtige OS-Konfiguration und den Buildstatus vom Server auf."
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
 msgstr "Bitte stellen Sie sicher, dass die Pakete ipxe-bootimgs und syslinux installiert sind."
@@ -132,7 +133,7 @@ msgstr "Bitte stellen Sie sicher, dass die Pakete ipxe-bootimgs und syslinux ins
 msgid ""
 "Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
 "without the need for PXE infrastructure."
-msgstr ""
+msgstr "Plugin für Foreman, welches iPXE-basierte Startmedien erstellt, um Hosts ohne die Notwendigkeit einer PXE-Infrastruktur bereitzustellen."
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "Subnetz (%s) hat keinen Gateway definiert"
@@ -144,23 +145,23 @@ msgid ""
 "The OS install continues using the installation media configured in Foreman,"
 " and it will typically configure static networking, depending on how the OS "
 "iPXE template is configured."
-msgstr ""
+msgstr "Die Installation des Betriebssystems wird unter Verwendung eines in Foreman konfigurierten Installationsmediums fortgesetzt und konfiguriert für gewöhnlich eine statische Verbindung in Abhängigkeit davon, wie die Betriebssystem-iPXE-Vorlage konfiguriert ist."
 
 msgid "True for full, false for basic reusable image"
-msgstr ""
+msgstr "\"True\" für vollständiges, \"false\" für einfaches wiederverwendbares Image"
 
 msgid "Unable to find template specified by %s setting"
 msgstr "Konnte Vorlage mit der %s-Einstellung nicht finden"
 
 msgid "Unable to generate disk template: %s"
-msgstr ""
+msgstr "Startmedium-Vorlage konnte nicht erzeugt werden: %s"
 
 msgid ""
 "Various types of boot disks can be created to provision hosts without the "
 "need for PXE services.  Boot disks can be attached to the host (physical or "
 "virtual) which boots from the disk, contacts Foreman and begins the OS "
 "installation."
-msgstr ""
+msgstr "Verschiedene Arten von Startmedien können erstellt werden, um Hosts ohne die Notwendigkeit von PXE-Diensten bereitzustellen. Startmedien können mit dem Host (physisch oder virtuell) verbunden werden, der von der Festplatte bootet, Foreman kontaktiert und die OS-Installation beginnt."
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "iPXE Vorlage zur Verwendung für generische Host-Startmedien"
