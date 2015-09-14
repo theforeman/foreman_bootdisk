@@ -1,7 +1,7 @@
 # foreman_bootdisk
-# 
+#
 # This file is distributed under the same license as foreman_bootdisk.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2015-02-20 11:19+0000\n"
 "PO-Revision-Date: 2015-02-20 11:24+0000\n"
 "Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/language/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/"
+"language/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid ""
@@ -23,11 +24,15 @@ msgid ""
 "hardware, but has the downside that the image must be regenerated for any "
 "change in the OS, bootloader or templates."
 msgstr ""
+"個別主機映像檔的變體，磁碟中嵌入了 OS 的開機載入程式。這對於在特定硬體上的 "
+"chainloading 失敗時特別有幫助，不過缺點就是若要對 OS、開機載入程式或範本進行"
+"任何更改，映像檔就必須重新產生。"
 
 msgid ""
 "All images are usable as either ISOs or as disk images, including being "
 "written to a USB disk with `dd`."
 msgstr ""
+"所有映像檔皆能作為 ISO 或是磁碟映像檔使用，包括以 `dd` 寫入一個 USB 磁碟中。"
 
 msgid "Back"
 msgstr "上一步"
@@ -36,30 +41,32 @@ msgid "Boot disk"
 msgstr "開機磁碟"
 
 msgid "Boot disks"
-msgstr ""
+msgstr "開機磁碟"
 
 msgid ""
 "Bootdisk is not supported with safemode rendering, please disable "
 "safemode_render under Adminster>Settings"
-msgstr "開機磁碟不支援 safemode rendering，請在「管理」>「設定」下停用 safemode_render"
+msgstr ""
+"開機磁碟不支援 safemode rendering，請在「管理」>「設定」下停用 "
+"safemode_render"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "請使用 genisoimage 或是 mkisofs 來作為產生 ISO 映像檔的指令"
 
 msgid "Download generic image"
-msgstr ""
+msgstr "下載泛型映像檔"
 
 msgid "Download host image"
-msgstr ""
+msgstr "下載主機映像檔"
 
 msgid "Failed to render boot disk template: %s"
 msgstr "轉譯開機磁碟範本失敗：%s"
 
 msgid "Full host '%s' image"
-msgstr ""
+msgstr "完整的主機 '%s' 映像檔"
 
 msgid "Full host image"
-msgstr ""
+msgstr "完整的主機映像檔"
 
 msgid "Generic image"
 msgstr "泛型映像檔"
@@ -70,6 +77,9 @@ msgid ""
 "contact the server, but does not require DHCP reservations or static IP "
 "addresses."
 msgstr ""
+"泛型映像檔是個可重複使用的磁碟映像檔，並且可使用於任何向 Foreman 註冊過的主機"
+"上。它需要一項基本的 DHCP 和 DNS 服務才能運作和聯絡伺服器，不過並不需要 DHCP "
+"預留或靜態 IP 位址。"
 
 msgid "Help"
 msgstr "協助"
@@ -90,10 +100,10 @@ msgid "Host has no subnet defined"
 msgstr "主機尚未定義子網路"
 
 msgid "Host image"
-msgstr ""
+msgstr "主機映像檔"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
-msgstr ""
+msgstr "主機不在組建模式下，因此無法編寫範本"
 
 msgid "ISO build failed"
 msgstr "建立 ISO 失敗"
@@ -102,13 +112,15 @@ msgid "ISO hybrid conversion failed"
 msgstr "ISO 混合式轉換失敗"
 
 msgid "Installation media files will be cached for full host images"
-msgstr ""
+msgstr "安裝媒介檔案將會被快取以作為完整的主機映像檔"
 
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly "
 "from the installation media configured in Foreman, and the provisioning "
 "script (kickstart/preseed) is downloaded from Foreman."
 msgstr ""
+"在 chainload 之後，OS 開機載入程式和安裝程式將會直接從 Foreman 中所配置的安裝"
+"媒介下載，而佈建 script（kickstart/preseed）則會由 Foreman 下載。"
 
 msgid "Path to directory containing iPXE images"
 msgstr "包含 iPXE 映像檔的目錄之路徑"
@@ -122,6 +134,9 @@ msgid ""
 "After networking is configured, they chainload from Foreman, picking up the "
 "current OS configuration and build state from the server."
 msgstr ""
+"個別主機的映像檔包含了有關於向 Foreman 註冊的特定主機的資料，並且會設置完整靜"
+"態的網路，以避免需要使用到 DHCP。在配置了網路後，它們便會由 Foreman 進行 "
+"chainload，取得目前的 OS 配置，並由伺服器建立狀態。"
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
 msgstr "請確認 ipxe-bootimgs 和 syslinux 套件已安裝。"
@@ -130,6 +145,8 @@ msgid ""
 "Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
 "without the need for PXE infrastructure."
 msgstr ""
+"能建立基於 iPXE 的開機磁碟的 Foreman 外掛程式，以在不需要 PXE 設備的情況下佈"
+"建主機。"
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "子網路（%s）尚未定義閘道器"
@@ -138,19 +155,21 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "子網路（%s）尚未定義主 DNS 伺服器"
 
 msgid ""
-"The OS install continues using the installation media configured in Foreman,"
-" and it will typically configure static networking, depending on how the OS "
+"The OS install continues using the installation media configured in Foreman, "
+"and it will typically configure static networking, depending on how the OS "
 "iPXE template is configured."
 msgstr ""
+"OS 安裝程序會繼續使用配置於 Foreman 中的安裝媒介，並且它一般會根據 OS iPXE 範"
+"本的配置方法來配置靜態網路。"
 
 msgid "True for full, false for basic reusable image"
-msgstr ""
+msgstr "「true」代表完整，「false」則代表可重複使用的基本映像檔"
 
 msgid "Unable to find template specified by %s setting"
 msgstr "找不到 %s 設定所指定的範本"
 
 msgid "Unable to generate disk template: %s"
-msgstr ""
+msgstr "無法產生磁碟範本：%s"
 
 msgid ""
 "Various types of boot disks can be created to provision hosts without the "
@@ -158,6 +177,8 @@ msgid ""
 "virtual) which boots from the disk, contacts Foreman and begins the OS "
 "installation."
 msgstr ""
+"您可建立各種不同類型的開機磁碟來在不使用 PXE 服務的情況下佈建主機。開機磁碟能"
+"連接至由磁碟開機的主機（實體或虛擬），聯絡 Foreman 並開始進行 OS 的安裝程序。"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "使用來作為泛型主機開機磁碟的 iPXE 範本"
