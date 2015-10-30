@@ -23,7 +23,7 @@ class ForemanBootdisk::ISOGenerator
         iso_suffix = iso9660_filename(suffix)
         iso_f0 = iso9660_filename(f[0].to_s) + '_' + iso_suffix
         tmpl.gsub!(f[0].to_s + '-' + suffix, iso_f0)
-        Rails.logger.debug("Boot file #{iso_f0}, source #{f[1]}")
+        ForemanBootdisk.logger.debug("Boot file #{iso_f0}, source #{f[1]}")
         [iso_f0, f[1]]
       end
     end
@@ -107,10 +107,10 @@ class ForemanBootdisk::ISOGenerator
       file.binmode
 
       if use_cache && !(contents = Rails.cache.fetch(uri, :raw => true)).nil?
-        Rails.logger.info("Retrieved #{uri} from local cache (use foreman-rake tmp:cache:clear to empty)")
+        ForemanBootdisk.logger.info("Retrieved #{uri} from local cache (use foreman-rake tmp:cache:clear to empty)")
         file.write(contents)
       else
-        Rails.logger.info("Fetching #{uri}")
+        ForemanBootdisk.logger.info("Fetching #{uri}")
         write_cache = use_cache
         uri = URI(uri)
         Net::HTTP.start(uri.host, uri.port) do |http|
@@ -126,7 +126,7 @@ class ForemanBootdisk::ISOGenerator
     end
 
     if write_cache
-      Rails.logger.debug("Caching contents of #{uri}")
+      ForemanBootdisk.logger.debug("Caching contents of #{uri}")
       Rails.cache.write(uri, File.read(path), :raw => true)
     end
   end

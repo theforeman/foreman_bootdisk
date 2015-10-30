@@ -11,6 +11,7 @@ module ForemanBootdisk
         end
 
         before_filter :find_resource, :only => :host
+
         skip_after_filter :log_response_body
 
         # no-op, but required for apipie documentation

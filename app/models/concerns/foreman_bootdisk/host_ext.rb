@@ -13,10 +13,7 @@ module ForemanBootdisk::HostExt
   end
 
   def bootdisk_chain_url(mac = self.mac, action = 'iPXE')
-    u = URI.parse(foreman_url(action))
-    u.query = "#{u.query}&mac=#{mac}"
-    u.fragment = nil
-    u.to_s
+    ForemanBootdisk::Renderer.format_bootdisk_chain_url(foreman_url(action), mac)
   end
 
   def bootdisk_raise(*args)
