@@ -28,9 +28,27 @@ module ForemanBootdisk
       Apipie.configuration.checksum_path += ['/bootdisk/api/']
     end
 
+    # Precompile any JS or CSS files under app/assets/
+    # If requiring files from each other, list them explicitly here to avoid precompiling the same
+    # content twice.
+    assets_to_precompile =
+      Dir.chdir(root) do
+        Dir['app/assets/javascripts/**/*', 'app/assets/stylesheets/**/*'].map do |f|
+          f.split(File::SEPARATOR, 4).last
+        end
+      end
+
+    initializer 'foreman_bootdisk.assets.precompile' do |app|
+      app.config.assets.precompile += assets_to_precompile
+    end
+
+    initializer 'foreman_bootdisk.configure_assets', group: :assets do
+      SETTINGS[:foreman_bootdisk] = { assets: { precompile: assets_to_precompile } }
+    end
+
     initializer 'foreman_bootdisk.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 1.9'
+        requires_foreman '>= 1.11'
 
         security_block :bootdisk do |map|
           permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :subnet, :help],
@@ -41,6 +59,7 @@ module ForemanBootdisk
 
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
         apipie_documented_controllers ["#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"]
+        provision_method 'bootdisk', N_('Bootdisk Based')
       end
     end
 
@@ -53,8 +72,10 @@ module ForemanBootdisk
     config.to_prepare do
       begin
         Host::Managed.send(:include, ForemanBootdisk::HostExt)
+        Host::Managed.send(:include, ForemanBootdisk::Orchestration::Compute) if SETTINGS[:unattended]
         HostsHelper.send(:include, ForemanBootdisk::HostsHelperExt)
         UnattendedController.send(:include, ForemanBootdisk::UnattendedControllerExt)
+        Foreman::Model::Vmware.send(:include, ForemanBootdisk::ComputeResources::Vmware) if SETTINGS[:vmware]
       rescue => e
         puts "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
       end

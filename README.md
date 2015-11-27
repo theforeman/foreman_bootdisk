@@ -47,7 +47,7 @@ gPXE images are unsupported due to lack of initrd support.
 ## Configuration
 
 With all image types, hosts have to be registered to Foreman prior to booting
-the image.  Hosts will be identified by their MAC or IP address to provide
+the image by hand. Hosts will be identified by their MAC or IP address to provide
 the correct provisioning template if the host is in build mode.
 
 For per-host images, ensure host IP addresses and subnets are populated, and
@@ -56,6 +56,14 @@ under Infrastructure>Subnets in Foreman.
 
 To permit access to images for non-admin users, add the "Boot disk access" role
 to a user or the "download_bootdisk" permission to an existing role.
+
+## Fully Automated Provisioning
+
+On VMWare compute resources it is possible to create a new host with a cd-drive
+preconfigured and have a per-host image attached before first boot. This allows
+a fully automated provisioning of hosts via ISO boot. This feature can be used by
+selecting the Bootdisk Based provisioning method under the OS tab when creating
+the host, or by setting provision_method: "bootdisk" using the API.
 
 ## Templates
 
