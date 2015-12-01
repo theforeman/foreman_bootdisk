@@ -12,8 +12,8 @@ ProvisioningTemplate.without_auditing do
     :template => content,
     :default  => true,
     :vendor   => "Foreman boot disk",
-    :locked   => true
   }
+  tmpl.locked = true
   tmpl.save!(:validate => false) if tmpl.changes.present?
 
   content = File.read(File.join(ForemanBootdisk::Engine.root, 'app', 'views', 'foreman_bootdisk', 'generic_host.erb'))
@@ -27,7 +27,7 @@ ProvisioningTemplate.without_auditing do
     :template => content,
     :default  => true,
     :vendor   => "Foreman boot disk",
-    :locked   => true
   }
+  tmpl.locked = true
   tmpl.save!(:validate => false) if tmpl.changes.present?
 end
