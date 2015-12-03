@@ -162,8 +162,9 @@ It must be writable by the 'foreman' user.
 A variant of the per-host image, this version doesn't chainload from Foreman,
 but contains the initial OS bootloader.  It can be useful for hosts that fail
 to chainload correctly, but has the downsides that it may become out of date
-if the host OS, bootloader or templates change, or build tokens are required
-and expire.
+if the host OS, bootloader or PXELinux templates change, or build tokens are
+required and expire.  The provisioning template is still fetched from the
+Foreman server.
 
 To generate the image from the web interface, view the host page, click the
 "Boot disk" button and select "Full host 'FQDN' image".  This image may take
