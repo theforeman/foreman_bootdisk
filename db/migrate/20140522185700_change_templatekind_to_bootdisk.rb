@@ -8,7 +8,7 @@ class ChangeTemplatekindToBootdisk < ActiveRecord::Migration
   end
 
   def self.up
-    kind = TemplateKind.find_or_create_by_name('Bootdisk')
+    kind = TemplateKind.where(:name => 'Bootdisk').first_or_create
 
     tmpl_h = Setting.find_by_name('bootdisk_host_template').try(:value)
     tmpl_g = Setting.find_by_name('bootdisk_generic_host_template').try(:value)

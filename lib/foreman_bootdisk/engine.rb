@@ -19,7 +19,9 @@ module ForemanBootdisk
     end
 
     initializer "foreman_bootdisk.load_app_instance_data" do |app|
-      app.config.paths['db/migrate'] += ForemanBootdisk::Engine.paths['db/migrate'].existent
+      ForemanBootdisk::Engine.paths['db/migrate'].existent.each do |path|
+        app.config.paths['db/migrate'] << path
+      end
     end
 
     initializer "foreman_bootdisk.apipie" do
