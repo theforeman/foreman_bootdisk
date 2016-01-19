@@ -16,6 +16,7 @@
 isset ${net<%= i -%>/mac} || goto no_nic
 echo net<%= i -%> is a ${net<%= i -%>/chip} with MAC ${net<%= i -%>/mac}
 dhcp net<%= i %> || goto net<%= i+1 %>
+sleep 5
 chain <%= url %>${net<%= i -%>/mac} || goto net<%= i+1 %>
 exit 0
 <% end -%>
