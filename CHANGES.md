@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.1.0
+* add subnet-level generic image relying on template smart proxy (#8146)
+* add Catalan translation
+* fix compatibility with Rails 4 for Foreman 1.11
+
 ## v6.0.0
 * compatibility with Foreman 1.9 template changes (#10773)
 * generate correct links under sub-URI (#10494)
