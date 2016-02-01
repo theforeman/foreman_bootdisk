@@ -14,26 +14,29 @@ bootdisk_raise(N_('Subnet (%s) has no gateway defined'), interface.subnet) if in
 bootdisk_raise(N_('Subnet (%s) has no primary DNS server defined'), interface.subnet) if interface.subnet.dns_primary.nil? || interface.subnet.dns_primary.empty?
 %>
 
+echo Foreman Bootdisk: Host image (<%= @host.name %>)
+
 # loop over net* until the host's MAC matches
 <% (0..32).each do |i| -%>
 :net<%= i %>
 isset ${net<%= i -%>/mac} || goto no_nic
 echo net<%= i -%> is a ${net<%= i -%>/chip} with MAC ${net<%= i -%>/mac}
 iseq ${net<%= i -%>/mac} <%= interface.mac -%> || goto net<%= i+1 %>
-ifopen net<%= i %>
 set idx:int32 <%= i %>
 goto loop_success
 <% end -%>
 
 :loop_success
-echo Configuring net${idx} for static IP address
+echo Configuring net${idx} for static IP address <%= interface.ip %>
 ifopen net${idx}
 set netX/ip <%= interface.ip %>
 set netX/netmask <%= interface.subnet.mask %>
 set netX/gateway <%= interface.subnet.gateway %>
+ifstat net${idx}
 route
 
 # Note, iPXE can only use one DNS server
+echo Using DNS <%= interface.subnet.dns_primary %>
 set dns <%= interface.subnet.dns_primary %>
 set domain <%= interface.domain.to_s %>
 
