@@ -28,7 +28,7 @@ module ForemanBootdisk
       Apipie.configuration.checksum_path += ['/bootdisk/api/']
     end
 
-    initializer 'foreman_bootdisk.register_plugin', :after=> :finisher_hook do |app|
+    initializer 'foreman_bootdisk.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
         requires_foreman '>= 1.9'
 
