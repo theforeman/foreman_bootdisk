@@ -18,7 +18,7 @@ Please see the Foreman manual for appropriate instructions:
 The gem name is "foreman_bootdisk".  Run `foreman-rake db:migrate`,
 `foreman-rake db:seed` after installation.
 
-RPM users can install the "ruby193-rubygem-foreman_bootdisk" or
+RPM users can install the "tfm-rubygem-foreman_bootdisk" or
 "rubygem-foreman_bootdisk" packages.
 
 Debian users can install the "ruby-foreman-bootdisk" package.
