@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-14 13:03+0000\n"
-"PO-Revision-Date: 2016-01-14 13:03+0000\n"
+"POT-Creation-Date: 2016-03-23 11:59+0000\n"
+"PO-Revision-Date: 2016-03-23 11:59+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -81,9 +81,33 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/host_ext.rb:7
+#: ../app/models/concerns/foreman_bootdisk/host_ext.rb:12
 #: ../app/services/foreman_bootdisk/renderer.rb:10
 msgid "Unable to find template specified by %s setting"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:24
+msgid "Generating ISO image for %s"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:26
+msgid "Upload ISO image to datastore for %s"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:28
+msgid "Attach ISO image to CDROM drive for %s"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:50
+msgid "Failed to generate ISO image for instance %{name}: %{message}"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:59
+msgid "Failed to upload ISO image for instance %{name}: %{message}"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:68
+msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
 #: ../app/models/setting/bootdisk.rb:11
@@ -230,6 +254,10 @@ msgstr ""
 
 #: ../app/views/foreman_bootdisk/host.erb:14
 msgid "Subnet (%s) has no primary DNS server defined"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:62
+msgid "Bootdisk Based"
 msgstr ""
 
 #: gemspec.rb:2
