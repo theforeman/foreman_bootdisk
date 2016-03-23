@@ -10,6 +10,8 @@ Gemfile.lock
 .ruby-*
 pkg/
 locale/*.mo
+locale/*/*.edit.po
+locale/*/*.po.time_stamp
 locale/*/*.pox
 tags
 TAGS
