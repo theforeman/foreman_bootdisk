@@ -1,34 +1,33 @@
-# foreman_bootdisk
-# 
-# This file is distributed under the same license as foreman_bootdisk.
-# 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_bootdisk package.
+#
 # Translators:
 # Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 6.0.0\n"
+"Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 11:19+0000\n"
-"PO-Revision-Date: 2015-05-13 13:24+0000\n"
-"Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>\n"
-"Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/ru/)\n"
+"PO-Revision-Date: 2016-03-24 09:54+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
+"Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/ru/)"
+"\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=1"
+"1 && n%100<=14)? 2 : 3);\n"
 
-msgid ""
-"A variant of the per-host image which contains the OS bootloader embedded "
-"inside the disk.  This may be useful if chainloading fails on certain "
-"hardware, but has the downside that the image must be regenerated for any "
-"change in the OS, bootloader or templates."
-msgstr "Вариант образа узла, содержащий встроенный загрузчик ОС на диске. Это может быть полезно при смене загрузчика на каком-либо оборудовании, но он должен быть пересобран при любом изменении в ОС, загрузчике или шаблоне."
+msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
+msgstr ""
 
-msgid ""
-"All images are usable as either ISOs or as disk images, including being "
-"written to a USB disk with `dd`."
+msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Все образы используются как ISO или образы дисков, включая записанные на USB диск командой 'dd'."
+
+msgid "Attach ISO image to CDROM drive for %s"
+msgstr ""
 
 msgid "Back"
 msgstr "Назад"
@@ -39,10 +38,8 @@ msgstr "Загрузочный диск"
 msgid "Boot disks"
 msgstr "Загрузочные диски"
 
-msgid ""
-"Bootdisk is not supported with safemode rendering, please disable "
-"safemode_render under Adminster>Settings"
-msgstr "Создание загрузочного диска с обработкой в безопасном режиме не поддерживается. Отключите safemode_render на странице «Управление > Параметры»."
+msgid "Bootdisk Based"
+msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Команда создания ISO-образа. Используйте genisoimage или mkisofs"
@@ -53,8 +50,20 @@ msgstr "Скачать общий образ"
 msgid "Download host image"
 msgstr "Скачать образ узла"
 
-msgid "Failed to render boot disk template: %s"
-msgstr "Не удалось обработать шаблон загрузочного диска: %s"
+msgid "Download subnet generic image"
+msgstr ""
+
+msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to generate ISO image for instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to render boot disk template"
+msgstr ""
+
+msgid "Failed to upload ISO image for instance %{name}: %{message}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr "Полный образ узлы '%s'"
@@ -62,14 +71,13 @@ msgstr "Полный образ узлы '%s'"
 msgid "Full host image"
 msgstr "Полный образ узла"
 
+msgid "Generating ISO image for %s"
+msgstr ""
+
 msgid "Generic image"
 msgstr "Стандартный образ"
 
-msgid ""
-"Generic images are a reusable disk image that works for any host registered "
-"in Foreman.  It requires a basic DHCP and DNS service to function and "
-"contact the server, but does not require DHCP reservations or static IP "
-"addresses."
+msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Общий образ - это образ диска работающий на любом узле, зарегистрированном в Foreman. Он требует наличие DHCP и DNS служб для функционирования и соединения с сервером, но не требует резервации DHCP или статических IP адресов."
 
 msgid "Help"
@@ -105,10 +113,7 @@ msgstr "Ошибка преобразования гибридного обра�
 msgid "Installation media files will be cached for full host images"
 msgstr "Файлы с установочного носителя будут закешированы для полного образа узла."
 
-msgid ""
-"Once chainloaded, the OS bootloader and installer are downloaded directly "
-"from the installation media configured in Foreman, and the provisioning "
-"script (kickstart/preseed) is downloaded from Foreman."
+msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "После того как загрузчик ОС и установщик скачаны напрямую с установочного носителя, настроенного в Foreman, и скрипт подготовки (kickstart/preseed) скачан из Foreman."
 
 msgid "Path to directory containing iPXE images"
@@ -117,20 +122,17 @@ msgstr "Путь к каталогу с образами iPXE"
 msgid "Path to directory containing syslinux images"
 msgstr "Путь к каталогу с образами syslinux"
 
-msgid ""
-"Per-host images contain data about a particular host registered in Foreman "
-"and set up fully static networking, avoiding the requirement for DHCP.  "
-"After networking is configured, they chainload from Foreman, picking up the "
-"current OS configuration and build state from the server."
+msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr "Образ для каждого узла содержит данные о конкретном узле, зарегистрированном в Foreman и настроен на статичную сеть, избегающую запросов по DHCP. После настройки сети, с сервера Foreman подтягивается текущая конфигурация ОС и собирается окружение сервера."
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
 msgstr "Убедитесь, что пакеты ipxe-bootimgs и syslinux установлены."
 
-msgid ""
-"Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
-"without the need for PXE infrastructure."
+msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Дополнение для Foreman, которое создает iPXE-базовые загрузочные диски для подготовленных узлов без использования служб инфраструктуры PXE."
+
+msgid "Subnet '%s' generic image"
+msgstr ""
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "Шлюз подсети (%s) не задан"
@@ -138,11 +140,26 @@ msgstr "Шлюз подсети (%s) не задан"
 msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "Основной DNS-сервер для подсети (%s) не определен"
 
-msgid ""
-"The OS install continues using the installation media configured in Foreman,"
-" and it will typically configure static networking, depending on how the OS "
-"iPXE template is configured."
+msgid "Subnet boot disks"
+msgstr ""
+
+msgid "Subnet image"
+msgstr ""
+
+msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
+msgstr ""
+
+msgid "Subnet is not assigned to the host %s"
+msgstr ""
+
+msgid "TFTP feature not enabled for subnet %s"
+msgstr ""
+
+msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "Установщик ОС продолжит использовать установочный носитель, настроенный в Foreman, и он будет настраивать статическую сеть, зависящую от того как настроен шаблон iPXE ОС."
+
+msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
+msgstr ""
 
 msgid "True for full, false for basic reusable image"
 msgstr "Истина для полного, ложь для начального образа"
@@ -153,11 +170,10 @@ msgstr "Шаблон из параметра %s не найден"
 msgid "Unable to generate disk template: %s"
 msgstr "Не удалось сгенерировать шаблон диска: %s"
 
-msgid ""
-"Various types of boot disks can be created to provision hosts without the "
-"need for PXE services.  Boot disks can be attached to the host (physical or "
-"virtual) which boots from the disk, contacts Foreman and begins the OS "
-"installation."
+msgid "Upload ISO image to datastore for %s"
+msgstr ""
+
+msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "Типы вариантов загрузочных дисков, которые могут быть созданы для подготовленных узлов без служб PXE. Загрузочные диски могут быть прикреплены к узлу (физическому или виртуальному), который загружается соединяясь с Foreman и начинающих установку ОС."
 
 msgid "iPXE template to use for generic host boot disks"

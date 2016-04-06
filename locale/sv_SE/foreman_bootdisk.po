@@ -1,33 +1,30 @@
-# foreman_bootdisk
-# 
-# This file is distributed under the same license as foreman_bootdisk.
-# 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_bootdisk package.
+#
 # Translators:
 # johnny.westerlund <johnny.westerlund@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 6.0.0\n"
+"Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 11:19+0000\n"
-"PO-Revision-Date: 2015-02-20 11:24+0000\n"
-"Last-Translator: Dominic Cleal <dominic@cleal.org>\n"
-"Language-Team: Swedish (Sweden) (http://www.transifex.com/foreman/foreman/language/sv_SE/)\n"
+"PO-Revision-Date: 2016-03-24 09:54+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
+"Language-Team: Swedish (Sweden) (http://www.transifex.com/foreman/foreman/lang"
+"uage/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv_SE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ""
-"A variant of the per-host image which contains the OS bootloader embedded "
-"inside the disk.  This may be useful if chainloading fails on certain "
-"hardware, but has the downside that the image must be regenerated for any "
-"change in the OS, bootloader or templates."
+msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr ""
 
-msgid ""
-"All images are usable as either ISOs or as disk images, including being "
-"written to a USB disk with `dd`."
+msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
+msgstr ""
+
+msgid "Attach ISO image to CDROM drive for %s"
 msgstr ""
 
 msgid "Back"
@@ -39,10 +36,8 @@ msgstr "Startdisk"
 msgid "Boot disks"
 msgstr "Startdiskar"
 
-msgid ""
-"Bootdisk is not supported with safemode rendering, please disable "
-"safemode_render under Adminster>Settings"
-msgstr "Startdisk är inte supportat med \"safemode\" rendering aktiverat, var vänlig och inaktivera \"safemode_render\" under Administration>Inställningar"
+msgid "Bootdisk Based"
+msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Kommando för att generera ISO-avbildningar, använd genisoimage eller mkisofs"
@@ -53,8 +48,20 @@ msgstr "Ladda ner generisk avbildning"
 msgid "Download host image"
 msgstr "Ladda ner värd avbildning"
 
-msgid "Failed to render boot disk template: %s"
-msgstr "Misslyckades att tolka startdiskmallen: %s"
+msgid "Download subnet generic image"
+msgstr ""
+
+msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to generate ISO image for instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to render boot disk template"
+msgstr ""
+
+msgid "Failed to upload ISO image for instance %{name}: %{message}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr ""
@@ -62,14 +69,13 @@ msgstr ""
 msgid "Full host image"
 msgstr ""
 
+msgid "Generating ISO image for %s"
+msgstr ""
+
 msgid "Generic image"
 msgstr "Generell avbildning"
 
-msgid ""
-"Generic images are a reusable disk image that works for any host registered "
-"in Foreman.  It requires a basic DHCP and DNS service to function and "
-"contact the server, but does not require DHCP reservations or static IP "
-"addresses."
+msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr ""
 
 msgid "Help"
@@ -105,10 +111,7 @@ msgstr "ISO hybridkonvertering misslyckades"
 msgid "Installation media files will be cached for full host images"
 msgstr ""
 
-msgid ""
-"Once chainloaded, the OS bootloader and installer are downloaded directly "
-"from the installation media configured in Foreman, and the provisioning "
-"script (kickstart/preseed) is downloaded from Foreman."
+msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr ""
 
 msgid "Path to directory containing iPXE images"
@@ -117,20 +120,17 @@ msgstr "Sökvägen till ett bibliotek med iPXE-avbildningar"
 msgid "Path to directory containing syslinux images"
 msgstr "Sökvägen till ett bibliotek med syslinux-avbildningar"
 
-msgid ""
-"Per-host images contain data about a particular host registered in Foreman "
-"and set up fully static networking, avoiding the requirement for DHCP.  "
-"After networking is configured, they chainload from Foreman, picking up the "
-"current OS configuration and build state from the server."
+msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr ""
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
 msgstr "Vär vänlig och säkerställ att ipxe-startavbildningarna och syslinux paketen är installerade."
 
-msgid ""
-"Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
-"without the need for PXE infrastructure."
+msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin för Foreman som skapar iPXE-baserad start disk för att provisionera värdar utan en existerande PXE-infrastruktur."
+
+msgid "Subnet '%s' generic image"
+msgstr ""
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "Subnät (%s) har ingen nätsluss definierad"
@@ -138,10 +138,25 @@ msgstr "Subnät (%s) har ingen nätsluss definierad"
 msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "Subnät (%s) har ingen primär DNS-server definierad"
 
-msgid ""
-"The OS install continues using the installation media configured in Foreman,"
-" and it will typically configure static networking, depending on how the OS "
-"iPXE template is configured."
+msgid "Subnet boot disks"
+msgstr ""
+
+msgid "Subnet image"
+msgstr ""
+
+msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
+msgstr ""
+
+msgid "Subnet is not assigned to the host %s"
+msgstr ""
+
+msgid "TFTP feature not enabled for subnet %s"
+msgstr ""
+
+msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
+msgstr ""
+
+msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr ""
 
 msgid "True for full, false for basic reusable image"
@@ -153,11 +168,10 @@ msgstr "Går inte att hitta mallen specificerad med inställningen %s"
 msgid "Unable to generate disk template: %s"
 msgstr ""
 
-msgid ""
-"Various types of boot disks can be created to provision hosts without the "
-"need for PXE services.  Boot disks can be attached to the host (physical or "
-"virtual) which boots from the disk, contacts Foreman and begins the OS "
-"installation."
+msgid "Upload ISO image to datastore for %s"
+msgstr ""
+
+msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
