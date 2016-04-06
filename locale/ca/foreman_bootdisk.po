@@ -1,33 +1,30 @@
-# foreman_bootdisk
-# 
-# This file is distributed under the same license as foreman_bootdisk.
-# 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_bootdisk package.
+#
 # Translators:
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 6.0.0\n"
+"Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 11:19+0000\n"
-"PO-Revision-Date: 2015-12-10 08:15+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
-"Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/ca/)\n"
+"PO-Revision-Date: 2016-03-24 09:54+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
+"Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/ca/)"
+"\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ""
-"A variant of the per-host image which contains the OS bootloader embedded "
-"inside the disk.  This may be useful if chainloading fails on certain "
-"hardware, but has the downside that the image must be regenerated for any "
-"change in the OS, bootloader or templates."
-msgstr "Una variant de la imatge per amfitrió que conté el gestor d'arrencada del SO incrustat a l'interior del disc. Això pot ser útil si falla la cadena d'arrencada en algun maquinari, però té l'inconvenient que la imatge ha de ser regenerada en qualsevol canvi realitzat al sistema operatiu, al gestor d'arrencada o a les plantilles."
+msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
+msgstr ""
 
-msgid ""
-"All images are usable as either ISOs or as disk images, including being "
-"written to a USB disk with `dd`."
+msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
+msgstr ""
+
+msgid "Attach ISO image to CDROM drive for %s"
 msgstr ""
 
 msgid "Back"
@@ -39,13 +36,11 @@ msgstr "Disc d'arrencada"
 msgid "Boot disks"
 msgstr "Discs d'arrencada"
 
-msgid ""
-"Bootdisk is not supported with safemode rendering, please disable "
-"safemode_render under Adminster>Settings"
+msgid "Bootdisk Based"
 msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr ""
+msgstr "L'ordre per generar la imatge ISO, utilitzeu genisoimage o mkisofs"
 
 msgid "Download generic image"
 msgstr "Baixa la imatge genèrica"
@@ -53,23 +48,34 @@ msgstr "Baixa la imatge genèrica"
 msgid "Download host image"
 msgstr "Baixa la imatge d'amfitrió"
 
-msgid "Failed to render boot disk template: %s"
+msgid "Download subnet generic image"
+msgstr "Baixa la imatge genèrica de subxarxa"
+
+msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to generate ISO image for instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to render boot disk template"
+msgstr ""
+
+msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
 
 msgid "Full host '%s' image"
 msgstr ""
 
 msgid "Full host image"
+msgstr "Imatge completa d'amfitrió"
+
+msgid "Generating ISO image for %s"
 msgstr ""
 
 msgid "Generic image"
 msgstr "Imatge genèrica"
 
-msgid ""
-"Generic images are a reusable disk image that works for any host registered "
-"in Foreman.  It requires a basic DHCP and DNS service to function and "
-"contact the server, but does not require DHCP reservations or static IP "
-"addresses."
+msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr ""
 
 msgid "Help"
@@ -79,16 +85,16 @@ msgid "Host '%s' image"
 msgstr ""
 
 msgid "Host has no IP address defined"
-msgstr ""
+msgstr "L'amfitrió no té definida cap adreça IP"
 
 msgid "Host has no domain defined"
-msgstr ""
+msgstr "L'amfitrió no té definit cap domini"
 
 msgid "Host has no provisioning interface defined"
-msgstr ""
+msgstr "L'amfitrió no té definida cap interfície d'aprovisionament"
 
 msgid "Host has no subnet defined"
-msgstr ""
+msgstr "L'amfitrió no té definida cap subxarxa"
 
 msgid "Host image"
 msgstr "Imatge d'amfitrió"
@@ -97,7 +103,7 @@ msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr ""
 
 msgid "ISO build failed"
-msgstr ""
+msgstr "No s'ha pogut construir la ISO"
 
 msgid "ISO hybrid conversion failed"
 msgstr ""
@@ -105,59 +111,67 @@ msgstr ""
 msgid "Installation media files will be cached for full host images"
 msgstr "Els fitxers dels mitjans d'instal·lació s'emmagatzemaran en memòria cau per a les imatges completes dels amfitrions"
 
-msgid ""
-"Once chainloaded, the OS bootloader and installer are downloaded directly "
-"from the installation media configured in Foreman, and the provisioning "
-"script (kickstart/preseed) is downloaded from Foreman."
+msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr ""
 
 msgid "Path to directory containing iPXE images"
-msgstr ""
+msgstr "El camí al directori que conté les imatges iPXE"
 
 msgid "Path to directory containing syslinux images"
-msgstr ""
+msgstr "El camí al directori que conté les imatges syslinux"
 
-msgid ""
-"Per-host images contain data about a particular host registered in Foreman "
-"and set up fully static networking, avoiding the requirement for DHCP.  "
-"After networking is configured, they chainload from Foreman, picking up the "
-"current OS configuration and build state from the server."
+msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr ""
 
 msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
+msgstr "Si us plau, assegureu-vos que estiguin instal·lats els paquets ipxe-bootimgs i syslinux."
+
+msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr ""
 
-msgid ""
-"Plugin for Foreman that creates iPXE-based boot disks to provision hosts "
-"without the need for PXE infrastructure."
+msgid "Subnet '%s' generic image"
 msgstr ""
 
 msgid "Subnet (%s) has no gateway defined"
-msgstr ""
+msgstr "La subxarxa (%s) no té definida cap passarel·la"
 
 msgid "Subnet (%s) has no primary DNS server defined"
+msgstr "La subxarxa (%s) no té definit cap servidor DNS primari"
+
+msgid "Subnet boot disks"
+msgstr "Discs d'arrencada de subxarxa"
+
+msgid "Subnet image"
+msgstr "Imatge de subxarxa"
+
+msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
 msgstr ""
 
-msgid ""
-"The OS install continues using the installation media configured in Foreman,"
-" and it will typically configure static networking, depending on how the OS "
-"iPXE template is configured."
+msgid "Subnet is not assigned to the host %s"
+msgstr "La subxarxa no està assignada a l'amfitrió %s"
+
+msgid "TFTP feature not enabled for subnet %s"
+msgstr "La funcionalitat TFTP no està habilitada per a la subxarxa %s"
+
+msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
+msgstr ""
+
+msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr ""
 
 msgid "True for full, false for basic reusable image"
 msgstr ""
 
 msgid "Unable to find template specified by %s setting"
-msgstr ""
+msgstr "No es pot trobar la plantilla especificada per l'ajust %s"
 
 msgid "Unable to generate disk template: %s"
+msgstr "No es pot generar la plantilla de disc: %s"
+
+msgid "Upload ISO image to datastore for %s"
 msgstr ""
 
-msgid ""
-"Various types of boot disks can be created to provision hosts without the "
-"need for PXE services.  Boot disks can be attached to the host (physical or "
-"virtual) which boots from the disk, contacts Foreman and begins the OS "
-"installation."
+msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
