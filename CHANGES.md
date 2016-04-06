@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.0
+* add automated "bootdisk" provisioning method when creating hosts on VMware
+  compute resources, attaching a host ISO image to the virtual CDROM (#3287)
+* fix RPM installation instructions
+* fix gettext compatibility with Foreman 1.11
+
 ## v6.1.0
 * add subnet-level generic image relying on template smart proxy (#8146)
 * add Catalan translation
