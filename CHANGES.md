@@ -1,5 +1,8 @@
 # Changelog
 
+## v8.0.0
+* fix button and compute resource loading compatibility with Foreman 1.12
+
 ## v7.0.0
 * add automated "bootdisk" provisioning method when creating hosts on VMware
   compute resources, attaching a host ISO image to the virtual CDROM (#3287)
