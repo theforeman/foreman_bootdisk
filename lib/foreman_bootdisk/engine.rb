@@ -59,7 +59,8 @@ module ForemanBootdisk
 
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
         apipie_documented_controllers ["#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"]
-        provision_method 'bootdisk', N_('Bootdisk Based')
+        provision_method 'bootdisk', N_('Boot disk based')
+        template_labels 'Bootdisk' => N_('Boot disk embedded template')
       end
     end
 
