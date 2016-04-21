@@ -26,11 +26,11 @@ class ActionController::TestCase
   end
 
   def setup_subnet
-    @subnet = FactoryGirl.create(:subnet, :tftp, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
+    @subnet = FactoryGirl.create(:subnet_ipv4, :tftp, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
   end
 
   def setup_subnet_no_tftp
-    @subnet = FactoryGirl.create(:subnet, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
+    @subnet = FactoryGirl.create(:subnet_ipv4, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
   end
 
   def setup_host
