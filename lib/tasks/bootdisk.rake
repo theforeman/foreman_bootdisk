@@ -71,13 +71,9 @@ namespace :test do
   end
 end
 
-Rake::Task[:test].enhance do
-  Rake::Task['test:foreman_bootdisk'].invoke
-end
+Rake::Task[:test].enhance ['test:foreman_bootdisk']
 
 load 'tasks/jenkins.rake'
 if Rake::Task.task_defined?(:'jenkins:unit')
-  Rake::Task["jenkins:unit"].enhance do
-    Rake::Task['test:foreman_bootdisk'].invoke
-  end
+  Rake::Task["jenkins:unit"].enhance ['test:foreman_bootdisk']
 end
