@@ -21,8 +21,26 @@ dhcp net<%= i %> || goto net<%= i+1 %>
 chain <%= url %>${net<%= i -%>/mac} || goto net<%= i+1 %>
 exit 0
 <% end -%>
+echo Failed to chainload from any network interface, fallback to static.
+ifstat
 
 :no_nic
-echo Failed to chainload from any network interface
-sleep 30
-exit 1
+echo -n Enter interface name to boot from (e.g. net0):  && read interface
+isset ${${interface}/mac} && goto get_static_ip
+echo Interface ${interface} is not initialized, try again
+goto no_nic
+
+:get_static_ip
+ifopen ${interface}
+echo Please enter IP details for ${interface}
+echo
+echo -n IP address      :  && read ${interface}/ip
+echo -n Subnet mask     :  && read ${interface}/netmask
+echo -n Default gateway :  && read ${interface}/gateway
+echo -n DNS server      :  && read dns
+chain <%= url %>${${interface}/mac} || goto boot_failure
+exit 0
+
+:boot_failure
+echo Cannot continue, spawning shell
+shell

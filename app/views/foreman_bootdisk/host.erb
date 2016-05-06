@@ -48,6 +48,5 @@ chain <%= bootdisk_chain_url %>
 exit 0
 
 :no_nic
-echo Cannot find interface with MAC <%= interface.mac %>
-sleep 30
-exit 1
+echo Cannot find interface with MAC <%= interface.mac %>, spawning shell
+shell
