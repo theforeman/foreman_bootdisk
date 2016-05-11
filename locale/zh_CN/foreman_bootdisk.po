@@ -32,11 +32,14 @@ msgstr "后退"
 msgid "Boot disk"
 msgstr "引导磁盘"
 
+msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk embedded template"
+msgstr ""
+
 msgid "Boot disks"
 msgstr "引导磁盘"
-
-msgid "Bootdisk Based"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "使用 genisoimage 或者 mkisofs 命令生成 ISO 映像。"
@@ -74,6 +77,9 @@ msgstr ""
 msgid "Generic image"
 msgstr "原始映像"
 
+msgid "Generic image template"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "通用映像是可重复使用的映像，可用于 Foreman 中注册的所有主机。它要求使用 DHCP 和 DNS 服务与服务器联络，但不要求 DHCP 预订或静态 IP 地址。"
 
@@ -98,14 +104,23 @@ msgstr "没有为主机定义子网"
 msgid "Host image"
 msgstr "主机映像"
 
+msgid "Host image template"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "主机不是构建模式，因此无法修改模板。"
 
 msgid "ISO build failed"
 msgstr "ISO 构建失败"
 
+msgid "ISO generation command"
+msgstr ""
+
 msgid "ISO hybrid conversion failed"
 msgstr "ISO 复合转换失败"
+
+msgid "Installation media caching"
+msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "可为完整主机映像缓存安装介质文件"
@@ -127,6 +142,9 @@ msgstr "请确定已安装 ipxe-bootimgs 和 syslinux 软件包"
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "为 Foreman 生成基于 iPXE 的引导磁盘的插件，在不需要 PXE 架构的条件下即可供应主机。"
+
+msgid "SYSLINUX directory"
+msgstr ""
 
 msgid "Subnet '%s' generic image"
 msgstr ""
@@ -172,6 +190,9 @@ msgstr ""
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "可生成各种类型的引导磁盘在不需要 PXE 服务的情况下供应主机。可将引导磁盘附加到使用该磁盘引导的主机（物理机或虚拟机），联络 Foreman 并开始操作系统安装。"
+
+msgid "iPXE directory"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "通用主机引导盘使用的 iPXE 模板"

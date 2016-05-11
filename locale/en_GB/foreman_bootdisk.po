@@ -35,11 +35,14 @@ msgstr "Back"
 msgid "Boot disk"
 msgstr "Boot disk"
 
+msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk embedded template"
+msgstr ""
+
 msgid "Boot disks"
 msgstr "Boot disks"
-
-msgid "Bootdisk Based"
-msgstr "Bootdisk Based"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Command to generate ISO image, use genisoimage or mkisofs"
@@ -77,6 +80,9 @@ msgstr "Generating ISO image for %s"
 msgid "Generic image"
 msgstr "Generic image"
 
+msgid "Generic image template"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 
@@ -101,14 +107,23 @@ msgstr "Host has no subnet defined"
 msgid "Host image"
 msgstr "Host image"
 
+msgid "Host image template"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "Host is not in build mode, so the template cannot be rendered"
 
 msgid "ISO build failed"
 msgstr "ISO build failed"
 
+msgid "ISO generation command"
+msgstr ""
+
 msgid "ISO hybrid conversion failed"
 msgstr "ISO hybrid conversion failed"
+
+msgid "Installation media caching"
+msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Installation media files will be cached for full host images"
@@ -130,6 +145,9 @@ msgstr "Please ensure the ipxe-bootimgs and syslinux packages are installed."
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
+
+msgid "SYSLINUX directory"
+msgstr ""
 
 msgid "Subnet '%s' generic image"
 msgstr "Subnet '%s' generic image"
@@ -175,6 +193,9 @@ msgstr "Upload ISO image to datastore for %s"
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
+
+msgid "iPXE directory"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "iPXE template to use for generic host boot disks"

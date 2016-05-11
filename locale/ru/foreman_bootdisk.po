@@ -35,11 +35,14 @@ msgstr "Назад"
 msgid "Boot disk"
 msgstr "Загрузочный диск"
 
+msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk embedded template"
+msgstr ""
+
 msgid "Boot disks"
 msgstr "Загрузочные диски"
-
-msgid "Bootdisk Based"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Команда создания ISO-образа. Используйте genisoimage или mkisofs"
@@ -77,6 +80,9 @@ msgstr ""
 msgid "Generic image"
 msgstr "Стандартный образ"
 
+msgid "Generic image template"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Общий образ - это образ диска работающий на любом узле, зарегистрированном в Foreman. Он требует наличие DHCP и DNS служб для функционирования и соединения с сервером, но не требует резервации DHCP или статических IP адресов."
 
@@ -101,14 +107,23 @@ msgstr "Подсеть не определена"
 msgid "Host image"
 msgstr "Образ узла"
 
+msgid "Host image template"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "узел не в режиме сборки, шаблон не может быть применим"
 
 msgid "ISO build failed"
 msgstr "Не удалось создать ISO"
 
+msgid "ISO generation command"
+msgstr ""
+
 msgid "ISO hybrid conversion failed"
 msgstr "Ошибка преобразования гибридного образа"
+
+msgid "Installation media caching"
+msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Файлы с установочного носителя будут закешированы для полного образа узла."
@@ -130,6 +145,9 @@ msgstr "Убедитесь, что пакеты ipxe-bootimgs и syslinux уст
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Дополнение для Foreman, которое создает iPXE-базовые загрузочные диски для подготовленных узлов без использования служб инфраструктуры PXE."
+
+msgid "SYSLINUX directory"
+msgstr ""
 
 msgid "Subnet '%s' generic image"
 msgstr ""
@@ -175,6 +193,9 @@ msgstr ""
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "Типы вариантов загрузочных дисков, которые могут быть созданы для подготовленных узлов без служб PXE. Загрузочные диски могут быть прикреплены к узлу (физическому или виртуальному), который загружается соединяясь с Foreman и начинающих установку ОС."
+
+msgid "iPXE directory"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Шаблон iPXE стандартного образа"

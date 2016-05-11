@@ -34,11 +34,14 @@ msgstr "Retour"
 msgid "Boot disk"
 msgstr "Disque de démarrage"
 
+msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk embedded template"
+msgstr ""
+
 msgid "Boot disks"
 msgstr "Disques de démarrage"
-
-msgid "Bootdisk Based"
-msgstr "Basé sur bootdisk"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Commande servant à générer l'image ISO, utiliser genisoimage ou mkisofs"
@@ -76,6 +79,9 @@ msgstr "Création de l'image ISO pour %s"
 msgid "Generic image"
 msgstr "Image générique"
 
+msgid "Generic image template"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Les images génériques correspondent à une image disque réutilisable qui fonctionne pour tout hôte enregistré dans Foreman. Cela demande les services DHCP et DNS fonctionnels mais ne requiert pas de réservation DHCP ni d'adresse IP statique."
 
@@ -100,14 +106,23 @@ msgstr "L'hôte n'a aucun sous réseau défini"
 msgid "Host image"
 msgstr "Image hôte"
 
+msgid "Host image template"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "L'hôte n'est pas en mode construction, c'est pourquoi le modèle ne peut être rendu"
 
 msgid "ISO build failed"
 msgstr "La création de l'image ISO a échoué"
 
+msgid "ISO generation command"
+msgstr ""
+
 msgid "ISO hybrid conversion failed"
 msgstr "La conversion de l'image ISO hybride a échoué"
+
+msgid "Installation media caching"
+msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Les fichiers du media d'installation vont être cachés pour les images complètes d'hôtes"
@@ -129,6 +144,9 @@ msgstr "Merci de vérifier que les paquets ipxe-bootimgs et syslinux soient inst
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin pour Foreman qui crée le démarrage des disques iPXE-bases pour provisionner les hôtes sans l'aide de l'infrastructure PXE."
+
+msgid "SYSLINUX directory"
+msgstr ""
 
 msgid "Subnet '%s' generic image"
 msgstr "Image générique du sous-réseau %s"
@@ -174,6 +192,9 @@ msgstr "Envoi de l'image ISO sur la banque de données pour %s"
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "Différents types de disque de démarrage peuvent être créés pour provisionner les hôtes sans requérir à PXE. Les disques de démarrage peuvent être attachés à un hôte (physique ou virtuel) qui démarre depuis le disque, contacte Foreman puis lance l'installation du système d'exploitation."
+
+msgid "iPXE directory"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Modèle iPXE à appliquer pour les disques de boot génériques"

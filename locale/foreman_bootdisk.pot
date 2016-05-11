@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-06 10:02+0100\n"
-"PO-Revision-Date: 2016-04-06 10:02+0100\n"
+"POT-Creation-Date: 2016-05-11 08:17+0100\n"
+"PO-Revision-Date: 2016-05-11 08:17+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -110,28 +110,52 @@ msgstr ""
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:11
+#: ../app/models/setting/bootdisk.rb:12
 msgid "Path to directory containing iPXE images"
 msgstr ""
 
 #: ../app/models/setting/bootdisk.rb:12
+msgid "iPXE directory"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:13
 msgid "Path to directory containing syslinux images"
 msgstr ""
 
 #: ../app/models/setting/bootdisk.rb:13
+msgid "SYSLINUX directory"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:14
 msgid "iPXE template to use for host-specific boot disks"
 msgstr ""
 
 #: ../app/models/setting/bootdisk.rb:14
+msgid "Host image template"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:15
 msgid "iPXE template to use for generic host boot disks"
 msgstr ""
 
 #: ../app/models/setting/bootdisk.rb:15
+msgid "Generic image template"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:16
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr ""
 
 #: ../app/models/setting/bootdisk.rb:16
+msgid "ISO generation command"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:17
 msgid "Installation media files will be cached for full host images"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:17
+msgid "Installation media caching"
 msgstr ""
 
 #: ../app/services/foreman_bootdisk/iso_generator.rb:11
@@ -257,7 +281,11 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr ""
 
 #: ../lib/foreman_bootdisk/engine.rb:62
-msgid "Bootdisk Based"
+msgid "Boot disk based"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:63
+msgid "Boot disk embedded template"
 msgstr ""
 
 #: gemspec.rb:2

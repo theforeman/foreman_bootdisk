@@ -31,11 +31,14 @@ msgstr "뒤로 "
 msgid "Boot disk"
 msgstr "부팅 디스크 "
 
+msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk embedded template"
+msgstr ""
+
 msgid "Boot disks"
 msgstr "부팅 디스크 "
-
-msgid "Bootdisk Based"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "ISO 이미지를 생성하기 위한 명령, genisoimage 또는 mkisofs 사용 "
@@ -73,6 +76,9 @@ msgstr ""
 msgid "Generic image"
 msgstr "일반 이미지 "
 
+msgid "Generic image template"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "일반 이미지는 Foreman에 등록된 모든 호스트에서 작동하는 다시 사용 가능한 디스크 이미지입니다. 이를 사용하려면 기본  DHCP 및 DNS 서비스가 작동하고 서버와 통신할 수 있어야 하지만 DHCP 예약 기능 및 고정 IP 주소는 필요하지 않습니다.  "
 
@@ -97,14 +103,23 @@ msgstr "호스트에 지정된 서브넷이 없습니다 "
 msgid "Host image"
 msgstr "호스트 이미지 "
 
+msgid "Host image template"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "호스트가 빌드 모드가 아니므로 템플릿을 렌더링할 수 없습니다 "
 
 msgid "ISO build failed"
 msgstr "ISO 빌드 실패 "
 
+msgid "ISO generation command"
+msgstr ""
+
 msgid "ISO hybrid conversion failed"
 msgstr "ISO 하이브리드 변환 실패 "
+
+msgid "Installation media caching"
+msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "설치 미디어 파일은 전체 호스트 이미지에 캐시됩니다 "
@@ -126,6 +141,9 @@ msgstr "ipxe-bootimgs 및 syslinux 패키지가 설치되었는지 확인하십�
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "PXE 인프라없이 호스트 프로비저닝을 실행하기 위해 iPXE 기반 부트 디스크를 생성하는 Foreman 플러그인입니다."
+
+msgid "SYSLINUX directory"
+msgstr ""
 
 msgid "Subnet '%s' generic image"
 msgstr ""
@@ -171,6 +189,9 @@ msgstr ""
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "PXE 서비스 없이 호스트 프로비저닝을 수행하기 위해 다양한 유형의 부팅 디스크를 생성할 수 있습니다. 부팅 디스크는 디스크에서 부팅하여 Foreman과 통신 후 OS 설치를 시작하는 호스트 (물리 또는 가상)에 할당할 수 있습니다. "
+
+msgid "iPXE directory"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "일반 호스트 부팅 디스크 용으로 사용할 iPXE 템플릿 "
