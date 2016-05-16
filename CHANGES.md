@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.0.1
+* added extra information during iPXE boot (#14794)
+* show bootdisk fields after new host page reload (#14796)
+
 ## v7.0.0
 * add automated "bootdisk" provisioning method when creating hosts on VMware
   compute resources, attaching a host ISO image to the virtual CDROM (#3287)
