@@ -12,10 +12,6 @@ module ForemanBootdisk
         capabilities_without_bootdisk + [:bootdisk]
       end
 
-      def new_cdrom(attr = {})
-        client.cdroms.new attr
-      end
-
       def parse_args_with_bootdisk(args = {})
         args = parse_args_without_bootdisk args
         if args[:provision_method] == 'bootdisk'
