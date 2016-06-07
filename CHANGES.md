@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.1
+* translate setting names
+* use dropdown menus for template settings (#14948)
+* associate orgs and locs to seeded templates (#14682)
+* use Foreman 1.12 CDROM helper (#15173)
+
 ## v8.0.0
 * fix button and compute resource loading compatibility with Foreman 1.12
 
