@@ -72,7 +72,7 @@ namespace :test do
   end
 end
 
-Rake::Task[:test].enhance ['test:foreman_bootdisk']
+Rake::Task["test:plugins"].enhance ['test:foreman_bootdisk']
 
 load 'tasks/jenkins.rake'
 if Rake::Task.task_defined?(:'jenkins:unit')
