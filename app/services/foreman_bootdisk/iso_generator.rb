@@ -17,6 +17,10 @@ class ForemanBootdisk::ISOGenerator
     # aim to convert filenames to something usable under ISO 9660, update the template to match
     # and then still ensure that the fetch() process stores them under the same name
     files = host.operatingsystem.pxe_files(host.medium, host.architecture, host)
+    
+    # add host templates to boot disk
+    files << {'unattended/template_'.to_sym => "http://#{host.puppetmaster}/unattended/provision?token=#{host.token}"}
+    
     files.map! do |bootfile_info|
       bootfile_info.map do |f|
         suffix = f[1].split('/').last
