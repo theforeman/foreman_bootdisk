@@ -20,8 +20,7 @@ class ForemanBootdisk::ISOGenerator
     files.map! do |bootfile_info|
       bootfile_info.map do |f|
         suffix = f[1].split('/').last
-        iso_suffix = iso9660_filename(suffix)
-        iso_f0 = iso9660_filename(f[0].to_s) + '_' + iso_suffix
+        iso_f0 = iso9660_filename(f[0].to_s + '_' + suffix)
         tmpl.gsub!(f[0].to_s + '-' + suffix, iso_f0)
         ForemanBootdisk.logger.debug("Boot file #{iso_f0}, source #{f[1]}")
         [iso_f0, f[1]]
@@ -134,7 +133,7 @@ class ForemanBootdisk::ISOGenerator
   # isolinux supports up to ISO 9660 level 2 filenames
   def self.iso9660_filename(name)
     dir  = File.dirname(name)
-    file = File.basename(name).upcase.tr_s('^A-Z0-9_', '_')[0..30]
-    dir == '.' ? file : File.join(dir.upcase.tr_s('^A-Z0-9_', '_')[0..30], file)
+    file = File.basename(name).upcase.tr_s('^A-Z0-9_', '_').last(28)
+    dir == '.' ? file : File.join(dir.upcase.tr_s('^A-Z0-9_', '_').last(28), file)
   end
 end
