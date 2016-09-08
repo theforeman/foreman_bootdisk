@@ -1,5 +1,9 @@
 # Changelog
 
+## v8.0.2
+* fix truncation of filenames with suffixes for ISO9660
+* replace deprecated pxe_render call for Foreman 1.14
+
 ## v8.0.1
 * translate setting names
 * use dropdown menus for template settings (#14948)
