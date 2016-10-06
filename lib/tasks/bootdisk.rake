@@ -1,4 +1,5 @@
 require 'date'
+require 'rake/testtask'
 require 'tmpdir'
 
 namespace :bootdisk do
