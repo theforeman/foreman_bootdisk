@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 08:17+0100\n"
-"PO-Revision-Date: 2016-05-11 08:17+0100\n"
+"POT-Creation-Date: 2016-10-10 15:13+0100\n"
+"PO-Revision-Date: 2016-10-10 15:13+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -110,51 +110,59 @@ msgstr ""
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:12
+#: ../app/models/setting/bootdisk.rb:13
 msgid "Path to directory containing iPXE images"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:12
+#: ../app/models/setting/bootdisk.rb:13
 msgid "iPXE directory"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:13
+#: ../app/models/setting/bootdisk.rb:14
+msgid "Path to directory containing isolinux images"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:14
+msgid "ISOLINUX directory"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:15
 msgid "Path to directory containing syslinux images"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:13
+#: ../app/models/setting/bootdisk.rb:15
 msgid "SYSLINUX directory"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:14
+#: ../app/models/setting/bootdisk.rb:16
 msgid "iPXE template to use for host-specific boot disks"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:14
+#: ../app/models/setting/bootdisk.rb:16
 msgid "Host image template"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:15
+#: ../app/models/setting/bootdisk.rb:17
 msgid "iPXE template to use for generic host boot disks"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:15
+#: ../app/models/setting/bootdisk.rb:17
 msgid "Generic image template"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:16
+#: ../app/models/setting/bootdisk.rb:18
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:16
+#: ../app/models/setting/bootdisk.rb:18
 msgid "ISO generation command"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:17
+#: ../app/models/setting/bootdisk.rb:19
 msgid "Installation media files will be cached for full host images"
 msgstr ""
 
-#: ../app/models/setting/bootdisk.rb:17
+#: ../app/models/setting/bootdisk.rb:19
 msgid "Installation media caching"
 msgstr ""
 
@@ -166,16 +174,19 @@ msgstr ""
 msgid "Unable to generate disk template: %s"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:47
-#: ../app/services/foreman_bootdisk/iso_generator.rb:60
-msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
+#: ../app/services/foreman_bootdisk/iso_generator.rb:46
+msgid "Please ensure the isolinux/syslinux package(s) are installed."
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:80
+#: ../app/services/foreman_bootdisk/iso_generator.rb:59
+msgid "Please ensure the ipxe-bootimgs package is installed."
+msgstr ""
+
+#: ../app/services/foreman_bootdisk/iso_generator.rb:79
 msgid "ISO build failed"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:85
+#: ../app/services/foreman_bootdisk/iso_generator.rb:84
 msgid "ISO hybrid conversion failed"
 msgstr ""
 

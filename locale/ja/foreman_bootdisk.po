@@ -120,6 +120,9 @@ msgstr ""
 msgid "ISO hybrid conversion failed"
 msgstr "ISO ハイブリッド変換に失敗しました"
 
+msgid "ISOLINUX directory"
+msgstr ""
+
 msgid "Installation media caching"
 msgstr ""
 
@@ -132,14 +135,20 @@ msgstr "チェーンロードが実行されると、OS ブートローダーと
 msgid "Path to directory containing iPXE images"
 msgstr "iPXE イメージを含むディレクトリーのパス"
 
+msgid "Path to directory containing isolinux images"
+msgstr ""
+
 msgid "Path to directory containing syslinux images"
 msgstr "syslinux イメージを含むディレクトリーのパス"
 
 msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr "ホストごとのイメージには、Foreman に登録された特定ホストについてのデータが含まれ、これは完全に静的なネットワークをセットアップするため、DHCP の要件が排除されます。ネットワークの設定後、Foreman からチェーンロードが実行され、現在の OS 設定やビルド状態の情報がサーバーから取得されます。"
 
-msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
-msgstr "ipxe-bootimgs および syslinux パッケージがインストールされていることを確認してください。"
+msgid "Please ensure the ipxe-bootimgs package is installed."
+msgstr ""
+
+msgid "Please ensure the isolinux/syslinux package(s) are installed."
+msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "PXE インストラクチャーなしにホストのプロビジョニングを行うための iPXE ベースのブートディスクを作成する Foreman のプラグインです。"

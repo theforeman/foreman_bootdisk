@@ -119,6 +119,9 @@ msgstr ""
 msgid "ISO hybrid conversion failed"
 msgstr "ISO 混合式轉換失敗"
 
+msgid "ISOLINUX directory"
+msgstr ""
+
 msgid "Installation media caching"
 msgstr ""
 
@@ -131,14 +134,20 @@ msgstr "在 chainload 之後，OS 開機載入程式和安裝程式將會直接�
 msgid "Path to directory containing iPXE images"
 msgstr "包含 iPXE 映像檔的目錄之路徑"
 
+msgid "Path to directory containing isolinux images"
+msgstr ""
+
 msgid "Path to directory containing syslinux images"
 msgstr "包含 syslinux 映像檔的目錄之路徑"
 
 msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr "個別主機的映像檔包含了有關於向 Foreman 註冊的特定主機的資料，並且會設置完整靜態的網路，以避免需要使用到 DHCP。在配置了網路後，它們便會由 Foreman 進行 chainload，取得目前的 OS 配置，並由伺服器建立狀態。"
 
-msgid "Please ensure the ipxe-bootimgs and syslinux packages are installed."
-msgstr "請確認 ipxe-bootimgs 和 syslinux 套件已安裝。"
+msgid "Please ensure the ipxe-bootimgs package is installed."
+msgstr ""
+
+msgid "Please ensure the isolinux/syslinux package(s) are installed."
+msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "能建立基於 iPXE 的開機磁碟的 Foreman 外掛程式，以在不需要 PXE 設備的情況下佈建主機。"
