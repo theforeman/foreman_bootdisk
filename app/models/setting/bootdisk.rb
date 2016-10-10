@@ -4,12 +4,14 @@ class Setting::Bootdisk< ::Setting
     return unless super
 
     ipxe = ['/usr/lib/ipxe'].find { |p| File.exist?(p) } || '/usr/share/ipxe'
-    syslinux = ['/usr/lib/syslinux'].find { |p| File.exist?(p) } || '/usr/share/syslinux'
+    isolinux = ['/usr/lib/ISOLINUX'].find { |p| File.exist?(p) } || '/usr/share/syslinux'
+    syslinux = ['/usr/lib/syslinux/modules/bios', '/usr/lib/syslinux'].find { |p| File.exist?(p) } || '/usr/share/syslinux'
     templates = -> { Hash[ProvisioningTemplate.where(:template_kind => TemplateKind.where(:name => 'Bootdisk')).map{|temp| [temp[:name], temp[:name]]}] }
 
     Setting.transaction do
       [
         self.set('bootdisk_ipxe_dir', N_('Path to directory containing iPXE images'), ipxe, N_('iPXE directory')),
+        self.set('bootdisk_isolinux_dir', N_('Path to directory containing isolinux images'), isolinux, N_('ISOLINUX directory')),
         self.set('bootdisk_syslinux_dir', N_('Path to directory containing syslinux images'), syslinux, N_('SYSLINUX directory')),
         self.set('bootdisk_host_template', N_('iPXE template to use for host-specific boot disks'), 'Boot disk iPXE - host', N_('Host image template'), nil, :collection => templates),
         self.set('bootdisk_generic_host_template', N_('iPXE template to use for generic host boot disks'), 'Boot disk iPXE - generic host', N_('Generic image template'), nil, :collection => templates),

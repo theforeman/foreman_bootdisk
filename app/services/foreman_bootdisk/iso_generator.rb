@@ -42,10 +42,10 @@ class ForemanBootdisk::ISOGenerator
       Dir.mkdir(File.join(wd, 'build'))
 
       if opts[:isolinux]
-        unless File.exists?(File.join(Setting[:bootdisk_syslinux_dir], 'isolinux.bin'))
-          raise ::Foreman::Exception.new(N_("Please ensure the ipxe-bootimgs and syslinux packages are installed."))
+        unless File.exists?(File.join(Setting[:bootdisk_isolinux_dir], 'isolinux.bin'))
+          raise ::Foreman::Exception.new(N_("Please ensure the isolinux/syslinux package(s) are installed."))
         end
-        FileUtils.cp(File.join(Setting[:bootdisk_syslinux_dir], 'isolinux.bin'), File.join(wd, 'build', 'isolinux.bin'))
+        FileUtils.cp(File.join(Setting[:bootdisk_isolinux_dir], 'isolinux.bin'), File.join(wd, 'build', 'isolinux.bin'))
         if File.exist?(File.join(Setting[:bootdisk_syslinux_dir], 'ldlinux.c32'))
           FileUtils.cp(File.join(Setting[:bootdisk_syslinux_dir], 'ldlinux.c32'), File.join(wd, 'build', 'ldlinux.c32'))
         end
@@ -56,7 +56,7 @@ class ForemanBootdisk::ISOGenerator
 
       if opts[:ipxe]
         unless File.exists?(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn'))
-          raise ::Foreman::Exception.new(N_("Please ensure the ipxe-bootimgs and syslinux packages are installed."))
+          raise ::Foreman::Exception.new(N_("Please ensure the ipxe-bootimgs package is installed."))
         end
         FileUtils.cp(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn'), File.join(wd, 'build', 'ipxe'))
         File.open(File.join(wd, 'build', 'script'), 'w') { |file| file.write(opts[:ipxe]) }
