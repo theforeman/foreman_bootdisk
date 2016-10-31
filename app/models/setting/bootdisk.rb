@@ -23,4 +23,8 @@ class Setting::Bootdisk< ::Setting
     true
 
   end
+
+  def self.humanized_category
+    N_('Boot disk')
+  end
 end
