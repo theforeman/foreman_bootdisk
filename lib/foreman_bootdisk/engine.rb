@@ -52,7 +52,8 @@ module ForemanBootdisk
 
         security_block :bootdisk do |map|
           permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :subnet, :help],
-                                          :'foreman_bootdisk/api/v2/disks' => [:generic, :host]}
+                                          :'foreman_bootdisk/api/v2/disks' => [:generic, :host],
+                                          :'foreman_bootdisk/api/v2/subnet_disks' => [:subnet]}
         end
 
         role "Boot disk access", [:download_bootdisk]
