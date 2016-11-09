@@ -16,4 +16,5 @@ locale/*/*.pox
 tags
 TAGS
 .foreman_app
-bootloaders
+/bootloaders
+/foreman_bootdisk*gem
