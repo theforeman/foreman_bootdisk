@@ -1,6 +1,7 @@
 require 'test_plugin_helper'
 
 class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
+  include ForemanBootdiskTestHelper
   setup :setup_bootdisk
 
   test "should generate generic image" do
@@ -12,6 +13,7 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
   end
 
   describe "#host" do
+    setup :setup_referer
     setup :setup_org_loc
     setup :setup_subnet
     setup :setup_host
@@ -44,6 +46,7 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
   end
 
   describe "#host without tftp" do
+    setup :setup_referer
     setup :setup_org_loc
     setup :setup_subnet_no_tftp
     setup :setup_host

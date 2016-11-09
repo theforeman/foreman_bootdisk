@@ -1,9 +1,11 @@
 require 'test_plugin_helper'
 
 class ForemanBootdisk::Api::V2::SubnetDisksControllerTest < ActionController::TestCase
+  include ForemanBootdiskTestHelper
   setup :setup_bootdisk
 
   describe "#subnet_host" do
+    setup :setup_referer
     setup :setup_org_loc
     setup :setup_subnet
     setup :setup_host
