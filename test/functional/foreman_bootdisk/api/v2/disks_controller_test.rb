@@ -1,6 +1,7 @@
 require 'test_plugin_helper'
 
 class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
+  include ForemanBootdiskTestHelper
   setup :setup_bootdisk
 
   test "should generate generic image" do
@@ -12,6 +13,7 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
   end
 
   describe "#host" do
+    setup :setup_referer
     setup :setup_host_env
 
     test "should generate host image" do

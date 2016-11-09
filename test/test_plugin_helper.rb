@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ActionController::TestCase
+module ForemanBootdiskTestHelper
   def setup_bootdisk
     setup_routes
     setup_settings
@@ -25,9 +25,12 @@ class ActionController::TestCase
     load File.join(File.dirname(__FILE__), '..', 'db', 'seeds.d', '50-bootdisk_templates.rb')
   end
 
+  def setup_referer
+    request.env["HTTP_REFERER"] = "/history"
+  end
+
   def setup_org_loc
     disable_orchestration
-    request.env["HTTP_REFERER"] = "/history"
     @org, @loc = FactoryGirl.create(:organization), FactoryGirl.create(:location)
   end
 

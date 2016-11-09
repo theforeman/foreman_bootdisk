@@ -10,7 +10,7 @@ class ForemanBootdisk::ISOGenerator
   def self.generate_full_host(host, opts = {}, &block)
     raise ::Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
-    tmpl = host.send(:generate_pxe_template)
+    tmpl = host.send(:generate_pxe_template, :PXELinux)
     raise ::Foreman::Exception.new(N_('Unable to generate disk template: %s'), host.errors.full_messages.to_sentence) if tmpl == false
 
     # pxe_files and filename conversion is utterly bizarre
