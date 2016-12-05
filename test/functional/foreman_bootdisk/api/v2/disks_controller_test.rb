@@ -12,9 +12,7 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
   end
 
   describe "#host" do
-    setup :setup_org_loc
-    setup :setup_subnet
-    setup :setup_host
+    setup :setup_host_env
 
     test "should generate host image" do
       ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk host template/))).yields("temp ISO")
@@ -30,6 +28,27 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
       get :host, {:id => @host.name, :full => true}
       assert_response :success
       assert_equal "ISO image", @response.body
+    end
+  end
+
+  describe "default API version 2" do
+    setup :setup_host_env
+
+    test "path - /api/hosts/:host_id routes to #host" do
+      assert_routing "/api/hosts/#{@host.id}",
+                     :format     => "json",
+                     :apiv       => "v2",
+                     :controller => "foreman_bootdisk/api/v2/disks",
+                     :action     => "host",
+                     :id         => @host.id.to_s
+    end
+
+    test "path - /api/generic routes to #generic" do
+      assert_routing "/api/generic",
+                     :format     => "json",
+                     :apiv       => "v2",
+                     :controller => "foreman_bootdisk/api/v2/disks",
+                     :action     => "generic"
     end
   end
 end

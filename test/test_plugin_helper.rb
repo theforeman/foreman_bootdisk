@@ -7,6 +7,12 @@ class ActionController::TestCase
     setup_templates
   end
 
+  def setup_host_env
+    setup_org_loc
+    setup_subnet
+    setup_host
+  end
+
   def setup_routes
     @routes = ForemanBootdisk::Engine.routes
   end

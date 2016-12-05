@@ -10,7 +10,7 @@ ForemanBootdisk::Engine.routes.draw do
   end
 
   namespace :api, :defaults => {:format => 'json'} do
-    scope "(:apiv)", :module => :v2, :defaults => {:apiv => 'v2'}, :apiv => /v1|v2/, :constraints => ApiConstraints.new(:version => 2) do
+    scope "(:apiv)", :module => :v2, :defaults => {:apiv => 'v2'}, :apiv => /v1|v2/, :constraints => ApiConstraints.new(:version => 2, :default => true) do
       get 'generic', :to => 'disks#generic'
       constraints(:id => /[^\/]+/) do
         get 'hosts/:id', :to => 'disks#host'
