@@ -33,6 +33,14 @@ module ForemanBootdisk::HostExt
     managed? && bootdisk_build? && SETTINGS[:unattended]
   end
 
+  def bootdisk_downloadable?
+    architecture.blank? || intel_arch?
+  end
+
+  def intel_arch?
+    /i.86|x86[_-]64/ =~ architecture.name
+  end
+
   def validate_media_with_bootdisk?
     validate_media_without_bootdisk? || (managed && bootdisk_build? && build?)
   end

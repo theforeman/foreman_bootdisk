@@ -6,20 +6,34 @@ module ForemanBootdisk::HostsHelperExt
   end
 
   def host_title_actions_with_bootdisk(*args)
-    title_actions(
-      button_group(
-        select_action_button(_('Boot disk'), {:class => 'btn btn-group'},
-          display_bootdisk_link_if_authorized(_("Host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'host', :id => @host}, :class=>'la'),
-          display_bootdisk_link_if_authorized(_("Full host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'full_host', :id => @host}, :class=>'la'),
-          content_tag(:li, "", :class => "divider"),
-          display_bootdisk_link_if_authorized(_("Generic image"), {:controller => 'foreman_bootdisk/disks', :action => 'generic'}, :class=>'la'),
-          display_bootdisk_for_subnet,
-          content_tag(:li, "", :class => "divider"),
-          display_bootdisk_link_if_authorized(_("Help"), {:controller => 'foreman_bootdisk/disks', :action => 'help'}, :class=>'la')
+    if @host.bootdisk_downloadable?
+      title_actions(
+        button_group(
+          select_action_button(_('Boot disk'), {:class => 'btn btn-group'},
+            display_bootdisk_link_if_authorized(_("Host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'host', :id => @host}, :class=>'la'),
+            display_bootdisk_link_if_authorized(_("Full host '%s' image") % @host.name.split('.')[0], {:controller => 'foreman_bootdisk/disks', :action => 'full_host', :id => @host}, :class=>'la'),
+            content_tag(:li, "", :class => "divider"),
+            display_bootdisk_link_if_authorized(_("Generic image"), {:controller => 'foreman_bootdisk/disks', :action => 'generic'}, :class=>'la'),
+            display_bootdisk_for_subnet,
+            content_tag(:li, "", :class => "divider"),
+            display_bootdisk_link_if_authorized(_("Help"), {:controller => 'foreman_bootdisk/disks', :action => 'help'}, :class=>'la')
+          )
         )
       )
-    )
+    else
+      bootdisk_button_disabled
+    end
+
     host_title_actions_without_bootdisk(*args)
+  end
+
+  def bootdisk_button_disabled
+    title_actions(
+      button_group(
+        link_to(_("Boot disk"), '#', :disabled => true, :class => 'btn btn-default',
+                :title => _("Boot disk download not available for %s architecture") % @host.architecture.name)
+      )
+    )
   end
 
   # need to wrap this one in a test for template proxy presence
