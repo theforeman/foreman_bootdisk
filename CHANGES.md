@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.0
+* add separate ISOLINUX dir setting for Debian OSes (#14896)
+* add friendly setting category name for Foreman 1.14
+* change default API version to v2
+* fix missing subnet boot disk API permission
+
 ## v8.0.2
 * fix truncation of filenames with suffixes for ISO9660
 * replace deprecated pxe_render call for Foreman 1.14
