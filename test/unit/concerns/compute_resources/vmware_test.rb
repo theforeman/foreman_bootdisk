@@ -10,6 +10,7 @@ class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
     test "does not call clone_vm when bootdisk provisioning" do
       args = { "provision_method" => "bootdisk" }
       mock_vm = mock('vm')
+      mock_vm.stubs(:firmware)
       mock_vm.expects(:save).returns(mock_vm)
       @cr.stubs(:parse_networks).returns(args)
       @cr.expects(:clone_vm).times(0)
