@@ -1,4 +1,6 @@
 class Setting::Bootdisk< ::Setting
+  BLANK_ATTRS << "bootdisk_efiboot_dir"
+
   def self.load_defaults
     return unless ActiveRecord::Base.connection.table_exists?('settings')
     return unless super
@@ -13,6 +15,7 @@ class Setting::Bootdisk< ::Setting
         self.set('bootdisk_ipxe_dir', N_('Path to directory containing iPXE images'), ipxe, N_('iPXE directory')),
         self.set('bootdisk_isolinux_dir', N_('Path to directory containing isolinux images'), isolinux, N_('ISOLINUX directory')),
         self.set('bootdisk_syslinux_dir', N_('Path to directory containing syslinux images'), syslinux, N_('SYSLINUX directory')),
+        self.set('bootdisk_efiboot_dir', N_('Path to directory containing efiboot.img and grubx64.efi (leave empty for BIOS only)'), '', N_('EFI directory')),
         self.set('bootdisk_host_template', N_('iPXE template to use for host-specific boot disks'), 'Boot disk iPXE - host', N_('Host image template'), nil, :collection => templates),
         self.set('bootdisk_generic_host_template', N_('iPXE template to use for generic host boot disks'), 'Boot disk iPXE - generic host', N_('Generic image template'), nil, :collection => templates),
         self.set('bootdisk_mkiso_command', N_('Command to generate ISO image, use genisoimage or mkisofs'), 'genisoimage', N_('ISO generation command')),

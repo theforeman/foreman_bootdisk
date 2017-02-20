@@ -10,8 +10,9 @@ class ForemanBootdisk::ISOGenerator
   def self.generate_full_host(host, opts = {}, &block)
     raise ::Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
-    tmpl = host.send(:generate_pxe_template)
-    raise ::Foreman::Exception.new(N_('Unable to generate disk template: %s'), host.errors.full_messages.to_sentence) if tmpl == false
+    pxelinux_template = host.send(:generate_pxe_template, :PXELinux)
+    pxegrub2_template = host.send(:generate_pxe_template, :PXEGrub2) if Setting[:bootdisk_efiboot_dir].present?
+    raise ::Foreman::Exception.new(N_('Unable to generate disk template: %s'), host.errors.full_messages.to_sentence) if pxelinux_template == false
 
     # pxe_files and filename conversion is utterly bizarre
     # aim to convert filenames to something usable under ISO 9660, update the template to match
@@ -21,13 +22,14 @@ class ForemanBootdisk::ISOGenerator
       bootfile_info.map do |f|
         suffix = f[1].split('/').last
         iso_f0 = iso9660_filename(f[0].to_s + '_' + suffix)
-        tmpl.gsub!(f[0].to_s + '-' + suffix, iso_f0)
+        pxelinux_template.gsub!(f[0].to_s + '-' + suffix, iso_f0)
+        pxegrub2_template.gsub!(f[0].to_s + '-' + suffix, '/' + iso_f0) if pxegrub2_template
         ForemanBootdisk.logger.debug("Boot file #{iso_f0}, source #{f[1]}")
         [iso_f0, f[1]]
       end
     end
 
-    generate(opts.merge(:isolinux => tmpl, :files => files), &block)
+    generate(opts.merge(:isolinux => pxelinux_template, :grub => pxegrub2_template, :files => files), &block)
   end
 
   def self.generate(opts = {}, &block)
@@ -75,13 +77,30 @@ class ForemanBootdisk::ISOGenerator
             else
               File.join(wd, 'output.iso')
             end
-      unless system("#{Setting[:bootdisk_mkiso_command]} -o #{iso} -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
-        raise ::Foreman::Exception.new(N_("ISO build failed"))
+
+      if opts[:grub]
+        FileUtils.mkdir_p(File.join(wd, 'build', 'EFI', 'BOOT'))
+        ['efiboot.img', 'grubx64.efi'].each do |file|
+          FileUtils.cp(File.join(Setting[:bootdisk_efiboot_dir], file), File.join(wd, 'build', 'EFI', 'BOOT', file))
+        end
+        File.open(File.join(wd, 'build', 'EFI', 'BOOT', 'grub.cfg'), 'w') do |file|
+          file.write(opts[:grub])
+        end
+        efiopts = "-eltorito-alt-boot -e EFI/BOOT/efiboot.img -no-emul-boot"
+        isohybrid_command = "isohybrid --uefi #{iso}"
+      else
+        efiopts = ''
+        isohybrid_command = "isohybrid #{iso}"
+      end
+
+      mkiso_command = "#{Setting[:bootdisk_mkiso_command]} -o #{iso} -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{efiopts} #{File.join(wd, 'build')}"
+      unless system(mkiso_command)
+        raise ::Foreman::Exception.new(N_("ISO build failed") + ': ' + mkiso_command)
       end
 
       # Make the ISO bootable as a HDD/USB disk too
-      unless system("isohybrid", iso)
-        raise ::Foreman::Exception.new(N_("ISO hybrid conversion failed"))
+      unless system(isohybrid_command)
+        raise ::Foreman::Exception.new(N_("ISO hybrid conversion failed") + ': ' + isohybrid_command)
       end
 
       yield iso
