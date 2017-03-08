@@ -43,6 +43,7 @@ gPXE images are unsupported due to lack of initrd support.
 | >= 1.9          | ~> 6.0         |
 | >= 1.11         | >= 6.1, < 8.0  |
 | >= 1.12         | ~> 8.0         |
+| >= 1.13         | ~> 9.0         |
 
 # Usage
 
