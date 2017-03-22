@@ -1,5 +1,10 @@
 # Changelog
 
+## v9.0.0
+* add missing bootdisk helpers for template previews (#17893)
+* disable boot disk button on non-Intel architectures (#17497)
+* fix TFTP menu setup on Foreman 1.13 when creating full host disks
+
 ## v8.1.0
 * add separate ISOLINUX dir setting for Debian OSes (#14896)
 * add friendly setting category name for Foreman 1.14

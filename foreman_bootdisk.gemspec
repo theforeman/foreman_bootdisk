@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   # duplicated in locale/gemspec.rb
   s.description = "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
   s.homepage = "http://github.com/theforeman/foreman_bootdisk"
-  s.licenses = ["GPL-3"]
+  s.licenses = ["GPL-3.0"]
   s.require_paths = ["lib"]
 
   s.authors = ["Dominic Cleal"]

@@ -1,3 +1,3 @@
 module ForemanBootdisk
-  VERSION = '8.1.0'
+  VERSION = '9.0.0'
 end
