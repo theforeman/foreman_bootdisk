@@ -14,7 +14,7 @@ module ForemanBootdisk
       end
 
       ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
-        send_data File.read(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
+        send_data read_file(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
       end
     end
 
@@ -29,14 +29,14 @@ module ForemanBootdisk
       end
 
       ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
-        send_data File.read(iso), :filename => "#{host.name}.iso"
+        send_data read_file(iso), :filename => "#{host.name}.iso"
       end
     end
 
     def full_host
       host = @disk
       ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
-        send_data File.read(iso), :filename => "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
+        send_data read_file(iso), :filename => "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
       end
     end
 
@@ -53,7 +53,7 @@ module ForemanBootdisk
       end
 
       ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
-        send_data File.read(iso), :filename => "bootdisk_subnet_#{subnet.name}.iso"
+        send_data read_file(iso), :filename => "bootdisk_subnet_#{subnet.name}.iso"
       end
     end
 
@@ -61,6 +61,10 @@ module ForemanBootdisk
     end
 
     private
+
+    def read_file(filename)
+      File.read(filename)
+    end
 
     def resource_scope(controller = controller_name)
       Host::Managed.authorized(:view_hosts)

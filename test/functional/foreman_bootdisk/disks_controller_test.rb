@@ -6,7 +6,7 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
 
   test "should generate generic image" do
     ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk generic host template/))).yields("temp ISO")
-    File.expects(:read).with("temp ISO").returns("ISO image")
+    @controller.expects(:read_file).with("temp ISO").returns("ISO image")
     get :generic, {}, set_session_user
     assert_response :success
     assert_equal "ISO image", @response.body
@@ -20,7 +20,7 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
 
     test "should generate host image" do
       ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk host template/))).yields("temp ISO")
-      File.expects(:read).with("temp ISO").returns("ISO image")
+      @controller.expects(:read_file).with("temp ISO").returns("ISO image")
       get :host, {:id => @host.name}, set_session_user
       assert_response :success
       assert_equal "ISO image", @response.body
@@ -28,7 +28,7 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
 
     test "should generate full host image" do
       ForemanBootdisk::ISOGenerator.expects(:generate_full_host).with(@host).yields("temp ISO")
-      File.expects(:read).with("temp ISO").returns("ISO image")
+      @controller.expects(:read_file).with("temp ISO").returns("ISO image")
       get :full_host, {:id => @host.name}, set_session_user
       assert_response :success
       assert_equal "ISO image", @response.body
@@ -37,7 +37,7 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
     test "should generate subnet image" do
       ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk generic host template/))).yields("temp ISO")
       ForemanBootdisk::Renderer.any_instance.stubs(:bootdisk_chain_url).yields("http://smart-proxy.lan")
-      File.expects(:read).with("temp ISO").returns("ISO image")
+      @controller.expects(:read_file).with("temp ISO").returns("ISO image")
       get :subnet, {:id => @host.name}, set_session_user
       assert_empty flash[:error]
       assert_response :success
