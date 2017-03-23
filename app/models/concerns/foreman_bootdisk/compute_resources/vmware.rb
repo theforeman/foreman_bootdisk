@@ -1,19 +1,12 @@
 module ForemanBootdisk
   module ComputeResources
     module Vmware
-      extend ActiveSupport::Concern
-
-      included do
-        alias_method_chain :capabilities, :bootdisk
-        alias_method_chain :parse_args, :bootdisk
+      def capabilities
+        super + [:bootdisk]
       end
 
-      def capabilities_with_bootdisk
-        capabilities_without_bootdisk + [:bootdisk]
-      end
-
-      def parse_args_with_bootdisk(args = {})
-        args = parse_args_without_bootdisk args
+      def parse_args(args = {})
+        args = super
         if args[:provision_method] == 'bootdisk'
           args[:cdroms] = [new_cdrom]
           args[:boot_order] = ['cdrom', 'disk']

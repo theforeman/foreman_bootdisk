@@ -1,11 +1,5 @@
 module ForemanBootdisk::HostsHelperExt
-  extend ActiveSupport::Concern
-
-  included do
-    alias_method_chain :host_title_actions, :bootdisk
-  end
-
-  def host_title_actions_with_bootdisk(*args)
+  def host_title_actions(*args)
     if @host.bootdisk_downloadable?
       title_actions(
         button_group(
@@ -24,7 +18,7 @@ module ForemanBootdisk::HostsHelperExt
       bootdisk_button_disabled
     end
 
-    host_title_actions_without_bootdisk(*args)
+    super
   end
 
   def bootdisk_button_disabled
