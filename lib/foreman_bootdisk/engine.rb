@@ -48,7 +48,7 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 1.13'
+        requires_foreman '>= 1.15'
 
         security_block :bootdisk do |map|
           permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :subnet, :help],
@@ -57,6 +57,8 @@ module ForemanBootdisk
         end
 
         role "Boot disk access", [:download_bootdisk]
+
+        add_all_permissions_to_default_roles
 
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
         apipie_documented_controllers ["#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"]
