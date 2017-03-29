@@ -9,6 +9,10 @@ Boot images are written as hybrid ISO images (usable as ISOs or USB disks),
 and booted either from physical media or virtual disk/CDROM (via a lights out
 management device).
 
+# Supported hardware
+
+Before you start, see our [hardware compatibility list](HARDWARE.md).
+
 # Installation
 
 Please see the Foreman manual for appropriate instructions:
