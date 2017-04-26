@@ -10,8 +10,8 @@ module ForemanBootdisk
           api_base_url "/bootdisk/api"
         end
 
-        before_filter :find_resource, :only => :host
-        skip_after_filter :log_response_body
+        before_action :find_resource, :only => :host
+        skip_after_action :log_response_body
 
         # no-op, but required for apipie documentation
         api :GET, '', N_('Boot disks')

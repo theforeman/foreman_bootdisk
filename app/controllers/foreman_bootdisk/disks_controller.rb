@@ -2,7 +2,7 @@ require 'uri'
 
 module ForemanBootdisk
   class DisksController < ::ApplicationController
-    before_filter :find_resource, :only => %w[host full_host subnet]
+    before_action :find_resource, :only => %w[host full_host subnet]
 
     def generic
       begin
