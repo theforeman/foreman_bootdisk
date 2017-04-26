@@ -66,7 +66,7 @@ class ForemanBootdisk::HostTest < ActiveSupport::TestCase
     test 'should be true if architecture is absent' do
       host = FactoryGirl.build(:host, :managed, :architecture => nil)
 
-      assert_equal host.architecture, nil
+      assert_nil host.architecture
       assert host.bootdisk_downloadable?
     end
   end
