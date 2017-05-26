@@ -121,7 +121,7 @@ TFTP settings are needed.
   <tr>
     <td>Full host image</td>
     <td>No</td>
-    <td>Yes</td>
+    <td>No (*)</td>
     <td>No</td>
     <td>Yes</td>
     <td>Yes</td>
@@ -143,6 +143,8 @@ TFTP settings are needed.
     <td>No</td>
   </tr>
 </table>
+
+(*) - Foreman 1.14 or older do require DHCP
 
 ### Per-host images
 
