@@ -18,6 +18,7 @@ ProvisioningTemplate.without_auditing do
     :template => content,
     :default  => true,
     :vendor   => "Foreman boot disk",
+    :preview_enabled => false
   }
   tmpl.locked = true
   tmpl.save!(:validate => false) if tmpl.changes.present?
@@ -35,6 +36,7 @@ ProvisioningTemplate.without_auditing do
     :template => content,
     :default  => true,
     :vendor   => "Foreman boot disk",
+    :preview_enabled => false
   }
   tmpl.locked = true
   tmpl.save!(:validate => false) if tmpl.changes.present?
