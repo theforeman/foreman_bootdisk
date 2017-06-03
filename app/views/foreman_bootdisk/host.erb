@@ -42,6 +42,7 @@ set domain <%= interface.domain.to_s %>
 
 # Chainload from Foreman rather than embedding OS info here, so the behaviour
 # is entirely dynamic.
+sleep 5
 chain <%= bootdisk_chain_url %>
 exit 0
 
