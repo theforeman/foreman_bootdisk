@@ -32,6 +32,7 @@ class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
       mock_client.expects(:servers).returns(mock_servers)
       mock_servers.expects(:new).with() do |args|
         assert_equal args[:boot_order], ['cdrom', 'disk']
+        assert_equal args[:boot_retry], 10
         assert_includes args[:cdroms], mock_cdrom
       end
       @cr.expects(:new_cdrom).returns(mock_cdrom)
@@ -60,6 +61,7 @@ class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
         :provision_method => 'bootdisk',
         :cdroms => [mock_cdrom],
         :boot_order => ['cdrom', 'disk'],
+        :boot_retry => 10
       }
       assert_equal attrs_out, @cr.parse_args(attrs_in)
     end
