@@ -10,8 +10,6 @@ bootdisk_raise(N_('Host has no provisioning interface defined')) unless interfac
 bootdisk_raise(N_('Host has no IP address defined')) if interface.ip.nil? || interface.ip.empty?
 bootdisk_raise(N_('Host has no subnet defined')) unless interface.subnet
 bootdisk_raise(N_('Host has no domain defined')) unless interface.domain
-bootdisk_raise(N_('Subnet (%s) has no gateway defined'), interface.subnet) if interface.subnet.gateway.nil? || interface.subnet.gateway.empty?
-bootdisk_raise(N_('Subnet (%s) has no primary DNS server defined'), interface.subnet) if interface.subnet.dns_primary.nil? || interface.subnet.dns_primary.empty?
 %>
 
 echo Foreman Bootdisk: Host image (<%= @host.name %>)
@@ -31,14 +29,18 @@ echo Configuring net${idx} for static IP address <%= interface.ip %>
 ifopen net${idx}
 set netX/ip <%= interface.ip %>
 set netX/netmask <%= interface.subnet.mask %>
+<% if interface.subnet.gateway.present? %>
 set netX/gateway <%= interface.subnet.gateway %>
+<% end %>
 ifstat net${idx}
 route
 
+<% if interface.subnet.dns_primary.present? %>
 # Note, iPXE can only use one DNS server
 echo Using DNS <%= interface.subnet.dns_primary %>
 set dns <%= interface.subnet.dns_primary %>
 set domain <%= interface.domain.to_s %>
+<% end %>
 
 # Chainload from Foreman rather than embedding OS info here, so the behaviour
 # is entirely dynamic.
