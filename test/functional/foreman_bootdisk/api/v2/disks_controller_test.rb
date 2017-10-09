@@ -37,7 +37,12 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
     setup :setup_host_env
 
     test "path - /api/hosts/:host_id routes to #host" do
-      assert_routing "/api/hosts/#{@host.id}",
+      if Rails::VERSION::MAJOR >= 5
+        expected_path = "/api/v2/hosts/#{@host.id}"
+      else
+        expected_path = "/api/hosts/#{@host.id}"
+      end
+      assert_routing expected_path,
                      :format     => "json",
                      :apiv       => "v2",
                      :controller => "foreman_bootdisk/api/v2/disks",
