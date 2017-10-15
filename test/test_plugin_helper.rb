@@ -35,7 +35,8 @@ module ForemanBootdiskTestHelper
   end
 
   def setup_subnet
-    @subnet = FactoryGirl.create(:subnet_ipv4, :tftp, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
+    tftp_proxy = FactoryGirl.create(:smart_proxy, :features => [FactoryGirl.create(:tftp_feature)])
+    setup_subnet_no_tftp.update! :tftp => tftp_proxy
   end
 
   def setup_subnet_no_tftp
