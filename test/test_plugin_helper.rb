@@ -31,20 +31,20 @@ module ForemanBootdiskTestHelper
 
   def setup_org_loc
     disable_orchestration
-    @org, @loc = FactoryGirl.create(:organization), FactoryGirl.create(:location)
+    @org, @loc = FactoryBot.create(:organization), FactoryBot.create(:location)
   end
 
   def setup_subnet
-    tftp_proxy = FactoryGirl.create(:smart_proxy, :features => [FactoryGirl.create(:tftp_feature)])
+    tftp_proxy = FactoryBot.create(:smart_proxy, :features => [FactoryBot.create(:tftp_feature)])
     setup_subnet_no_tftp.update! :tftp => tftp_proxy
   end
 
   def setup_subnet_no_tftp
-    @subnet = FactoryGirl.create(:subnet_ipv4, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
+    @subnet = FactoryBot.create(:subnet_ipv4, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
   end
 
   def setup_host
-    @host = FactoryGirl.create(:host, :managed, :subnet => @subnet, :ip => @subnet.network.sub(/0$/, '4'), :organization => @org, :location => @loc)
+    @host = FactoryBot.create(:host, :managed, :subnet => @subnet, :ip => @subnet.network.sub(/0$/, '4'), :organization => @org, :location => @loc)
   end
 
 end

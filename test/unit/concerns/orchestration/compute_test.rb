@@ -3,8 +3,8 @@ require 'test_plugin_helper'
 class ForemanBootdisk::OrchestrationComputeTest < ActiveSupport::TestCase
   setup do
     disable_orchestration
-    @cr = FactoryGirl.build(:vmware_cr)
-    @host = FactoryGirl.build(:host, :managed,
+    @cr = FactoryBot.build(:vmware_cr)
+    @host = FactoryBot.build(:host, :managed,
                              :compute_resource => @cr,
                              :provision_method => "bootdisk",
                              )
@@ -37,7 +37,7 @@ class ForemanBootdisk::OrchestrationComputeTest < ActiveSupport::TestCase
   end
 
   test "should skip rebuild bootdisk" do
-    host = FactoryGirl.build(:host,
+    host = FactoryBot.build(:host,
                              :compute_resource => @cr
                              )
     host.expects(:bootdisk_generate_iso_image).never

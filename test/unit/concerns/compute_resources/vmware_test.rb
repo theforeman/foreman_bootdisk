@@ -3,7 +3,7 @@ require 'test_plugin_helper'
 class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
   describe "#create_vm" do
     setup do
-      @cr = FactoryGirl.build(:vmware_cr)
+      @cr = FactoryBot.build(:vmware_cr)
       @cr.stubs(:test_connection)
     end
 
@@ -21,7 +21,7 @@ class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
 
   describe "#new_vm" do
     setup do
-      @cr = FactoryGirl.build(:vmware_cr)
+      @cr = FactoryBot.build(:vmware_cr)
     end
 
     test "calls client with cdrom drive and correct boot order when bootdisk provisioning" do
@@ -46,7 +46,7 @@ class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
 
   describe "#parse_args" do
     setup do
-      @cr = FactoryGirl.build(:vmware_cr)
+      @cr = FactoryBot.build(:vmware_cr)
     end
 
     test "should add a cdrom drive while keeping other parameters when provision_method is bootdisk" do
@@ -69,7 +69,7 @@ class ForemanBootdisk::VmwareTest < ActiveSupport::TestCase
 
   describe "#capabilities" do
     setup do
-      @cr = FactoryGirl.build(:vmware_cr)
+      @cr = FactoryBot.build(:vmware_cr)
     end
 
     test "should include bootdisk" do
