@@ -1,4 +1,5 @@
 require 'net/http'
+require 'net/ftp'
 require 'tempfile'
 require 'tmpdir'
 require 'uri'
@@ -108,6 +109,20 @@ class ForemanBootdisk::ISOGenerator
       if use_cache && !(contents = Rails.cache.fetch(uri, :raw => true)).nil?
         ForemanBootdisk.logger.info("Retrieved #{uri} from local cache (use foreman-rake tmp:cache:clear to empty)")
         file.write(contents)
+      elsif URI(uri).scheme == "ftp"
+        ForemanBootdisk.logger.info("Fetching from ftp #{uri}")
+        write_cache = use_cache
+        uri = URI(uri)
+        filename = uri.path.split("/").last
+        Net::FTP.open(uri.host) do |ftp|
+          ftp.passive = true
+          ftp.login
+          remote_dir = File.dirname(uri.path)
+          ftp.chdir(remote_dir) unless remote_dir == '.'
+          ftp.getbinaryfile(filename, nil, @ftp_data_chunk_size) do |chunk|
+            file.write chunk
+          end
+        end
       else
         ForemanBootdisk.logger.info("Fetching #{uri}")
         write_cache = use_cache
