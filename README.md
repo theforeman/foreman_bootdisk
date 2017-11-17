@@ -67,6 +67,10 @@ preconfigured and have a per-host image attached before first boot. This allows
 a fully automated provisioning of hosts via ISO boot. This feature can be used by
 selecting the Bootdisk Based provisioning method under the OS tab when creating
 the host, or by setting provision_method: "bootdisk" using the API.
+Foreman will create an ISO image as part of the orchestration. This image is then
+uploaded to a VMWare datastore and attached to the VM.
+The user you configured during compute resource setup needs the permissions
+`Datastore > Browse Datastore` and `Datastore >  Low level file operations`.
 
 ## Templates
 
