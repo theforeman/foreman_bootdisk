@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-24 09:54+0000\n"
+"PO-Revision-Date: 2017-09-20 11:08+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
+msgstr "디스크 내부에 내장된 OS 부트로더를 포함하는 호스트별 이미지의 변형입니다. 특정 하드웨어에서 체인로딩이 실패할 경우 유용할 수 있지만 OS, 부트로더 또는 PXELinux 템플릿이 변경될 때마다 이미지를 다시 생성해야 한다는 단점이 있습니다."
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "모든 이미지는 `dd`로 USB 디스크에 기록되는 것을 포함하여 ISO 또는 디스크 이미지 중 하나로 사용할 수 있습니다. "
@@ -32,6 +32,9 @@ msgid "Boot disk"
 msgstr "부팅 디스크 "
 
 msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
@@ -50,7 +53,7 @@ msgid "Download host image"
 msgstr "호스트 이미지 다운로드 "
 
 msgid "Download subnet generic image"
-msgstr ""
+msgstr "서브넷 일반 이미지 다운로드"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
@@ -59,7 +62,7 @@ msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr ""
 
 msgid "Failed to render boot disk template"
-msgstr ""
+msgstr "부팅 디스크 템플릿을 렌더링하지 못했습니다."
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
@@ -95,7 +98,7 @@ msgid "Host has no domain defined"
 msgstr "호스트에 지정된 도메인이 없습니다 "
 
 msgid "Host has no provisioning interface defined"
-msgstr ""
+msgstr "호스트에 프로비저닝 인터페이스가 정의되어 있지 않습니다."
 
 msgid "Host has no subnet defined"
 msgstr "호스트에 지정된 서브넷이 없습니다 "
@@ -155,7 +158,7 @@ msgid "SYSLINUX directory"
 msgstr ""
 
 msgid "Subnet '%s' generic image"
-msgstr ""
+msgstr "'%s' 서브넷 일반 이미지"
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "서브넷 (%s)에 지정된 게이트웨이가 없습니다 "
@@ -164,25 +167,25 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "서브넷 (%s)에 지정된 1차 DNS 서버가 없습니다 "
 
 msgid "Subnet boot disks"
-msgstr ""
+msgstr "서브넷 부팅 디스크"
 
 msgid "Subnet image"
-msgstr ""
+msgstr "서브넷 이미지"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
-msgstr ""
+msgstr "서브넷 이미지는 일반 이미지와 유사하지만 체인로딩이 호스트의 서브넷에 할당된 TFTP 스마트 프록시를 통해 수행됩니다. 스마트 프록시에는 \"템플릿\" 모듈이 활성화되고 구성되어 있어야 합니다."
 
 msgid "Subnet is not assigned to the host %s"
-msgstr ""
+msgstr "%s 호스트에 서브넷이 할당되어 있지 않습니다."
 
 msgid "TFTP feature not enabled for subnet %s"
-msgstr ""
+msgstr "%s 서브넷에 대해 TFTP 기능이 활성화되어 있지 않습니다."
 
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "OS 설치는 Foreman에 설정된 설치 미디어를 계속 사용하며 OS iPXE 템플릿의 설정 방법에 따라 일반적으로 정적 네트워크를 설정합니다. "
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
-msgstr ""
+msgstr "이 이미지는 해당 서브넷에 프로비저닝 NIC가 있는 모든 호스트에 공통적으로 사용됩니다."
 
 msgid "True for full, false for basic reusable image"
 msgstr "전체 이미지의 경우 True, 다시 사용할 수 있는 기본 이미지의 경우 False"

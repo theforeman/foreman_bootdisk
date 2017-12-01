@@ -33,6 +33,9 @@ msgstr ""
 msgid "Boot disk based"
 msgstr ""
 
+msgid "Boot disk download not available for %s architecture"
+msgstr ""
+
 msgid "Boot disk embedded template"
 msgstr ""
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-24 09:54+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2017-11-20 20:46+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/"
 ")\n"
 "MIME-Version: 1.0\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
+msgstr "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、イメージを OS、ブートローダーまたは PXELinux テンプレートに変更がある場合にイメージを再生成する必要があります。"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "すべてのイメージは、`dd` で USB ディスクに書き込まれるものを含め、ISO またはディスクイメージのいずれかとして利用することができます。"
 
 msgid "Attach ISO image to CDROM drive for %s"
-msgstr ""
+msgstr "ISO イメージの %s の CDROM ドライブへの割り当て"
 
 msgid "Back"
 msgstr "戻る"
@@ -34,10 +34,13 @@ msgid "Boot disk"
 msgstr "ブートディスク"
 
 msgid "Boot disk based"
+msgstr "ブートディスクベース"
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "ブートディスクで組み込まれるテンプレート"
 
 msgid "Boot disks"
 msgstr "ブートディスク"
@@ -52,19 +55,19 @@ msgid "Download host image"
 msgstr "ホストイメージをダウンロード"
 
 msgid "Download subnet generic image"
-msgstr ""
+msgstr "サブネットの汎用イメージのダウンロード"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr ""
+msgstr "インスタンス %{name} の CDROM ドライブへの ISO イメージの割り当てに失敗しました: %{message}"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "インスタンス %{name} の ISO イメージの生成に失敗しました: %{message}"
 
 msgid "Failed to render boot disk template"
-msgstr ""
+msgstr "ブートディスクテンプレートのレンダリングに失敗しました"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "インスタンス %{name} の ISO イメージのアップロードに失敗しました: %{message}"
 
 msgid "Full host '%s' image"
 msgstr "Full host '%s' イメージ"
@@ -73,13 +76,13 @@ msgid "Full host image"
 msgstr "完全ホストイメージ"
 
 msgid "Generating ISO image for %s"
-msgstr ""
+msgstr "%s の ISO イメージを生成中"
 
 msgid "Generic image"
 msgstr "汎用イメージ"
 
 msgid "Generic image template"
-msgstr ""
+msgstr "汎用イメージテンプレート"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "汎用イメージは、Foreman に登録されたすべてのホストで機能する再利用可能なディスクイメージです。これを使用するには、基本的な DHCP および DNS サービスが機能し、サーバーと通信できることが必要になりますが、DHCP 予約や静的 IP アドレスは必要ありません。"
@@ -106,7 +109,7 @@ msgid "Host image"
 msgstr "ホストイメージ"
 
 msgid "Host image template"
-msgstr ""
+msgstr "ホストイメージテンプレート"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "ホストはビルドモードではないため、テンプレートはレンダリングすることができません"
@@ -115,16 +118,16 @@ msgid "ISO build failed"
 msgstr "ISO ビルドに失敗しました"
 
 msgid "ISO generation command"
-msgstr ""
+msgstr "ISO 生成コマンド"
 
 msgid "ISO hybrid conversion failed"
 msgstr "ISO ハイブリッド変換に失敗しました"
 
 msgid "ISOLINUX directory"
-msgstr ""
+msgstr "ISOLINUX ディレクトリー"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "インストールメディアのキャッシング"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "インストールメディアファイルは、完全なホストのイメージのためにキャッシュされます"
@@ -136,7 +139,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "iPXE イメージを含むディレクトリーのパス"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "isolinux イメージを含むディレクトリーへのパス"
 
 msgid "Path to directory containing syslinux images"
 msgstr "syslinux イメージを含むディレクトリーのパス"
@@ -145,19 +148,19 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "ホストごとのイメージには、Foreman に登録された特定ホストについてのデータが含まれ、これは完全に静的なネットワークをセットアップするため、DHCP の要件が排除されます。ネットワークの設定後、Foreman からチェーンロードが実行され、現在の OS 設定やビルド状態の情報がサーバーから取得されます。"
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "ipxe-bootimgs パッケージがインストールされていることを確認してください。"
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "isolinux/syslinux パッケージがインストールされていることを確認してください。"
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "PXE インストラクチャーなしにホストのプロビジョニングを行うための iPXE ベースのブートディスクを作成する Foreman のプラグインです。"
 
 msgid "SYSLINUX directory"
-msgstr ""
+msgstr "SYSLINUX ディレクトリー"
 
 msgid "Subnet '%s' generic image"
-msgstr ""
+msgstr "サブネット '%s' の汎用イメージ"
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "サブネット (%s) にはゲートウェイが定義されていません"
@@ -166,25 +169,25 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "サブネット (%s) にはプライマリー DNS サーバーが定義されていません"
 
 msgid "Subnet boot disks"
-msgstr ""
+msgstr "サブネットブートディスク"
 
 msgid "Subnet image"
-msgstr ""
+msgstr "サブネットイメージ"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
-msgstr ""
+msgstr "サブネットイメージは汎用イメージに似ていますが、チェーンロードは、ホストのサブネットに割り当てられる TFTP スマートプロキシーで実行されます。スマートプロキシーでは「テンプレート」を有効にし、設定する必要があります。"
 
 msgid "Subnet is not assigned to the host %s"
-msgstr ""
+msgstr "サブネットがホスト %s に割り当てられていません"
 
 msgid "TFTP feature not enabled for subnet %s"
-msgstr ""
+msgstr " TFTP 機能がサブネット %s に対して有効にされていません"
 
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "OS インストールは、Foreman で設定されたインストールメディアの使用を継続します。さらに、OS iPXE テンプレートの設定方法によりますが、通常は静的ネットワークを設定します。"
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
-msgstr ""
+msgstr "このイメージは、サブネットにプロビジョニング NIC が設定されたすべてのホストに対して汎用性があります。"
 
 msgid "True for full, false for basic reusable image"
 msgstr "完全イメージの場合は true、基本的な再利用可能イメージの場合は false"
@@ -196,13 +199,13 @@ msgid "Unable to generate disk template: %s"
 msgstr "ディスクテンプレートを生成することができません: %s"
 
 msgid "Upload ISO image to datastore for %s"
-msgstr ""
+msgstr "ISO イメージの %s のデータストアへのアップロード"
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "さまざまなタイプのブートディスクを作成して、PXE サービスなしにホストのプロビジョニングを実行できます。ブートディスクは、ディスクから起動し、Foreman と通信して OS インストールを開始するホスト (物理または仮想) に割り当てることができます。"
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "iPXE ディレクトリー"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "汎用のホストブートディスクに使用する iPXE テンプレート"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-10 15:13+0100\n"
-"PO-Revision-Date: 2016-10-10 15:13+0100\n"
+"POT-Creation-Date: 2017-12-01 14:36-0500\n"
+"PO-Revision-Date: 2017-12-01 14:36-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -52,37 +52,43 @@ msgstr ""
 msgid "Subnet is not assigned to the host %s"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/disks_controller.rb:70
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:74
 msgid "Failed to render boot disk template"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:11
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:6
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:27
+#: ../app/models/setting/bootdisk.rb:28
 msgid "Boot disk"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:12
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:7
 msgid "Host '%s' image"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:13
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:8
 msgid "Full host '%s' image"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:15
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:10
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:25
 msgid "Generic image"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:18
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:13
 msgid "Help"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:28
+msgid "Boot disk download not available for %s architecture"
+msgstr ""
+
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:36
 msgid "Subnet '%s' generic image"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/host_ext.rb:12
-#: ../app/services/foreman_bootdisk/renderer.rb:10
+#: ../app/models/concerns/foreman_bootdisk/host_ext.rb:5
+#: ../app/services/foreman_bootdisk/renderer.rb:11
 msgid "Unable to find template specified by %s setting"
 msgstr ""
 
@@ -291,11 +297,11 @@ msgstr ""
 msgid "Subnet (%s) has no primary DNS server defined"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:62
+#: ../lib/foreman_bootdisk/engine.rb:65
 msgid "Boot disk based"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:63
+#: ../lib/foreman_bootdisk/engine.rb:66
 msgid "Boot disk embedded template"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-24 09:54+0000\n"
+"PO-Revision-Date: 2017-09-20 00:09+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/foreman/foreman/lang"
 "uage/sv_SE/)\n"
@@ -34,6 +34,9 @@ msgid "Boot disk"
 msgstr "Startdisk"
 
 msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"

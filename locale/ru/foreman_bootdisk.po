@@ -4,12 +4,13 @@
 #
 # Translators:
 # Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015
+# Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-24 09:54+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2017-09-20 00:09+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/ru/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 "1 && n%100<=14)? 2 : 3);\n"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
+msgstr "Вариант для создания индивидуального образа с интеграцией загрузчика операционной системы. Подходит, если по какой-то причине цепная загрузка невозможна. Основной недостаток такого подхода заключается в том, что при любых изменениях операционной системы, загрузчика или шаблона PXELinux образ надо будет создавать заново."
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Все образы используются как ISO или образы дисков, включая записанные на USB диск командой 'dd'."
@@ -36,6 +37,9 @@ msgid "Boot disk"
 msgstr "Загрузочный диск"
 
 msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
@@ -54,7 +58,7 @@ msgid "Download host image"
 msgstr "Скачать образ узла"
 
 msgid "Download subnet generic image"
-msgstr ""
+msgstr "Загрузить стандартный образ для подсети"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
@@ -63,7 +67,7 @@ msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr ""
 
 msgid "Failed to render boot disk template"
-msgstr ""
+msgstr "Не удалось сформировать шаблон загрузочного диска"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
@@ -75,7 +79,7 @@ msgid "Full host image"
 msgstr "Полный образ узла"
 
 msgid "Generating ISO image for %s"
-msgstr ""
+msgstr "Создается ISO для %s..."
 
 msgid "Generic image"
 msgstr "Стандартный образ"
@@ -159,7 +163,7 @@ msgid "SYSLINUX directory"
 msgstr ""
 
 msgid "Subnet '%s' generic image"
-msgstr ""
+msgstr "Стандартный образ для подсети «%s»"
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "Шлюз подсети (%s) не задан"
@@ -168,25 +172,25 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "Основной DNS-сервер для подсети (%s) не определен"
 
 msgid "Subnet boot disks"
-msgstr ""
+msgstr "Загрузочные диски для подсети"
 
 msgid "Subnet image"
-msgstr ""
+msgstr "Образ для подсети"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
-msgstr ""
+msgstr "Образ для подсети похож на стандартный образ, но отличается от него тем, что цепная загрузка происходит с капсулы TFTP, назначенной подсети, которой принадлежит узел. Для этого на капсуле должно быть установлено и настроено дополнение «Шаблоны»."
 
 msgid "Subnet is not assigned to the host %s"
-msgstr ""
+msgstr "Для узла %s не выбрана подсеть"
 
 msgid "TFTP feature not enabled for subnet %s"
-msgstr ""
+msgstr "TFTP не поддерживается для подсети %s"
 
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "Установщик ОС продолжит использовать установочный носитель, настроенный в Foreman, и он будет настраивать статическую сеть, зависящую от того как настроен шаблон iPXE ОС."
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
-msgstr ""
+msgstr "Этот образ является универсальным для всех узлов в избранной подсети, на которых настроен сетевой адаптер для подготовки узла."
 
 msgid "True for full, false for basic reusable image"
 msgstr "Истина для полного, ложь для начального образа"

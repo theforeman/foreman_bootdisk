@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-24 09:54+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2017-09-20 00:09+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/langu"
 "age/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
+msgstr "每个包含磁盘内置 OS 引导装载程序的主机映像变体。如果某个硬件中的链载入失败，这个变体可能会有帮助，但缺点是必须为所有 OS、引导装载程序或 PXELinux 模板中的所有更改重新生成该映像。"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "所有映像都可作为 ISO 或者磁盘映像使用，包括使用 `dd` 写入的 USB盘。"
@@ -33,6 +33,9 @@ msgid "Boot disk"
 msgstr "引导磁盘"
 
 msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
@@ -51,7 +54,7 @@ msgid "Download host image"
 msgstr "下载主机映像"
 
 msgid "Download subnet generic image"
-msgstr ""
+msgstr "下载子网通用映象"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
@@ -60,7 +63,7 @@ msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr ""
 
 msgid "Failed to render boot disk template"
-msgstr ""
+msgstr "呈现引导盘模板失败"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
@@ -96,7 +99,7 @@ msgid "Host has no domain defined"
 msgstr "没有为主机定义域"
 
 msgid "Host has no provisioning interface defined"
-msgstr ""
+msgstr "主机没有定义预配接口"
 
 msgid "Host has no subnet defined"
 msgstr "没有为主机定义子网"
@@ -156,7 +159,7 @@ msgid "SYSLINUX directory"
 msgstr ""
 
 msgid "Subnet '%s' generic image"
-msgstr ""
+msgstr "子网 '%s' 通用映象"
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "没有为子网（%s）定义网关"
@@ -165,25 +168,25 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "没有为子网（%s）定义主 DNS 服务器"
 
 msgid "Subnet boot disks"
-msgstr ""
+msgstr "子网引导盘"
 
 msgid "Subnet image"
-msgstr ""
+msgstr "子网映象"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
-msgstr ""
+msgstr "子网映象与通用映象类似，但是通过为主机子网分配的 TFTP 智能代理服务器完成链载入。必须为该智能代理服务器启用并配置 “Templates”。"
 
 msgid "Subnet is not assigned to the host %s"
-msgstr ""
+msgstr "没有为主机 %s 分配子网"
 
 msgid "TFTP feature not enabled for subnet %s"
-msgstr ""
+msgstr "没有为子网 %s 启用 TFTP 功能"
 
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "食用 Foreman 中配置的安装介质继续安装，并配置静态联网，具体要看如何配置 OS iPXE 模板。"
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
-msgstr ""
+msgstr "该映象在那个子网中所有预配 NIC 的主机中通用。"
 
 msgid "True for full, false for basic reusable image"
 msgstr "True 代表完整映像，false 代表基本可重复使用映像。"
