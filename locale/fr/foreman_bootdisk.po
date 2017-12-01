@@ -5,13 +5,13 @@
 # Translators:
 # Claer <transiblu@claer.hammock.fr>, 2014-2016
 # Dominic Cleal <dominic@cleal.org>, 2015
-# Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014
+# Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-25 23:41+0000\n"
-"Last-Translator: Claer <transiblu@claer.hammock.fr>\n"
+"PO-Revision-Date: 2017-09-20 00:09+0000\n"
+"Last-Translator: Pierre-Emmanuel Dutang <dutangp@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/foreman/foreman/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,10 +35,13 @@ msgid "Boot disk"
 msgstr "Disque de démarrage"
 
 msgid "Boot disk based"
+msgstr "Basé sur disque de démarrage"
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "Modèle de disque de démarrage embarqué"
 
 msgid "Boot disks"
 msgstr "Disques de démarrage"
@@ -80,7 +83,7 @@ msgid "Generic image"
 msgstr "Image générique"
 
 msgid "Generic image template"
-msgstr ""
+msgstr "Modèle d'image générique"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Les images génériques correspondent à une image disque réutilisable qui fonctionne pour tout hôte enregistré dans Foreman. Cela demande les services DHCP et DNS fonctionnels mais ne requiert pas de réservation DHCP ni d'adresse IP statique."
@@ -107,7 +110,7 @@ msgid "Host image"
 msgstr "Image hôte"
 
 msgid "Host image template"
-msgstr ""
+msgstr "Modèle d'image hôte"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "L'hôte n'est pas en mode construction, c'est pourquoi le modèle ne peut être rendu"
@@ -116,16 +119,16 @@ msgid "ISO build failed"
 msgstr "La création de l'image ISO a échoué"
 
 msgid "ISO generation command"
-msgstr ""
+msgstr "command de génération ISO"
 
 msgid "ISO hybrid conversion failed"
 msgstr "La conversion de l'image ISO hybride a échoué"
 
 msgid "ISOLINUX directory"
-msgstr ""
+msgstr "Repertoire ISOLINUX"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "Cache d'installation media"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Les fichiers du media d'installation vont être cachés pour les images complètes d'hôtes"
@@ -137,7 +140,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "Emplacement du répertoire contenant les images iPXE"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "Chemin vers le repertoire contenant les images isolinux"
 
 msgid "Path to directory containing syslinux images"
 msgstr "Emplacement du répertoire contenant les images syslinux"
@@ -146,16 +149,16 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "Les images par hôte contiennent des données spécifiques pour un hôte donné enregistré dans Foreman et configurent de manière statique les paramètres réseau, ce qui permet de s'affranchir d'un serveur DHCP. Une fois le réseau configuré, ils sont liés depuis Foreman, récupérant la configuration du système d'exploitation et l'état de construction du serveur."
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "Merci de vous assurer que le paquet ipxe-bootimgs est installé."
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "Merci de vous assurer que les paquets isolinux/syslinux sont installés."
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin pour Foreman qui crée le démarrage des disques iPXE-bases pour provisionner les hôtes sans l'aide de l'infrastructure PXE."
 
 msgid "SYSLINUX directory"
-msgstr ""
+msgstr "Répertoire SYSLINUX"
 
 msgid "Subnet '%s' generic image"
 msgstr "Image générique du sous-réseau %s"
@@ -203,7 +206,7 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr "Différents types de disque de démarrage peuvent être créés pour provisionner les hôtes sans requérir à PXE. Les disques de démarrage peuvent être attachés à un hôte (physique ou virtuel) qui démarre depuis le disque, contacte Foreman puis lance l'installation du système d'exploitation."
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "Répertoire iPXE"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Modèle iPXE à appliquer pour les disques de boot génériques"

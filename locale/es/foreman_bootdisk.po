@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-24 09:54+0000\n"
+"PO-Revision-Date: 2017-09-20 00:09+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Spanish (http://www.transifex.com/foreman/foreman/language/es/)"
 "\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
+msgstr "Una variante de la imagen por host que contiene el bootloader del SO incluido dentro del disco. Esto puede resultar útil si la carga de la cadena falla en ciertos hardware, pero presenta la desventaja de que la imagen se debe regenerar frente a cualquier cambio en las plantillas del SO, bootloader o PXELinux."
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Todas las imágenes pueden utilizarse como ISO o como imágenes de disco, incluso tras copiarlas en un disco USB con `dd`"
@@ -35,6 +35,9 @@ msgid "Boot disk"
 msgstr "Disco de arranque"
 
 msgid "Boot disk based"
+msgstr ""
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
@@ -53,7 +56,7 @@ msgid "Download host image"
 msgstr "Descargar imagen de host"
 
 msgid "Download subnet generic image"
-msgstr ""
+msgstr "Descargar imagen genérica de la subred"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
@@ -62,7 +65,7 @@ msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr ""
 
 msgid "Failed to render boot disk template"
-msgstr ""
+msgstr "No se pudo reproducir la plantilla del disco de arranque."
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
@@ -158,7 +161,7 @@ msgid "SYSLINUX directory"
 msgstr ""
 
 msgid "Subnet '%s' generic image"
-msgstr ""
+msgstr "Imagen genérica '%s' de la subred"
 
 msgid "Subnet (%s) has no gateway defined"
 msgstr "La subred (%s) no tiene gateway definida"
@@ -167,25 +170,25 @@ msgid "Subnet (%s) has no primary DNS server defined"
 msgstr "La subred (%s) no tiene servidor DNS primario definido"
 
 msgid "Subnet boot disks"
-msgstr ""
+msgstr "Discos de arranque de la subred"
 
 msgid "Subnet image"
-msgstr ""
+msgstr "Imagen de subred"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
-msgstr ""
+msgstr "Las imágenes de la subred son similares a las imágenes genéricas, pero la carga de la cadena se realiza a través del proxy inteligente TFTP asignado a la subred del host. El módulo \"Plantillas\" debe estar habilitado y configurado en el proxy inteligente."
 
 msgid "Subnet is not assigned to the host %s"
-msgstr ""
+msgstr "La subred no está asignada al host %s."
 
 msgid "TFTP feature not enabled for subnet %s"
-msgstr ""
+msgstr "Funcionalidad TFTP no habilitada para la subred %s"
 
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "La instalación del SO sigue usando el medio de instalación configurado en Foreman, y típicamente configura red estática, según como se configura la plantilla iPXE del SO."
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
-msgstr ""
+msgstr "Esta imagen es genérica para todos los hosts con NIC de aprovisionamiento en la subred."
 
 msgid "True for full, false for basic reusable image"
 msgstr "Verdadero para completo, falso para imagen básica reutilizable"

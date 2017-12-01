@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the foreman_bootdisk package.
 #
 # Translators:
-# Andi Chandler <andi@gowling.com>, 2015-2016
+# Andi Chandler <andi@gowling.com>, 2015-2017
 # Dominic Cleal <dominic@cleal.org>, 2014
 # Dominic Cleal <dominic@cleal.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Foreman\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-03-26 16:18+0000\n"
-"Last-Translator: Dominic Cleal <dominic@cleal.org>\n"
+"PO-Revision-Date: 2017-10-12 21:14+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/fore"
 "man/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -36,10 +36,13 @@ msgid "Boot disk"
 msgstr "Boot disk"
 
 msgid "Boot disk based"
+msgstr "Boot disk based"
+
+msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "Boot disk embedded template"
 
 msgid "Boot disks"
 msgstr "Boot disks"
@@ -81,7 +84,7 @@ msgid "Generic image"
 msgstr "Generic image"
 
 msgid "Generic image template"
-msgstr ""
+msgstr "Generic image template"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
@@ -108,7 +111,7 @@ msgid "Host image"
 msgstr "Host image"
 
 msgid "Host image template"
-msgstr ""
+msgstr "Host image template"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "Host is not in build mode, so the template cannot be rendered"
@@ -117,16 +120,16 @@ msgid "ISO build failed"
 msgstr "ISO build failed"
 
 msgid "ISO generation command"
-msgstr ""
+msgstr "ISO generation command"
 
 msgid "ISO hybrid conversion failed"
 msgstr "ISO hybrid conversion failed"
 
 msgid "ISOLINUX directory"
-msgstr ""
+msgstr "ISOLINUX directory"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "Installation media caching"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Installation media files will be cached for full host images"
@@ -138,7 +141,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "Path to directory containing iPXE images"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "Path to directory containing isolinux images"
 
 msgid "Path to directory containing syslinux images"
 msgstr "Path to directory containing syslinux images"
@@ -147,16 +150,16 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "Please ensure the ipxe-bootimgs package is installed."
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "Please ensure the isolinux/syslinux package(s) are installed."
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 
 msgid "SYSLINUX directory"
-msgstr ""
+msgstr "SYSLINUX directory"
 
 msgid "Subnet '%s' generic image"
 msgstr "Subnet '%s' generic image"
@@ -204,7 +207,7 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "iPXE directory"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "iPXE template to use for generic host boot disks"
