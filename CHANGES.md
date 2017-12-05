@@ -1,5 +1,12 @@
 # Changelog
 
+## v10.0.0
+* retry vmware iso boot 10 times before giving up (#19013)
+* fix duplicate template creation during database seeding (#19733)
+* add plugin permissions to core permissions (#17963)
+* Replace alias_method_chain with Module#prepend
+* Replace controller 'filter' callbacks with 'action'
+
 ## v9.0.0
 * add missing bootdisk helpers for template previews (#17893)
 * disable boot disk button on non-Intel architectures (#17497)
