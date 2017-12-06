@@ -16,46 +16,54 @@ namespace :bootdisk do
   namespace :generate do
     desc 'Generate a static boot disk for a specific host.  NAME=fqdn, OUTPUT path'
     task :host => :environment do
-      host = Host::Base.find_by_name(ENV['NAME']) || raise("cannot find host '#{ENV['NAME']}', specify NAME=fqdn")
-      tmpl = host.bootdisk_template_render
+      User.as_anonymous_admin do
+        host = Host::Base.unscoped.find_by_name(ENV['NAME']) || raise("cannot find host '#{ENV['NAME']}', specify NAME=fqdn")
+        tmpl = host.bootdisk_template_render
 
-      ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
-        output = ENV['OUTPUT'] || File.join(outputdir, "#{host.name}.iso")
-        FileUtils.mv image, output
-        puts "Wrote #{output}"
+        ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
+          output = ENV['OUTPUT'] || File.join(outputdir, "#{host.name}.iso")
+          FileUtils.mv image, output
+          puts "Wrote #{output}"
+        end
       end
     end
 
     desc 'Generate a full boot disk for a specific host with the OS bootloader included.  NAME=fqdn, OUTPUT path'
     task :full_host => :environment do
-      host = Host::Base.find_by_name(ENV['NAME']) || raise("cannot find host '#{ENV['NAME']}', specify NAME=fqdn")
-      ForemanBootdisk::ISOGenerator.generate_full_host(host, :dir => outputdir) do |image|
-        output = ENV['OUTPUT'] || File.join(outputdir, "#{host.name}_#{Date.today.strftime('%Y%m%d')}.iso")
-        FileUtils.cp image, output
-        puts "Wrote #{output}"
+      User.as_anonymous_admin do
+        host = Host::Base.unscoped.find_by_name(ENV['NAME']) || raise("cannot find host '#{ENV['NAME']}', specify NAME=fqdn")
+        ForemanBootdisk::ISOGenerator.generate_full_host(host, :dir => outputdir) do |image|
+          output = ENV['OUTPUT'] || File.join(outputdir, "#{host.name}_#{Date.today.strftime('%Y%m%d')}.iso")
+          FileUtils.cp image, output
+          puts "Wrote #{output}"
+        end
       end
     end
 
     desc 'Generate a generic boot disk.  OUTPUT=path'
     task :generic => :environment do
-      tmpl = ForemanBootdisk::Renderer.new.generic_template_render
+      User.as_anonymous_admin do
+        tmpl = ForemanBootdisk::Renderer.new.generic_template_render
 
-      ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
-        output = ENV['OUTPUT'] || File.join(outputdir, "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso")
-        FileUtils.cp image, output
-        puts "Wrote #{output}"
+        ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
+          output = ENV['OUTPUT'] || File.join(outputdir, "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso")
+          FileUtils.cp image, output
+          puts "Wrote #{output}"
+        end
       end
     end
 
     desc 'Generate a subnet disk for a specific subnet. NAME=subnet, OUTPUT=path'
     task :subnet => :environment do
-      subnet = Subnet.find_by_name(ENV['NAME']) || raise("cannot find subnet '#{ENV['NAME']}', specify NAME=subnet")
-      subnet.tftp || raise(::Foreman::Exception.new(N_("TFTP feature not enabled for subnet %s"), subnet.name))
-      tmpl = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
-      ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
-        output = ENV['OUTPUT'] || File.join(outputdir, "bootdisk_subnet_#{subnet.name}.iso")
-        FileUtils.cp image, output
-        puts "Wrote #{output}"
+      User.as_anonymous_admin do
+        subnet = Subnet.unscoped.find_by_name(ENV['NAME']) || raise("cannot find subnet '#{ENV['NAME']}', specify NAME=subnet")
+        subnet.tftp || raise(::Foreman::Exception.new(N_("TFTP feature not enabled for subnet %s"), subnet.name))
+        tmpl = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
+        ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl, :dir => outputdir) do |image|
+          output = ENV['OUTPUT'] || File.join(outputdir, "bootdisk_subnet_#{subnet.name}.iso")
+          FileUtils.cp image, output
+          puts "Wrote #{output}"
+        end
       end
     end
   end
