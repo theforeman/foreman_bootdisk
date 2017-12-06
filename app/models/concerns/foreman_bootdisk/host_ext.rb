@@ -1,6 +1,13 @@
 require 'uri'
 
 module ForemanBootdisk::HostExt
+  extend ActiveSupport::Concern
+
+  included do
+    alias_method_chain :validate_media?, :bootdisk
+    alias_method_chain :can_be_built?, :bootdisk
+  end
+
   def bootdisk_template
     ProvisioningTemplate.unscoped.find_by_name(Setting[:bootdisk_host_template]) || raise(::Foreman::Exception.new(N_('Unable to find template specified by %s setting'), 'bootdisk_host_template'))
   end
@@ -34,11 +41,11 @@ module ForemanBootdisk::HostExt
     /i.86|x86[_-]64/ =~ architecture.name
   end
 
-  def validate_media?
-    super || (managed && bootdisk_build? && build?)
+  def validate_media_with_bootdisk?
+    validate_media_without_bootdisk? || (managed && bootdisk_build? && build?)
   end
 
-  def can_be_built?
-    super || (managed? and SETTINGS[:unattended] and bootdisk_build? and !build?)
+  def can_be_built_with_bootdisk?
+    can_be_built_without_bootdisk? || (managed? and SETTINGS[:unattended] and bootdisk_build? and !build?)
   end
 end

@@ -76,11 +76,11 @@ module ForemanBootdisk
 
     config.to_prepare do
       begin
-        Host::Managed.send(:prepend, ForemanBootdisk::HostExt)
+        Host::Managed.send(:include, ForemanBootdisk::HostExt)
         Host::Managed.send(:include, ForemanBootdisk::Orchestration::Compute) if SETTINGS[:unattended]
-        HostsHelper.send(:prepend, ForemanBootdisk::HostsHelperExt)
-        UnattendedController.send(:prepend, ForemanBootdisk::UnattendedControllerExt)
-        Foreman::Model::Vmware.send(:prepend, ForemanBootdisk::ComputeResources::Vmware) if Foreman::Model::Vmware.available?
+        HostsHelper.send(:include, ForemanBootdisk::HostsHelperExt)
+        UnattendedController.send(:include, ForemanBootdisk::UnattendedControllerExt)
+        Foreman::Model::Vmware.send(:include, ForemanBootdisk::ComputeResources::Vmware) if Foreman::Model::Vmware.available?
       rescue => e
         puts "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
       end
