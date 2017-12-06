@@ -8,7 +8,7 @@ module ForemanBootdisk
     include RendererMethods
 
     def generic_template_render(subnet = nil)
-      tmpl = ProvisioningTemplate.find_by_name(Setting[:bootdisk_generic_host_template]) || raise(::Foreman::Exception.new(N_('Unable to find template specified by %s setting'), 'bootdisk_generic_host_template'))
+      tmpl = ProvisioningTemplate.unscoped.find_by_name(Setting[:bootdisk_generic_host_template]) || raise(::Foreman::Exception.new(N_('Unable to find template specified by %s setting'), 'bootdisk_generic_host_template'))
 
       if subnet.present?
         # rendering a subnet-level bootdisk requires tricking the renderer into thinking it has a
