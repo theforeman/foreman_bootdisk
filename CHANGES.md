@@ -1,5 +1,9 @@
 # Changelog
 
+## v10.0.1
+* Fix rake tasks are Taxonomy and User aware (#21877)
+* Revert alias_method_chain with Module#prepend for Katello 3.4 compatibility
+
 ## v10.0.0
 * retry vmware iso boot 10 times before giving up (#19013)
 * fix duplicate template creation during database seeding (#19733)

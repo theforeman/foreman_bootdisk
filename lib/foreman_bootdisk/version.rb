@@ -1,3 +1,3 @@
 module ForemanBootdisk
-  VERSION = '10.0.0'
+  VERSION = '10.0.1'
 end
