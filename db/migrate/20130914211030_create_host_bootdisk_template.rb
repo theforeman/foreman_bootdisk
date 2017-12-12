@@ -1,4 +1,4 @@
-class CreateHostBootdiskTemplate < ActiveRecord::Migration
+class CreateHostBootdiskTemplate < ActiveRecord::Migration[4.2]
   def self.up
   end
 

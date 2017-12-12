@@ -1,4 +1,4 @@
-class RemoveDuplicateBootdiskTemplates < ActiveRecord::Migration
+class RemoveDuplicateBootdiskTemplates < ActiveRecord::Migration[4.2]
   def up
     template_names = ['Boot disk iPXE - host', 'Boot disk iPXE - generic host']
     template_names.each do |template_name|
