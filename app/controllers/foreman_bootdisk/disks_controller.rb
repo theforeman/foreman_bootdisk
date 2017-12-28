@@ -9,7 +9,7 @@ module ForemanBootdisk
         tmpl = ForemanBootdisk::Renderer.new.generic_template_render
       rescue => e
         error_rendering(e)
-        redirect_to :back
+        redirect_back(fallback_location: '/')
         return
       end
 
@@ -24,7 +24,7 @@ module ForemanBootdisk
         tmpl = host.bootdisk_template_render
       rescue => e
         error_rendering(e)
-        redirect_to :back
+        redirect_back(fallback_location: '/')
         return
       end
 
@@ -48,7 +48,7 @@ module ForemanBootdisk
         tmpl = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
       rescue => e
         error_rendering(e)
-        redirect_to :back
+        redirect_back(fallback_location: '/')
         return
       end
 
