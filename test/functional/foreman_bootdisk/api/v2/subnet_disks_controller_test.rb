@@ -14,7 +14,7 @@ class ForemanBootdisk::Api::V2::SubnetDisksControllerTest < ActionController::Te
       ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk generic host template/))).yields("temp ISO")
       ForemanBootdisk::Renderer.any_instance.stubs(:bootdisk_chain_url).yields("http://smart-proxy.lan")
       File.expects(:read).with("temp ISO").returns("ISO image")
-      get :subnet, {:id => @host.subnet.id}
+      get :subnet, params: {:id => @host.subnet.id}
       assert_response :success
       assert_equal "ISO image", @response.body
     end

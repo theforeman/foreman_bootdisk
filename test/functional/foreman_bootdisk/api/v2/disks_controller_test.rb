@@ -7,7 +7,7 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
   test "should generate generic image" do
     ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk generic host template/))).yields("temp ISO")
     @controller.expects(:read_file).with("temp ISO").returns("ISO image")
-    get :generic, {}
+    get :generic
     assert_response :success
     assert_equal "ISO image", @response.body
   end
@@ -19,7 +19,7 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
     test "should generate host image" do
       ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(:ipxe => regexp_matches(/disk host template/))).yields("temp ISO")
       @controller.expects(:read_file).with("temp ISO").returns("ISO image")
-      get :host, {:id => @host.name}
+      get :host, params: {:id => @host.name}
       assert_response :success
       assert_equal "ISO image", @response.body
     end
@@ -27,7 +27,7 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
     test "should generate full host image" do
       ForemanBootdisk::ISOGenerator.expects(:generate_full_host).with(@host).yields("temp ISO")
       @controller.expects(:read_file).with("temp ISO").returns("ISO image")
-      get :host, {:id => @host.name, :full => true}
+      get :host, params: {:id => @host.name, :full => true}
       assert_response :success
       assert_equal "ISO image", @response.body
     end
