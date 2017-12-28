@@ -1,6 +1,6 @@
 class Setting::Bootdisk< ::Setting
   def self.load_defaults
-    return unless ActiveRecord::Base.connection.table_exists?('settings')
+    return unless ApplicationRecord.connection.table_exists?('settings')
     return unless super
 
     ipxe = ['/usr/lib/ipxe'].find { |p| File.exist?(p) } || '/usr/share/ipxe'
