@@ -15,5 +15,9 @@ module ForemanBootdisk
     def bootdisk_chain_url(mac = '', action = 'iPXE')
       self.class.format_bootdisk_chain_url(foreman_url(action), mac)
     end
+
+    def bootdisk_raise(*args)
+      raise ::Foreman::Exception.new(*args)
+    end
   end
 end
