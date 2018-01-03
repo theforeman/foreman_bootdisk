@@ -14,10 +14,6 @@ module ForemanBootdisk::HostExt
     ForemanBootdisk::Renderer.format_bootdisk_chain_url(foreman_url(action), mac)
   end
 
-  def bootdisk_raise(*args)
-    raise ::Foreman::Exception.new(*args)
-  end
-
   def bootdisk_build?
     provision_method == 'bootdisk'
   end
