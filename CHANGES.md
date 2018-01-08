@@ -1,5 +1,9 @@
 # Changelog
 
+## v10.0.2
+* bootdisk_raise template marco works in preview mode (#22136)
+* host image works with subnet without gateway (#21106)
+
 ## v10.0.1
 * Fix rake tasks are Taxonomy and User aware (#21877)
 * Revert alias_method_chain with Module#prepend for Katello 3.4 compatibility
