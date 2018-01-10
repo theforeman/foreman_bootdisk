@@ -4,7 +4,6 @@ module ForemanBootdisk::HostExt
   extend ActiveSupport::Concern
 
   included do
-    alias_method_chain :validate_media?, :bootdisk
     alias_method_chain :can_be_built?, :bootdisk
   end
 
@@ -35,10 +34,6 @@ module ForemanBootdisk::HostExt
 
   def intel_arch?
     /i.86|x86[_-]64/ =~ architecture.name
-  end
-
-  def validate_media_with_bootdisk?
-    validate_media_without_bootdisk? || (managed && bootdisk_build? && build?)
   end
 
   def can_be_built_with_bootdisk?
