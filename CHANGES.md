@@ -1,5 +1,12 @@
 # Changelog
 
+## v11.0.0
+* bootdisk_raise template marco works in preview mode (#22136)
+* host image works with subnet without gateway (#21106)
+* Fix rake tasks are Taxonomy and User aware (#21877)
+* database migrations support rails 5 (#21821)
+* changes to support rails 5.1
+
 ## v10.0.0
 * retry vmware iso boot 10 times before giving up (#19013)
 * fix duplicate template creation during database seeding (#19733)
