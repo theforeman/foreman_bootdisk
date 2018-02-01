@@ -10,14 +10,18 @@ module ForemanBootdisk
         u.fragment = nil
         u.to_s
       end
+
+      def bootdisk_raise(*args)
+        raise ::Foreman::Exception.new(*args)
+      end
     end
 
-    def bootdisk_chain_url(mac = '', action = 'iPXE')
+    def bootdisk_chain_url(mac = self.try(:mac), action = 'iPXE')
       self.class.format_bootdisk_chain_url(foreman_url(action), mac)
     end
 
     def bootdisk_raise(*args)
-      raise ::Foreman::Exception.new(*args)
+      self.class.bootdisk_raise(*args)
     end
   end
 end
