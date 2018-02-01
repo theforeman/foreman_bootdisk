@@ -10,10 +10,6 @@ module ForemanBootdisk::HostExt
     unattended_render(bootdisk_template.template)
   end
 
-  def bootdisk_chain_url(mac = self.mac, action = 'iPXE')
-    ForemanBootdisk::Renderer.format_bootdisk_chain_url(foreman_url(action), mac)
-  end
-
   def bootdisk_build?
     provision_method == 'bootdisk'
   end
