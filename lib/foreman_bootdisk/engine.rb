@@ -48,7 +48,7 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 1.17'
+        requires_foreman '>= 1.18'
 
         security_block :bootdisk do |map|
           permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :subnet, :help],
@@ -79,7 +79,6 @@ module ForemanBootdisk
         Host::Managed.send(:prepend, ForemanBootdisk::HostExt)
         Host::Managed.send(:include, ForemanBootdisk::Orchestration::Compute) if SETTINGS[:unattended]
         HostsHelper.send(:prepend, ForemanBootdisk::HostsHelperExt)
-        UnattendedController.send(:prepend, ForemanBootdisk::UnattendedControllerExt)
         Foreman::Model::Vmware.send(:prepend, ForemanBootdisk::ComputeResources::Vmware) if Foreman::Model::Vmware.available?
       rescue => e
         puts "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
