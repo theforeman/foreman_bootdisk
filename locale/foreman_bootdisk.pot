@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-01 14:36-0500\n"
-"PO-Revision-Date: 2017-12-01 14:36-0500\n"
+"POT-Creation-Date: 2018-03-12 12:56-0400\n"
+"PO-Revision-Date: 2018-03-12 12:56-0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -287,14 +287,6 @@ msgstr ""
 
 #: ../app/views/foreman_bootdisk/host.erb:12
 msgid "Host has no domain defined"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:13
-msgid "Subnet (%s) has no gateway defined"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:14
-msgid "Subnet (%s) has no primary DNS server defined"
 msgstr ""
 
 #: ../lib/foreman_bootdisk/engine.rb:65
