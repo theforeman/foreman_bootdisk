@@ -11,7 +11,10 @@ class ForemanBootdisk::ISOGenerator
     raise ::Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
     tmpl = host.send(:generate_pxe_template, :PXELinux)
-    raise ::Foreman::Exception.new(N_('Unable to generate disk template: %s'), host.errors.full_messages.to_sentence) if tmpl == false
+    unless tmpl
+      err = host.errors.full_messages.to_sentence
+      raise ::Foreman::Exception.new(N_('Unable to generate disk template, PXELinux template not found or: %s'), err)
+    end
 
     # pxe_files and filename conversion is utterly bizarre
     # aim to convert filenames to something usable under ISO 9660, update the template to match
