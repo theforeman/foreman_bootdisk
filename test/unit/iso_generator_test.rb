@@ -40,10 +40,9 @@ class ForemanBootdisk::IsoGeneratorTest < ActiveSupport::TestCase
   end
 
   test "full host image generation generates via PXELinux type" do
+    @host.expects(:generate_pxe_template).with(:PXELinux).returns("Template")
     @host.operatingsystem.expects(:pxe_files).returns([])
-    @host.operatingsystem.expects(:kernel).returns("kernel")
-    @host.operatingsystem.expects(:initrd).returns("initrd")
-    ForemanBootdisk::ISOGenerator.expects(:generate).with({:isolinux => nil, :files => []}, anything)
+    ForemanBootdisk::ISOGenerator.expects(:generate).with({:isolinux => "Template", :files => []}, anything)
     ForemanBootdisk::ISOGenerator.generate_full_host(@host)
   end
 end
