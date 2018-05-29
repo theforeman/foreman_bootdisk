@@ -16,7 +16,7 @@ echo Found ${net<%= i -%>/mac} as net<%= i -%> on a ${net<%= i -%>/chip}
 goto net<%= i+1 %>
 <% end -%>
 
-echo -n Enter the interface name to boot from based on above MAC addresses (e.g net0|n):  && read interface
+echo -n Enter interface name to boot from based on above MAC addresses (e.g net0|n):  && read interface
 iseq ${interface} n && goto rebooting ||
 iseq ${interface} N && goto rebooting ||
 goto get_static_ip
