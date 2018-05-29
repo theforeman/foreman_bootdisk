@@ -1,5 +1,11 @@
 # Changelog
 
+## v12.0.0
+* fixed subnet image token stub (#22428)
+* moved MAC based identification to Foreman core (#22858)
+* bootdisk_raise fixed for host context (#22482)
+* fixed nil exception with PXELinux template (#23267)
+
 ## v11.0.0
 * bootdisk_raise template marco works in preview mode (#22136)
 * host image works with subnet without gateway (#21106)
