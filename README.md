@@ -233,6 +233,41 @@ To generate from the command line on the Foreman server:
 Set `OUTPUT=/path` to change the output destination path (directory or file).
 It must be writable by the 'foreman' user.
 
+### Generic image without DHCP
+
+This provides a single ISO that can be used by all registered hosts, but since
+IP details can't be stored inside, it list MAC addresses matching with driver that its using
+and network interface name, and ask user to enter following details;
+- Network interface name
+- IP Address
+- Netmask
+- Gateway
+- DNS
+
+Once details are entered, iPXE will reconfigure the network interface with entered details, then bootstrap. 
+It will boot and contact Foreman for template of a registered host
+matching a MAC address or the IP the host was assigned.
+
+The installation can continue on how the OS iPXE template is configured, and could configure the assigned IP
+address statically for the installed system via the kickstart file.
+
+To generate the image from the web interface, view a host page, click the
+"Boot disk" button and select "Generic image without DHCP".
+
+To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
+plugin and run:
+
+    hammer bootdisk generic_boot_no_dhcp
+
+See the hammer_cli_foreman_bootdisk documentation for more advanced usage.
+
+To generate from the command line on the Foreman server:
+
+    foreman-rake bootdisk:generate:generic_boot_no_dhcp
+
+Set `OUTPUT=/path` to change the output destination path (directory or file).
+It must be writable by the 'foreman' user.
+
 ### Subnet images
 
 Subnet images are similar to generic images, but chain-loading is done via the
