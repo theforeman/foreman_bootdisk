@@ -1,0 +1,45 @@
+#!ipxe
+#
+# This template is generic, but it will chainload to Foreman so expects the
+# host to be registered already.
+#
+# It loops through all interfaces asking if this is the one that the host
+# was registered with, then prompting for IP settings to configure
+# the interface with.
+#
+
+# loop over net*
+<% (0..32).each do |i| -%>
+:net<%= i %>
+isset ${net<%= i -%>/mac} || goto no_nic
+echo Found ${net<%= i -%>/mac} as net<%= i -%> on a ${net<%= i -%>/chip}
+goto net<%= i+1 %>
+<% end -%>
+
+echo -n Enter interface name to boot from based on above MAC addresses (e.g net0|n):  && read interface
+iseq ${interface} n && goto rebooting ||
+iseq ${interface} N && goto rebooting ||
+goto get_static_ip
+
+:rebooting
+echo No interface selected... rebooting
+sleep 30
+exit 1
+
+:get_static_ip
+ifopen ${interface}
+echo Please enter IP details for ${interface}
+echo
+
+echo -n IP address      :  && read ${interface}/ip
+echo -n Subnet mask     :  && read ${interface}/netmask
+echo -n Default gateway :  && read ${interface}/gateway
+echo -n DNS server      :  && read dns
+
+chain <%= bootdisk_chain_url %>${${interface}/mac} || goto boot_failure
+exit 0
+
+:boot_failure
+echo Failed to boot from ${interface}
+sleep 30
+exit 1
