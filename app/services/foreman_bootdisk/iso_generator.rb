@@ -11,7 +11,7 @@ require 'uri'
 module ForemanBootdisk
   class ISOGenerator
     def self.generate_full_host(host, opts = {}, &block)
-      raise Foreman::Exception, N_('Host is not in build mode, so the template cannot be rendered') unless host.build?
+      raise(Foreman::Exception, N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
       tmpl = render_pxelinux_template(host)
 
@@ -30,7 +30,7 @@ module ForemanBootdisk
     def self.render_pxelinux_template(host)
       pxelinux_template = host.provisioning_template(kind: :PXELinux)
 
-      raise Foreman::Exception, N_('Unable to generate disk template, PXELinux template not found.') unless pxelinux_template
+      raise(Foreman::Exception, N_('Unable to generate disk template, PXELinux template not found.')) unless pxelinux_template
 
       template = ForemanBootdisk::Renderer.new.render_template(
         template: pxelinux_template,
@@ -40,7 +40,7 @@ module ForemanBootdisk
 
       unless template
         err = host.errors.full_messages.to_sentence
-        raise ::Foreman::Exception.new(N_('Unable to generate disk PXELinux template: %s'), err)
+        raise(::Foreman::Exception.new(N_('Unable to generate disk PXELinux template: %s'), err))
       end
 
       template
@@ -59,7 +59,7 @@ module ForemanBootdisk
 
         if opts[:isolinux]
           isolinux_source_file = File.join(Setting[:bootdisk_isolinux_dir], 'isolinux.bin')
-          raise Foreman::Exception, N_('Please ensure the isolinux/syslinux package(s) are installed.') unless File.exist?(isolinux_source_file)
+          raise(Foreman::Exception, N_('Please ensure the isolinux/syslinux package(s) are installed.')) unless File.exist?(isolinux_source_file)
 
           FileUtils.cp(isolinux_source_file, File.join(wd, 'build', 'isolinux.bin'))
 
@@ -76,7 +76,7 @@ module ForemanBootdisk
 
         if opts[:ipxe]
           ipxe_source_file = File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn')
-          raise Foreman::Exception, N_('Please ensure the ipxe-bootimgs package is installed.') unless File.exist?(ipxe_source_file)
+          raise(Foreman::Exception, N_('Please ensure the ipxe-bootimgs package is installed.')) unless File.exist?(ipxe_source_file)
 
           FileUtils.cp(ipxe_source_file, File.join(wd, 'build', 'ipxe'))
           File.open(File.join(wd, 'build', 'script'), 'w') { |file| file.write(opts[:ipxe]) }
@@ -95,10 +95,10 @@ module ForemanBootdisk
               else
                 File.join(wd, 'output.iso')
               end
-        raise Foreman::Exception, N_('ISO build failed') unless system(build_mkiso_command(output_file: iso, source_directory: File.join(wd, 'build')))
+        raise(Foreman::Exception, N_('ISO build failed')) unless system(build_mkiso_command(output_file: iso, source_directory: File.join(wd, 'build')))
 
         # Make the ISO bootable as a HDD/USB disk too
-        raise Foreman::Exception, N_('ISO hybrid conversion failed') unless system('isohybrid', iso)
+        raise(Foreman::Exception, N_('ISO hybrid conversion failed')) unless system('isohybrid', iso)
 
         yield iso
       end

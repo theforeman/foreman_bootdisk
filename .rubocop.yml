@@ -1,3 +1,7 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
 AllCops:
   TargetRubyVersion: 2.3
   TargetRailsVersion: 5.2
@@ -8,13 +12,7 @@ AllCops:
 Rails:
   Enabled: true
 
-Style/Documentation:
-  Enabled: false
-
-Style/FormatStringToken:
-  Enabled: false
-
-Style/DoubleNegation:
+Style:
   Enabled: false
 
 Metrics:
@@ -32,19 +30,6 @@ Rails/Date:
   Exclude:
     - 'lib/tasks/**/*'
 
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'test/functional/**/*'
-
 Naming/FileName:
   Exclude:
     - 'db/seeds.d/**/*'
-
-# Support both ruby19 and hash_rockets
-Style/HashSyntax:
-  EnforcedStyle: no_mixed_keys
-  Enabled: true
-
-# Both double and single quotes are OK
-Style/StringLiterals:
-  Enabled: false

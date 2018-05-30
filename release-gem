@@ -1,4 +1,6 @@
 #!/bin/env ruby
+# frozen_string_literal: true
+# rubocop:disable all
 
 $plugin_name = "foreman_bootdisk"
 RUBY_VERSION_FILE = "lib/#{$plugin_name}/version.rb"

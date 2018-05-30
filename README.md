@@ -236,6 +236,22 @@ To generate from the command line on the Foreman server:
 Set `OUTPUT=/path` to change the output destination path (directory or file).
 It must be writable by the 'foreman' user.
 
+### Generic static image
+
+This is generic image type which asks for network credentials instead of doing
+DHCP request. Tokens must be turned off in order to find the host by MAC
+address. To do that, set Token duration to 0 in Administer - Settings.
+
+- Network interface name
+- IP Address
+- Netmask
+- Gateway
+- DNS
+
+To use generic static host image, set "Generic image template" to "Bootdisk
+iPXE - host template" in Administer - Settings - Boot disk. Only one template
+can be used at one time across all hosts.
+
 ### Subnet images
 
 Subnet images are similar to generic images, but chain-loading is done via the
