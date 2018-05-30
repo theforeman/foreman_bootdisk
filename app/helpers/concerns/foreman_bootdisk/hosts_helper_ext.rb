@@ -2,27 +2,27 @@
 
 module ForemanBootdisk
   module HostsHelperExt
-    def host_title_actions(*args)
-      if @host.bootdisk_downloadable?
+    def host_title_actions(host)
+      if host.bootdisk_downloadable?
         title_actions(
           button_group(
             select_action_button(
               _('Boot disk'), { class: 'btn btn-group' },
               display_bootdisk_link_if_authorized(
-                _("Host '%s' image") % @host.name.split('.')[0],
+                _("Host '%s' image") % host.name.split('.')[0],
                 {
                   controller: 'foreman_bootdisk/disks',
                   action: 'host',
-                  id: @host
+                  id: host
                 },
                 class: 'la'
               ),
               display_bootdisk_link_if_authorized(
-                _("Full host '%s' image") % @host.name.split('.')[0],
+                _("Full host '%s' image") % host.name.split('.')[0],
                 {
                   controller: 'foreman_bootdisk/disks',
                   action: 'full_host',
-                  id: @host
+                  id: host
                 },
                 class: 'la'
               ),
@@ -35,7 +35,7 @@ module ForemanBootdisk
                 },
                 class: 'la'
               ),
-              display_bootdisk_for_subnet,
+              display_bootdisk_for_subnet(host),
               content_tag(:li, '', class: 'divider'),
               display_bootdisk_link_if_authorized(
                 _('Help'), {
@@ -48,29 +48,29 @@ module ForemanBootdisk
           )
         )
       else
-        bootdisk_button_disabled
+        bootdisk_button_disabled(host)
       end
 
       super
     end
 
-    def bootdisk_button_disabled
+    def bootdisk_button_disabled(host)
       title_actions(
         button_group(
           link_to(_('Boot disk'), '#', disabled: true, class: 'btn btn-default',
-                                       title: _('Boot disk download not available for %s architecture') % @host.architecture.name)
+                                       title: _('Boot disk download not available for %s architecture') % host.architecture.name)
         )
       )
     end
 
     # need to wrap this one in a test for template proxy presence
-    def display_bootdisk_for_subnet
-      if (proxy = @host.try(:subnet).try(:tftp)) && proxy.has_feature?('Templates')
+    def display_bootdisk_for_subnet(host)
+      if (proxy = host.try(:subnet).try(:tftp)) && proxy.has_feature?('Templates')
         display_bootdisk_link_if_authorized(
-          _("Subnet '%s' generic image") % @host.subnet.name, {
+          _("Subnet '%s' generic image") % host.subnet.name, {
             controller: 'foreman_bootdisk/disks',
             action: 'subnet',
-            id: @host
+            id: host
           },
           class: 'la'
         )
