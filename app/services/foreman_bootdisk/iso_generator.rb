@@ -10,10 +10,15 @@ class ForemanBootdisk::ISOGenerator
   def self.generate_full_host(host, opts = {}, &block)
     raise ::Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
-    tmpl = host.send(:generate_pxe_template, :PXELinux)
-    unless tmpl
+    pxelinux_template = host.send(:generate_pxe_template, :PXELinux)
+    unless pxelinux_template
       err = host.errors.full_messages.to_sentence
       raise ::Foreman::Exception.new(N_('Unable to generate disk template, PXELinux template not found or: %s'), err)
+    end
+
+    pxegrub_template = host.send(:generate_pxe_template, :PXEGrub2)
+    unless pxegrub_template
+        ForemanBootdisk.logger.warn("Unable to generate disk template, PXEGrub2 template not found. Bootdisk will not support UEFI")
     end
 
     # pxe_files and filename conversion is utterly bizarre
@@ -24,13 +29,14 @@ class ForemanBootdisk::ISOGenerator
       bootfile_info.map do |f|
         suffix = f[1].split('/').last
         iso_f0 = iso9660_filename(f[0].to_s + '_' + suffix)
-        tmpl.gsub!(f[0].to_s + '-' + suffix, iso_f0)
+        pxelinux_template.gsub!(f[0].to_s + '-' + suffix, iso_f0)
+        pxegrub_template.gsub!(f[0].to_s + '-' + suffix, '/' + iso_f0) if pxegrub_template
         ForemanBootdisk.logger.debug("Boot file #{iso_f0}, source #{f[1]}")
         [iso_f0, f[1]]
       end
     end
 
-    generate(opts.merge(:isolinux => tmpl, :files => files), &block)
+    generate(opts.merge(:isolinux => pxelinux_template, :grub => pxegrub_template, :files => files), &block)
   end
 
   def self.generate(opts = {}, &block)
@@ -39,6 +45,15 @@ class ForemanBootdisk::ISOGenerator
       label ipxe
       kernel /ipxe
       initrd /script
+    EOS
+
+    opts[:grub] = <<-EOS if opts[:grub].nil? && opts[:ipxe]
+      set default=0
+      set timeout=5
+      menuentry "Chainload iPXE chain" {
+        search --no-floppy --set=root -f /ipxe.efi
+        chainloader ($root)/ipxe.efi cmdline "echo If patch was applied you should see this text ; sleep 10"
+      }
     EOS
 
     Dir.mktmpdir('bootdisk') do |wd|
@@ -62,6 +77,11 @@ class ForemanBootdisk::ISOGenerator
           raise ::Foreman::Exception.new(N_("Please ensure the ipxe-bootimgs package is installed."))
         end
         FileUtils.cp(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn'), File.join(wd, 'build', 'ipxe'))
+        if File.exists?(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.efi'))
+          FileUtils.cp(File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.efi'), File.join(wd, 'build', 'ipxe.efi'))
+        else
+          ForemanBootdisk.logger.warn("Unable to find ipxe.efi in iPXE directory. Bootdisk will not support UEFI.")
+        end
         File.open(File.join(wd, 'build', 'script'), 'w') { |file| file.write(opts[:ipxe]) }
       end
 
@@ -73,17 +93,35 @@ class ForemanBootdisk::ISOGenerator
         end if opts[:files].respond_to? :each
       end
 
+      if opts[:grub]
+        FileUtils.mkdir_p(File.join(wd, 'build', 'EFI', 'BOOT'))
+        FileUtils.cp('/var/lib/tftpboot/grub2/shimx64.efi', File.join(wd, 'build', 'EFI', 'BOOT', 'BOOTX64.efi'))
+        FileUtils.cp('/var/lib/tftpboot/grub2/grubx64.efi', File.join(wd, 'build', 'EFI', 'BOOT', 'grubx64.efi'))
+        File.open(File.join(wd, 'build', 'EFI', 'BOOT', 'grub.cfg'), 'w') { |file| file.write(opts[:grub]) }
+        efibootimg = File.join(wd, 'build', 'efiboot.img')
+        system("mformat -f 2880 -C -i #{efibootimg}")
+        system("mmd -i #{efibootimg} '::/EFI'")
+        system("mmd -i #{efibootimg} '::/EFI/BOOT'")
+        system("mcopy -m -i #{efibootimg} '/var/lib/tftpboot/grub2/shimx64.efi' '::/EFI/BOOT/BOOTX64.efi'")
+        system("mcopy -m -i #{efibootimg} '/var/lib/tftpboot/grub2/grubx64.efi' '::/EFI/BOOT/grubx64.efi'")
+        efiopts = "-eltorito-alt-boot -e efiboot.img -no-emul-boot"
+        isohybrid_command = "isohybrid --uefi"
+      else
+        efiopts = ''
+        isohybrid_command = "isohybrid"
+      end
+
       iso = if opts[:dir]
               Tempfile.new(['bootdisk', '.iso'], opts[:dir]).path
             else
               File.join(wd, 'output.iso')
             end
-      unless system("#{Setting[:bootdisk_mkiso_command]} -o #{iso} -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{File.join(wd, 'build')}")
+      unless system("#{Setting[:bootdisk_mkiso_command]} -o #{iso} -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table #{efiopts} #{File.join(wd, 'build')}")
         raise ::Foreman::Exception.new(N_("ISO build failed"))
       end
 
       # Make the ISO bootable as a HDD/USB disk too
-      unless system("isohybrid", iso)
+      unless system("#{isohybrid_command} #{iso}")
         raise ::Foreman::Exception.new(N_("ISO hybrid conversion failed"))
       end
 
