@@ -6,8 +6,7 @@ module ForemanBootdisk::HostExt
   end
 
   def bootdisk_template_render
-    @host = self
-    unattended_render(bootdisk_template.template)
+    ForemanBootdisk::Renderer.new.render_template(template: bootdisk_template, host: self)
   end
 
   def bootdisk_build?

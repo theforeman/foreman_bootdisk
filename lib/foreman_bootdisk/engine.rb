@@ -9,6 +9,7 @@ module ForemanBootdisk
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
+    config.autoload_paths += Dir["#{config.root}/app/lib"]
 
     initializer 'foreman_bootdisk.mount_engine' do |app|
       app.routes_reloader.paths << "#{ForemanBootdisk::Engine.root}/config/routes/mount_engine.rb"
@@ -60,11 +61,10 @@ module ForemanBootdisk
 
         add_all_permissions_to_default_roles
 
-        allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
         apipie_documented_controllers ["#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"]
         provision_method 'bootdisk', N_('Boot disk based')
         template_labels 'Bootdisk' => N_('Boot disk embedded template')
-        extend_template_helpers ForemanBootdisk::RendererMethods
+        allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
       end
     end
 
@@ -77,7 +77,6 @@ module ForemanBootdisk
     config.to_prepare do
       begin
         Host::Managed.send(:prepend, ForemanBootdisk::HostExt)
-        Host::Managed.send(:include, ForemanBootdisk::RendererMethods)
         Host::Managed.send(:include, ForemanBootdisk::Orchestration::Compute) if SETTINGS[:unattended]
         HostsHelper.send(:prepend, ForemanBootdisk::HostsHelperExt)
         Foreman::Model::Vmware.send(:prepend, ForemanBootdisk::ComputeResources::Vmware) if Foreman::Model::Vmware.available?

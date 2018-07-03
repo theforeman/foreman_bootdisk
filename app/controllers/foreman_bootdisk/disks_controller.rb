@@ -4,6 +4,10 @@ module ForemanBootdisk
   class DisksController < ::ApplicationController
     before_action :find_resource, :only => %w[host full_host subnet]
 
+    # as this engine is isolated, we need to include url helpers from core explicitly
+    # to render help page layout
+    include Rails.application.routes.url_helpers
+
     def generic
       begin
         tmpl = ForemanBootdisk::Renderer.new.generic_template_render
