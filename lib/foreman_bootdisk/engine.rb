@@ -10,7 +10,7 @@ module ForemanBootdisk
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
 
-    initializer 'foreman_bootdisk.mount_engine', :after=> :build_middleware_stack do |app|
+    initializer 'foreman_bootdisk.mount_engine' do |app|
       app.routes_reloader.paths << "#{ForemanBootdisk::Engine.root}/config/routes/mount_engine.rb"
     end
 
