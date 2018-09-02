@@ -1,6 +1,6 @@
 class ChangeTemplatekindToBootdisk < ActiveRecord::Migration[4.2]
   class FakeConfigTemplate < ApplicationRecord
-    if ActiveRecord::Migrator.get_all_versions.include?(20150514072626)
+    if ActiveRecord::Base.connection.migration_context.get_all_versions.include?(20150514072626)
       self.table_name = 'templates'
     else
       self.table_name = 'config_templates'
