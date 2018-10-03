@@ -29,24 +29,6 @@ module ForemanBootdisk
       Apipie.configuration.checksum_path += ['/bootdisk/api/']
     end
 
-    # Precompile any JS or CSS files under app/assets/
-    # If requiring files from each other, list them explicitly here to avoid precompiling the same
-    # content twice.
-    assets_to_precompile =
-      Dir.chdir(root) do
-        Dir['app/assets/javascripts/**/*', 'app/assets/stylesheets/**/*'].map do |f|
-          f.split(File::SEPARATOR, 4).last
-        end
-      end
-
-    initializer 'foreman_bootdisk.assets.precompile' do |app|
-      app.config.assets.precompile += assets_to_precompile
-    end
-
-    initializer 'foreman_bootdisk.configure_assets', group: :assets do
-      SETTINGS[:foreman_bootdisk] = { assets: { precompile: assets_to_precompile } }
-    end
-
     initializer 'foreman_bootdisk.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_bootdisk do
         requires_foreman '>= 1.18'
