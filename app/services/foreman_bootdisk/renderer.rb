@@ -17,14 +17,14 @@ module ForemanBootdisk
       render_template(template: generic_host_template, host: host)
     end
 
-    def render_template(template: , host:)
+    def render_template(template:, host:, scope_class: renderer_scope)
       source = Foreman::Renderer.get_source(
         template: template,
         host: host
       )
       scope = Foreman::Renderer.get_scope(
         host: host,
-        klass: renderer_scope
+        klass: scope_class
       )
       Foreman::Renderer.render(source, scope)
     end
