@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 module ForemanBootdiskTestHelper
@@ -26,25 +28,25 @@ module ForemanBootdiskTestHelper
   end
 
   def setup_referer
-    request.env["HTTP_REFERER"] = "/history"
+    request.env['HTTP_REFERER'] = '/history'
   end
 
   def setup_org_loc
     disable_orchestration
-    @org, @loc = FactoryBot.create(:organization), FactoryBot.create(:location)
+    @org = FactoryBot.create(:organization)
+    @loc = FactoryBot.create(:location)
   end
 
   def setup_subnet
-    tftp_proxy = FactoryBot.create(:smart_proxy, :features => [FactoryBot.create(:tftp_feature)])
-    setup_subnet_no_tftp.update! :tftp => tftp_proxy
+    tftp_proxy = FactoryBot.create(:smart_proxy, features: [FactoryBot.create(:tftp_feature)])
+    setup_subnet_no_tftp.update! tftp: tftp_proxy
   end
 
   def setup_subnet_no_tftp
-    @subnet = FactoryBot.create(:subnet_ipv4, :gateway => '10.0.1.254', :dns_primary => '8.8.8.8', :organizations => [@org], :locations => [@loc])
+    @subnet = FactoryBot.create(:subnet_ipv4, gateway: '10.0.1.254', dns_primary: '8.8.8.8', organizations: [@org], locations: [@loc])
   end
 
   def setup_host
-    @host = FactoryBot.create(:host, :managed, :subnet => @subnet, :ip => @subnet.network.sub(/0$/, '4'), :organization => @org, :location => @loc)
+    @host = FactoryBot.create(:host, :managed, subnet: @subnet, ip: @subnet.network.sub(/0$/, '4'), organization: @org, location: @loc)
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ForemanBootdisk
   module Scope
     class FullHostBootdisk < Bootdisk
