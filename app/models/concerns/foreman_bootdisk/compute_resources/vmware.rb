@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ForemanBootdisk
   module ComputeResources
     module Vmware
@@ -6,10 +8,10 @@ module ForemanBootdisk
       end
 
       def parse_args(args = {})
-        args = super
+        args = super(args)
         if args[:provision_method] == 'bootdisk'
           args[:cdroms] = [new_cdrom]
-          args[:boot_order] = ['cdrom', 'disk']
+          args[:boot_order] = %w[cdrom disk]
           args[:boot_retry] = 10
         end
         args

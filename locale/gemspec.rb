@@ -1,2 +1,4 @@
+# frozen_string_literal: true
+
 # Matches foreman_bootdisk.gemspec
-_("Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure.")
+_('Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure.')

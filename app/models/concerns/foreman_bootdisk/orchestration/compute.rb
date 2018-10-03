@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'tmpdir'
 
 module ForemanBootdisk
@@ -44,10 +46,10 @@ module ForemanBootdisk
       end
 
       def setGenerateIsoImage
-        logger.info 'Generating ISO image for %s' % name
+        logger.info format('Generating ISO image for %s', name)
         bootdisk_generate_iso_image
-      rescue => e
-        failure _('Failed to generate ISO image for instance %{name}: %{message}') % { name: name, message: e.message }, e
+      rescue StandardError => e
+        failure format(_('Failed to generate ISO image for instance %{name}: %{message}'), name: name, message: e.message), e
       end
 
       def delGenerateIsoImage; end
@@ -55,17 +57,17 @@ module ForemanBootdisk
       def setIsoImage
         logger.info "Uploading ISO image #{bootdisk_isofile} for #{name}"
         bootdisk_upload_iso
-      rescue => e
-        failure _('Failed to upload ISO image for instance %{name}: %{message}') % { name: name, message: e.message }, e
+      rescue StandardError => e
+        failure format(_('Failed to upload ISO image for instance %{name}: %{message}'), name: name, message: e.message), e
       end
 
       def delIsoImage; end
 
       def setAttachIsoImage
-        logger.info 'Attaching ISO image to CDROM drive for %s' % name
+        logger.info format('Attaching ISO image to CDROM drive for %s', name)
         bootdisk_attach_iso
-      rescue => e
-        failure _('Failed to attach ISO image to CDROM drive of instance %{name}: %{message}') % { name: name, message: e.message }, e
+      rescue StandardError => e
+        failure format(_('Failed to attach ISO image to CDROM drive of instance %{name}: %{message}'), name: name, message: e.message), e
       end
 
       def delAttachIsoImage; end
@@ -76,8 +78,8 @@ module ForemanBootdisk
           bootdisk_generate_iso_image
           bootdisk_upload_iso
           bootdisk_attach_iso
-        rescue => e
-          Foreman::Logging.exception "Failed to rebuild Bootdisk image for #{name}", e, :level => :error
+        rescue StandardError => e
+          Foreman::Logging.exception "Failed to rebuild Bootdisk image for #{name}", e, level: :error
           return false
         end
       end

@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 require 'uri'
 
 module ForemanBootdisk
   class Renderer
     def generic_template_render(subnet = nil)
-      if subnet.present?
-        # rendering a subnet-level bootdisk requires tricking the renderer into thinking it has a
-        # valid host, without a token, but with a tftp proxy
-        host = Struct.new(:token, :provision_interface).new(
-          nil,
-          Struct.new(:subnet).new(subnet)
-        )
-      else
-        host = Struct.new(:token, :subnet).new(nil, nil)
-      end
+      host = if subnet.present?
+               # rendering a subnet-level bootdisk requires tricking the renderer into thinking it has a
+               # valid host, without a token, but with a tftp proxy
+               Struct.new(:token, :provision_interface).new(
+                 nil,
+                 Struct.new(:subnet).new(subnet)
+               )
+             else
+               Struct.new(:token, :subnet).new(nil, nil)
+             end
 
       render_template(template: generic_host_template, host: host)
     end
@@ -36,7 +38,7 @@ module ForemanBootdisk
     end
 
     def generic_host_template
-      template = ProvisioningTemplate.unscoped.find_by_name(Setting[:bootdisk_generic_host_template])
+      template = ProvisioningTemplate.unscoped.find_by(name: Setting[:bootdisk_generic_host_template])
       raise ::Foreman::Exception.new(N_('Unable to find template specified by %s setting'), 'bootdisk_generic_host_template') unless template
       template
     end

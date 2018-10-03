@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Foreman::Application.routes.draw do
-  mount ForemanBootdisk::Engine, :at => "/bootdisk"
+  mount ForemanBootdisk::Engine, at: '/bootdisk'
 end

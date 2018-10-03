@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'uri'
 
 module ForemanBootdisk
@@ -7,10 +9,10 @@ module ForemanBootdisk
         include ::Api::Version2
 
         resource_description do
-          api_base_url "/bootdisk/api"
+          api_base_url '/bootdisk/api'
         end
 
-        before_action :find_resource, :only => :host
+        before_action :find_resource, only: :host
         skip_after_action :log_response_body
 
         # no-op, but required for apipie documentation
@@ -20,24 +22,24 @@ module ForemanBootdisk
         api :GET, '/generic', N_('Download generic image')
         def generic
           tmpl = ForemanBootdisk::Renderer.new.generic_template_render
-          ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
-            send_data read_file(iso), :filename => "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
+          ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|
+            send_data read_file(iso), filename: "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
           end
         end
 
         api :GET, '/hosts/:host_id', N_('Download host image')
-        param :full, :bool, :required => false, :desc => N_('True for full, false for basic reusable image')
-        param :host_id, :identifier_dottable, :required => true
+        param :full, :bool, required: false, desc: N_('True for full, false for basic reusable image')
+        param :host_id, :identifier_dottable, required: true
         def host
           host = @disk
           if params[:full]
             ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
-              send_data read_file(iso), :filename => "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
+              send_data read_file(iso), filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
             end
           else
             tmpl = host.bootdisk_template_render
-            ForemanBootdisk::ISOGenerator.generate(:ipxe => tmpl) do |iso|
-              send_data read_file(iso), :filename => "#{host.name}.iso"
+            ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|
+              send_data read_file(iso), filename: "#{host.name}.iso"
             end
           end
         end

@@ -1,26 +1,28 @@
-require File.expand_path('../lib/foreman_bootdisk/version', __FILE__)
-require 'date'
+# frozen_string_literal: true
+
+require File.expand_path('lib/foreman_bootdisk/version', __dir__)
 
 Gem::Specification.new do |s|
-  s.name = "foreman_bootdisk"
+  s.name = 'foreman_bootdisk'
 
   s.version = ForemanBootdisk::VERSION
-  s.date = Date.today.to_s
 
-  s.summary = "Create boot disks to provision hosts with Foreman"
+  s.summary = 'Create boot disks to provision hosts with Foreman'
   # duplicated in locale/gemspec.rb
-  s.description = "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
-  s.homepage = "http://github.com/theforeman/foreman_bootdisk"
-  s.licenses = ["GPL-3.0"]
-  s.require_paths = ["lib"]
+  s.description = 'Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure.'
+  s.homepage = 'http://github.com/theforeman/foreman_bootdisk'
+  s.licenses = ['GPL-3.0']
+  s.require_paths = ['lib']
 
-  s.authors = ["Dominic Cleal"]
-  s.email = "dcleal@redhat.com"
+  s.authors = ['Dominic Cleal']
+  s.email = 'dcleal@redhat.com'
 
   s.extra_rdoc_files = [
-    "CHANGES.md",
-    "LICENSE",
-    "README.md",
+    'CHANGES.md',
+    'LICENSE',
+    'README.md'
   ]
-  s.files = `git ls-files`.split("\n") - Dir[".*", "Gem*", "*.gemspec"]
+  s.files = `git ls-files`.split("\n") - Dir['.*', 'Gem*', '*.gemspec']
+
+  s.add_development_dependency 'rubocop'
 end

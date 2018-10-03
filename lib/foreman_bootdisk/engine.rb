@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'foreman_bootdisk'
 require 'fast_gettext'
 require 'gettext_i18n_rails'
@@ -15,31 +17,35 @@ module ForemanBootdisk
       app.routes_reloader.paths << "#{ForemanBootdisk::Engine.root}/config/routes/mount_engine.rb"
     end
 
-    initializer 'foreman_bootdisk.load_default_settings', :before => :load_config_initializers do |app|
-      require_dependency File.expand_path("../../../app/models/setting/bootdisk.rb", __FILE__) if (Setting.table_exists? rescue(false))
+    initializer 'foreman_bootdisk.load_default_settings', before: :load_config_initializers do |_app|
+      require_dependency File.expand_path('../../app/models/setting/bootdisk.rb', __dir__) if begin
+                                                                                                     Setting.table_exists?
+                                                                                                   rescue StandardError
+                                                                                                     (false)
+                                                                                                   end
     end
 
-    initializer "foreman_bootdisk.load_app_instance_data" do |app|
+    initializer 'foreman_bootdisk.load_app_instance_data' do |app|
       ForemanBootdisk::Engine.paths['db/migrate'].existent.each do |path|
         app.config.paths['db/migrate'] << path
       end
     end
 
-    initializer "foreman_bootdisk.apipie" do
+    initializer 'foreman_bootdisk.apipie' do
       Apipie.configuration.checksum_path += ['/bootdisk/api/']
     end
 
-    initializer 'foreman_bootdisk.register_plugin', :before => :finisher_hook do |app|
+    initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_bootdisk do
         requires_foreman '>= 1.20'
 
-        security_block :bootdisk do |map|
-          permission :download_bootdisk, {:'foreman_bootdisk/disks' => [:generic, :host, :full_host, :subnet, :help],
-                                          :'foreman_bootdisk/api/v2/disks' => [:generic, :host],
-                                          :'foreman_bootdisk/api/v2/subnet_disks' => [:subnet]}
+        security_block :bootdisk do |_map|
+          permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host subnet help],
+                                         'foreman_bootdisk/api/v2/disks': %i[generic host],
+                                         'foreman_bootdisk/api/v2/subnet_disks': [:subnet]
         end
 
-        role "Boot disk access", [:download_bootdisk]
+        role 'Boot disk access', [:download_bootdisk]
 
         add_all_permissions_to_default_roles
 
@@ -50,8 +56,8 @@ module ForemanBootdisk
       end
     end
 
-    initializer 'foreman_bootdisk.register_gettext', :after => :load_config_initializers do |app|
-      locale_dir = File.join(File.expand_path('../../..', __FILE__), 'locale')
+    initializer 'foreman_bootdisk.register_gettext', after: :load_config_initializers do |_app|
+      locale_dir = File.join(File.expand_path('../..', __dir__), 'locale')
       locale_domain = 'foreman_bootdisk'
       Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
@@ -62,8 +68,8 @@ module ForemanBootdisk
         Host::Managed.send(:include, ForemanBootdisk::Orchestration::Compute) if SETTINGS[:unattended]
         HostsHelper.send(:prepend, ForemanBootdisk::HostsHelperExt)
         Foreman::Model::Vmware.send(:prepend, ForemanBootdisk::ComputeResources::Vmware) if Foreman::Model::Vmware.available?
-      rescue => e
-        puts "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e.to_s})"
+      rescue StandardError => e
+        Rails.logger.warn "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e})"
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_plugin_helper'
 
 module ForemanBootdisk
@@ -13,7 +15,7 @@ module ForemanBootdisk
         end
 
         test 'should render bootdisk chain url with custom mac' do
-          assert_equal "http://foreman.some.host.fqdn/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55", scope.bootdisk_chain_url('00:11:22:33:44:55')
+          assert_equal 'http://foreman.some.host.fqdn/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55', scope.bootdisk_chain_url('00:11:22:33:44:55')
         end
       end
 
