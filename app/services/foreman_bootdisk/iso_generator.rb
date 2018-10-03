@@ -10,27 +10,39 @@ class ForemanBootdisk::ISOGenerator
   def self.generate_full_host(host, opts = {}, &block)
     raise ::Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
-    tmpl = host.send(:generate_pxe_template, :PXELinux)
-    unless tmpl
-      err = host.errors.full_messages.to_sentence
-      raise ::Foreman::Exception.new(N_('Unable to generate disk template, PXELinux template not found or: %s'), err)
-    end
+    tmpl = render_pxelinux_template(host)
 
     # pxe_files and filename conversion is utterly bizarre
-    # aim to convert filenames to something usable under ISO 9660, update the template to match
+    # aim to convert filenames to something usable under ISO 9660, to match as rendered in the template
     # and then still ensure that the fetch() process stores them under the same name
-    files = host.operatingsystem.pxe_files(host.medium, host.architecture, host)
-    files.map! do |bootfile_info|
-      bootfile_info.map do |f|
-        suffix = f[1].split('/').last
-        iso_f0 = iso9660_filename(f[0].to_s + '_' + suffix)
-        tmpl.gsub!(f[0].to_s + '-' + suffix, iso_f0)
-        ForemanBootdisk.logger.debug("Boot file #{iso_f0}, source #{f[1]}")
-        [iso_f0, f[1]]
-      end
+    files = host.operatingsystem.family.constantize::PXEFILES.keys.each_with_object({}) do |type, hash|
+      filename = host.operatingsystem.bootfile(host.medium_provider, type)
+      iso_filename = iso9660_filename(filename)
+      hash[iso_filename] = host.url_for_boot(type)
     end
 
     generate(opts.merge(:isolinux => tmpl, :files => files), &block)
+  end
+
+  def self.render_pxelinux_template(host)
+    pxelinux_template = host.provisioning_template(kind: :PXELinux)
+
+    unless pxelinux_template
+      raise ::Foreman::Exception.new(N_('Unable to generate disk template, PXELinux template not found.'))
+    end
+
+    template = ForemanBootdisk::Renderer.new.render_template(
+      template: pxelinux_template,
+      host: host,
+      scope_class: ForemanBootdisk::Scope::FullHostBootdisk
+    )
+
+    unless template
+      err = host.errors.full_messages.to_sentence
+      raise ::Foreman::Exception.new(N_('Unable to generate disk PXELinux template: %s'), err)
+    end
+
+    template
   end
 
   def self.generate(opts = {}, &block)
@@ -66,10 +78,8 @@ class ForemanBootdisk::ISOGenerator
       end
 
       if opts[:files]
-        opts[:files].each do |bootfile_info|
-          for file, source in bootfile_info do
-            fetch(File.join(wd, 'build', file), source)
-          end
+        opts[:files].each do |file, source|
+          fetch(File.join(wd, 'build', file), source)
         end if opts[:files].respond_to? :each
       end
 

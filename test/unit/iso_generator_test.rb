@@ -3,46 +3,46 @@ require 'test_plugin_helper'
 class ForemanBootdisk::IsoGeneratorTest < ActiveSupport::TestCase
   include ForemanBootdiskTestHelper
   setup :setup_bootdisk
-  setup :setup_org_loc
-  setup :setup_subnet
-  setup :setup_host
 
-  setup do
-    @host.build = true
+  describe '#generate_full_host' do
+    let(:medium) { FactoryBot.create(:medium, name: 'Red Hat Enterprise Linux Atomic Mirror') }
+    let(:operatingsystem) { FactoryBot.create(:ubuntu14_10, :with_archs, :with_ptables, media: [medium]) }
+    let(:host) { FactoryBot.create(:host, :managed, operatingsystem: operatingsystem, build: true) }
+    let(:template) { FactoryBot.create(:provisioning_template, template: 'Fake kernel line <%= @kernel %> - <%= @initrd %>') }
+
+    setup do
+      host.expects(:provisioning_template).with(kind: :PXELinux).returns(template)
+    end
+
+    test 'generate_full_host creates with ISO-compatible file names' do
+      urls = host.operatingsystem.boot_file_sources(host.medium_provider)
+
+      kernel = ForemanBootdisk::ISOGenerator.iso9660_filename(
+        host.operatingsystem.kernel(host.medium_provider)
+      )
+      kernel_url = urls[:kernel]
+
+      initrd = ForemanBootdisk::ISOGenerator.iso9660_filename(
+        host.operatingsystem.initrd(host.medium_provider)
+      )
+      initrd_url = urls[:initrd]
+
+      ForemanBootdisk::ISOGenerator.expects(:generate).with({
+        isolinux: "Fake kernel line #{kernel} - #{initrd}",
+        files: {kernel => kernel_url,
+                initrd => initrd_url}}, anything)
+
+      ForemanBootdisk::ISOGenerator.generate_full_host(host)
+    end
   end
 
-  test "generate_full_host creates with ISO-compatible file names" do
-    @host.expects(:generate_pxe_template).with(:PXELinux).returns("Fake kernel line boot/Debian-8.1-x86_64-vmlinuz")
-    boot_files = [
-      {:"boot/Debian-8.1-x86_64"=>"/tmp/pxeboot/vmlinuz"},
-      {:"boot/Debian-8.1-x86_64"=>"/tmp/pxeboot/initrd.img"}
-    ]
-    @host.operatingsystem.expects(:pxe_files).returns(boot_files)
-    ForemanBootdisk::ISOGenerator.expects(:generate).with({
-      :isolinux => 'Fake kernel line BOOT/DEBIAN_8_1_X86_64_VMLINUZ',
-      :files => [[['BOOT/DEBIAN_8_1_X86_64_VMLINUZ', '/tmp/pxeboot/vmlinuz']],
-      [['BOOT/DEBIAN_8_1_X86_64_INITRD_IMG', '/tmp/pxeboot/initrd.img']]] }, anything)
-    ForemanBootdisk::ISOGenerator.generate_full_host(@host)
-  end
+  describe '#iso9660_filename' do
+    test 'converts path to iso9660' do
+      assert_equal 'BOOT/SOME_FILE_N_A_M_E123_', ForemanBootdisk::ISOGenerator.iso9660_filename('boot/some-File-n_a_m_e123Ä')
+    end
 
-  test "generate_full_host creates with ISO-compatible long file names" do
-    @host.expects(:generate_pxe_template).with(:PXELinux).returns("Fake kernel line boot/RedHatEnterpriseLinuxAtomic-7.3-x86_64-vmlinuz")
-    boot_files = [
-      {:"boot/RedHatEnterpriseLinuxAtomic-7.3-x86_64"=>"/tmp/pxeboot/vmlinuz"},
-      {:"boot/RedHatEnterpriseLinuxAtomic-7.3-x86_64"=>"/tmp/pxeboot/initrd.img"}
-    ]
-    @host.operatingsystem.expects(:pxe_files).returns(boot_files)
-    ForemanBootdisk::ISOGenerator.expects(:generate).with({
-      :isolinux => 'Fake kernel line BOOT/NUXATOMIC_7_3_X86_64_VMLINUZ',
-      :files => [[['BOOT/NUXATOMIC_7_3_X86_64_VMLINUZ', '/tmp/pxeboot/vmlinuz']],
-        [['BOOT/ATOMIC_7_3_X86_64_INITRD_IMG', '/tmp/pxeboot/initrd.img']]]}, anything)
-    ForemanBootdisk::ISOGenerator.generate_full_host(@host)
-  end
-
-  test "full host image generation generates via PXELinux type" do
-    @host.expects(:generate_pxe_template).with(:PXELinux).returns("Template")
-    @host.operatingsystem.expects(:pxe_files).returns([])
-    ForemanBootdisk::ISOGenerator.expects(:generate).with({:isolinux => "Template", :files => []}, anything)
-    ForemanBootdisk::ISOGenerator.generate_full_host(@host)
+    test 'shortens long filenames' do
+      assert_equal 'BOOT/RPRISELINUXATOMIC_7_3_X86_64', ForemanBootdisk::ISOGenerator.iso9660_filename('boot/RedHatEnterpriseLinuxAtomic-7.3-x86_64')
+    end
   end
 end
