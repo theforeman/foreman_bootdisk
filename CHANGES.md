@@ -1,5 +1,10 @@
 # Changelog
 
+## v13.0.0
+* static credentials failover
+* Rails 5.2 support
+* use of core new renderer framework
+
 ## v12.0.0
 * fixed subnet image token stub (#22428)
 * moved MAC based identification to Foreman core (#22858)
