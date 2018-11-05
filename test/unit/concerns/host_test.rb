@@ -8,8 +8,8 @@ module ForemanBootdisk
       host = FactoryBot.build(:host, :managed)
       host.provision_method = 'bootdisk'
       assert host.bootdisk_build?
-      refute host.image_build?
-      refute host.pxe_build?
+      assert_not host.image_build?
+      assert_not host.pxe_build?
     end
 
     test '#validate_media? must be true when provision_method is bootdisk' do

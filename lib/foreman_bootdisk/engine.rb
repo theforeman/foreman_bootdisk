@@ -18,11 +18,12 @@ module ForemanBootdisk
     end
 
     initializer 'foreman_bootdisk.load_default_settings', before: :load_config_initializers do |_app|
-      require_dependency File.expand_path('../../app/models/setting/bootdisk.rb', __dir__) if begin
-                                                                                                     Setting.table_exists?
-                                                                                                   rescue StandardError
-                                                                                                     (false)
-                                                                                                   end
+      table_exists = begin
+                       Setting.table_exists?
+                     rescue StandardError
+                       false
+                     end
+      require_dependency File.expand_path('../../app/models/setting/bootdisk.rb', __dir__) if table_exists
     end
 
     initializer 'foreman_bootdisk.load_app_instance_data' do |app|

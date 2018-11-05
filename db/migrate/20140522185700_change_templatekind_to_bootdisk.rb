@@ -25,6 +25,7 @@ class ChangeTemplatekindToBootdisk < ActiveRecord::Migration[4.2]
     old_kind = TemplateKind.find_by(name: 'Bootdisk')
     new_kind = TemplateKind.find_by(name: 'iPXE')
     return unless old_kind.present? && new_kind.present?
+
     FakeConfigTemplate.unscoped.where(template_kind_id: old_kind.id).update_all(template_kind_id: new_kind.id)
   end
 end
