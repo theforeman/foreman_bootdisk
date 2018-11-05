@@ -74,6 +74,7 @@ module ForemanBootdisk
         if opts[:ipxe]
           ipxe_source_file = File.join(Setting[:bootdisk_ipxe_dir], 'ipxe.lkrn')
           raise Foreman::Exception, N_('Please ensure the ipxe-bootimgs package is installed.') unless File.exist?(ipxe_source_file)
+
           FileUtils.cp(ipxe_source_file, File.join(wd, 'build', 'ipxe'))
           File.open(File.join(wd, 'build', 'script'), 'w') { |file| file.write(opts[:ipxe]) }
         end
@@ -116,6 +117,7 @@ module ForemanBootdisk
     def self.token_expiry(host)
       expiry = host.token.try(:expires)
       return '' if Setting[:token_duration].zero? || expiry.blank?
+
       '_' + expiry.strftime('%Y%m%d_%H%M')
     end
 
@@ -148,6 +150,7 @@ module ForemanBootdisk
       end
 
       return unless write_cache
+
       ForemanBootdisk.logger.debug("Caching contents of #{uri}")
       Rails.cache.write(uri, File.read(path), raw: true)
     end

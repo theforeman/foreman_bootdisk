@@ -22,7 +22,7 @@ module ForemanBootdisk
       test 'does not include a host token' do
         rendered_template = renderer.generic_template_render
         assert_includes rendered_template, 'http://foreman.some.host.fqdn/unattended/iPXE?mac=${net0/mac}'
-        refute_includes rendered_template, 'token'
+        assert_not_includes rendered_template, 'token'
       end
     end
 

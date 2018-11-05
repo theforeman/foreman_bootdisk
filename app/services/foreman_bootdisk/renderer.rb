@@ -40,6 +40,7 @@ module ForemanBootdisk
     def generic_host_template
       template = ProvisioningTemplate.unscoped.find_by(name: Setting[:bootdisk_generic_host_template])
       raise ::Foreman::Exception.new(N_('Unable to find template specified by %s setting'), 'bootdisk_generic_host_template') unless template
+
       template
     end
   end

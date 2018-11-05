@@ -23,6 +23,7 @@ module ForemanBootdisk
       def queue_bootdisk_compute
         return unless compute? && errors.empty? && new_record?
         return unless provision_method == 'bootdisk'
+
         queue.create(name: _('Generating ISO image for %s') % self, priority: 5,
                      action: [self, :setGenerateIsoImage])
         queue.create(name: _('Upload ISO image to datastore for %s') % self, priority: 6,
@@ -74,6 +75,7 @@ module ForemanBootdisk
 
       def rebuild_with_bootdisk
         return true unless bootdisk?
+
         begin
           bootdisk_generate_iso_image
           bootdisk_upload_iso

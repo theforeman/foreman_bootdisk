@@ -14,6 +14,5 @@ else
       rake setup:foreman_prepare
 
     and try again.
-MESSAGE
-
+  MESSAGE
 end
