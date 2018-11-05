@@ -92,7 +92,7 @@ module ForemanBootdisk
               else
                 File.join(wd, 'output.iso')
               end
-        raise Foreman::Exception, N_('ISO build failed') unless system(build_mkiso_command(iso, File.join(wd, 'build')))
+        raise Foreman::Exception, N_('ISO build failed') unless system(build_mkiso_command(output_file: iso, source_directory: File.join(wd, 'build')))
 
         # Make the ISO bootable as a HDD/USB disk too
         raise Foreman::Exception, N_('ISO hybrid conversion failed') unless system('isohybrid', iso)
@@ -101,9 +101,9 @@ module ForemanBootdisk
       end
     end
 
-    def self.build_mkiso_command(iso:, file:)
+    def self.build_mkiso_command(output_file:, source_directory:)
       arguments = [
-        "-o #{iso}",
+        "-o #{output_file}",
         '-iso-level 2',
         '-b isolinux.bin',
         '-c boot.cat',
@@ -111,7 +111,7 @@ module ForemanBootdisk
         '-boot-load-size 4',
         '-boot-info-table'
       ]
-      [Setting[:bootdisk_mkiso_command], arguments, file].flatten.join(' ')
+      [Setting[:bootdisk_mkiso_command], arguments, source_directory].flatten.join(' ')
     end
 
     def self.token_expiry(host)

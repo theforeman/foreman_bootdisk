@@ -40,6 +40,18 @@ module ForemanBootdisk
       end
     end
 
+    describe '#generate' do
+      test 'generates an iso image' do
+        ForemanBootdisk::ISOGenerator.expects(:system).with(
+          regexp_matches(/genisoimage -o .*output.iso -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table .*build/)
+        ).returns(true)
+        ForemanBootdisk::ISOGenerator.expects(:system).with('isohybrid', anything).returns(true)
+        ForemanBootdisk::ISOGenerator.generate do |iso|
+          assert_not_nil iso
+        end
+      end
+    end
+
     describe '#iso9660_filename' do
       test 'converts path to iso9660' do
         assert_equal 'BOOT/SOME_FILE_N_A_M_E123_', ForemanBootdisk::ISOGenerator.iso9660_filename('boot/some-File-n_a_m_e123Ä')
