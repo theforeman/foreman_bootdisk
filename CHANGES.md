@@ -1,5 +1,9 @@
 # Changelog
 
+## v14.0.0
+* use new medium provider framework
+* droped some unused code
+
 ## v13.0.0
 * static credentials failover
 * Rails 5.2 support
