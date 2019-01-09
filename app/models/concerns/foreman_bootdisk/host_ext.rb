@@ -36,10 +36,6 @@ module ForemanBootdisk
       /i.86|x86[_-]64/ =~ architecture.name
     end
 
-    def validate_media?
-      super || (managed && bootdisk_build? && build?)
-    end
-
     def can_be_built?
       super || (managed? && SETTINGS[:unattended] && bootdisk_build? && !build?)
     end
