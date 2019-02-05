@@ -14,7 +14,17 @@ module ForemanBootdisk
       let(:template) { FactoryBot.create(:provisioning_template, template: 'Fake kernel line <%= @kernel %> - <%= @initrd %>') }
 
       setup do
-        host.expects(:provisioning_template).with(kind: :PXELinux).returns(template)
+        host.stubs(:provisioning_template).with(kind: :PXELinux).returns(template)
+      end
+
+      test 'fetch handles redirect' do
+        Dir.mktmpdir do |dir|
+          url = 'http://example.com/request'
+          redirection = 'http://example.com/redirect'
+          stub_request(:get, url).to_return(status: 301, headers: { 'Location' => redirection })
+          stub_request(:get, redirection)
+          ForemanBootdisk::ISOGenerator.fetch(File.join(dir, 'test'), url)
+        end
       end
 
       test 'generate_full_host creates with ISO-compatible file names' do
