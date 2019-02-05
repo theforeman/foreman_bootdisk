@@ -121,7 +121,7 @@ module ForemanBootdisk
       '_' + expiry.strftime('%Y%m%d_%H%M')
     end
 
-    def self.fetch(path, uri)
+    def self.fetch(path, uri, limit = 10)
       dir = File.dirname(path)
       FileUtils.mkdir_p(dir) unless File.exist?(dir)
 
@@ -138,11 +138,22 @@ module ForemanBootdisk
           write_cache = use_cache
           uri = URI(uri)
           Net::HTTP.start(uri.host, uri.port) do |http|
-            request = Net::HTTP::Get.new(uri.request_uri)
+            request = Net::HTTP::Get.new(uri.request_uri, 'Accept-Encoding' => 'plain')
 
             http.request(request) do |response|
-              response.read_body do |chunk|
-                file.write chunk
+              case response
+              when Net::HTTPSuccess then
+                response.read_body do |chunk|
+                  file.write chunk
+                end
+              when Net::HTTPRedirection then
+                raise("Too many HTTP redirects when downloading #{uri}") if limit <= 0
+
+                fetch(path, response['location'], limit - 1)
+                # prevent multiple writes to the cache
+                write_cache = false
+              else
+                response.error!
               end
             end
           end
@@ -151,8 +162,11 @@ module ForemanBootdisk
 
       return unless write_cache
 
+      contents = File.read(path)
+      return if contents.empty?
+
       ForemanBootdisk.logger.debug("Caching contents of #{uri}")
-      Rails.cache.write(uri, File.read(path), raw: true)
+      Rails.cache.write(uri, contents, raw: true)
     end
 
     # isolinux supports up to ISO 9660 level 2 filenames

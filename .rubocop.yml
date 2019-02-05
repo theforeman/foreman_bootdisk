@@ -14,8 +14,8 @@ Style/FormatStringToken:
 Style/DoubleNegation:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 180
+Metrics:
+  Enabled: false
 
 Naming/MethodName:
   Exclude:
@@ -24,24 +24,6 @@ Naming/MethodName:
 Rails/SkipsModelValidations:
   Exclude:
     - 'db/migrate/**/*'
-
-Metrics/ClassLength:
-  Enabled: false
-
-Metrics/AbcSize:
-  Enabled: false
-
-Metrics/MethodLength:
-  Enabled: false
-
-Metrics/CyclomaticComplexity:
-  Enabled: false
-
-Metrics/PerceivedComplexity:
-  Enabled: false
-
-Metrics/BlockLength:
-  Enabled: false
 
 Rails/Date:
   Exclude:
@@ -54,3 +36,12 @@ Style/ClassAndModuleChildren:
 Naming/FileName:
   Exclude:
     - 'db/seeds.d/**/*'
+
+# Support both ruby19 and hash_rockets
+Style/HashSyntax:
+  EnforcedStyle: no_mixed_keys
+  Enabled: true
+
+# Both double and single quotes are OK
+Style/StringLiterals:
+  Enabled: false

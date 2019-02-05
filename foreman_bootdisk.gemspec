@@ -25,4 +25,5 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n") - Dir['.*', 'Gem*', '*.gemspec']
 
   s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'webmock'
 end

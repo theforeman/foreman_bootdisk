@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require 'webmock/minitest'
+require 'webmock'
 
 module ForemanBootdiskTestHelper
   def setup_bootdisk
