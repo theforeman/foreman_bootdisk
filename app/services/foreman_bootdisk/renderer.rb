@@ -13,7 +13,7 @@ module ForemanBootdisk
                  Struct.new(:subnet).new(subnet)
                )
              else
-               Struct.new(:token, :subnet).new(nil, nil)
+               Struct.new(:token, :subnet, :content_source).new(nil, nil, nil)
              end
 
       render_template(template: generic_host_template, host: host)
