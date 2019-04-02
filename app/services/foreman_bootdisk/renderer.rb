@@ -8,9 +8,10 @@ module ForemanBootdisk
       host = if subnet.present?
                # rendering a subnet-level bootdisk requires tricking the renderer into thinking it has a
                # valid host, without a token, but with a tftp proxy
-               Struct.new(:token, :provision_interface).new(
+               Struct.new(:token, :provision_interface, :content_source).new(
                  nil,
-                 Struct.new(:subnet).new(subnet)
+                 Struct.new(:subnet).new(subnet),
+                 nil
                )
              else
                Struct.new(:token, :subnet, :content_source).new(nil, nil, nil)
