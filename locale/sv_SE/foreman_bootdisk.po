@@ -162,12 +162,6 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr ""
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "Subnät (%s) har ingen nätsluss definierad"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "Subnät (%s) har ingen primär DNS-server definierad"
-
 msgid "Subnet boot disks"
 msgstr ""
 
@@ -195,7 +189,10 @@ msgstr ""
 msgid "Unable to find template specified by %s setting"
 msgstr "Går inte att hitta mallen specificerad med inställningen %s"
 
-msgid "Unable to generate disk template: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

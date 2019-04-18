@@ -162,12 +162,6 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr ""
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "La subxarxa (%s) no té definida cap passarel·la"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "La subxarxa (%s) no té definit cap servidor DNS primari"
-
 msgid "Subnet boot disks"
 msgstr "Discs d'arrencada de subxarxa"
 
@@ -195,8 +189,11 @@ msgstr ""
 msgid "Unable to find template specified by %s setting"
 msgstr "No es pot trobar la plantilla especificada per l'ajust %s"
 
-msgid "Unable to generate disk template: %s"
-msgstr "No es pot generar la plantilla de disc: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr ""

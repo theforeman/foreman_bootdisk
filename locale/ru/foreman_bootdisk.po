@@ -165,12 +165,6 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr "Стандартный образ для подсети «%s»"
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "Шлюз подсети (%s) не задан"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "Основной DNS-сервер для подсети (%s) не определен"
-
 msgid "Subnet boot disks"
 msgstr "Загрузочные диски для подсети"
 
@@ -198,8 +192,11 @@ msgstr "Истина для полного, ложь для начального
 msgid "Unable to find template specified by %s setting"
 msgstr "Шаблон из параметра %s не найден"
 
-msgid "Unable to generate disk template: %s"
-msgstr "Не удалось сгенерировать шаблон диска: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr ""

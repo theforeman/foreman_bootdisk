@@ -160,12 +160,6 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr "'%s' 서브넷 일반 이미지"
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "서브넷 (%s)에 지정된 게이트웨이가 없습니다 "
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "서브넷 (%s)에 지정된 1차 DNS 서버가 없습니다 "
-
 msgid "Subnet boot disks"
 msgstr "서브넷 부팅 디스크"
 
@@ -193,8 +187,11 @@ msgstr "전체 이미지의 경우 True, 다시 사용할 수 있는 기본 이�
 msgid "Unable to find template specified by %s setting"
 msgstr "%s 설정에 의해 지정된 템플릿을 찾을 수 없습니다 "
 
-msgid "Unable to generate disk template: %s"
-msgstr "디스크 템플릿을 생성할 수 없습니다: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr ""

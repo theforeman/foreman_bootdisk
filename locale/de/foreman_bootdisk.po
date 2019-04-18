@@ -164,12 +164,6 @@ msgstr "SYSLINUX-Verzeichnis"
 msgid "Subnet '%s' generic image"
 msgstr "Subnetz '%s' generisches Abbild"
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "Subnetz (%s) hat keinen Gateway definiert"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "Subnetz (%s) hat keinen primären DNS-Server definiert"
-
 msgid "Subnet boot disks"
 msgstr "Subnetz-Startmedien"
 
@@ -197,8 +191,11 @@ msgstr "\"True\" für vollständiges, \"false\" für einfaches wiederverwendbare
 msgid "Unable to find template specified by %s setting"
 msgstr "Konnte Vorlage mit der %s-Einstellung nicht finden"
 
-msgid "Unable to generate disk template: %s"
-msgstr "Startmedium-Vorlage konnte nicht erzeugt werden: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "ISO-Abbild zum Datenspeicher für %s hochladen"

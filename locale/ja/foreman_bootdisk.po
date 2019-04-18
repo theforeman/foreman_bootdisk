@@ -162,12 +162,6 @@ msgstr "SYSLINUX ディレクトリー"
 msgid "Subnet '%s' generic image"
 msgstr "サブネット '%s' の汎用イメージ"
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "サブネット (%s) にはゲートウェイが定義されていません"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "サブネット (%s) にはプライマリー DNS サーバーが定義されていません"
-
 msgid "Subnet boot disks"
 msgstr "サブネットブートディスク"
 
@@ -195,8 +189,11 @@ msgstr "完全イメージの場合は true、基本的な再利用可能イメ�
 msgid "Unable to find template specified by %s setting"
 msgstr "%s 設定で指定されているテンプレートが見つかりません"
 
-msgid "Unable to generate disk template: %s"
-msgstr "ディスクテンプレートを生成することができません: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "ISO イメージの %s のデータストアへのアップロード"

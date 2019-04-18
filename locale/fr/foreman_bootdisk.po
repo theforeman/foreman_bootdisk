@@ -163,12 +163,6 @@ msgstr "Répertoire SYSLINUX"
 msgid "Subnet '%s' generic image"
 msgstr "Image générique du sous-réseau %s"
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "Le sous réseau (%s) n'a pas de passerelle définie"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "Le sous réseau (%s) n'a pas de serveur DNS primaire défini"
-
 msgid "Subnet boot disks"
 msgstr "Sous-réseau des disques de démarrage"
 
@@ -196,8 +190,11 @@ msgstr "Vrai pour complète, faux pour une image basique réutilisable"
 msgid "Unable to find template specified by %s setting"
 msgstr "Impossible de trouver un modèle spécifié par le paramètre %s"
 
-msgid "Unable to generate disk template: %s"
-msgstr "Impossible de générer le modèle de disque : %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "Envoi de l'image ISO sur la banque de données pour %s"

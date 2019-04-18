@@ -161,12 +161,6 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr ""
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "La sottorete (%s) non presenta alcun gateway"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "La sottorete (%s) non presenta alcun server DNS primario"
-
 msgid "Subnet boot disks"
 msgstr ""
 
@@ -194,8 +188,11 @@ msgstr "True per immagini complete o false per immagini riutilizzabili di base"
 msgid "Unable to find template specified by %s setting"
 msgstr "Impossibile trovare il template usando l'impostazione %s"
 
-msgid "Unable to generate disk template: %s"
-msgstr "Impossibile generare un template del disco: %s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr ""

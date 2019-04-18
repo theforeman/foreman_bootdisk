@@ -161,12 +161,6 @@ msgstr ""
 msgid "Subnet '%s' generic image"
 msgstr "子網路「%s」泛型映像檔"
 
-msgid "Subnet (%s) has no gateway defined"
-msgstr "子網路（%s）尚未定義閘道器"
-
-msgid "Subnet (%s) has no primary DNS server defined"
-msgstr "子網路（%s）尚未定義主 DNS 伺服器"
-
 msgid "Subnet boot disks"
 msgstr "子網路開機磁碟"
 
@@ -194,8 +188,11 @@ msgstr "「true」代表完整，「false」則代表可重複使用的基本映
 msgid "Unable to find template specified by %s setting"
 msgstr "找不到 %s 設定所指定的範本"
 
-msgid "Unable to generate disk template: %s"
-msgstr "無法產生磁碟範本：%s"
+msgid "Unable to generate disk PXELinux template: %s"
+msgstr ""
+
+msgid "Unable to generate disk template, PXELinux template not found."
+msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
 msgstr ""
