@@ -35,10 +35,12 @@ set netX/gateway <%= interface.subnet.gateway %>
 ifstat net${idx}
 route
 
-<% if interface.subnet.dns_primary.present? %>
-# Note, iPXE can only use one DNS server
-echo Using DNS <%= interface.subnet.dns_primary %>
-set dns <%= interface.subnet.dns_primary %>
+# Note: When multiple DNS servers are specified, only the first
+# server will be used. See: http://ipxe.org/cfg/dns
+<% dns = interface.subnet.dns_servers.first -%>
+<% if dns.present? -%>
+echo Using DNS <%= dns %>
+set dns <%= dns %>
 set domain <%= interface.domain.to_s %>
 <% end %>
 
