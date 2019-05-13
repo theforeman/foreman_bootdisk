@@ -17,3 +17,4 @@ tags
 TAGS
 .foreman_app
 bootloaders
+foreman_bootdisk*.gem

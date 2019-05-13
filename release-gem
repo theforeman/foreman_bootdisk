@@ -44,8 +44,8 @@ action "Modified #{RUBY_VERSION_FILE} to match desired version"
 action "Created 'Version X.Y' commit with engine.rb/version.rb change"
 
 action "Created git tag" do
-  $git_version = `git describe --abbrev=0 --tags`.chomp
-  $git_version == File.read(RUBY_VERSION_FILE).match(/VERSION\s*=\s"([0-9\.]+)"/)[1]
+  $git_version = `git describe --abbrev=0 --tags`.chomp.sub("v", "")
+  $git_version == File.read(RUBY_VERSION_FILE).match(/VERSION\s*=\s'([0-9\.]+)'/)[1]
 end
 
 action "Is version #{$git_version} the one to be released"
