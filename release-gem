@@ -1,0 +1,82 @@
+#!/bin/env ruby
+
+$plugin_name = "foreman_bootdisk"
+RUBY_VERSION_FILE = "lib/#{$plugin_name}/version.rb"
+
+def die(msg)
+  STDERR.puts msg; exit 1
+end
+
+def run(cmd)
+  puts `#{cmd}`
+  die("Command #{cmd} failed with #{$?}!") if $?.to_i != 0
+  true
+end
+
+def action(question)
+  puts "#{question} ? [Y/n]"
+  die("Aborted.") if STDIN.gets.chomp.match(/^(n|no|nope)$/i)
+  die("Check failed, exiting.") if block_given? && ! yield
+end
+
+action "Extracted strings with: rake plugin:gettext[#{$plugin_name}] (Foreman dir)"
+
+action "Pulled updates with: make -C locale tx-update"
+
+action "Merged the updates with: rake plugin:gettext[#{$plugin_name}] (Foreman dir)"
+
+action "Rebuilt the MO files with: make -C locale mo-files" do
+  Dir["locale/**/*.po"].each do |po|
+    mo = po.sub(/#{$plugin_name}\.po$/, "LC_MESSAGES/#{$plugin_name}.mo")
+    puts("Warning, file #{mo} does not exist!") unless File.exist?(mo)
+    puts("Warning, file #{mo} outdated!") if File.mtime(po) > File.mtime(mo)
+  end
+end
+
+action "Want me to update AUTHORS file" do
+  run "git log --pretty=format:'%an' | sort -u > AUTHORS"
+end
+
+action "Modified lib/#{$plugin_name}/engine.rb to match minimum Foreman core version"
+
+action "Modified #{RUBY_VERSION_FILE} to match desired version"
+
+action "Created 'Version X.Y' commit with engine.rb/version.rb change"
+
+action "Created git tag" do
+  $git_version = `git describe --abbrev=0 --tags`.chomp
+  $git_version == File.read(RUBY_VERSION_FILE).match(/VERSION\s*=\s"([0-9\.]+)"/)[1]
+end
+
+action "Is version #{$git_version} the one to be released"
+
+$gem_filename = "#{$plugin_name}-#{$git_version}.gem"
+action "Shall I build the #{$gem_filename} now" do
+  run "gem build #{$plugin_name}.gemspec"
+end
+
+action "Investigated the #{$gem_filename} via gem compare -k -b #{$plugin_name} OLD #{$git_version} -k" do
+  run "tar -xOf #{$gem_filename} data.tar.gz | tar -z -list | sort"
+end
+
+action "Created and built OS distribution packages"
+
+action "Updated dependencies in both RPM and DEB spec files"
+
+action "All commits and *tags* pushed to origin"
+
+action "Shell I push the #{$gem_filename} to rubygems.org now" do
+  run "gem push #{$gem_filename}"
+end
+
+action "Is https://rubygems.org/gems/#{$plugin_name} looking good"
+
+action "Created new stable branch and pushed to origin"
+
+action "Updated documentation at www.theforeman.org?"
+
+action "Updated jenkins_job_builder http://bit.ly/2iZKR3B branch"
+
+puts "Well done! Go ahead and create documentation and changelog:"
+puts "  git log --pretty=format:'%s' develop...X.Y.Z"
+puts "  git log --pretty=format:'%an' develop...X.Y.Z | sort -u"
