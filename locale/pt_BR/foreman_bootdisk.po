@@ -5,12 +5,13 @@
 # Translators:
 # Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2016
 # Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2015
+# Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-20 00:09+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/l"
 "anguage/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -35,13 +36,13 @@ msgid "Boot disk"
 msgstr "Disco de boot"
 
 msgid "Boot disk based"
-msgstr ""
+msgstr "Baseado em disco de inicialização"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr ""
+msgstr "Download do disco de inicialização não disponível para arquitetura %s"
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "Modelo incorporado ao disco de inicialização"
 
 msgid "Boot disks"
 msgstr "Discos de inicialização"
@@ -59,16 +60,16 @@ msgid "Download subnet generic image"
 msgstr "Baixar imagem genérica de subrede"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr ""
+msgstr "Falha ao anexar imagem ISO para drive de CD-ROM da instância: %{name}: %{message}"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "Falha ao gerar imagem ISO para instância %{name}: %{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "Ocorreu uma falha ao renderizar modelo de disco de inicialização "
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "Falha ao fazer upload da imagem ISO para instância: %{name}: %{message}"
 
 msgid "Full host '%s' image"
 msgstr "Imagem '%s' de host completo"
@@ -83,7 +84,7 @@ msgid "Generic image"
 msgstr "Imagem genérica"
 
 msgid "Generic image template"
-msgstr ""
+msgstr "Modelo de imagem genérica"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Imagens genéricas são imagens de disco reutilizáveis que funcionam para qualquer host registrado em Foreman. Elas exigem um serviço básico de DHCP e DNS para funcionar e entrar em contato com o servidor, mas não exigem reservas de DHCP ou endereços IP estáticos."
@@ -110,7 +111,7 @@ msgid "Host image"
 msgstr "Imagem de host"
 
 msgid "Host image template"
-msgstr ""
+msgstr "Modelo de imagem do host"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "Host não está no modo de construção, portanto o modelo não pode ser processado"
@@ -119,7 +120,7 @@ msgid "ISO build failed"
 msgstr "Construção da ISO falhou"
 
 msgid "ISO generation command"
-msgstr ""
+msgstr "Comando de geração ISO"
 
 msgid "ISO hybrid conversion failed"
 msgstr "Conversão da ISO híbrida falhou"
@@ -128,7 +129,7 @@ msgid "ISOLINUX directory"
 msgstr "diretório ISOLINUX"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "Cache de mídia de instalação"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Arquivos de mídia de instalação serão armazenados em cache para imagens completas de host"
@@ -140,7 +141,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "Caminho do diretório contendo imagens iPXE"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "Caminho para o diretório contendo imagens isolinux"
 
 msgid "Path to directory containing syslinux images"
 msgstr "Caminho do diretório contendo imagens syslinux"
@@ -149,10 +150,10 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "Imagens per-host contêm dados sobre um determinado host registrado em Foreman e configuram a rede totalmente estática, evitando a necessidade de DHCP. Depois que a rede está configurada, eles carregam em série a partir do Foreman, pegando a configuração atual do sistema operacional e construindo o estado do servidor."
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "Garanta que o pacote ipxe-bootimgs esteja instalado."
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "Garanta que os pacotes isolinux/syslinux estejam instalados."
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin para Foreman que cria discos de inicialização baseados em iPXE para provisionar hosts sem a necessidade de infra-estrutura PXE."
@@ -203,7 +204,7 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr "Vários tipos de discos de inicialização podem ser criados para fornecer hosts sem a necessidade de serviços PXE. Discos de inicialização podem ser anexados ao host (físico ou virtual), que iniciam a partir do disco, contacta o Foreman e começa a instalação do SO."
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "Diretório iPXE"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Template iPXE para uso em discos de boot de hosts genéricos"

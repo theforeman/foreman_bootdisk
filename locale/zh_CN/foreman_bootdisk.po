@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-20 00:09+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/langu"
 "age/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "All images are usable as either ISOs or as disk images, including being w
 msgstr "所有映像都可作为 ISO 或者磁盘映像使用，包括使用 `dd` 写入的 USB盘。"
 
 msgid "Attach ISO image to CDROM drive for %s"
-msgstr ""
+msgstr "将 ISO 映像附加至  %s 的 CDROM 驱动"
 
 msgid "Back"
 msgstr "后退"
@@ -33,13 +33,13 @@ msgid "Boot disk"
 msgstr "引导磁盘"
 
 msgid "Boot disk based"
-msgstr ""
+msgstr "基于引导磁盘"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr ""
+msgstr "引导磁盘下载不适用于 %s 架构"
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "引导磁盘内嵌的模板"
 
 msgid "Boot disks"
 msgstr "引导磁盘"
@@ -57,16 +57,16 @@ msgid "Download subnet generic image"
 msgstr "下载子网通用映象"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr ""
+msgstr "未能成功将 ISO 映像附加到实例 %{name} 的 CDROM 驱动：%{message}"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "为实例 %{name} 生成 ISO 映像失败：%{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "呈现引导盘模板失败"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "为实例 %{name} 上传 ISO 映像失败：%{message}"
 
 msgid "Full host '%s' image"
 msgstr "完整主机 '%s' 映像"
@@ -75,13 +75,13 @@ msgid "Full host image"
 msgstr "完整主机映像"
 
 msgid "Generating ISO image for %s"
-msgstr ""
+msgstr "为 %s 生成 ISO 映像"
 
 msgid "Generic image"
 msgstr "原始映像"
 
 msgid "Generic image template"
-msgstr ""
+msgstr "原始映像模板"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "通用映像是可重复使用的映像，可用于 Foreman 中注册的所有主机。它要求使用 DHCP 和 DNS 服务与服务器联络，但不要求 DHCP 预订或静态 IP 地址。"
@@ -108,7 +108,7 @@ msgid "Host image"
 msgstr "主机映像"
 
 msgid "Host image template"
-msgstr ""
+msgstr "主机映像模板"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "主机不是构建模式，因此无法修改模板。"
@@ -117,16 +117,16 @@ msgid "ISO build failed"
 msgstr "ISO 构建失败"
 
 msgid "ISO generation command"
-msgstr ""
+msgstr "ISO 生成命令"
 
 msgid "ISO hybrid conversion failed"
 msgstr "ISO 复合转换失败"
 
 msgid "ISOLINUX directory"
-msgstr ""
+msgstr "ISOLINUX 目录"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "安装介质缓存"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "可为完整主机映像缓存安装介质文件"
@@ -138,7 +138,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "包含 iPXE 映像目录的路径"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "到包含 isolinux 映像目录的路径"
 
 msgid "Path to directory containing syslinux images"
 msgstr "到包含 syslinux 映像目录的路径"
@@ -147,16 +147,16 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "每台主机映像包含有关中 Foreman 中注册的具体主机的数据，并设置静态联网，避免使用 DHCP。配置联网后，主机就可以从 Foreman 进行链载入，提取当前 OS 配置，并根据服务器构建状态。"
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "请确保已安装 ipxe-bootimgs 软件包。"
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "请确保已安装 isolinux/syslinux 软件包。"
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "为 Foreman 生成基于 iPXE 的引导磁盘的插件，在不需要 PXE 架构的条件下即可供应主机。"
 
 msgid "SYSLINUX directory"
-msgstr ""
+msgstr "SYSLINUX 目录"
 
 msgid "Subnet '%s' generic image"
 msgstr "子网 '%s' 通用映象"
@@ -195,13 +195,13 @@ msgid "Unable to generate disk template, PXELinux template not found."
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
-msgstr ""
+msgstr "将 ISO 映像上传至 %s 的数据存储区"
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "可生成各种类型的引导磁盘在不需要 PXE 服务的情况下供应主机。可将引导磁盘附加到使用该磁盘引导的主机（物理机或虚拟机），联络 Foreman 并开始操作系统安装。"
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "iPXE 目录"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "通用主机引导盘使用的 iPXE 模板"

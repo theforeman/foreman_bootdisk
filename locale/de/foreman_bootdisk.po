@@ -5,14 +5,17 @@
 # Translators:
 # Christina Gurski <Gurski_christina@yahoo.de>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2014,2016
+# Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
 # Paul Puschmann, 2014
+# abf90805572190d649c59f7a021d76cb, 2014
+# simon11 <simon.stieger.98@live.de>, 2014
 # simon11 <simon.stieger.98@live.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-20 00:09+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,10 +42,10 @@ msgid "Boot disk based"
 msgstr "Startmedium-basiert"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr ""
+msgstr "Startmedium Download nicht verfügbar für Architektur %s"
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "Im Startmedium eingebettete Vorlage"
 
 msgid "Boot disks"
 msgstr "Startmedien"
@@ -60,16 +63,16 @@ msgid "Download subnet generic image"
 msgstr "Generisches Abbild von Subnetz herunterladen"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr ""
+msgstr "Fehler beim Einhängen des ISO-Abbild am CDROM-Laufwerk für Instanz %{name}: %{message}"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "Fehler beim Erzeugen des ISO-Abbild für Instanz %{name}: %{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "Fehler beim Rendern der Vorlage für Startmedium"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "Fehler beim Upload des ISO-Abbild für Instanz %{name}: %{message}"
 
 msgid "Full host '%s' image"
 msgstr "Vollständiges Host \"%s\"-Abbild"
@@ -129,7 +132,7 @@ msgid "ISOLINUX directory"
 msgstr "ISOLINUX-Verzeichnis"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "Installationsmedien-Dateien Caching"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Installationsmedien-Dateien werden für vollständige Host-Images zwischengespeichert."
@@ -141,7 +144,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "Pfad zum Verzeichnis mit iPXE-Abbildern"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "Pfad zum Verzeichnis welches die ISOLINUX Abbilder enthält"
 
 msgid "Path to directory containing syslinux images"
 msgstr "Pfad zum Verzeichnis mit syslinux-Abbildern"
@@ -150,10 +153,10 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "\"Pro-Host\"-Abbilder enthalten Daten über einen bestimmten Host, der in Foreman registriert ist, und richten eine vollständig statische Verbindung ein, wobei die Notwendigkeit von DHCP vermieden wird. Nach der Konfiguration der Verbindung werden sie nacheinander von Foreman geladen (Chainloading) und nehmen die gegenwärtige OS-Konfiguration und den Buildstatus vom Server auf."
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "Bitte die Installation des IPXE-bootimgs Paket sicherstellen."
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "Bitte die Installation des/der ISOLINUX/SYSLINUX Paket(e) sicherstellen."
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin für Foreman, welches iPXE-basierte Startmedien erstellt, um Hosts ohne die Notwendigkeit einer PXE-Infrastruktur bereitzustellen."

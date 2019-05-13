@@ -8,10 +8,10 @@
 # Dominic Cleal <dominic@cleal.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-10-12 21:14+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/fore"
 "man/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgid "Boot disk based"
 msgstr "Boot disk based"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr ""
+msgstr "Boot disk download not available for %s architecture"
 
 msgid "Boot disk embedded template"
 msgstr "Boot disk embedded template"

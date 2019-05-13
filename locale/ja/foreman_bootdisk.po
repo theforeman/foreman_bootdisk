@@ -6,10 +6,10 @@
 # Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-11-20 20:46+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/"
 ")\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgid "Boot disk based"
 msgstr "ブートディスクベース"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr ""
+msgstr "ブートディスクのダウンロードは %s アーキテクチャーには使用できません"
 
 msgid "Boot disk embedded template"
 msgstr "ブートディスクで組み込まれるテンプレート"

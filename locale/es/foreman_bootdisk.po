@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the foreman_bootdisk package.
 #
 # Translators:
-# Sergio Ocón <sergio.ocon@redhat.com>, 2015
+# Sergio Ocón <sergio.ocon@redhat.com>, 2014-2015
 # Sergio Ocón <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-20 00:09+0000\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Spanish (http://www.transifex.com/foreman/foreman/language/es/)"
 "\n"
@@ -26,7 +26,7 @@ msgid "All images are usable as either ISOs or as disk images, including being w
 msgstr "Todas las imágenes pueden utilizarse como ISO o como imágenes de disco, incluso tras copiarlas en un disco USB con `dd`"
 
 msgid "Attach ISO image to CDROM drive for %s"
-msgstr ""
+msgstr "Adjuntar imagen ISO a la unidad CDROM para %s"
 
 msgid "Back"
 msgstr "Atrás"
@@ -35,13 +35,13 @@ msgid "Boot disk"
 msgstr "Disco de arranque"
 
 msgid "Boot disk based"
-msgstr ""
+msgstr "Basado en el disco de arranque"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr ""
+msgstr "Descarga de disco de arranque no disponible para la arquitectura %s"
 
 msgid "Boot disk embedded template"
-msgstr ""
+msgstr "Plantilla inserta en el disco de arranque"
 
 msgid "Boot disks"
 msgstr "Discos de arranque"
@@ -59,16 +59,16 @@ msgid "Download subnet generic image"
 msgstr "Descargar imagen genérica de la subred"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr ""
+msgstr "Ocurrió un error al adjuntar la imagen ISP a la unidad CDROM de la instancia %{name}: %{message}"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "Ocurrió un error al generar la imagen ISP para la instancia %{name}: %{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "No se pudo reproducir la plantilla del disco de arranque."
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr ""
+msgstr "Ocurrió un error al subir la imagen ISP para la instancia %{name}: %{message}"
 
 msgid "Full host '%s' image"
 msgstr "Imagen completa de host '%s'"
@@ -77,13 +77,13 @@ msgid "Full host image"
 msgstr "Imagen completa de host"
 
 msgid "Generating ISO image for %s"
-msgstr ""
+msgstr "Generando imagen para %s"
 
 msgid "Generic image"
 msgstr "Imagen genérica"
 
 msgid "Generic image template"
-msgstr ""
+msgstr "Plantilla de imagen genérica"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Las imágenes genéricas son imágenes de disco reutilizables que funcionan con cualquier host registrado en Foreman. Requiere un servicio básico DCHP y DNS para funcionar y comunicarse con el servidor, pero no necesita reservas DHCP o direcciones IP estáticas."
@@ -110,7 +110,7 @@ msgid "Host image"
 msgstr "Imágen de host"
 
 msgid "Host image template"
-msgstr ""
+msgstr "Plantilla de imagen de host"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "El host no está en modo build, así que no se puede producir la plantilla"
@@ -119,16 +119,16 @@ msgid "ISO build failed"
 msgstr "Error en la construcción del ISO"
 
 msgid "ISO generation command"
-msgstr ""
+msgstr "Comando de generación ISO"
 
 msgid "ISO hybrid conversion failed"
 msgstr "Error en la conversión del ISO Híbrido"
 
 msgid "ISOLINUX directory"
-msgstr ""
+msgstr "Directorio ISOLINUX"
 
 msgid "Installation media caching"
-msgstr ""
+msgstr "Habilitando caché de medios de instalación"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Archivos de medios de instalación se almacenarán en caché para imágenes completas de host"
@@ -140,7 +140,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "Ruta al directorio que contiene las imágenes iPXE"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "Ruta al directorio que contiene imágenes isolinux"
 
 msgid "Path to directory containing syslinux images"
 msgstr "Ruta al directorio que contiene las imágenes syslinux"
@@ -149,16 +149,16 @@ msgid "Per-host images contain data about a particular host registered in Forema
 msgstr "Las imágenes por-host contienen datos sobre un host en particular registrado en Foreman y configuran una red completamente estática, sin necesidad de DHCP. Tras configurar la red, encadenan desde Foreman, cogiendo la configuración actual de SO y el estado de build del servidor."
 
 msgid "Please ensure the ipxe-bootimgs package is installed."
-msgstr ""
+msgstr "Asegúrese de que el paquete ipxe-bootimgs esté instalado."
 
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
-msgstr ""
+msgstr "Asegúrese de que el(los) paquete(s) isolinux/syslinux estén instalados."
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin para Foreman que crea discos de arranque iPXE para provisionar hosts sin necesidad de infraestructura PXE"
 
 msgid "SYSLINUX directory"
-msgstr ""
+msgstr "Directorio SYSLINUX"
 
 msgid "Subnet '%s' generic image"
 msgstr "Imagen genérica '%s' de la subred"
@@ -197,13 +197,13 @@ msgid "Unable to generate disk template, PXELinux template not found."
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
-msgstr ""
+msgstr "Subir imagen ISP al almacén de datos para %s"
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "Se puede crear varios tipos de discos de arranque para provisionar hosts sin necesidad de servicios PXE. Los discos de arranque pueden engancharse al host (físico o virtual) que arranca desde el disco, se conecta a Foreman y comienza la instalación del SO."
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "Directorio iPXE"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Plantilla iPXE para usar en discos de arranque de host genéricos"

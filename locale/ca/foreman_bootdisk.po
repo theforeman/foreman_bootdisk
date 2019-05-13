@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the foreman_bootdisk package.
 #
 # Translators:
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreman\n"
+"Project-Id-Version: foreman_bootdisk 14.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-20 00:09+0000\n"
+"PO-Revision-Date: 2019-04-18 20:22+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/ca/)"
 "\n"
@@ -115,7 +116,7 @@ msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr ""
 
 msgid "ISO build failed"
-msgstr "No s'ha pogut construir la ISO"
+msgstr "No s'ha pogut construir l'ISO"
 
 msgid "ISO generation command"
 msgstr ""
@@ -139,7 +140,7 @@ msgid "Path to directory containing iPXE images"
 msgstr "El camí al directori que conté les imatges iPXE"
 
 msgid "Path to directory containing isolinux images"
-msgstr ""
+msgstr "El camí al directori que conté les imatges isolinux"
 
 msgid "Path to directory containing syslinux images"
 msgstr "El camí al directori que conté les imatges syslinux"
@@ -202,7 +203,7 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr ""
 
 msgid "iPXE directory"
-msgstr ""
+msgstr "Directori iPXE"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr ""
