@@ -9,14 +9,6 @@ class ForemanBootdisk::HostTest < ActiveSupport::TestCase
     refute host.pxe_build?
   end
 
-  test "#validate_media? must be true when provision_method is bootdisk" do
-    host = FactoryBot.build(:host, :managed,
-                             :provision_method => "bootdisk",
-                             :build => true,
-                             )
-    assert host.validate_media?
-  end
-
   test "#can_be_built? must be true when provision_method is bootdisk" do
     host = FactoryBot.build(:host, :managed,
                              :provision_method => "bootdisk"

@@ -26,10 +26,6 @@ module ForemanBootdisk::HostExt
     /i.86|x86[_-]64/ =~ architecture.name
   end
 
-  def validate_media?
-    super || (managed && bootdisk_build? && build?)
-  end
-
   def can_be_built?
     super || (managed? and SETTINGS[:unattended] and bootdisk_build? and !build?)
   end
