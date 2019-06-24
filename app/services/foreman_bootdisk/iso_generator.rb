@@ -63,8 +63,11 @@ module ForemanBootdisk
 
           FileUtils.cp(isolinux_source_file, File.join(wd, 'build', 'isolinux.bin'))
 
-          ldlinux_source_file = File.join(Setting[:bootdisk_syslinux_dir], 'ldlinux.c32')
-          FileUtils.cp(ldlinux_source_file, File.join(wd, 'build', 'ldlinux.c32')) if File.exist?(ldlinux_source_file)
+          source_files = ['ldlinux.c32', 'menu.c32']
+          source_files.each do |source_file|
+            full_path = File.join(Setting[:bootdisk_syslinux_dir], source_file)
+            FileUtils.cp(full_path, File.join(wd, 'build', source_file)) if File.exist?(source_file)
+          end
 
           File.open(File.join(wd, 'build', 'isolinux.cfg'), 'w') do |file|
             file.write(opts[:isolinux])
