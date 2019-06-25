@@ -7,9 +7,23 @@
 <%
 interface = @host.provision_interface
 bootdisk_raise(N_('Host has no provisioning interface defined')) unless interface
-bootdisk_raise(N_('Host has no IP address defined')) if interface.ip.nil? || interface.ip.empty?
-bootdisk_raise(N_('Host has no subnet defined')) unless interface.subnet
+bootdisk_raise(N_('Host has no IPv4 or IPv6 address defined')) unless interface.ip.present? || interface.ip6.present?
+bootdisk_raise(N_('Host has no subnet defined')) unless interface.subnet || interface.subnet6
 bootdisk_raise(N_('Host has no domain defined')) unless interface.domain
+if interface.ip.present? && interface.subnet
+  ip = interface.ip
+  subnet = interface.subnet
+elsif interface.ip6.present? && interface.subnet6
+  ip = interface.ip6
+  subnet = interface.subnet6
+  bootdisk_raise(N_('Host bootdisk does not work with static IPv6'))
+else
+  bootdisk_raise(N_('Both IP and Subnet must be set'))
+end
+
+mask = subnet.mask
+gw = subnet.gateway
+dns = subnet.dns_servers.first
 %>
 
 echo Foreman Bootdisk: Host image (<%= @host.name %>)
@@ -25,19 +39,19 @@ goto loop_success
 <% end -%>
 
 :loop_success
-echo Configuring net${idx} for static IP address <%= interface.ip %>
+echo Configuring net${idx} for static IP address <%= ip %>
 ifopen net${idx}
-set netX/ip <%= interface.ip %>
-set netX/netmask <%= interface.subnet.mask %>
-<% if interface.subnet.gateway.present? %>
-set netX/gateway <%= interface.subnet.gateway %>
+# netX = last opened NIC
+set netX/ip <%= ip %>
+set netX/netmask <%= mask %>
+<% if gw.present? %>
+set netX/gateway <%= gw %>
 <% end %>
 ifstat net${idx}
 route
 
 # Note: When multiple DNS servers are specified, only the first
 # server will be used. See: http://ipxe.org/cfg/dns
-<% dns = interface.subnet.dns_servers.first -%>
 <% if dns.present? -%>
 echo Using DNS <%= dns %>
 set dns <%= dns %>
