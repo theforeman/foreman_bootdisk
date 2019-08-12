@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-13 16:37+0200\n"
-"PO-Revision-Date: 2019-05-13 16:37+0200\n"
+"POT-Creation-Date: 2019-08-12 08:38+0200\n"
+"PO-Revision-Date: 2019-08-12 08:38+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -188,16 +188,20 @@ msgstr ""
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:76
+#: ../app/services/foreman_bootdisk/iso_generator.rb:79
 msgid "Please ensure the ipxe-bootimgs package is installed."
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:95
+#: ../app/services/foreman_bootdisk/iso_generator.rb:98
 msgid "ISO build failed"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:98
+#: ../app/services/foreman_bootdisk/iso_generator.rb:101
 msgid "ISO hybrid conversion failed"
+msgstr ""
+
+#: ../app/services/foreman_bootdisk/iso_generator.rb:159
+msgid "Unable to download boot file %{uri}, HTTP return code %{code}"
 msgstr ""
 
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:2
@@ -282,7 +286,7 @@ msgid "Host has no provisioning interface defined"
 msgstr ""
 
 #: ../app/views/foreman_bootdisk/host.erb:10
-msgid "Host has no IP address defined"
+msgid "Host has no IPv4 or IPv6 address defined"
 msgstr ""
 
 #: ../app/views/foreman_bootdisk/host.erb:11
@@ -291,6 +295,14 @@ msgstr ""
 
 #: ../app/views/foreman_bootdisk/host.erb:12
 msgid "Host has no domain defined"
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/host.erb:19
+msgid "Host bootdisk does not work with static IPv6"
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/host.erb:21
+msgid "Both IP and Subnet must be set"
 msgstr ""
 
 #: ../lib/foreman_bootdisk/engine.rb:54

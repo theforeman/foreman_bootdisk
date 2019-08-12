@@ -8,7 +8,7 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 14.0.0\n"
+"Project-Id-Version: foreman_bootdisk 15.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2019-04-18 20:22+0000\n"
 "Last-Translator: Lukáš Zapletal\n"

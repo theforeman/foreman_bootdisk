@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 14.0.0\n"
+"Project-Id-Version: foreman_bootdisk 15.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:09+0000\n"
 "Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
@@ -40,6 +40,9 @@ msgid "Boot disk embedded template"
 msgstr ""
 
 msgid "Boot disks"
+msgstr ""
+
+msgid "Both IP and Subnet must be set"
 msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
@@ -90,7 +93,10 @@ msgstr ""
 msgid "Host '%s' image"
 msgstr ""
 
-msgid "Host has no IP address defined"
+msgid "Host bootdisk does not work with static IPv6"
+msgstr ""
+
+msgid "Host has no IPv4 or IPv6 address defined"
 msgstr ""
 
 msgid "Host has no domain defined"
@@ -181,6 +187,9 @@ msgid "This image is generic for all hosts with a provisioning NIC on that subne
 msgstr ""
 
 msgid "True for full, false for basic reusable image"
+msgstr ""
+
+msgid "Unable to download boot file %{uri}, HTTP return code %{code}"
 msgstr ""
 
 msgid "Unable to find template specified by %s setting"
