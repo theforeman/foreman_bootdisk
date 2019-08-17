@@ -26,6 +26,19 @@ goto loop_success
 
 :loop_success
 echo Configuring net${idx} for static IP address <%= interface.ip %>
+<% if interface.tag.present? && interface.attached_to.present? %>
+vcreate --tag <%= interface.tag %> net${idx}
+ifopen net${idx}-<%= interface.tag %>
+set netX/ip <%= interface.ip %>
+set netX/netmask <%= interface.subnet.mask %>
+<% if interface.subnet.gateway.present? %>
+set netX/gateway <%= interface.subnet.gateway %>
+<% end %>
+ifstat netX
+route
+
+<% else %>
+  
 ifopen net${idx}
 set netX/ip <%= interface.ip %>
 set netX/netmask <%= interface.subnet.mask %>
@@ -34,6 +47,7 @@ set netX/gateway <%= interface.subnet.gateway %>
 <% end %>
 ifstat net${idx}
 route
+<% end %>
 
 # Note: When multiple DNS servers are specified, only the first
 # server will be used. See: http://ipxe.org/cfg/dns
