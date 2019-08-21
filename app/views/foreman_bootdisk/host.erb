@@ -40,6 +40,19 @@ goto loop_success
 
 :loop_success
 echo Configuring net${idx} for static IP address <%= ip %>
+<% if interface.tag.present? && interface.attached_to.present? %>
+vcreate --tag <%= interface.tag %> net${idx}
+ifopen net${idx}-<%= interface.tag %>
+# netX = last opened NIC
+set netX/ip <%= ip %>
+set netX/netmask <%= mask %>
+<% if gw.present? %>
+set netX/gateway <%= gw %>
+<% end %>
+ifstat net${idx}
+route
+
+<% else %>
 ifopen net${idx}
 # netX = last opened NIC
 set netX/ip <%= ip %>
