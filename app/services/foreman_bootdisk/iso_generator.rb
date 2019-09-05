@@ -156,7 +156,7 @@ module ForemanBootdisk
                 # prevent multiple writes to the cache
                 write_cache = false
               else
-                raise(::Foreman::Exception.new N_("Unable to download boot file %{uri}, HTTP return code %{code}" % { uri: uri, code: response.code }))
+                raise ::Foreman::Exception, N_(format("Unable to download boot file %{uri}, HTTP return code %{code}", uri: uri, code: response.code))
               end
             end
           end
