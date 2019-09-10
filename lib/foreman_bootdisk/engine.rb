@@ -38,7 +38,7 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 1.22'
+        requires_foreman '>= 1.24'
 
         security_block :bootdisk do |_map|
           permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host subnet help],
