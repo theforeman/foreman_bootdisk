@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.0.0\n"
+"Project-Id-Version: foreman_bootdisk 15.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"PO-Revision-Date: 2019-08-12 08:51+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/it/)"
 "\n"
@@ -18,6 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
+msgstr ""
+
+msgid "Action with sub plans"
 msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
@@ -43,6 +46,9 @@ msgstr ""
 
 msgid "Boot disks"
 msgstr "Dischi d'avvio"
+
+msgid "Both IP and Subnet must be set"
+msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Comando per generare l'immagine ISO, usare genisoimage o mkisofs"
@@ -92,8 +98,11 @@ msgstr "Aiuto"
 msgid "Host '%s' image"
 msgstr "Immagine '%s' dell'host"
 
-msgid "Host has no IP address defined"
-msgstr "L'host non presenta alcun indirizzo IP"
+msgid "Host bootdisk does not work with static IPv6"
+msgstr ""
+
+msgid "Host has no IPv4 or IPv6 address defined"
+msgstr ""
 
 msgid "Host has no domain defined"
 msgstr "L'host non presenta alcun dominio"
@@ -125,6 +134,12 @@ msgstr "Conversione ISO hybrid fallita"
 msgid "ISOLINUX directory"
 msgstr ""
 
+msgid "Import Puppet classes"
+msgstr ""
+
+msgid "Import facts"
+msgstr ""
+
 msgid "Installation media caching"
 msgstr ""
 
@@ -154,6 +169,9 @@ msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin per Foreman in grado di creare i dischi d'avvio basati su iPXE per il provisioning degli host, senza utilizzare infrastrutture PXE."
+
+msgid "Remote action:"
+msgstr ""
 
 msgid "SYSLINUX directory"
 msgstr ""

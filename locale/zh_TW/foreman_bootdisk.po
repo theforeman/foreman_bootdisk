@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.0.0\n"
+"Project-Id-Version: foreman_bootdisk 15.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"PO-Revision-Date: 2019-08-12 08:51+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/foreman/foreman/lang"
 "uage/zh_TW/)\n"
@@ -19,6 +19,9 @@ msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "個別主機映像檔的變體，磁碟中嵌入了 OS 的開機載入程式。這對於在特定硬體上的 chainloading 失敗時特別有幫助，不過缺點就是若要對 OS、開機載入程式或 PXELinux 範本進行任何更改，映像檔就必須重新產生。"
+
+msgid "Action with sub plans"
+msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "所有映像檔皆能作為 ISO 或是磁碟映像檔使用，包括以 `dd` 寫入一個 USB 磁碟中。"
@@ -43,6 +46,9 @@ msgstr ""
 
 msgid "Boot disks"
 msgstr "開機磁碟"
+
+msgid "Both IP and Subnet must be set"
+msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "請使用 genisoimage 或是 mkisofs 來作為產生 ISO 映像檔的指令"
@@ -92,8 +98,11 @@ msgstr "協助"
 msgid "Host '%s' image"
 msgstr "主機「%s」映像檔"
 
-msgid "Host has no IP address defined"
-msgstr "主機尚未定義 IP 位址"
+msgid "Host bootdisk does not work with static IPv6"
+msgstr ""
+
+msgid "Host has no IPv4 or IPv6 address defined"
+msgstr ""
 
 msgid "Host has no domain defined"
 msgstr "主機尚未定義區域"
@@ -125,6 +134,12 @@ msgstr "ISO 混合式轉換失敗"
 msgid "ISOLINUX directory"
 msgstr ""
 
+msgid "Import Puppet classes"
+msgstr ""
+
+msgid "Import facts"
+msgstr ""
+
 msgid "Installation media caching"
 msgstr ""
 
@@ -154,6 +169,9 @@ msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "能建立基於 iPXE 的開機磁碟的 Foreman 外掛程式，以在不需要 PXE 設備的情況下佈建主機。"
+
+msgid "Remote action:"
+msgstr ""
 
 msgid "SYSLINUX directory"
 msgstr ""

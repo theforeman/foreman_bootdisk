@@ -5,9 +5,9 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.0.0\n"
+"Project-Id-Version: foreman_bootdisk 15.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"PO-Revision-Date: 2019-08-12 08:51+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/langu"
 "age/zh_CN/)\n"
@@ -19,6 +19,9 @@ msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "每个包含磁盘内置 OS 引导装载程序的主机映像变体。如果某个硬件中的链载入失败，这个变体可能会有帮助，但缺点是必须为所有 OS、引导装载程序或 PXELinux 模板中的所有更改重新生成该映像。"
+
+msgid "Action with sub plans"
+msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "所有映像都可作为 ISO 或者磁盘映像使用，包括使用 `dd` 写入的 USB盘。"
@@ -43,6 +46,9 @@ msgstr "引导磁盘内嵌的模板"
 
 msgid "Boot disks"
 msgstr "引导磁盘"
+
+msgid "Both IP and Subnet must be set"
+msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "使用 genisoimage 或者 mkisofs 命令生成 ISO 映像。"
@@ -92,8 +98,11 @@ msgstr "帮助"
 msgid "Host '%s' image"
 msgstr "主机 '%s' 映像"
 
-msgid "Host has no IP address defined"
-msgstr "没有为主机定义 IP 地址"
+msgid "Host bootdisk does not work with static IPv6"
+msgstr ""
+
+msgid "Host has no IPv4 or IPv6 address defined"
+msgstr ""
 
 msgid "Host has no domain defined"
 msgstr "没有为主机定义域"
@@ -125,6 +134,12 @@ msgstr "ISO 复合转换失败"
 msgid "ISOLINUX directory"
 msgstr "ISOLINUX 目录"
 
+msgid "Import Puppet classes"
+msgstr ""
+
+msgid "Import facts"
+msgstr ""
+
 msgid "Installation media caching"
 msgstr "安装介质缓存"
 
@@ -154,6 +169,9 @@ msgstr "请确保已安装 isolinux/syslinux 软件包。"
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "为 Foreman 生成基于 iPXE 的引导磁盘的插件，在不需要 PXE 架构的条件下即可供应主机。"
+
+msgid "Remote action:"
+msgstr ""
 
 msgid "SYSLINUX directory"
 msgstr "SYSLINUX 目录"

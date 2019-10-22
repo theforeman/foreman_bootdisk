@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-12 08:38+0200\n"
-"PO-Revision-Date: 2019-08-12 08:38+0200\n"
+"POT-Creation-Date: 2019-10-22 13:33+0200\n"
+"PO-Revision-Date: 2019-10-22 13:33+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -200,10 +200,6 @@ msgstr ""
 msgid "ISO hybrid conversion failed"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:159
-msgid "Unable to download boot file %{uri}, HTTP return code %{code}"
-msgstr ""
-
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:2
 msgid "Back"
 msgstr ""
@@ -311,6 +307,22 @@ msgstr ""
 
 #: ../lib/foreman_bootdisk/engine.rb:55
 msgid "Boot disk embedded template"
+msgstr ""
+
+#: action_names.rb:2
+msgid "Import facts"
+msgstr ""
+
+#: action_names.rb:3
+msgid "Import Puppet classes"
+msgstr ""
+
+#: action_names.rb:4
+msgid "Action with sub plans"
+msgstr ""
+
+#: action_names.rb:5
+msgid "Remote action:"
 msgstr ""
 
 #: gemspec.rb:4

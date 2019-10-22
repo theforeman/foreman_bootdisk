@@ -4,13 +4,13 @@
 #
 # Translators:
 # Claer <transiblu@claer.hammock.fr>, 2014-2016
-# Dominic Cleal <dominic@cleal.org>, 2015
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2015
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.0.0\n"
+"Project-Id-Version: foreman_bootdisk 15.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-04-18 20:22+0000\n"
+"PO-Revision-Date: 2019-08-12 08:51+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
 "Language-Team: French (http://www.transifex.com/foreman/foreman/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,9 @@ msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "Une variante des images par hôte qui contient le chargeur de démarrage de l'OS dans le disque. Cela peut être utile si le chainage échoue sur certains matériels, mais l'inconvénient est que l'image doit être régénérée à chaque changement du système,du chargeur de démarrage ou des modèles."
+
+msgid "Action with sub plans"
+msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Toutes les images sont utilisables soit comme ISO soit comme images disque, y compris pour écriture sur disque USB avec 'dd'"
@@ -45,6 +48,9 @@ msgstr "Modèle de disque de démarrage embarqué"
 
 msgid "Boot disks"
 msgstr "Disques de démarrage"
+
+msgid "Both IP and Subnet must be set"
+msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Commande servant à générer l'image ISO, utiliser genisoimage ou mkisofs"
@@ -94,8 +100,11 @@ msgstr "Aide"
 msgid "Host '%s' image"
 msgstr "Image de l'hôte '%s'"
 
-msgid "Host has no IP address defined"
-msgstr "L'hôte n'a aucune adresse IP définie"
+msgid "Host bootdisk does not work with static IPv6"
+msgstr ""
+
+msgid "Host has no IPv4 or IPv6 address defined"
+msgstr ""
 
 msgid "Host has no domain defined"
 msgstr "L'hôte n'a aucun domaine défini"
@@ -127,6 +136,12 @@ msgstr "La conversion de l'image ISO hybride a échoué"
 msgid "ISOLINUX directory"
 msgstr "Repertoire ISOLINUX"
 
+msgid "Import Puppet classes"
+msgstr ""
+
+msgid "Import facts"
+msgstr ""
+
 msgid "Installation media caching"
 msgstr "Cache d'installation media"
 
@@ -156,6 +171,9 @@ msgstr "Merci de vous assurer que les paquets isolinux/syslinux sont installés.
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin pour Foreman qui crée le démarrage des disques iPXE-bases pour provisionner les hôtes sans l'aide de l'infrastructure PXE."
+
+msgid "Remote action:"
+msgstr ""
 
 msgid "SYSLINUX directory"
 msgstr "Répertoire SYSLINUX"
