@@ -66,7 +66,7 @@ module ForemanBootdisk
           source_files = ['ldlinux.c32', 'menu.c32']
           source_files.each do |source_file|
             full_path = File.join(Setting[:bootdisk_syslinux_dir], source_file)
-            FileUtils.cp(full_path, File.join(wd, 'build', source_file)) if File.exist?(source_file)
+            FileUtils.cp(full_path, File.join(wd, 'build', source_file)) if File.exist?(full_path)
           end
 
           File.open(File.join(wd, 'build', 'isolinux.cfg'), 'w') do |file|
