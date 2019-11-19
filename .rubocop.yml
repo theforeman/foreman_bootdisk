@@ -8,6 +8,7 @@ AllCops:
   Exclude:
     - 'release-gem'
     - 'test/**/*'
+    - 'lib/tasks/**/*'
 
 Rails:
   Enabled: true
@@ -18,18 +19,9 @@ Style:
 Metrics:
   Enabled: false
 
-Naming/MethodName:
-  Exclude:
-    - 'app/models/concerns/foreman_bootdisk/orchestration/**/*'
+Naming:
+  Enabled: false
 
 Rails/SkipsModelValidations:
   Exclude:
     - 'db/migrate/**/*'
-
-Rails/Date:
-  Exclude:
-    - 'lib/tasks/**/*'
-
-Naming/FileName:
-  Exclude:
-    - 'db/seeds.d/**/*'
