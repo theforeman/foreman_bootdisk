@@ -46,7 +46,7 @@ module ForemanBootdisk
                                          'foreman_bootdisk/api/v2/subnet_disks': [:subnet]
         end
 
-        role 'Boot disk access', [:download_bootdisk]
+        role 'Boot disk access', [:download_bootdisk], 'Role granting permissions to download bootdisks'
 
         add_all_permissions_to_default_roles
 
