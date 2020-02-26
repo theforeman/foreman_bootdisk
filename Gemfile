@@ -4,4 +4,8 @@ source 'http://rubygems.org'
 
 gem 'theforeman-rubocop', '~> 0.1.0.pre', groups: %i[development rubocop]
 
+group :test do
+  eval_gemfile 'gemfile.d/proxmox.rb'
+end
+
 gemspec

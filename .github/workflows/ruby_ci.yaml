@@ -45,6 +45,7 @@ jobs:
       - name: Setup Bundler
         run: |
           echo "gem 'foreman_bootdisk', path: './foreman_bootdisk'" > bundler.d/foreman_bootdisk.local.rb
+          echo "gem 'foreman_fog_proxmox'" >> bundler.d/foreman_bootdisk.local.rb
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
