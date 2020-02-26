@@ -2,6 +2,10 @@
 
 require 'test_helper'
 
+FactoryBot.definition_file_paths << File.join(ForemanFogProxmox::Engine.root, 'test', 'factories') if defined?(ForemanFogProxmox::Engine)
+FactoryBot.definition_file_paths << File.join(__dir__, 'factories')
+FactoryBot.reload
+
 module ForemanBootdiskTestHelper
   def create_tempfile
     file = Tempfile.new('bootdisk-test', '/tmp')
