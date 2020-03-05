@@ -69,5 +69,16 @@ module ForemanBootdisk
         assert host.bootdisk_downloadable?
       end
     end
+
+    context '#bootdisk_build?' do
+      test 'should be false for hosts without bootdisk' do
+        host = FactoryBot.create(:host)
+        assert_not host.bootdisk_build?
+      end
+
+      test 'should be available in safe mode' do
+        assert Host::Managed::Jail.allowed?(:bootdisk_build?)
+      end
+    end
   end
 end

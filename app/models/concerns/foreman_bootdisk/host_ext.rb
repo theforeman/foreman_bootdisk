@@ -41,3 +41,7 @@ module ForemanBootdisk
     end
   end
 end
+
+class Host::Managed::Jail < Safemode::Jail
+  allow :bootdisk_build?
+end
