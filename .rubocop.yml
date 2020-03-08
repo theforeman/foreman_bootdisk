@@ -16,6 +16,9 @@ Rails:
 Style:
   Enabled: false
 
+Layout/LineLength:
+  Enabled: false
+
 Metrics:
   Enabled: false
 
