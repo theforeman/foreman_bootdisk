@@ -8,10 +8,10 @@
 # Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.1.0\n"
+"Project-Id-Version: foreman_bootdisk 16.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-08-12 08:51+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2019-10-22 20:06+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/l"
 "anguage/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "A variant of the per-host image which contains the OS bootloader embedded
 msgstr "Uma variante da imagem por host, que contém o carregador de inicialização do SO incorporado ao disco. Pode ser útil quando ocorre uma falha no carregamento em série em um determinado hardware, mas tem a desvantagem de ter que gerar a imagem novamente no caso de qualquer alteração no sistema operacional, nos modelos PXELinux ou no carregador de inicialização."
 
 msgid "Action with sub plans"
-msgstr ""
+msgstr "Ação com subplanos"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Todas as imagens são utilizáveis como ISOs ou como imagens de disco, incluindo o que está sendo gravado em um disco USB com `dd`."
@@ -138,10 +138,10 @@ msgid "ISOLINUX directory"
 msgstr "diretório ISOLINUX"
 
 msgid "Import Puppet classes"
-msgstr ""
+msgstr "Importar classes de Puppet"
 
 msgid "Import facts"
-msgstr ""
+msgstr "Importar fatos"
 
 msgid "Installation media caching"
 msgstr "Cache de mídia de instalação"
@@ -174,7 +174,7 @@ msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts 
 msgstr "Plugin para Foreman que cria discos de inicialização baseados em iPXE para provisionar hosts sem a necessidade de infra-estrutura PXE."
 
 msgid "Remote action:"
-msgstr ""
+msgstr "Ação remota:"
 
 msgid "SYSLINUX directory"
 msgstr "diretório SYSLINUX"

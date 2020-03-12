@@ -7,10 +7,10 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.1.0\n"
+"Project-Id-Version: foreman_bootdisk 16.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-08-12 08:51+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2019-10-22 20:06+0000\n"
+"Last-Translator: Yulia <yulia.poyarkova@redhat.com>\n"
 "Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/ru/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgid "A variant of the per-host image which contains the OS bootloader embedded
 msgstr "Вариант для создания индивидуального образа с интеграцией загрузчика операционной системы. Подходит, если по какой-то причине цепная загрузка невозможна. Основной недостаток такого подхода заключается в том, что при любых изменениях операционной системы, загрузчика или шаблона PXELinux образ надо будет создавать заново."
 
 msgid "Action with sub plans"
-msgstr ""
+msgstr "Действия с подпланами"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Все образы используются как ISO или образы дисков, включая записанные на USB диск командой 'dd'."
@@ -139,10 +139,10 @@ msgid "ISOLINUX directory"
 msgstr ""
 
 msgid "Import Puppet classes"
-msgstr ""
+msgstr "Импорт классов Puppet"
 
 msgid "Import facts"
-msgstr ""
+msgstr "Импорт фактов"
 
 msgid "Installation media caching"
 msgstr ""
@@ -175,7 +175,7 @@ msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts 
 msgstr "Дополнение для Foreman, которое создает iPXE-базовые загрузочные диски для подготовленных узлов без использования служб инфраструктуры PXE."
 
 msgid "Remote action:"
-msgstr ""
+msgstr "Удаленное действие:"
 
 msgid "SYSLINUX directory"
 msgstr ""

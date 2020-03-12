@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.1.0\n"
+"Project-Id-Version: foreman_bootdisk 16.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-08-12 08:51+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2019-10-22 20:06+0000\n"
+"Last-Translator: Andrea Perotti\n"
 "Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/it/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -135,10 +135,10 @@ msgid "ISOLINUX directory"
 msgstr ""
 
 msgid "Import Puppet classes"
-msgstr ""
+msgstr "Importa classi Puppet"
 
 msgid "Import facts"
-msgstr ""
+msgstr "Importa gli eventi"
 
 msgid "Installation media caching"
 msgstr ""
@@ -171,7 +171,7 @@ msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts 
 msgstr "Plugin per Foreman in grado di creare i dischi d'avvio basati su iPXE per il provisioning degli host, senza utilizzare infrastrutture PXE."
 
 msgid "Remote action:"
-msgstr ""
+msgstr "Azione remota:"
 
 msgid "SYSLINUX directory"
 msgstr ""

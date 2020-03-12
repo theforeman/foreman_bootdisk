@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 15.1.0\n"
+"Project-Id-Version: foreman_bootdisk 16.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-08-12 08:51+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2019-10-22 20:06+0000\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgid "A variant of the per-host image which contains the OS bootloader embedded
 msgstr "디스크 내부에 내장된 OS 부트로더를 포함하는 호스트별 이미지의 변형입니다. 특정 하드웨어에서 체인로딩이 실패할 경우 유용할 수 있지만 OS, 부트로더 또는 PXELinux 템플릿이 변경될 때마다 이미지를 다시 생성해야 한다는 단점이 있습니다."
 
 msgid "Action with sub plans"
-msgstr ""
+msgstr "하위 계획이 있는 작업"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "모든 이미지는 `dd`로 USB 디스크에 기록되는 것을 포함하여 ISO 또는 디스크 이미지 중 하나로 사용할 수 있습니다. "
@@ -134,10 +134,10 @@ msgid "ISOLINUX directory"
 msgstr ""
 
 msgid "Import Puppet classes"
-msgstr ""
+msgstr "Puppet 클래스 가져오기"
 
 msgid "Import facts"
-msgstr ""
+msgstr "팩트 불러오기"
 
 msgid "Installation media caching"
 msgstr ""
@@ -170,7 +170,7 @@ msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts 
 msgstr "PXE 인프라없이 호스트 프로비저닝을 실행하기 위해 iPXE 기반 부트 디스크를 생성하는 Foreman 플러그인입니다."
 
 msgid "Remote action:"
-msgstr ""
+msgstr "원격 작업:"
 
 msgid "SYSLINUX directory"
 msgstr ""
