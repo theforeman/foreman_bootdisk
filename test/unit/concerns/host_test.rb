@@ -36,7 +36,7 @@ module ForemanBootdisk
     test 'host should not have bootdisk' do
       if unattended?
         h = FactoryBot.create(:host)
-        assert_equal false, h.bootdisk?
+        assert_not(h.bootdisk?)
       end
     end
 
