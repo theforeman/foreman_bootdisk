@@ -22,29 +22,48 @@ module ForemanBootdisk
       @host.send(:setAttachIsoImage)
     end
 
-    test 'provisioning a host with provision method bootdisk should queue bootdisk tasks' do
+    test 'provisioning a host with provision method bootdisk should detach iso' do
+      @cr.expects(:iso_detach)
+      @host.send(:setDetachIsoImage)
+    end
+
+    test 'provisioning a new host with provision method bootdisk should queue bootdisk tasks' do
       @host.stubs(:compute?).returns(true)
+      @host.stubs(:build?).returns(true)
       @host.send(:queue_bootdisk_compute)
       tasks = @host.queue.all.map(&:name)
       assert_includes tasks, "Generating ISO image for #{@host.name}"
       assert_includes tasks, "Upload ISO image to datastore for #{@host.name}"
       assert_includes tasks, "Attach ISO image to CDROM drive for #{@host.name}"
+      assert_not_includes tasks, "Detach ISO image from CDROM drive for #{@host.name}"
     end
 
-    test 'should rebuild bootdisk' do
-      @host.expects(:bootdisk_generate_iso_image).returns(true)
-      @host.expects(:bootdisk_upload_iso).returns(true)
-      @host.expects(:bootdisk_attach_iso).returns(true)
-      assert @host.rebuild_with_bootdisk
+    test 'rebuilding a host with provision method bootdisk should queue bootdisk tasks' do
+      @host.stubs(:compute?).returns(true)
+      old = stub()
+      old.stubs(:build?).returns(false)
+      @host.stubs(:old).returns(old)
+      @host.stubs(:build?).returns(true)
+      @host.send(:queue_bootdisk_compute)
+      tasks = @host.queue.all.map(&:name)
+      assert_includes tasks, "Generating ISO image for #{@host.name}"
+      assert_includes tasks, "Upload ISO image to datastore for #{@host.name}"
+      assert_includes tasks, "Attach ISO image to CDROM drive for #{@host.name}"
+      assert_not_includes tasks, "Detach ISO image from CDROM drive for #{@host.name}"
     end
 
-    test 'should skip rebuild bootdisk' do
-      host = FactoryBot.build(:host,
-                              compute_resource: @cr)
-      host.expects(:bootdisk_generate_iso_image).never
-      host.expects(:bootdisk_upload_iso).never
-      host.expects(:bootdisk_attach_iso).never
-      assert host.rebuild_with_bootdisk
+    test 'detaching the bootdisk should be done' do
+      @host.stubs(:compute?).returns(true)
+      old = stub()
+      old.stubs(:build?).returns(true)
+      @host.stubs(:old).returns(old)
+      @host.stubs(:build?).returns(false)
+      @host.send(:queue_bootdisk_compute)
+      tasks = @host.queue.all.map(&:name)
+      assert_not_includes tasks, "Generating ISO image for #{@host.name}"
+      assert_not_includes tasks, "Upload ISO image to datastore for #{@host.name}"
+      assert_not_includes tasks, "Attach ISO image to CDROM drive for #{@host.name}"
+      assert_includes tasks, "Detach ISO image from CDROM drive for #{@host.name}"
     end
   end
 end
