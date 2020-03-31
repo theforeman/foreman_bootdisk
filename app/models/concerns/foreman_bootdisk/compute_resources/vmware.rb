@@ -36,9 +36,18 @@ module ForemanBootdisk
           'instance_uuid' => vm_uuid,
           'iso' => "foreman_isos/#{iso}",
           'datastore' => bootdisk_datastore(vm_uuid),
-          'start_connected' => false,
+          'start_connected' => true,
           'connected' => true,
           'allow_guest_control' => true
+        }
+        client.vm_reconfig_cdrom options
+      end
+
+      def iso_detach(vm_uuid)
+        options = {
+          'instance_uuid' => vm_uuid,
+          'start_connected' => false,
+          'connected' => false,
         }
         client.vm_reconfig_cdrom options
       end
