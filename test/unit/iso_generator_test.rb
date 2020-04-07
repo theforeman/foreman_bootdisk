@@ -11,10 +11,12 @@ module ForemanBootdisk
       let(:medium) { FactoryBot.create(:medium, name: 'Red Hat Enterprise Linux Atomic Mirror') }
       let(:operatingsystem) { FactoryBot.create(:ubuntu14_10, :with_archs, :with_ptables, media: [medium]) }
       let(:host) { FactoryBot.create(:host, :managed, operatingsystem: operatingsystem, build: true) }
-      let(:template) { FactoryBot.create(:provisioning_template, template: 'Fake kernel line <%= @kernel %> - <%= @initrd %>') }
+      let(:pxelinux_template) { FactoryBot.create(:provisioning_template, template: 'Fake kernel line <%= @kernel %> - <%= @initrd %>') }
+      let(:pxegrub2_template) { FactoryBot.create(:provisioning_template, template: 'Fake kernel line <%= @kernel %> - <%= @initrd %>') }
 
       setup do
-        host.stubs(:provisioning_template).with(kind: :PXELinux).returns(template)
+        host.stubs(:provisioning_template).with(kind: :PXELinux).returns(pxelinux_template)
+        host.stubs(:provisioning_template).with(kind: :PXEGrub2).returns(pxegrub2_template)
       end
 
       test 'fetch handles redirect' do
@@ -40,11 +42,8 @@ module ForemanBootdisk
         )
         initrd_url = urls[:initrd]
 
-        ForemanBootdisk::ISOGenerator.expects(:generate).with({
-                                                                isolinux: "Fake kernel line #{kernel} - #{initrd}",
-                                                                files: { kernel => kernel_url,
-                                                                         initrd => initrd_url }
-                                                              }, anything)
+        ForemanBootdisk::ISOGenerator.expects(:generate)
+                                     .with({ isolinux: "Fake kernel line #{kernel} - #{initrd}", grub: "Fake kernel line /#{kernel} - /#{initrd}", files: { kernel => kernel_url, initrd => initrd_url } }, anything)
 
         ForemanBootdisk::ISOGenerator.generate_full_host(host)
       end

@@ -21,9 +21,10 @@ module ForemanBootdisk
 
         api :GET, '/generic', N_('Download generic image')
         def generic
+          # EFI not supported for iPXE generic bootdisk
           tmpl = ForemanBootdisk::Renderer.new.generic_template_render
           ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|
-            send_data read_file(iso), filename: "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso"
+            send_file(iso, filename: "bootdisk_#{URI.parse(Setting[:foreman_url]).host}.iso")
           end
         end
 
@@ -34,21 +35,18 @@ module ForemanBootdisk
           host = @disk
           if params[:full]
             ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
-              send_data read_file(iso), filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso"
+              send_file(iso, filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso")
             end
           else
+            # EFI not supported for iPXE host bootdisk
             tmpl = host.bootdisk_template_render
             ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|
-              send_data read_file(iso), filename: "#{host.name}.iso"
+              send_file(iso, filename: "#{host.name}.iso")
             end
           end
         end
 
         private
-
-        def read_file(filename)
-          File.read(filename)
-        end
 
         def resource_scope
           Host::Managed.authorized('view_hosts')

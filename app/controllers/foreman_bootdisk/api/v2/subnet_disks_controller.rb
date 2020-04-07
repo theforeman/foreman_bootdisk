@@ -25,10 +25,15 @@ module ForemanBootdisk
         def subnet
           subnet = @subnet_disk
           subnet.tftp || raise(::Foreman::Exception.new(N_('TFTP feature not enabled for subnet %s'), subnet.name))
-          tmpl = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
-          ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|
-            name = subnet.name
-            send_data File.read(iso), filename: "bootdisk_subnet_#{name}.iso"
+          tmpl_bios = ForemanBootdisk::Renderer.new.generic_template_render(subnet)
+          tmpl_efi = nil
+          if subnet.httpboot
+            tmpl_efi = ForemanBootdisk::Renderer.new.generic_efi_template_render(subnet)
+          else
+            ForemanBootdisk.logger.warn('HTTPBOOT feature is not enabled for subnet %s, UEFI may not be available for bootdisk' % subnet.name)
+          end
+          ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl_bios, grub: tmpl_efi) do |temp_iso_filename|
+            send_file(temp_iso_filename, filename: subnet.name)
           end
         end
 

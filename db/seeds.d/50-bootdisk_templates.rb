@@ -27,5 +27,6 @@ end
 ProvisioningTemplate.without_auditing do
   ensure_bootdisk_template("Boot disk iPXE - host", read_bootdisk_template("host.erb"))
   ensure_bootdisk_template("Boot disk iPXE - generic host", read_bootdisk_template("generic_host.erb"))
+  ensure_bootdisk_template("Boot disk Grub2 EFI - generic host", read_bootdisk_template("generic_efi_host.erb"))
   ensure_bootdisk_template("Boot disk iPXE - generic static host", read_bootdisk_template("generic_static_host.erb"))
 end
