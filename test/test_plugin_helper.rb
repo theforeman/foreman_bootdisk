@@ -5,15 +5,23 @@ require 'webmock/minitest'
 require 'webmock'
 
 module ForemanBootdiskTestHelper
+  def create_tempfile
+    file = Tempfile.new('bootdisk-test', '/tmp')
+    file.close
+    file
+  end
+
   def setup_bootdisk
+    ForemanBootdisk::Scope::Bootdisk.any_instance.stubs(:bootdisk_chain_url).returns('http://smart-proxy.example.com/unattended/iPXE?mac=')
     setup_routes
     setup_settings
     setup_templates
   end
 
+  # TODO remove me
   def setup_host_env
     setup_org_loc
-    setup_subnet
+    setup_subnet_with_tftp
     setup_host
   end
 
@@ -39,7 +47,17 @@ module ForemanBootdiskTestHelper
     @loc = FactoryBot.create(:location)
   end
 
-  def setup_subnet
+  def setup_subnet_with_tftp_httpboot_template
+    ProxyAPI::V2::Features.any_instance.stubs(:features).returns(:httpboot => { :settings => { :https_port => 1234 }, :state => 'running' }, :templates => {}, :tftp => {})
+    SmartProxy.any_instance.stubs(:httpboot_http_port).returns('8888')
+    SmartProxy.any_instance.stubs(:httpboot_https_port).returns('9999')
+
+    proxy = FactoryBot.create(:smart_proxy, features: [FactoryBot.create(:tftp_feature), FactoryBot.create(:feature, :templates), FactoryBot.create(:feature, :httpboot)])
+    proxy.reload
+    setup_subnet_no_tftp.update! tftp: proxy, httpboot: proxy, template: proxy
+  end
+
+  def setup_subnet_with_tftp
     tftp_proxy = FactoryBot.create(:smart_proxy, features: [FactoryBot.create(:tftp_feature)])
     setup_subnet_no_tftp.update! tftp: tftp_proxy
   end
@@ -49,6 +67,6 @@ module ForemanBootdiskTestHelper
   end
 
   def setup_host
-    @host = FactoryBot.create(:host, :managed, subnet: @subnet, ip: @subnet.network.sub(/0$/, '4'), organization: @org, location: @loc)
+    @host = FactoryBot.create(:host, :managed, subnet: @subnet, ip: @subnet.network.sub(/0$/, '4'), organization: @org, location: @loc, build: true)
   end
 end

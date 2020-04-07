@@ -119,6 +119,7 @@ TFTP settings are needed.
     <th>DHCP reservation</th>
     <th>Pre-register host</th>
     <th>OS-specific</th>
+    <th>EFI supported</th>
   </tr>
   <tr>
     <td>Per-host image</td>
@@ -127,12 +128,14 @@ TFTP settings are needed.
     <td>No</td>
     <td>Yes</td>
     <td>No</td>
+    <td>No</td>
   </tr>
   <tr>
     <td>Full host image</td>
     <td>No</td>
     <td>No (*)</td>
     <td>No</td>
+    <td>Yes</td>
     <td>Yes</td>
     <td>Yes</td>
   </tr>
@@ -143,6 +146,7 @@ TFTP settings are needed.
     <td>No</td>
     <td>Yes</td>
     <td>No</td>
+    <td>No</td>
   </tr>
   <tr>
     <td>Subnet image</td>
@@ -151,6 +155,7 @@ TFTP settings are needed.
     <td>No</td>
     <td>Yes</td>
     <td>No</td>
+    <td>Yes</td>
   </tr>
 </table>
 

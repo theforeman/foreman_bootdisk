@@ -5,33 +5,67 @@ require 'test_plugin_helper'
 class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
   include ForemanBootdiskTestHelper
   setup :setup_bootdisk
+  setup :setup_referer
+  setup :setup_org_loc
 
-  test 'should generate generic image' do
-    ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(ipxe: regexp_matches(/disk generic host template/))).yields('temp ISO')
-    @controller.expects(:read_file).with('temp ISO').returns('ISO image')
+  def perform_generic_generate
+    tmp = create_tempfile
+    ForemanBootdisk::ISOGenerator.expects(:generate).yields(create_tempfile.path)
     get :generic
     assert_response :success
-    assert_equal 'ISO image', @response.body
+  ensure
+    tmp.unlink
   end
 
-  describe '#host' do
-    setup :setup_referer
-    setup :setup_host_env
+  def perform_host_generate
+    tmp = create_tempfile
+    ForemanBootdisk::ISOGenerator.expects(:generate).yields(create_tempfile.path)
+    get :host, params: { id: @host.name }
+    assert_response :success
+  ensure
+    tmp.unlink
+  end
+
+  def perform_full_host_generate
+    tmp = create_tempfile
+    ForemanBootdisk::ISOGenerator.expects(:generate_full_host).yields(create_tempfile.path)
+    get :host, params: { id: @host.name, full: true }
+    assert_response :success
+  ensure
+    tmp.unlink
+  end
+
+  describe '#generic with TFTP' do
+    setup :setup_subnet_with_tftp
+    setup :setup_host
+
+    test 'should generate generic image' do
+      perform_generic_generate
+    end
 
     test 'should generate host image' do
-      ForemanBootdisk::ISOGenerator.expects(:generate).with(has_entry(ipxe: regexp_matches(/disk host template/))).yields('temp ISO')
-      @controller.expects(:read_file).with('temp ISO').returns('ISO image')
-      get :host, params: { id: @host.name }
-      assert_response :success
-      assert_equal 'ISO image', @response.body
+      perform_host_generate
     end
 
     test 'should generate full host image' do
-      ForemanBootdisk::ISOGenerator.expects(:generate_full_host).with(@host).yields('temp ISO')
-      @controller.expects(:read_file).with('temp ISO').returns('ISO image')
-      get :host, params: { id: @host.name, full: true }
-      assert_response :success
-      assert_equal 'ISO image', @response.body
+      perform_full_host_generate
+    end
+  end
+
+  describe '#subnet_host with TFTP and HTTPBOOT' do
+    setup :setup_subnet_with_tftp_httpboot_template
+    setup :setup_host
+
+    test 'should generate generic image' do
+      perform_generic_generate
+    end
+
+    test 'should generate host image' do
+      perform_host_generate
+    end
+
+    test 'should generate full host image' do
+      perform_full_host_generate
     end
   end
 

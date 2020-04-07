@@ -5,14 +5,11 @@ require 'uri'
 module ForemanBootdisk
   module HostExt
     def bootdisk_template
-      template = ProvisioningTemplate.unscoped.find_by(
-        name: Setting[:bootdisk_host_template]
-      )
+      template = ProvisioningTemplate.unscoped.find_by(name: Setting[:bootdisk_host_template])
       unless template
-        raise ::Foreman::Exception.new(
-          N_('Unable to find template specified by %s setting'), 'bootdisk_host_template'
-        )
+        raise ::Foreman::Exception.new(N_('Unable to find template specified by %s setting'), 'bootdisk_host_template')
       end
+
       template
     end
 

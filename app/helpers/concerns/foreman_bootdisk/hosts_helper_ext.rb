@@ -65,7 +65,7 @@ module ForemanBootdisk
 
     # need to wrap this one in a test for template proxy presence
     def display_bootdisk_for_subnet(host)
-      if (proxy = host.try(:subnet).try(:tftp)) && proxy.has_feature?('Templates')
+      if (proxy = host.try(:subnet).try(:tftp) || host.try(:subnet).try(:httpboot)) && proxy.has_feature?('Templates')
         display_bootdisk_link_if_authorized(
           _("Subnet '%s' generic image") % host.subnet.name, {
             controller: 'foreman_bootdisk/disks',

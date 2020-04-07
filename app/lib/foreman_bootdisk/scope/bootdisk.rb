@@ -6,7 +6,6 @@ module ForemanBootdisk
       def bootdisk_chain_url(mac = host.try(:mac), action = 'iPXE')
         url = foreman_url(action)
         u = URI.parse(url)
-        ForemanBootdisk.logger.warn("Foreman or proxy is configured with HTTPS, probably not supported by iPXE: #{u}") if u.scheme == 'https'
         new_query_data = URI.decode_www_form(u.query || '') << ['mac', mac || '']
         new_querystring = URI.encode_www_form(new_query_data)
         u.query = nil
@@ -17,6 +16,10 @@ module ForemanBootdisk
 
       def bootdisk_raise(*args)
         raise ::Foreman::Exception.new(*args)
+      end
+
+      def template_name
+        "Foreman Bootdisk"
       end
     end
   end
