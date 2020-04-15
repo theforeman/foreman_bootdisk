@@ -52,7 +52,7 @@ module ForemanBootdisk
       assert_not_includes tasks, "Detach ISO image from CDROM drive for #{@host.name}"
     end
 
-    test 'detaching the bootdisk should be done' do
+    test 'the iso should be detached when the host leaves build mode' do
       @host.stubs(:compute?).returns(true)
       old = stub()
       old.stubs(:build?).returns(true)
