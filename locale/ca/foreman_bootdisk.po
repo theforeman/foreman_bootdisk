@@ -7,7 +7,7 @@
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 16.1.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2019-10-22 20:06+0000\n"
 "Last-Translator: Lukáš Zapletal\n"
@@ -55,6 +55,12 @@ msgstr ""
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "L'ordre per generar la imatge ISO, utilitzeu genisoimage o mkisofs"
 
+msgid "Creating new image failed, install truncate utility"
+msgstr ""
+
+msgid "Detach ISO image from CDROM drive for %s"
+msgstr ""
+
 msgid "Download generic image"
 msgstr "Baixa la imatge genèrica"
 
@@ -64,7 +70,19 @@ msgstr "Baixa la imatge d'amfitrió"
 msgid "Download subnet generic image"
 msgstr "Baixa la imatge genèrica de subxarxa"
 
+msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgstr ""
+
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to create a directory within the ESP image"
+msgstr ""
+
+msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr ""
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
@@ -85,6 +103,9 @@ msgstr "Imatge completa d'amfitrió"
 msgid "Generating ISO image for %s"
 msgstr ""
 
+msgid "Generic Grub2 EFI image template"
+msgstr ""
+
 msgid "Generic image"
 msgstr "Imatge genèrica"
 
@@ -92,6 +113,12 @@ msgid "Generic image template"
 msgstr ""
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
+msgstr ""
+
+msgid "Grub2 directory"
+msgstr ""
+
+msgid "Grub2 template to use for generic EFI host boot disks"
 msgstr ""
 
 msgid "Help"
@@ -130,7 +157,7 @@ msgstr "No s'ha pogut construir l'ISO"
 msgid "ISO generation command"
 msgstr ""
 
-msgid "ISO hybrid conversion failed"
+msgid "ISO hybrid conversion failed: %s"
 msgstr ""
 
 msgid "ISOLINUX directory"
@@ -149,6 +176,9 @@ msgid "Installation media files will be cached for full host images"
 msgstr "Els fitxers dels mitjans d'instal·lació s'emmagatzemaran en memòria cau per a les imatges completes dels amfitrions"
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
+msgstr ""
+
+msgid "Path to directory containing grubx64.efi and shimx64.efi"
 msgstr ""
 
 msgid "Path to directory containing iPXE images"
@@ -208,10 +238,13 @@ msgstr ""
 msgid "Unable to find template specified by %s setting"
 msgstr "No es pot trobar la plantilla especificada per l'ajust %s"
 
-msgid "Unable to generate disk PXELinux template: %s"
+msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr ""
 
-msgid "Unable to generate disk template, PXELinux template not found."
+msgid "Unable to generate disk template, %{kind} template not found."
+msgstr ""
+
+msgid "Unable to mcopy %{path}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

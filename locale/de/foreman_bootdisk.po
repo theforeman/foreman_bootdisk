@@ -8,11 +8,11 @@
 # Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
 # Paul Puschmann, 2014
 # abf90805572190d649c59f7a021d76cb, 2014
-# simon11 <simon.stieger.98@live.de>, 2014
-# simon11 <simon.stieger.98@live.de>, 2014
+# simon11 <transifex@stieger.co>, 2014
+# simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 16.1.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2019-10-22 20:06+0000\n"
 "Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
@@ -59,6 +59,12 @@ msgstr ""
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Kommando zur Erstellung von ISO-Abbildern, verwende genisoimage oder mkisofs"
 
+msgid "Creating new image failed, install truncate utility"
+msgstr ""
+
+msgid "Detach ISO image from CDROM drive for %s"
+msgstr ""
+
 msgid "Download generic image"
 msgstr "Generisches Abbild herunterladen"
 
@@ -68,8 +74,20 @@ msgstr "Host-Abbild herunterladen"
 msgid "Download subnet generic image"
 msgstr "Generisches Abbild von Subnetz herunterladen"
 
+msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgstr ""
+
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr "Fehler beim Einhängen des ISO-Abbild am CDROM-Laufwerk für Instanz %{name}: %{message}"
+
+msgid "Failed to create a directory within the ESP image"
+msgstr ""
+
+msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to format the ESP image via mkfs.msdos"
+msgstr ""
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr "Fehler beim Erzeugen des ISO-Abbild für Instanz %{name}: %{message}"
@@ -89,6 +107,9 @@ msgstr "Vollständiges Host-Abbild"
 msgid "Generating ISO image for %s"
 msgstr "ISO-Abbild für %s wird erzeugt"
 
+msgid "Generic Grub2 EFI image template"
+msgstr ""
+
 msgid "Generic image"
 msgstr "Generisches Abbild"
 
@@ -97,6 +118,12 @@ msgstr "Generische Abbildvorlage"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Generische Abbilder sind wiederverwendbare Festplattenabbilder die für beliebige in Foreman registrierte Hosts funktionieren. Sie erfordern einen einfachen DHCP- und DNS-Service, um zu funktionieren und den Server zu kontaktieren. Jedoch benötigen sie keinerlei DHCP-Reservierungen oder statische IP-Adressen."
+
+msgid "Grub2 directory"
+msgstr ""
+
+msgid "Grub2 template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "Help"
 msgstr "Hilfe"
@@ -134,8 +161,8 @@ msgstr "ISO-Erstellung fehlgeschlagen"
 msgid "ISO generation command"
 msgstr "ISO-Erzeugungsbefehl"
 
-msgid "ISO hybrid conversion failed"
-msgstr "ISO hybrid Konvertierung fehlgeschlagen"
+msgid "ISO hybrid conversion failed: %s"
+msgstr ""
 
 msgid "ISOLINUX directory"
 msgstr "ISOLINUX-Verzeichnis"
@@ -154,6 +181,9 @@ msgstr "Installationsmedien-Dateien werden für vollständige Host-Images zwisch
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Sobald sie nacheinander geladen (Chainloading) sind, werden der OS-Bootloader und das OS-Installationsprogramm direkt von den in Foreman konfigurierten Installationsmedien heruntergeladen, und das Bereitstellungsskript (kickstart/preseed) wird von Foreman heruntergeladen."
+
+msgid "Path to directory containing grubx64.efi and shimx64.efi"
+msgstr ""
 
 msgid "Path to directory containing iPXE images"
 msgstr "Pfad zum Verzeichnis mit iPXE-Abbildern"
@@ -212,10 +242,13 @@ msgstr "\"True\" für vollständiges, \"false\" für einfaches wiederverwendbare
 msgid "Unable to find template specified by %s setting"
 msgstr "Konnte Vorlage mit der %s-Einstellung nicht finden"
 
-msgid "Unable to generate disk PXELinux template: %s"
+msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr ""
 
-msgid "Unable to generate disk template, PXELinux template not found."
+msgid "Unable to generate disk template, %{kind} template not found."
+msgstr ""
+
+msgid "Unable to mcopy %{path}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

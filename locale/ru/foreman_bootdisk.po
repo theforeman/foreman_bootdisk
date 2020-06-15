@@ -7,7 +7,7 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 16.1.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2019-10-22 20:06+0000\n"
 "Last-Translator: Yulia <yulia.poyarkova@redhat.com>\n"
@@ -57,6 +57,12 @@ msgstr ""
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Команда создания ISO-образа. Используйте genisoimage или mkisofs"
 
+msgid "Creating new image failed, install truncate utility"
+msgstr ""
+
+msgid "Detach ISO image from CDROM drive for %s"
+msgstr ""
+
 msgid "Download generic image"
 msgstr "Скачать общий образ"
 
@@ -66,7 +72,19 @@ msgstr "Скачать образ узла"
 msgid "Download subnet generic image"
 msgstr "Загрузить стандартный образ для подсети"
 
+msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgstr ""
+
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to create a directory within the ESP image"
+msgstr ""
+
+msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr ""
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
@@ -87,6 +105,9 @@ msgstr "Полный образ узла"
 msgid "Generating ISO image for %s"
 msgstr "Создается ISO для %s..."
 
+msgid "Generic Grub2 EFI image template"
+msgstr ""
+
 msgid "Generic image"
 msgstr "Стандартный образ"
 
@@ -95,6 +116,12 @@ msgstr ""
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Общий образ - это образ диска работающий на любом узле, зарегистрированном в Foreman. Он требует наличие DHCP и DNS служб для функционирования и соединения с сервером, но не требует резервации DHCP или статических IP адресов."
+
+msgid "Grub2 directory"
+msgstr ""
+
+msgid "Grub2 template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "Help"
 msgstr "Справка"
@@ -132,8 +159,8 @@ msgstr "Не удалось создать ISO"
 msgid "ISO generation command"
 msgstr ""
 
-msgid "ISO hybrid conversion failed"
-msgstr "Ошибка преобразования гибридного образа"
+msgid "ISO hybrid conversion failed: %s"
+msgstr ""
 
 msgid "ISOLINUX directory"
 msgstr ""
@@ -152,6 +179,9 @@ msgstr "Файлы с установочного носителя будут з�
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "После того как загрузчик ОС и установщик скачаны напрямую с установочного носителя, настроенного в Foreman, и скрипт подготовки (kickstart/preseed) скачан из Foreman."
+
+msgid "Path to directory containing grubx64.efi and shimx64.efi"
+msgstr ""
 
 msgid "Path to directory containing iPXE images"
 msgstr "Путь к каталогу с образами iPXE"
@@ -210,10 +240,13 @@ msgstr "Истина для полного, ложь для начального
 msgid "Unable to find template specified by %s setting"
 msgstr "Шаблон из параметра %s не найден"
 
-msgid "Unable to generate disk PXELinux template: %s"
+msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr ""
 
-msgid "Unable to generate disk template, PXELinux template not found."
+msgid "Unable to generate disk template, %{kind} template not found."
+msgstr ""
+
+msgid "Unable to mcopy %{path}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

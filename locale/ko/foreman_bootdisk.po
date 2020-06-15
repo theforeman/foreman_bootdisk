@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 16.1.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2019-10-22 20:06+0000\n"
 "Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
@@ -52,6 +52,12 @@ msgstr ""
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "ISO 이미지를 생성하기 위한 명령, genisoimage 또는 mkisofs 사용 "
 
+msgid "Creating new image failed, install truncate utility"
+msgstr ""
+
+msgid "Detach ISO image from CDROM drive for %s"
+msgstr ""
+
 msgid "Download generic image"
 msgstr "일반 이미지 다운로드 "
 
@@ -61,7 +67,19 @@ msgstr "호스트 이미지 다운로드 "
 msgid "Download subnet generic image"
 msgstr "서브넷 일반 이미지 다운로드"
 
+msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgstr ""
+
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to create a directory within the ESP image"
+msgstr ""
+
+msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr ""
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
@@ -82,6 +100,9 @@ msgstr "전체 호스트 이미지 "
 msgid "Generating ISO image for %s"
 msgstr ""
 
+msgid "Generic Grub2 EFI image template"
+msgstr ""
+
 msgid "Generic image"
 msgstr "일반 이미지 "
 
@@ -90,6 +111,12 @@ msgstr ""
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "일반 이미지는 Foreman에 등록된 모든 호스트에서 작동하는 다시 사용 가능한 디스크 이미지입니다. 이를 사용하려면 기본  DHCP 및 DNS 서비스가 작동하고 서버와 통신할 수 있어야 하지만 DHCP 예약 기능 및 고정 IP 주소는 필요하지 않습니다.  "
+
+msgid "Grub2 directory"
+msgstr ""
+
+msgid "Grub2 template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "Help"
 msgstr "도움말"
@@ -127,8 +154,8 @@ msgstr "ISO 빌드 실패 "
 msgid "ISO generation command"
 msgstr ""
 
-msgid "ISO hybrid conversion failed"
-msgstr "ISO 하이브리드 변환 실패 "
+msgid "ISO hybrid conversion failed: %s"
+msgstr ""
 
 msgid "ISOLINUX directory"
 msgstr ""
@@ -147,6 +174,9 @@ msgstr "설치 미디어 파일은 전체 호스트 이미지에 캐시됩니다
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "체인 로드가 실행되면 OS 부트로더 및 설치 프로그램은 Foreman에서 설정된 설치 미디어에서 직접 다운로드되고 프로비저닝 스크립트 (kickstart/preseed)는 Foreman에서 다운로드됩니다. "
+
+msgid "Path to directory containing grubx64.efi and shimx64.efi"
+msgstr ""
 
 msgid "Path to directory containing iPXE images"
 msgstr "iPXE 이미지가 들어있는 디렉토리로의 경로 "
@@ -205,10 +235,13 @@ msgstr "전체 이미지의 경우 True, 다시 사용할 수 있는 기본 이�
 msgid "Unable to find template specified by %s setting"
 msgstr "%s 설정에 의해 지정된 템플릿을 찾을 수 없습니다 "
 
-msgid "Unable to generate disk PXELinux template: %s"
+msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr ""
 
-msgid "Unable to generate disk template, PXELinux template not found."
+msgid "Unable to generate disk template, %{kind} template not found."
+msgstr ""
+
+msgid "Unable to mcopy %{path}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"
