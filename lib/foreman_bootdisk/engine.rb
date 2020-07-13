@@ -51,6 +51,9 @@ module ForemanBootdisk
         add_all_permissions_to_default_roles
 
         apipie_documented_controllers ["#{ForemanBootdisk::Engine.root}/app/controllers/foreman_bootdisk/api/v2/*.rb"]
+        ApipieDSL.configuration.dsl_classes_matchers += [
+          "#{ForemanBootdisk::Engine.root}/app/lib/foreman_bootdisk/scope/*.rb"
+        ]
         provision_method 'bootdisk', N_('Boot disk based')
         template_labels 'Bootdisk' => N_('Boot disk embedded template')
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise

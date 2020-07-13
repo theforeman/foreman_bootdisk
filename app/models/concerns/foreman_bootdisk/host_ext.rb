@@ -4,6 +4,8 @@ require 'uri'
 
 module ForemanBootdisk
   module HostExt
+    extend ApipieDSL::Extension
+
     def bootdisk_template
       template = ProvisioningTemplate.unscoped.find_by(name: Setting[:bootdisk_host_template])
       unless template
@@ -35,6 +37,10 @@ module ForemanBootdisk
 
     def can_be_built?
       super || (managed? && SETTINGS[:unattended] && bootdisk_build? && !build?)
+    end
+
+    apipie_update :class do
+      property :bootdisk_build?, one_of: [true, false], desc: 'Returns true if provision method for this host is bootdisk, false otherwise'
     end
   end
 end
