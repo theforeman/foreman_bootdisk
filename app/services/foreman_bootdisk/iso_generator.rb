@@ -10,6 +10,8 @@ require 'uri'
 # requires syslinux, ipxe/ipxe-bootimgs, genisoimage, isohybrid
 module ForemanBootdisk
   class ISOGenerator
+    extend Foreman::HTTPProxy
+
     def self.generate_full_host(host, opts = {}, &block)
       raise Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
 
@@ -200,7 +202,14 @@ module ForemanBootdisk
           ForemanBootdisk.logger.info("Fetching #{uri}")
           write_cache = use_cache
           uri = URI(uri)
-          Net::HTTP.start(uri.host, uri.port) do |http|
+
+          if proxy_http_request?(http_proxy, uri.host, uri.scheme)
+            proxy_uri = URI.parse(http_proxy)
+            http_object = Net::HTTP::Proxy(proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
+          else
+            http_object = Net::HTTP
+          end
+          http_object.start(uri.host, uri.port) do |http|
             request = Net::HTTP::Get.new(uri.request_uri, 'Accept-Encoding' => 'plain')
 
             http.request(request) do |response|
