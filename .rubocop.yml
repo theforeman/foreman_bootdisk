@@ -1,10 +1,10 @@
 require:
-  - rubocop-minitest
   - rubocop-performance
   - rubocop-rails
+  - rubocop-minitest
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   TargetRailsVersion: 5.2
   Exclude:
     - 'release-gem'
