@@ -88,23 +88,5 @@ end
 
 Rake::Task[:test].enhance ['test:foreman_bootdisk']
 
-namespace :foreman_bootdisk do
-  task :rubocop do
-    begin
-      require 'rubocop/rake_task'
-      RuboCop::RakeTask.new(:rubocop_foreman_bootdisk) do |task|
-        task.patterns = ["#{ForemanBootdisk::Engine.root}/app/**/*.rb",
-                         "#{ForemanBootdisk::Engine.root}/lib/**/*.rb",
-                         "#{ForemanBootdisk::Engine.root}/test/**/*.rb"]
-        task.options << '--auto-correct' if ENV['RUBOCOP_AUTOCORRECT']
-      end
-    rescue StandardError
-      puts 'Rubocop not loaded.'
-    end
-
-    Rake::Task['rubocop_foreman_bootdisk'].invoke
-  end
-end
-
 load 'tasks/jenkins.rake'
-Rake::Task['jenkins:unit'].enhance ['test:foreman_bootdisk', 'foreman_bootdisk:rubocop'] if Rake::Task.task_defined?(:'jenkins:unit')
+Rake::Task['jenkins:unit'].enhance ['test:foreman_bootdisk'] if Rake::Task.task_defined?(:'jenkins:unit')

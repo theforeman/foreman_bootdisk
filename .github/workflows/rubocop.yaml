@@ -1,0 +1,19 @@
+name: Rubocop
+
+on: [pull_request]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    env:
+      BUNDLE_FOREMAN: '0'
+      BUNDLE_WITHOUT: development:test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.5
+          bundler-cache: true
+      - name: Run rubocop
+        run: bundle exec rubocop -P --format github

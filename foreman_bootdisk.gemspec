@@ -24,9 +24,8 @@ Gem::Specification.new do |s|
   ]
   s.files = `git ls-files`.split("\n") - Dir['.*', 'Gem*', '*.gemspec']
 
-  s.add_development_dependency 'rubocop', '~> 0.80.0'
-  s.add_development_dependency 'rubocop-minitest', '~> 0.7.0'
-  s.add_development_dependency 'rubocop-performance', '~> 1.5.2'
-  s.add_development_dependency 'rubocop-rails', '~> 2.4.2'
+  s.required_ruby_version = '>= 2.5'
+
+  s.add_development_dependency 'theforeman-rubocop'
   s.add_development_dependency 'webmock'
 end
