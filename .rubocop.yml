@@ -1,23 +1,22 @@
-require:
-  - rubocop-performance
-  - rubocop-rails
-  - rubocop-minitest
+inherit_gem:
+  theforeman-rubocop:
+    - lenient.yml
 
 AllCops:
-  TargetRubyVersion: 2.5
-  TargetRailsVersion: 5.2
+  NewCops: disable
   Exclude:
     - 'release-gem'
     - 'test/**/*'
     - 'lib/tasks/**/*'
-
-Rails:
-  Enabled: true
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'templates/**/*'
+    - 'vendor/**/*'
 
 Style:
   Enabled: false
 
-Layout/LineLength:
+Layout:
   Enabled: false
 
 Metrics:
