@@ -42,8 +42,16 @@ module ForemanBootdisk
       end
 
       def bootdisk_generate_iso_image
-        ForemanBootdisk::ISOGenerator.generate(ipxe: bootdisk_template_render, dir: Dir.tmpdir) do |image|
-          FileUtils.mv image, bootdisk_isofile
+        if self.build? && self.provisioning_template(kind: :PXELinux) && self.provisioning_template(kind: :PXEGrub2)
+          logger.info format('Generating FULL HOST ISO image for %s', name)
+          ForemanBootdisk::ISOGenerator.generate_full_host(self, dir: Dir.tmpdir) do |image|
+            FileUtils.mv image, bootdisk_isofile
+          end
+        else
+          logger.info format('Generating HOST ISO image for %s', name)
+          ForemanBootdisk::ISOGenerator.generate(ipxe: bootdisk_template_render, dir: Dir.tmpdir) do |image|
+            FileUtils.mv image, bootdisk_isofile
+          end
         end
       end
 
@@ -60,7 +68,6 @@ module ForemanBootdisk
       end
 
       def setGenerateIsoImage
-        logger.info format('Generating ISO image for %s', name)
         bootdisk_generate_iso_image
       rescue StandardError => e
         failure format(_('Failed to generate ISO image for instance %{name}: %{message}'), name: name, message: e.message), e
