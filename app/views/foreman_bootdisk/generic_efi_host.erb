@@ -44,6 +44,10 @@ net_bootp
 net_ls_addr
 net_ls_routes
 net_ls_dns
+echo Trying to ping proxy_httpboot_host: <%= proxy_httpboot_host %>
+ping --count 1 <%= proxy_httpboot_host %> || echo Ping to proxy_httpboot_host failed or ping command not available.
+echo Trying to ping proxy_template_host: <%= proxy_template_host %>
+ping --count 1 <%= proxy_template_host %> || echo Ping to proxy_template_host failed or ping command not available.
 sleep 5
 set root=(<%= proxy_proto %>,<%= proxy_httpboot_host %>:<%= proxy_port %>)
 # The variable will not survive configfile fetch, therefore absolute path
