@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[foreman.bootdisk]
+[foreman.foreman_bootdisk]
 file_filter = locale/<lang>/foreman_bootdisk.edit.po
 source_file = locale/foreman_bootdisk.pot
 source_lang = en
