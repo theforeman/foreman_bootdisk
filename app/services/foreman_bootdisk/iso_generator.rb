@@ -203,7 +203,7 @@ module ForemanBootdisk
           write_cache = use_cache
           uri = URI(uri)
 
-          if proxy_http_request?(http_proxy, uri.host, uri.scheme)
+          if proxy_http_request?(nil, uri.host, uri.scheme)
             proxy_uri = URI.parse(http_proxy)
             http_object = Net::HTTP::Proxy(proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
           else
