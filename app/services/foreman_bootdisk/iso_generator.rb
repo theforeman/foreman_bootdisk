@@ -85,13 +85,8 @@ module ForemanBootdisk
         EOT
       end
 
-      # Temporary directory cannot be cleaned in-process due to send_file offloaded to web server and
-      # the call is asynchronous. Also $TMPDIR (/tmp or /var/tmp) cannot be used because Foreman runs
-      # with PrivateTmp systemd setting. And the plugin does not ship its own systemd-tmpfiles config,
-      # so let's delete old temporary files explicitly for files older than 30 minutes:
-      Dir.glob(Rails.root.join('tmp/clean-daily/bootdisk-iso-*')).select{|f| File.ctime(f) < (Time.now - (60*30)) }.each{|f| FileUtils.rm_f(f)}
       # And create new temporary directory:
-      wd = Dir.mktmpdir('bootdisk-iso-', Rails.root.join('tmp/clean-daily'))
+      wd = Dir.mktmpdir('bootdisk-iso-', Rails.root.join('tmp'))
       Dir.mkdir(File.join(wd, 'build'))
 
       if opts[:isolinux]
@@ -168,6 +163,14 @@ module ForemanBootdisk
       raise Foreman::Exception.new(N_('ISO hybrid conversion failed: %s'), $?) unless system(*["isohybrid", isohybrod_args, iso].flatten.compact)
 
       yield iso
+    ensure
+      # Clean the working directory (not the ISO file itself)
+      FileUtils.rm_f(File.join(wd, 'build'))
+      # Temporary directory cannot be cleaned in-process due to asynchronous send_file call.
+      # Also we cannot rely on systemd-tmpfiles-clean as private temporary files are not subject
+      # of scheduled cleanups. Let's clean bootdisks from prevous requests manually by finding
+      # and deleting all directories created 30 minutes ago.
+      Rails.root.glob('tmp/bootdisk-iso-*').select { |f| File.ctime(f) < (Time.now.to_i - (60 * 30)) }.each { |f| FileUtils.rm_f(f) }
     end
 
     def self.build_mkiso_command(output_file:, source_directory:, extra_commands:)
