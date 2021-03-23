@@ -12,6 +12,7 @@ module ForemanBootdisk
           api_base_url '/bootdisk/api'
         end
 
+        rescue_from ActiveRecord::RecordNotFound, :with => :subnet_not_found
         before_action :find_resource, only: :subnet
 
         skip_after_action :log_response_body
@@ -41,6 +42,10 @@ module ForemanBootdisk
 
         def resource_scope
           Subnet.authorized('view_subnets')
+        end
+
+        def subnet_not_found
+          not_found ("Subnet not found by id '%s'") % params[:id]
         end
       end
     end
