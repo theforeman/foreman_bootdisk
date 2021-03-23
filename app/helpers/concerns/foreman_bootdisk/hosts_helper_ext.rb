@@ -26,7 +26,7 @@ module ForemanBootdisk
                 },
                 class: 'la'
               ),
-              content_tag(:li, '', class: 'divider'),
+              tag(:li, '', class: 'divider'),
               display_bootdisk_link_if_authorized(
                 _('Generic image'),
                 {
@@ -36,7 +36,7 @@ module ForemanBootdisk
                 class: 'la'
               ),
               display_bootdisk_for_subnet(host),
-              content_tag(:li, '', class: 'divider'),
+              tag(:li, '', class: 'divider'),
               display_bootdisk_link_if_authorized(
                 _('Help'), {
                   controller: 'foreman_bootdisk/disks',
