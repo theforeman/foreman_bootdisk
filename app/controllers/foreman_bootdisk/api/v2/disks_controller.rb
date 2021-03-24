@@ -7,11 +7,13 @@ module ForemanBootdisk
     module V2
       class DisksController < ::Api::V2::BaseController
         include ::Api::Version2
+        include AllowedActions
 
         resource_description do
           api_base_url '/bootdisk/api'
         end
 
+        before_action :bootdisk_type_allowed?, only: :generic
         before_action :find_resource, only: :host
         skip_after_action :log_response_body
 
@@ -34,10 +36,12 @@ module ForemanBootdisk
         def host
           host = @disk
           if params[:full]
+            return unless bootdisk_type_allowed?('full_host')
             ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
               send_file(iso, filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso")
             end
           else
+            return unless bootdisk_type_allowed?
             # EFI not supported for iPXE host bootdisk
             tmpl = host.bootdisk_template_render
             ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|

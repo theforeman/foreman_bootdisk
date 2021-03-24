@@ -7,12 +7,14 @@ module ForemanBootdisk
     module V2
       class SubnetDisksController < ::Api::V2::BaseController
         include ::Api::Version2
+        include AllowedActions
 
         resource_description do
           api_base_url '/bootdisk/api'
         end
 
         rescue_from ActiveRecord::RecordNotFound, :with => :subnet_not_found
+        before_action :bootdisk_type_allowed?, only: :subnet
         before_action :find_resource, only: :subnet
 
         skip_after_action :log_response_body
