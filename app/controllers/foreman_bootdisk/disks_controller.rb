@@ -4,6 +4,9 @@ require 'uri'
 
 module ForemanBootdisk
   class DisksController < ::ApplicationController
+    include AllowedActions
+
+    before_action :bootdisk_type_allowed?, except: :help
     before_action :find_resource, only: %w[host full_host subnet]
 
     # as this engine is isolated, we need to include url helpers from core explicitly

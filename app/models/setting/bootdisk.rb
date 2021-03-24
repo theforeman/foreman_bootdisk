@@ -21,12 +21,21 @@ class Setting
         set('bootdisk_generic_efi_host_template', N_('Grub2 template to use for generic EFI host boot disks'),
             'Boot disk Grub2 EFI - generic host', N_('Generic Grub2 EFI image template'), nil, collection: templates),
         set('bootdisk_mkiso_command', N_('Command to generate ISO image, use genisoimage or mkisofs'), 'genisoimage', N_('ISO generation command')),
-        set('bootdisk_cache_media', N_('Installation media files will be cached for full host images'), true, N_('Installation media caching'))
+        set('bootdisk_cache_media', N_('Installation media files will be cached for full host images'), true, N_('Installation media caching')),
+        set('bootdisk_allowed_types', N_('List of allowed bootdisk types, remove type to disable it'), Setting::Bootdisk.bootdisk_types, N_('Allowed bootdisk types'))
       ]
     end
 
     def self.humanized_category
       N_('Boot disk')
+    end
+
+    def self.bootdisk_types
+      %w(generic host full_host subnet)
+    end
+
+    def self.allowed_types
+      Setting['bootdisk_allowed_types']
     end
   end
 end

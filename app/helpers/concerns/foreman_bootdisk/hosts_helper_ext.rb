@@ -8,42 +8,7 @@ module ForemanBootdisk
           button_group(
             select_action_button(
               _('Boot disk'), { class: 'btn btn-group' },
-              display_bootdisk_link_if_authorized(
-                _("Host '%s' image") % host.name.split('.')[0],
-                {
-                  controller: 'foreman_bootdisk/disks',
-                  action: 'host',
-                  id: host
-                },
-                class: 'la'
-              ),
-              display_bootdisk_link_if_authorized(
-                _("Full host '%s' image") % host.name.split('.')[0],
-                {
-                  controller: 'foreman_bootdisk/disks',
-                  action: 'full_host',
-                  id: host
-                },
-                class: 'la'
-              ),
-              tag(:li, '', class: 'divider'),
-              display_bootdisk_link_if_authorized(
-                _('Generic image'),
-                {
-                  controller: 'foreman_bootdisk/disks',
-                  action: 'generic'
-                },
-                class: 'la'
-              ),
-              display_bootdisk_for_subnet(host),
-              tag(:li, '', class: 'divider'),
-              display_bootdisk_link_if_authorized(
-                _('Help'), {
-                  controller: 'foreman_bootdisk/disks',
-                  action: 'help'
-                },
-                class: 'la'
-              )
+              host_action_buttons(host)
             )
           )
         )
@@ -94,6 +59,67 @@ module ForemanBootdisk
 
     def bootdisk_authorized_for(options)
       User.current.allowed_to?(options)
+    end
+
+    def host_action_buttons(host)
+      actions = []
+
+      allowed_actions = Setting::Bootdisk.allowed_types
+      return '' unless allowed_actions
+
+      host_image_link = display_bootdisk_link_if_authorized(
+                          _("Host '%s' image") % host.name.split('.')[0],
+                          {
+                              controller: 'foreman_bootdisk/disks',
+                              action: 'host',
+                              id: host
+                          },
+                          class: 'la'
+                        )
+
+      full_host_image_link = display_bootdisk_link_if_authorized(
+                               _("Full host '%s' image") % host.name.split('.')[0],
+                               {
+                                   controller: 'foreman_bootdisk/disks',
+                                   action: 'full_host',
+                                   id: host
+                               },
+                               class: 'la'
+                             )
+
+      generic_image_link = display_bootdisk_link_if_authorized(
+                             _('Generic image'),
+                             {
+                                 controller: 'foreman_bootdisk/disks',
+                                 action: 'generic'
+                             },
+                             class: 'la'
+                           )
+
+      help_link = display_bootdisk_link_if_authorized(
+                    _('Help'),
+                    {
+                    controller: 'foreman_bootdisk/disks',
+                    action: 'help'
+                    },
+                    class: 'la'
+                  )
+
+      divider = tag(:li, '', class: 'divider')
+
+      actions << host_image_link if allowed_actions.include?('host')
+      actions << full_host_image_link if allowed_actions.include?('full_host')
+
+      subnet_link = display_bootdisk_for_subnet(host)
+      actions << divider if allowed_actions.include?('generic') || (allowed_actions.include?('subnet') && subnet_link.present?)
+
+      actions << generic_image_link if allowed_actions.include?('generic')
+      actions << subnet_link if allowed_actions.include?('subnet')
+
+      actions << divider
+      actions << help_link
+
+      actions
     end
   end
 end
