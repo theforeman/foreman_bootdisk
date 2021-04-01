@@ -228,7 +228,7 @@ The installation can continue on either the DHCP or static IP depending on how
 the OS iPXE template is configured, and could configure the assigned IP
 address statically for the installed system via the kickstart file.
 
-To generate the image from the web interface, view a host page, click the
+To generate the image from the web interface, view a subnet page, click the
 "Boot disk" button and select "Generic image".
 
 To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
@@ -269,8 +269,7 @@ the "Templates" module enabled and configured.
 
 This image is generic for all hosts with a provisioning NIC on that subnet.
 
-To generate the image from the web interface, view a host page, click the
-"Boot disk" button and select "Subnet image".
+To generate the image from the web interface, view a subnet page and select "Subnet image" from subnet action buttons.
 
 To generate using the Hammer CLI, install the [hammer_cli_foreman_bootdisk](https://github.com/theforeman/hammer_cli_foreman_bootdisk)
 plugin and run:

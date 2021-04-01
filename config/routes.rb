@@ -7,7 +7,7 @@ ForemanBootdisk::Engine.routes.draw do
     constraints(id: %r{[^/]+}) do
       get 'hosts/:id', on: :collection, to: 'disks#host'
       get 'full_hosts/:id', on: :collection, to: 'disks#full_host'
-      get 'subnet/:id', on: :collection, to: 'disks#subnet'
+      get 'subnet/:id', on: :collection, to: 'subnet_disks#subnet'
     end
   end
 
