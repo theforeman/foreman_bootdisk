@@ -38,10 +38,11 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 2.1'
+        requires_foreman '>= 2.5'
 
         security_block :bootdisk do |_map|
-          permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host subnet help],
+          permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host help],
+                                         'foreman_bootdisk/subnet_disks': [:subnet],
                                          'foreman_bootdisk/api/v2/disks': %i[generic host],
                                          'foreman_bootdisk/api/v2/subnet_disks': [:subnet]
         end
@@ -57,6 +58,11 @@ module ForemanBootdisk
         provision_method 'bootdisk', N_('Boot disk based')
         template_labels 'Bootdisk' => N_('Boot disk embedded template')
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
+
+        extend_page "subnets/index" do |cx|
+          cx.add_pagelet :subnet_index_action_buttons, name: 'Bootdisk', partial: 'subnets/bootdisk_action_buttons'
+          cx.add_pagelet :subnet_index_title_buttons, name: 'Bootdisk', partial: 'subnets/bootdisk_title_buttons'
+        end
       end
     end
 
@@ -71,6 +77,7 @@ module ForemanBootdisk
         Host::Managed.prepend ForemanBootdisk::HostExt
         Host::Managed.include ForemanBootdisk::Orchestration::Compute if SETTINGS[:unattended]
         HostsHelper.prepend ForemanBootdisk::HostsHelperExt
+        SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
         Foreman::Model::Vmware.prepend ForemanBootdisk::ComputeResources::Vmware if Foreman::Model::Vmware.available?
       rescue StandardError => e
         Rails.logger.warn "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e})"
