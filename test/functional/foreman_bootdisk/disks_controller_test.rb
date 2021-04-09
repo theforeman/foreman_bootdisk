@@ -69,6 +69,27 @@ class ForemanBootdisk::DisksControllerTest < ActionController::TestCase
     end
   end
 
+  describe '#host without tftp' do
+    setup :setup_referer
+    setup :setup_org_loc
+    setup :setup_subnet_no_tftp
+    setup :setup_host
+
+    test 'should prolong token for host image' do
+      Setting[:token_duration] = 60
+      @host.set_token
+      past = Time.now
+      assert @host.token.expires > past
+      travel_to(past + 2.hours)
+      assert @host.token_expired?
+
+      perform_full_host_generate
+
+      assert_equal @host.token_expired?, true
+      assert @host.token.expires > past
+    end
+  end
+
   test 'should render help' do
     get :help, session: set_session_user
     assert_response :success
