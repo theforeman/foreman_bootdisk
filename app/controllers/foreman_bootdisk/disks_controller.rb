@@ -41,6 +41,8 @@ module ForemanBootdisk
         return
       end
 
+      prolong_token(host)
+
       ForemanBootdisk::ISOGenerator.generate(ipxe: tmpl) do |iso|
         send_file(iso, filename: "#{host.name}.iso")
       end
@@ -48,6 +50,9 @@ module ForemanBootdisk
 
     def full_host
       host = @disk
+
+      prolong_token(host)
+
       ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
         send_file(iso, filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso")
       end
@@ -59,6 +64,20 @@ module ForemanBootdisk
 
     def resource_scope(_controller = controller_name)
       Host::Managed.authorized(:view_hosts)
+    end
+
+    def error_rendering(exception)
+      msg = _('Failed to render boot disk template')
+      error("#{msg}: #{exception.message}")
+      ::Foreman::Logging.exception(msg, exception)
+    end
+
+    def prolong_token(host)
+      return if Setting[:token_duration] == 0 || host.token.nil?
+
+      # update build token
+      token = host.token
+      token.update(expires: Time.zone.now + Setting[:token_duration].minutes)
     end
   end
 end
