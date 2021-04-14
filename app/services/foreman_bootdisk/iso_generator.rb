@@ -85,8 +85,8 @@ module ForemanBootdisk
         EOT
       end
 
-      # Temporary directory cannot be cleaned inprocess due to send_file offloaded to web server
-      wd = Dir.mktmpdir('bootdisk-iso-')
+      # And create new temporary directory:
+      wd = Dir.mktmpdir('bootdisk-iso-', Rails.root.join('tmp'))
       Dir.mkdir(File.join(wd, 'build'))
 
       if opts[:isolinux]
@@ -163,6 +163,15 @@ module ForemanBootdisk
       raise Foreman::Exception.new(N_('ISO hybrid conversion failed: %s'), $?) unless system(*["isohybrid", isohybrod_args, iso].flatten.compact)
 
       yield iso
+    ensure
+      # Clean the working directory (not the ISO file itself)
+      FileUtils.rm_f(File.join(wd, 'build'))
+      # Temporary directory cannot be cleaned in-process due to asynchronous send_file call.
+      # Also we cannot rely on systemd-tmpfiles-clean as private temporary files are not subject
+      # of scheduled cleanups. Let's clean bootdisks from prevous requests manually by finding
+      # and deleting all directories created 30 minutes ago.
+      delete_older_than = Time.now.to_i - (60 * 30)
+      Rails.root.glob('tmp/bootdisk-iso-*').select { |f| File.ctime(f) < delete_older_than }.each { |f| FileUtils.rm_f(f) }
     end
 
     def self.build_mkiso_command(output_file:, source_directory:, extra_commands:)
