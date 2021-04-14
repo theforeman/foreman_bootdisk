@@ -134,8 +134,8 @@ module ForemanBootdisk
           File.join(Setting[:bootdisk_grub2_dir], 'grubx64.efi').to_s => 'GRUBX64.EFI',
           File.join(Setting[:bootdisk_grub2_dir], 'shimx64.efi').to_s => 'BOOTX64.EFI',
         }.each do |src, dest|
-          raise(Foreman::Exception.new(N_('Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)'), path: src)) unless File.exist?(src)
-          raise(Foreman::Exception.new(N_('Unable to mcopy %{path}'), path: src)) unless system("mcopy -m -i #{efibootimg} '#{src}' '#{"::/EFI/BOOT/#{dest}"}'")
+          raise(Foreman::Exception.new(N_('Ensure %{file} is readable (or update "Grub2 directory" setting)'), file: src)) unless File.exist?(src)
+          raise(Foreman::Exception.new(N_('Unable to mcopy %{file}'), file: src)) unless system("mcopy -m -i #{efibootimg} '#{src}' '#{"::/EFI/BOOT/#{dest}"}'")
         end
         mkiso_args = "-eltorito-alt-boot -e efiboot.img -no-emul-boot"
         isohybrod_args = ["--uefi"]
