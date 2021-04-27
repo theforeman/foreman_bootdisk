@@ -7,10 +7,10 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-10-22 20:06+0000\n"
-"Last-Translator: Yulia <yulia.poyarkova@redhat.com>\n"
+"PO-Revision-Date: 2020-06-15 22:29+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/ru/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,9 @@ msgstr "Действия с подпланами"
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Все образы используются как ISO или образы дисков, включая записанные на USB диск командой 'dd'."
 
+msgid "Allowed bootdisk types"
+msgstr ""
+
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr ""
 
@@ -38,6 +41,9 @@ msgstr "Назад"
 
 msgid "Boot disk"
 msgstr "Загрузочный диск"
+
+msgid "Boot disk Help"
+msgstr ""
 
 msgid "Boot disk based"
 msgstr ""
@@ -72,7 +78,7 @@ msgstr "Скачать образ узла"
 msgid "Download subnet generic image"
 msgstr "Загрузить стандартный образ для подсети"
 
-msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
@@ -114,6 +120,9 @@ msgstr "Стандартный образ"
 msgid "Generic image template"
 msgstr ""
 
+msgid "Generic images"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Общий образ - это образ диска работающий на любом узле, зарегистрированном в Foreman. Он требует наличие DHCP и DNS служб для функционирования и соединения с сервером, но не требует резервации DHCP или статических IP адресов."
 
@@ -122,9 +131,6 @@ msgstr ""
 
 msgid "Grub2 template to use for generic EFI host boot disks"
 msgstr ""
-
-msgid "Help"
-msgstr "Справка"
 
 msgid "Host '%s' image"
 msgstr "Образ узла '%s'"
@@ -148,6 +154,9 @@ msgid "Host image"
 msgstr "Образ узла"
 
 msgid "Host image template"
+msgstr ""
+
+msgid "Host images"
 msgstr ""
 
 msgid "Host is not in build mode, so the template cannot be rendered"
@@ -176,6 +185,9 @@ msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Файлы с установочного носителя будут закешированы для полного образа узла."
+
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "После того как загрузчик ОС и установщик скачаны напрямую с установочного носителя, настроенного в Foreman, и скрипт подготовки (kickstart/preseed) скачан из Foreman."
@@ -216,14 +228,14 @@ msgstr "Стандартный образ для подсети «%s»"
 msgid "Subnet boot disks"
 msgstr "Загрузочные диски для подсети"
 
+msgid "Subnet generic image"
+msgstr ""
+
 msgid "Subnet image"
 msgstr "Образ для подсети"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
 msgstr "Образ для подсети похож на стандартный образ, но отличается от него тем, что цепная загрузка происходит с капсулы TFTP, назначенной подсети, которой принадлежит узел. Для этого на капсуле должно быть установлено и настроено дополнение «Шаблоны»."
-
-msgid "Subnet is not assigned to the host %s"
-msgstr "Для узла %s не выбрана подсеть"
 
 msgid "TFTP feature not enabled for subnet %s"
 msgstr "TFTP не поддерживается для подсети %s"
@@ -231,8 +243,17 @@ msgstr "TFTP не поддерживается для подсети %s"
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "Установщик ОС продолжит использовать установочный носитель, настроенный в Foreman, и он будет настраивать статическую сеть, зависящую от того как настроен шаблон iPXE ОС."
 
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr ""
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr "Этот образ является универсальным для всех узлов в избранной подсети, на которых настроен сетевой адаптер для подготовки узла."
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
+msgstr ""
 
 msgid "True for full, false for basic reusable image"
 msgstr "Истина для полного, ложь для начального образа"
@@ -246,7 +267,7 @@ msgstr ""
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr ""
 
-msgid "Unable to mcopy %{path}"
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

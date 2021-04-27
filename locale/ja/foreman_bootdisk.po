@@ -4,12 +4,13 @@
 #
 # Translators:
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
+# 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-10-22 20:06+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2020-09-03 07:56+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/"
 ")\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +28,9 @@ msgstr "サブプランによるアクション"
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "すべてのイメージは、`dd` で USB ディスクに書き込まれるものを含め、ISO またはディスクイメージのいずれかとして利用することができます。"
 
+msgid "Allowed bootdisk types"
+msgstr ""
+
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr "ISO イメージの %s の CDROM ドライブへの割り当て"
 
@@ -35,6 +39,9 @@ msgstr "戻る"
 
 msgid "Boot disk"
 msgstr "ブートディスク"
+
+msgid "Boot disk Help"
+msgstr ""
 
 msgid "Boot disk based"
 msgstr "ブートディスクベース"
@@ -49,16 +56,16 @@ msgid "Boot disks"
 msgstr "ブートディスク"
 
 msgid "Both IP and Subnet must be set"
-msgstr ""
+msgstr "IP とサブネットの両方を設定する必要があります"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "ISO イメージを生成するためのコマンドです。genisoimage または mkisofs を使用します"
 
 msgid "Creating new image failed, install truncate utility"
-msgstr ""
+msgstr "新しいイメージの作成に失敗しました。truncate ユーティリティをインストールしてください"
 
 msgid "Detach ISO image from CDROM drive for %s"
-msgstr ""
+msgstr "%s の CDROM ドライブから ISO イメージをデタッチ"
 
 msgid "Download generic image"
 msgstr "汎用イメージをダウンロード"
@@ -69,20 +76,20 @@ msgstr "ホストイメージをダウンロード"
 msgid "Download subnet generic image"
 msgstr "サブネットの汎用イメージのダウンロード"
 
-msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr "インスタンス %{name} の CDROM ドライブへの ISO イメージの割り当てに失敗しました: %{message}"
 
 msgid "Failed to create a directory within the ESP image"
-msgstr ""
+msgstr "ESP のイメージ内にディレクトリーを作成できませんでした"
 
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
-msgstr ""
+msgstr "インスタンス %{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %{message}"
 
 msgid "Failed to format the ESP image via mkfs.msdos"
-msgstr ""
+msgstr "mkfs.msdos で ESPイメージをフォーマットできませんでした"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr "インスタンス %{name} の ISO イメージの生成に失敗しました: %{message}"
@@ -103,7 +110,7 @@ msgid "Generating ISO image for %s"
 msgstr "%s の ISO イメージを生成中"
 
 msgid "Generic Grub2 EFI image template"
-msgstr ""
+msgstr "Grub2 EFI の汎用イメージテンプレート"
 
 msgid "Generic image"
 msgstr "汎用イメージ"
@@ -111,26 +118,26 @@ msgstr "汎用イメージ"
 msgid "Generic image template"
 msgstr "汎用イメージテンプレート"
 
+msgid "Generic images"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "汎用イメージは、Foreman に登録されたすべてのホストで機能する再利用可能なディスクイメージです。これを使用するには、基本的な DHCP および DNS サービスが機能し、サーバーと通信できることが必要になりますが、DHCP 予約や静的 IP アドレスは必要ありません。"
 
 msgid "Grub2 directory"
-msgstr ""
+msgstr "Grub2 ディレクトリー"
 
 msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
-msgid "Help"
-msgstr "ヘルプ"
+msgstr "汎用の EFI ホストブートディスクに使用する Grub2 テンプレート"
 
 msgid "Host '%s' image"
 msgstr "ホスト '%s' イメージ"
 
 msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
+msgstr "ホストのブートディスクは静的 IPv6 で機能しません"
 
 msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
+msgstr "ホストには IPv4 または IPv6 アドレスが定義されていません"
 
 msgid "Host has no domain defined"
 msgstr "ホストにはドメインが定義されていません"
@@ -147,6 +154,9 @@ msgstr "ホストイメージ"
 msgid "Host image template"
 msgstr "ホストイメージテンプレート"
 
+msgid "Host images"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "ホストはビルドモードではないため、テンプレートはレンダリングすることができません"
 
@@ -157,7 +167,7 @@ msgid "ISO generation command"
 msgstr "ISO 生成コマンド"
 
 msgid "ISO hybrid conversion failed: %s"
-msgstr ""
+msgstr "ISO ハイブリッド変換に失敗しました: %s"
 
 msgid "ISOLINUX directory"
 msgstr "ISOLINUX ディレクトリー"
@@ -174,11 +184,14 @@ msgstr "インストールメディアのキャッシング"
 msgid "Installation media files will be cached for full host images"
 msgstr "インストールメディアファイルは、完全なホストのイメージのためにキャッシュされます"
 
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
+
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "チェーンロードが実行されると、OS ブートローダーとインストーラーは Foreman で設定されたインストールメディアから直接ダウンロードされ、プロビジョニングスクリプト (kickstart/preseed) は Foreman からダウンロードされます。"
 
 msgid "Path to directory containing grubx64.efi and shimx64.efi"
-msgstr ""
+msgstr "grubx64.efi および shimx64.efi が含まれるディレクトリーへのパス"
 
 msgid "Path to directory containing iPXE images"
 msgstr "iPXE イメージを含むディレクトリーのパス"
@@ -213,14 +226,14 @@ msgstr "サブネット '%s' の汎用イメージ"
 msgid "Subnet boot disks"
 msgstr "サブネットブートディスク"
 
+msgid "Subnet generic image"
+msgstr ""
+
 msgid "Subnet image"
 msgstr "サブネットイメージ"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
 msgstr "サブネットイメージは汎用イメージに似ていますが、チェーンロードは、ホストのサブネットに割り当てられる TFTP スマートプロキシーで実行されます。スマートプロキシーでは「テンプレート」を有効にし、設定する必要があります。"
-
-msgid "Subnet is not assigned to the host %s"
-msgstr "サブネットがホスト %s に割り当てられていません"
 
 msgid "TFTP feature not enabled for subnet %s"
 msgstr " TFTP 機能がサブネット %s に対して有効にされていません"
@@ -228,8 +241,17 @@ msgstr " TFTP 機能がサブネット %s に対して有効にされていま�
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "OS インストールは、Foreman で設定されたインストールメディアの使用を継続します。さらに、OS iPXE テンプレートの設定方法によりますが、通常は静的ネットワークを設定します。"
 
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr ""
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr "このイメージは、サブネットにプロビジョニング NIC が設定されたすべてのホストに対して汎用性があります。"
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
+msgstr ""
 
 msgid "True for full, false for basic reusable image"
 msgstr "完全イメージの場合は true、基本的な再利用可能イメージの場合は false"
@@ -238,12 +260,12 @@ msgid "Unable to find template specified by %s setting"
 msgstr "%s 設定で指定されているテンプレートが見つかりません"
 
 msgid "Unable to generate disk %{kind} template: %{error}"
-msgstr ""
+msgstr "ディスクの %{kind} テンプレートを生成できません: %{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr ""
+msgstr "ディスクテンプレートを生成できません。%{kind} テンプレートが見つかりません。"
 
-msgid "Unable to mcopy %{path}"
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

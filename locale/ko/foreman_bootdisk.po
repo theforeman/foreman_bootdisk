@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-10-22 20:06+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2020-06-15 22:29+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: Korean (http://www.transifex.com/foreman/foreman/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +25,9 @@ msgstr "하위 계획이 있는 작업"
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "모든 이미지는 `dd`로 USB 디스크에 기록되는 것을 포함하여 ISO 또는 디스크 이미지 중 하나로 사용할 수 있습니다. "
 
+msgid "Allowed bootdisk types"
+msgstr ""
+
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr ""
 
@@ -33,6 +36,9 @@ msgstr "뒤로 "
 
 msgid "Boot disk"
 msgstr "부팅 디스크 "
+
+msgid "Boot disk Help"
+msgstr ""
 
 msgid "Boot disk based"
 msgstr ""
@@ -67,7 +73,7 @@ msgstr "호스트 이미지 다운로드 "
 msgid "Download subnet generic image"
 msgstr "서브넷 일반 이미지 다운로드"
 
-msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
@@ -109,6 +115,9 @@ msgstr "일반 이미지 "
 msgid "Generic image template"
 msgstr ""
 
+msgid "Generic images"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "일반 이미지는 Foreman에 등록된 모든 호스트에서 작동하는 다시 사용 가능한 디스크 이미지입니다. 이를 사용하려면 기본  DHCP 및 DNS 서비스가 작동하고 서버와 통신할 수 있어야 하지만 DHCP 예약 기능 및 고정 IP 주소는 필요하지 않습니다.  "
 
@@ -117,9 +126,6 @@ msgstr ""
 
 msgid "Grub2 template to use for generic EFI host boot disks"
 msgstr ""
-
-msgid "Help"
-msgstr "도움말"
 
 msgid "Host '%s' image"
 msgstr "호스트 '%s' 이미지 "
@@ -143,6 +149,9 @@ msgid "Host image"
 msgstr "호스트 이미지 "
 
 msgid "Host image template"
+msgstr ""
+
+msgid "Host images"
 msgstr ""
 
 msgid "Host is not in build mode, so the template cannot be rendered"
@@ -171,6 +180,9 @@ msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "설치 미디어 파일은 전체 호스트 이미지에 캐시됩니다 "
+
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "체인 로드가 실행되면 OS 부트로더 및 설치 프로그램은 Foreman에서 설정된 설치 미디어에서 직접 다운로드되고 프로비저닝 스크립트 (kickstart/preseed)는 Foreman에서 다운로드됩니다. "
@@ -211,14 +223,14 @@ msgstr "'%s' 서브넷 일반 이미지"
 msgid "Subnet boot disks"
 msgstr "서브넷 부팅 디스크"
 
+msgid "Subnet generic image"
+msgstr ""
+
 msgid "Subnet image"
 msgstr "서브넷 이미지"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
 msgstr "서브넷 이미지는 일반 이미지와 유사하지만 체인로딩이 호스트의 서브넷에 할당된 TFTP 스마트 프록시를 통해 수행됩니다. 스마트 프록시에는 \"템플릿\" 모듈이 활성화되고 구성되어 있어야 합니다."
-
-msgid "Subnet is not assigned to the host %s"
-msgstr "%s 호스트에 서브넷이 할당되어 있지 않습니다."
 
 msgid "TFTP feature not enabled for subnet %s"
 msgstr "%s 서브넷에 대해 TFTP 기능이 활성화되어 있지 않습니다."
@@ -226,8 +238,17 @@ msgstr "%s 서브넷에 대해 TFTP 기능이 활성화되어 있지 않습니�
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "OS 설치는 Foreman에 설정된 설치 미디어를 계속 사용하며 OS iPXE 템플릿의 설정 방법에 따라 일반적으로 정적 네트워크를 설정합니다. "
 
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr ""
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr "이 이미지는 해당 서브넷에 프로비저닝 NIC가 있는 모든 호스트에 공통적으로 사용됩니다."
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
+msgstr ""
 
 msgid "True for full, false for basic reusable image"
 msgstr "전체 이미지의 경우 True, 다시 사용할 수 있는 기본 이미지의 경우 False"
@@ -241,7 +262,7 @@ msgstr ""
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr ""
 
-msgid "Unable to mcopy %{path}"
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

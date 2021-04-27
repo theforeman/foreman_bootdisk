@@ -7,10 +7,10 @@
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-10-22 20:06+0000\n"
-"Last-Translator: Lukáš Zapletal\n"
+"PO-Revision-Date: 2020-06-15 22:29+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/ca/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,9 @@ msgstr ""
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr ""
 
+msgid "Allowed bootdisk types"
+msgstr ""
+
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr ""
 
@@ -36,6 +39,9 @@ msgstr "Enrere"
 
 msgid "Boot disk"
 msgstr "Disc d'arrencada"
+
+msgid "Boot disk Help"
+msgstr ""
 
 msgid "Boot disk based"
 msgstr ""
@@ -70,7 +76,7 @@ msgstr "Baixa la imatge d'amfitrió"
 msgid "Download subnet generic image"
 msgstr "Baixa la imatge genèrica de subxarxa"
 
-msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
@@ -112,6 +118,9 @@ msgstr "Imatge genèrica"
 msgid "Generic image template"
 msgstr ""
 
+msgid "Generic images"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr ""
 
@@ -120,9 +129,6 @@ msgstr ""
 
 msgid "Grub2 template to use for generic EFI host boot disks"
 msgstr ""
-
-msgid "Help"
-msgstr "Ajuda"
 
 msgid "Host '%s' image"
 msgstr ""
@@ -146,6 +152,9 @@ msgid "Host image"
 msgstr "Imatge d'amfitrió"
 
 msgid "Host image template"
+msgstr ""
+
+msgid "Host images"
 msgstr ""
 
 msgid "Host is not in build mode, so the template cannot be rendered"
@@ -174,6 +183,9 @@ msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Els fitxers dels mitjans d'instal·lació s'emmagatzemaran en memòria cau per a les imatges completes dels amfitrions"
+
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr ""
@@ -214,14 +226,14 @@ msgstr ""
 msgid "Subnet boot disks"
 msgstr "Discs d'arrencada de subxarxa"
 
+msgid "Subnet generic image"
+msgstr ""
+
 msgid "Subnet image"
 msgstr "Imatge de subxarxa"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
 msgstr ""
-
-msgid "Subnet is not assigned to the host %s"
-msgstr "La subxarxa no està assignada a l'amfitrió %s"
 
 msgid "TFTP feature not enabled for subnet %s"
 msgstr "La funcionalitat TFTP no està habilitada per a la subxarxa %s"
@@ -229,7 +241,16 @@ msgstr "La funcionalitat TFTP no està habilitada per a la subxarxa %s"
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr ""
 
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr ""
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
+msgstr ""
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
 msgstr ""
 
 msgid "True for full, false for basic reusable image"
@@ -244,7 +265,7 @@ msgstr ""
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr ""
 
-msgid "Unable to mcopy %{path}"
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

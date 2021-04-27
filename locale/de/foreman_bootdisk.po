@@ -12,10 +12,10 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-10-22 20:06+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>\n"
+"PO-Revision-Date: 2020-06-15 22:29+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: German (http://www.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,6 +32,9 @@ msgstr "Aktion mit Unterplänen"
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Alle Abbilder können entweder als ISOs oder als Festplattenabbilder verwendet werden und auch mit `dd` auf eine USB-Festplatte geschrieben."
 
+msgid "Allowed bootdisk types"
+msgstr ""
+
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr "ISO-Abbild dem CDROM-Laufwerk für %s anhängen"
 
@@ -40,6 +43,9 @@ msgstr "Zurück"
 
 msgid "Boot disk"
 msgstr "Startmedium"
+
+msgid "Boot disk Help"
+msgstr ""
 
 msgid "Boot disk based"
 msgstr "Startmedium-basiert"
@@ -74,7 +80,7 @@ msgstr "Host-Abbild herunterladen"
 msgid "Download subnet generic image"
 msgstr "Generisches Abbild von Subnetz herunterladen"
 
-msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
@@ -116,6 +122,9 @@ msgstr "Generisches Abbild"
 msgid "Generic image template"
 msgstr "Generische Abbildvorlage"
 
+msgid "Generic images"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Generische Abbilder sind wiederverwendbare Festplattenabbilder die für beliebige in Foreman registrierte Hosts funktionieren. Sie erfordern einen einfachen DHCP- und DNS-Service, um zu funktionieren und den Server zu kontaktieren. Jedoch benötigen sie keinerlei DHCP-Reservierungen oder statische IP-Adressen."
 
@@ -124,9 +133,6 @@ msgstr ""
 
 msgid "Grub2 template to use for generic EFI host boot disks"
 msgstr ""
-
-msgid "Help"
-msgstr "Hilfe"
 
 msgid "Host '%s' image"
 msgstr "Host '%s'-Abbild"
@@ -151,6 +157,9 @@ msgstr "Host-Abbild"
 
 msgid "Host image template"
 msgstr "Host-Abbildvorlage"
+
+msgid "Host images"
+msgstr ""
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "Host ist nicht im Buildmodus. Daher kann die Vorlage nicht erstellt werden."
@@ -178,6 +187,9 @@ msgstr "Installationsmedien-Dateien Caching"
 
 msgid "Installation media files will be cached for full host images"
 msgstr "Installationsmedien-Dateien werden für vollständige Host-Images zwischengespeichert."
+
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Sobald sie nacheinander geladen (Chainloading) sind, werden der OS-Bootloader und das OS-Installationsprogramm direkt von den in Foreman konfigurierten Installationsmedien heruntergeladen, und das Bereitstellungsskript (kickstart/preseed) wird von Foreman heruntergeladen."
@@ -218,14 +230,14 @@ msgstr "Subnetz '%s' generisches Abbild"
 msgid "Subnet boot disks"
 msgstr "Subnetz-Startmedien"
 
+msgid "Subnet generic image"
+msgstr ""
+
 msgid "Subnet image"
 msgstr "Subnetzabbild"
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
 msgstr "Subnetz-Abbilder sind generischen Abbildern ähnlich, aber Chainloading erfolgt über den TFTP Smart Proxy, der dem Host-Subnetz zu gewiesen ist. Das \"Vorlagen\"-Modul muss auf dem Smart-Proxy aktiviert und konfiguriert sein."
-
-msgid "Subnet is not assigned to the host %s"
-msgstr "Subnetz ist dem Host %s nicht zugewiesen"
 
 msgid "TFTP feature not enabled for subnet %s"
 msgstr "TFTP-Funktion für Subnetz %s nicht aktiviert"
@@ -233,8 +245,17 @@ msgstr "TFTP-Funktion für Subnetz %s nicht aktiviert"
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "Die Installation des Betriebssystems wird unter Verwendung eines in Foreman konfigurierten Installationsmediums fortgesetzt und konfiguriert für gewöhnlich eine statische Verbindung in Abhängigkeit davon, wie die Betriebssystem-iPXE-Vorlage konfiguriert ist."
 
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr ""
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr "Dieses Abbild ist für alle Hosts mit Provisioning-NIC auf diesem Subnetz generisch."
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
+msgstr ""
 
 msgid "True for full, false for basic reusable image"
 msgstr "\"True\" für vollständiges, \"false\" für einfaches wiederverwendbares Image"
@@ -248,7 +269,7 @@ msgstr ""
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr ""
 
-msgid "Unable to mcopy %{path}"
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

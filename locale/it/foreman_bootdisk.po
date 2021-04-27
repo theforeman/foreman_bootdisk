@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.0\n"
+"Project-Id-Version: foreman_bootdisk 17.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-10-22 20:06+0000\n"
-"Last-Translator: Andrea Perotti\n"
+"PO-Revision-Date: 2020-06-15 22:29+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/it/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,9 @@ msgstr ""
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Tutte le immagini possono essere utilizzate come ISO o immagini del disco, incluso la scrittura su un disco USB con `dd`."
 
+msgid "Allowed bootdisk types"
+msgstr ""
+
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr ""
 
@@ -34,6 +37,9 @@ msgstr "Indietro"
 
 msgid "Boot disk"
 msgstr "Disco d'avvio"
+
+msgid "Boot disk Help"
+msgstr ""
 
 msgid "Boot disk based"
 msgstr ""
@@ -68,7 +74,7 @@ msgstr "Scarica immagine host"
 msgid "Download subnet generic image"
 msgstr ""
 
-msgid "Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or copy those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
@@ -110,6 +116,9 @@ msgstr "Immagine generica"
 msgid "Generic image template"
 msgstr ""
 
+msgid "Generic images"
+msgstr ""
+
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Le immagini generiche sono immagini del disco riutilizzabili idonee per qualsiasi host registrato in Foreman. È necessario avere un server DNS e DHCP generico per un funzionamento corretto e contattare il server, non necessita prenotazioni DHCP o indirizzi IP statici."
 
@@ -118,9 +127,6 @@ msgstr ""
 
 msgid "Grub2 template to use for generic EFI host boot disks"
 msgstr ""
-
-msgid "Help"
-msgstr "Aiuto"
 
 msgid "Host '%s' image"
 msgstr "Immagine '%s' dell'host"
@@ -144,6 +150,9 @@ msgid "Host image"
 msgstr "Immagine host"
 
 msgid "Host image template"
+msgstr ""
+
+msgid "Host images"
 msgstr ""
 
 msgid "Host is not in build mode, so the template cannot be rendered"
@@ -172,6 +181,9 @@ msgstr ""
 
 msgid "Installation media files will be cached for full host images"
 msgstr "I file del dispositivo di installazione verranno memorizzati in cache per le immagini host complete"
+
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Una volta caricato a catena il bootloader del sistema operativo e l'installer verranno scaricati direttamente del dispositivo di installazione configurato in Foreman, e lo script di provisioning (kickstart/preseed) verrà scaricato da Foreman."
@@ -212,13 +224,13 @@ msgstr ""
 msgid "Subnet boot disks"
 msgstr ""
 
+msgid "Subnet generic image"
+msgstr ""
+
 msgid "Subnet image"
 msgstr ""
 
 msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
-msgstr ""
-
-msgid "Subnet is not assigned to the host %s"
 msgstr ""
 
 msgid "TFTP feature not enabled for subnet %s"
@@ -227,7 +239,16 @@ msgstr ""
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "L'installazione del sistema operativo continua usando il dispositivo d'installazione configurato in Foreman, e generalmente configurerà il networking statico in base alla configurazione del template iPXE del sistema operativo."
 
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr ""
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
+msgstr ""
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
 msgstr ""
 
 msgid "True for full, false for basic reusable image"
@@ -242,7 +263,7 @@ msgstr ""
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr ""
 
-msgid "Unable to mcopy %{path}"
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
 msgid "Upload ISO image to datastore for %s"

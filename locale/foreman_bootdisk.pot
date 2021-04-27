@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-15 14:46+0200\n"
-"PO-Revision-Date: 2020-06-15 14:46+0200\n"
+"POT-Creation-Date: 2021-04-27 14:11+0200\n"
+"PO-Revision-Date: 2021-04-27 14:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,76 +18,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:19
+#: ../app/controllers/concerns/allowed_actions.rb:7
+msgid "This type of bootdisk is not allowed. Please contact administrator."
+msgstr ""
+
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:21
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:1
 msgid "Boot disks"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:22
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:24
 msgid "Download generic image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:31
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:33
 msgid "Download host image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:32
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:34
 msgid "True for full, false for basic reusable image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:20
+#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:23
 msgid "Subnet boot disks"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:23
+#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:26
 msgid "Download subnet generic image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:27
-#: ../app/controllers/foreman_bootdisk/disks_controller.rb:55
+#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:30
+#: ../app/controllers/foreman_bootdisk/subnet_disks_controller.rb:15
 msgid "TFTP feature not enabled for subnet %s"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/disks_controller.rb:54
-msgid "Subnet is not assigned to the host %s"
+#: ../app/helpers/bootdisk_links_helper.rb:27
+msgid "Boot disk Help"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/disks_controller.rb:80
-msgid "Failed to render boot disk template"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:10
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:60
-#: ../app/models/setting/bootdisk.rb:29
+#: ../app/helpers/bootdisk_links_helper.rb:40
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:20
+#: ../app/models/setting/bootdisk.rb:30
 msgid "Boot disk"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:12
-msgid "Host '%s' image"
-msgstr ""
-
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:21
-msgid "Full host '%s' image"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:31
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:25
-msgid "Generic image"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:41
-msgid "Help"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:61
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:70
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:30
 msgid "Subnet '%s' generic image"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/host_ext.rb:10
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:66
+msgid "Host '%s' image"
+msgstr ""
+
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:76
+msgid "Full host '%s' image"
+msgstr ""
+
+#: ../app/helpers/concerns/foreman_bootdisk/pretty_error.rb:8
+msgid "Failed to render boot disk template"
+msgstr ""
+
+#: ../app/helpers/concerns/foreman_bootdisk/subnets_helper_ext.rb:10
+msgid "Subnet generic image"
+msgstr ""
+
+#: ../app/helpers/concerns/foreman_bootdisk/subnets_helper_ext.rb:27
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:35
+msgid "Generic image"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/host_ext.rb:12
 #: ../app/services/foreman_bootdisk/renderer.rb:53
 #: ../app/services/foreman_bootdisk/renderer.rb:60
 msgid "Unable to find template specified by %s setting"
@@ -109,19 +113,19 @@ msgstr ""
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:66
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:73
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:75
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:82
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:84
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:91
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:93
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:100
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
@@ -197,54 +201,60 @@ msgstr ""
 msgid "Installation media caching"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:14
+#: ../app/models/setting/bootdisk.rb:25
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
+
+#: ../app/models/setting/bootdisk.rb:25
+msgid "Allowed bootdisk types"
+msgstr ""
+
+#: ../app/services/foreman_bootdisk/iso_generator.rb:16
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:40
+#: ../app/services/foreman_bootdisk/iso_generator.rb:42
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:50
+#: ../app/services/foreman_bootdisk/iso_generator.rb:52
 msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:92
+#: ../app/services/foreman_bootdisk/iso_generator.rb:94
 msgid "Please ensure the isolinux/syslinux package(s) are installed."
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:109
+#: ../app/services/foreman_bootdisk/iso_generator.rb:111
 msgid "Please ensure the ipxe-bootimgs package is installed."
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:126
+#: ../app/services/foreman_bootdisk/iso_generator.rb:128
 msgid "Creating new image failed, install truncate utility"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:127
+#: ../app/services/foreman_bootdisk/iso_generator.rb:129
 msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:128
-#: ../app/services/foreman_bootdisk/iso_generator.rb:129
+#: ../app/services/foreman_bootdisk/iso_generator.rb:130
+#: ../app/services/foreman_bootdisk/iso_generator.rb:131
 msgid "Failed to create a directory within the ESP image"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:135
-msgid ""
-"Ensure %{path} contains grubx64.efi and shimx64.efi: install TFTP module or co"
-"py those files into /var/lib/foreman/bootdisk (Grub2 directory setting)"
+#: ../app/services/foreman_bootdisk/iso_generator.rb:137
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:136
-msgid "Unable to mcopy %{path}"
+#: ../app/services/foreman_bootdisk/iso_generator.rb:138
+msgid "Unable to mcopy %{file}"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:158
+#: ../app/services/foreman_bootdisk/iso_generator.rb:160
 msgid "ISO build failed"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:161
+#: ../app/services/foreman_bootdisk/iso_generator.rb:163
 msgid "ISO hybrid conversion failed: %s"
 msgstr ""
 
@@ -266,10 +276,18 @@ msgid ""
 msgstr ""
 
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:12
-msgid "Host image"
+msgid "Host images"
 msgstr ""
 
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:14
+msgid "These images are used for host. You can find them at host detail page."
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:17
+msgid "Host image"
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:19
 msgid ""
 "Per-host images contain data about a particular host registered in Foreman and"
 " set up fully static networking, avoiding the requirement for DHCP.  After net"
@@ -277,18 +295,18 @@ msgid ""
 "configuration and build state from the server."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:17
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:22
 msgid ""
 "Once chainloaded, the OS bootloader and installer are downloaded directly from"
 " the installation media configured in Foreman, and the provisioning script (ki"
 "ckstart/preseed) is downloaded from Foreman."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:20
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:25
 msgid "Full host image"
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:22
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:27
 msgid ""
 "A variant of the per-host image which contains the OS bootloader embedded insi"
 "de the disk.  This may be useful if chainloading fails on certain hardware, bu"
@@ -296,32 +314,42 @@ msgid ""
 ", bootloader or PXELinux templates."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:27
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:30
+msgid "Generic images"
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:32
+msgid ""
+"These images are more generic than previous images. You can find them at subne"
+"t index page."
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:37
 msgid ""
 "Generic images are a reusable disk image that works for any host registered in"
 " Foreman.  It requires a basic DHCP and DNS service to function and contact th"
 "e server, but does not require DHCP reservations or static IP addresses."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:30
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:40
 msgid ""
 "The OS install continues using the installation media configured in Foreman, a"
 "nd it will typically configure static networking, depending on how the OS iPXE"
 " template is configured."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:33
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:43
 msgid "Subnet image"
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:35
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:45
 msgid ""
 "Subnet images are similar to generic images, but chain-loading is done via the"
 " TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must hav"
 "e the \"Templates\" module enabled and configured."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/disks/help.html.erb:38
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:48
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr ""
 
@@ -349,11 +377,11 @@ msgstr ""
 msgid "Both IP and Subnet must be set"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:54
+#: ../lib/foreman_bootdisk/engine.rb:58
 msgid "Boot disk based"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:55
+#: ../lib/foreman_bootdisk/engine.rb:59
 msgid "Boot disk embedded template"
 msgstr ""
 
@@ -362,11 +390,11 @@ msgid "Remote action:"
 msgstr ""
 
 #: action_names.rb:3
-msgid "Import facts"
+msgid "Import Puppet classes"
 msgstr ""
 
 #: action_names.rb:4
-msgid "Import Puppet classes"
+msgid "Import facts"
 msgstr ""
 
 #: action_names.rb:5
