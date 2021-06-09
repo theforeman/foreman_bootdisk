@@ -7,6 +7,8 @@ module ForemanBootdisk
     include AllowedActions
     include PrettyError
 
+    helper DiskHelper
+
     before_action :bootdisk_type_allowed?, except: :help
 
     before_action :find_resource, only: %w[host full_host]
