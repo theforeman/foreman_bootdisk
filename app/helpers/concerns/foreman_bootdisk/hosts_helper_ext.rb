@@ -82,8 +82,26 @@ module ForemanBootdisk
                                class: 'la'
                              )
 
+      full_host_blind_link = if bootdisk_authorized_for({controller: 'foreman_bootdisk/disks', action: 'full_host', id: host})
+                               link_to(_("Full host '%s' image") % host.name.split('.')[0],
+                                       '#',
+                                       class: 'la btn btn-info',
+                                       disabled: true,
+                                       title: _('Host is not in build mode')
+                               )
+                             else
+                               ''
+                             end
+
       actions << host_image_link if allowed_actions.include?('host')
-      actions << full_host_image_link if allowed_actions.include?('full_host')
+      if allowed_actions.include?('full_host')
+        if host.build?
+          actions << full_host_image_link
+        else
+          actions << full_host_blind_link
+        end
+      end
+
 
       actions << divider if (host_image_link.present? && allowed_actions.include?('host')) || (full_host_image_link.present? && allowed_actions.include?('full_host'))
 

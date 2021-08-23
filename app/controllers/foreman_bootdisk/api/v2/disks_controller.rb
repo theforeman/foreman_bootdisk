@@ -37,8 +37,13 @@ module ForemanBootdisk
           host = @disk
           if params[:full]
             return unless bootdisk_type_allowed?('full_host')
-            ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
-              send_file(iso, filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso")
+            begin
+              ForemanBootdisk::ISOGenerator.generate_full_host(host) do |iso|
+                send_file(iso, filename: "#{host.name}#{ForemanBootdisk::ISOGenerator.token_expiry(host)}.iso")
+              end
+            rescue ::Foreman::Exception => e
+              raise e unless e.code == 'ERF42-2893'
+              render_error json: { error: _('Host is not in build mode')}, status: :method_not_allowed
             end
           else
             return unless bootdisk_type_allowed?
