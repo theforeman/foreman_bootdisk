@@ -8,10 +8,10 @@
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.2\n"
+"Project-Id-Version: foreman_bootdisk 18.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-09-03 07:56+0000\n"
-"Last-Translator: Amit Upadhye <aupadhye@redhat.com>\n"
+"PO-Revision-Date: 2021-04-29 10:23+0000\n"
+"Last-Translator: Transifex Bot <>\n"
 "Language-Team: Spanish (http://www.transifex.com/foreman/foreman/language/es/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
+msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "Una variante de la imagen por host que contiene el cargador de arranque del sistema operativo incluido en el disco. Esto puede resultar útil si se produce un error en el hardware de la cadena de arranque. No obstante, tiene la particularidad de que la imagen debe regenerarse para cualquier cambio que se produzca en el sistema operativo, en el cargador de arranque o en las plantillas PXELinux."
@@ -158,8 +161,14 @@ msgstr "Plantilla de imagen de host"
 msgid "Host images"
 msgstr ""
 
+msgid "Host is not in build mode"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "El host no está en modo build, así que no se puede producir la plantilla"
+
+msgid "Host is not in build mode."
+msgstr ""
 
 msgid "ISO build failed"
 msgstr "Error en la construcción del ISO"

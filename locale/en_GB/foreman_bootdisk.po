@@ -8,9 +8,9 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 17.0.2\n"
+"Project-Id-Version: foreman_bootdisk 18.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-06-15 22:29+0000\n"
+"PO-Revision-Date: 2021-04-29 10:23+0000\n"
 "Last-Translator: Transifex Bot <>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/fore"
 "man/language/en_GB/)\n"
@@ -19,6 +19,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
+msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
@@ -158,8 +161,14 @@ msgstr "Host image template"
 msgid "Host images"
 msgstr ""
 
+msgid "Host is not in build mode"
+msgstr ""
+
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "Host is not in build mode, so the template cannot be rendered"
+
+msgid "Host is not in build mode."
+msgstr ""
 
 msgid "ISO build failed"
 msgstr "ISO build failed"

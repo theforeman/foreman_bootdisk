@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-27 14:11+0200\n"
-"PO-Revision-Date: 2021-04-27 14:11+0200\n"
+"POT-Creation-Date: 2021-09-24 08:11+0200\n"
+"PO-Revision-Date: 2021-09-24 08:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -39,6 +39,11 @@ msgstr ""
 msgid "True for full, false for basic reusable image"
 msgstr ""
 
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:46
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:90
+msgid "Host is not in build mode"
+msgstr ""
+
 #: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:23
 msgid "Subnet boot disks"
 msgstr ""
@@ -50,6 +55,15 @@ msgstr ""
 #: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:30
 #: ../app/controllers/foreman_bootdisk/subnet_disks_controller.rb:15
 msgid "TFTP feature not enabled for subnet %s"
+msgstr ""
+
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:63
+msgid "Host is not in build mode."
+msgstr ""
+
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:77
+#: ../app/helpers/concerns/foreman_bootdisk/pretty_error.rb:8
+msgid "Failed to render boot disk template"
 msgstr ""
 
 #: ../app/helpers/bootdisk_links_helper.rb:27
@@ -75,11 +89,8 @@ msgid "Host '%s' image"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:76
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:86
 msgid "Full host '%s' image"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/pretty_error.rb:8
-msgid "Failed to render boot disk template"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/subnets_helper_ext.rb:10
@@ -351,6 +362,12 @@ msgstr ""
 
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:48
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
+msgstr ""
+
+#: ../app/views/foreman_bootdisk/disks/help.html.erb:51
+msgid ""
+"* - These bootdisk types were disabled, you can enable them in Administer - Se"
+"ttings."
 msgstr ""
 
 #: ../app/views/foreman_bootdisk/host.erb:9
