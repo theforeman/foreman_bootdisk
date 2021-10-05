@@ -22,7 +22,9 @@ Gem::Specification.new do |s|
     'LICENSE',
     'README.md'
   ]
-  s.files = `git ls-files`.split("\n") - Dir['.*', 'Gem*', '*.gemspec']
+  s.files = Dir['{app,config,db,lib,locale,webpack}/**/*'] +
+              ['LICENSE', 'README.md'] +
+              ['package.json']
 
   s.required_ruby_version = '>= 2.5'
 

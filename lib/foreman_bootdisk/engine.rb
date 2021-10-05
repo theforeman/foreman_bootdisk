@@ -38,10 +38,12 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 3.0'
+        requires_foreman '>= 3.1'
+        # Add Global files for extending foreman-core components and routes
+        register_global_js_file 'global'
 
         security_block :bootdisk do |_map|
-          permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host help],
+          permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host help bootdisk_options],
                                          'foreman_bootdisk/subnet_disks': [:subnet],
                                          'foreman_bootdisk/api/v2/disks': %i[generic host],
                                          'foreman_bootdisk/api/v2/subnet_disks': [:subnet]

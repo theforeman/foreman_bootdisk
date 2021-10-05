@@ -8,6 +8,7 @@ ForemanBootdisk::Engine.routes.draw do
       get 'hosts/:id', on: :collection, to: 'disks#host'
       get 'full_hosts/:id', on: :collection, to: 'disks#full_host'
       get 'subnet/:id', on: :collection, to: 'subnet_disks#subnet'
+      get 'bootdisk_options/:id', on: :collection, to: 'disks#bootdisk_options'
     end
   end
 
