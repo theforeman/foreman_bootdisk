@@ -1,0 +1,30 @@
+name: JavaScript Testing
+on:
+  pull_request:
+    paths:
+      - 'webpack/**'
+      - 'package.json'
+      - '.github/workflows/js_tests.yml'
+
+jobs:
+  test_js:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout plugin
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install plugin npm dependencies
+        run: npm install
+      - name: Run plugin linter
+        run: npm run lint
+      - name: Run plugin tests
+        run: npm run test
+      - name: Publish Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

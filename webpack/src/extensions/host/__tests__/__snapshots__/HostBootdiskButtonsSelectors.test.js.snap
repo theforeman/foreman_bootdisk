@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HostBootdiskButtons selectors should return hostId 1`] = `8`;
+
+exports[`HostBootdiskButtons selectors should return isLoading 1`] = `true`;
+
+exports[`HostBootdiskButtons selectors should return options 1`] = `
+Object {
+  "actions": Array [
+    Object {
+      "description": null,
+      "disabled": false,
+      "link": "/bootdisk/disks/hosts/8",
+      "title": "Host 'sppup' image",
+    },
+    Object {
+      "description": "Host is not in build mode",
+      "disabled": true,
+      "link": "/bootdisk/disks/full_hosts/8",
+      "title": "Full host 'sppup' image",
+    },
+    Object {
+      "link": "/bootdisk/disks/help",
+      "title": "Boot disk help",
+    },
+  ],
+  "architectureName": "x86_64",
+  "bootdiskDownloadable": true,
+}
+`;
