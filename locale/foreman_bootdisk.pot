@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-09 16:22+0100\n"
-"PO-Revision-Date: 2021-11-09 16:22+0100\n"
+"POT-Creation-Date: 2021-11-30 18:05+0100\n"
+"PO-Revision-Date: 2021-11-30 18:05+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -40,6 +40,7 @@ msgid "True for full, false for basic reusable image"
 msgstr ""
 
 #: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:46
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:126
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:90
 msgid "Host is not in build mode"
 msgstr ""
@@ -61,9 +62,24 @@ msgstr ""
 msgid "Host is not in build mode."
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/disks_controller.rb:77
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:95
 #: ../app/helpers/concerns/foreman_bootdisk/pretty_error.rb:8
 msgid "Failed to render boot disk template"
+msgstr ""
+
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:120
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:66
+msgid "Host '%s' image"
+msgstr ""
+
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:120
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:76
+#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:86
+msgid "Full host '%s' image"
+msgstr ""
+
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:132
+msgid "Boot disk help"
 msgstr ""
 
 #: ../app/helpers/bootdisk_links_helper.rb:27
@@ -73,24 +89,17 @@ msgstr ""
 #: ../app/helpers/bootdisk_links_helper.rb:40
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:20
 #: ../app/models/setting/bootdisk.rb:30
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:65
 msgid "Boot disk"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:21
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:54
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:30
 msgid "Subnet '%s' generic image"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:66
-msgid "Host '%s' image"
-msgstr ""
-
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:76
-#: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:86
-msgid "Full host '%s' image"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/subnets_helper_ext.rb:10
@@ -394,12 +403,16 @@ msgstr ""
 msgid "Both IP and Subnet must be set"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:58
+#: ../lib/foreman_bootdisk/engine.rb:60
 msgid "Boot disk based"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:59
+#: ../lib/foreman_bootdisk/engine.rb:61
 msgid "Boot disk embedded template"
+msgstr ""
+
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:59
+msgid "Not available"
 msgstr ""
 
 #: action_names.rb:2

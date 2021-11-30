@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.0.0\n"
+"Project-Id-Version: foreman_bootdisk 18.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2021-11-25 10:30+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/langu"
 "age/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
-msgstr ""
+msgstr "* - 这些 bootdisk 类型已被禁用，您可以在 Administer - Settings 中启用它们。"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "单个主机镜像的变体，其磁盘内包含 OS 引导装载程序。当某些硬件上的连锁装载失败之时，这可能有用，但是也存在缺点，即 OS、引导状态程序或 PXELinux 模板发生任何变化时都必须重新生成该镜像。"
@@ -52,6 +52,9 @@ msgstr "引导磁盘下载不适用于 %s 架构"
 
 msgid "Boot disk embedded template"
 msgstr "引导磁盘内嵌的模板"
+
+msgid "Boot disk help"
+msgstr ""
 
 msgid "Boot disks"
 msgstr "引导盘"
@@ -159,13 +162,13 @@ msgid "Host images"
 msgstr "主机镜像"
 
 msgid "Host is not in build mode"
-msgstr ""
+msgstr "主机不在构建模式中"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "主机没有处于构建模式，因此模板不能被处理"
 
 msgid "Host is not in build mode."
-msgstr ""
+msgstr "主机不在构建模式。"
 
 msgid "ISO build failed"
 msgstr "ISO 构建失败"
@@ -193,6 +196,9 @@ msgstr "安装介质文件将被缓存用于完整主机镜像"
 
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr "允许的启动盘类型列表，删除类型以将其禁用"
+
+msgid "Not available"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "链式加载后，将直接从 Foreman 中配置的安装介质中下载 OS Bootloader 和安装程序，并从 Foreman 中下载预配置脚本（kickstart / preseed）。"

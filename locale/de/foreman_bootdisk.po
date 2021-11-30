@@ -13,7 +13,7 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.0.0\n"
+"Project-Id-Version: foreman_bootdisk 18.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-10-14 23:10+0000\n"
 "Last-Translator: Patrick Dolinic\n"
@@ -59,6 +59,9 @@ msgstr "Startmedium Download nicht verfügbar für Architektur %s"
 
 msgid "Boot disk embedded template"
 msgstr "Im Startmedium eingebettete Vorlage"
+
+msgid "Boot disk help"
+msgstr ""
 
 msgid "Boot disks"
 msgstr "Startmedien"
@@ -200,6 +203,9 @@ msgstr "Installationsmedien-Dateien werden für vollständige Host-Images zwisch
 
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr "Liste der zulässigen Bootdisk-Typen, entfernen Sie den Typ, um ihn zu deaktivieren"
+
+msgid "Not available"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Sobald sie nacheinander geladen (Chainloading) sind, werden der OS-Bootloader und das OS-Installationsprogramm direkt von den in Foreman konfigurierten Installationsmedien heruntergeladen, und das Bereitstellungsskript (kickstart/preseed) wird von Foreman heruntergeladen."

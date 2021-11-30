@@ -7,10 +7,10 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.0.0\n"
+"Project-Id-Version: foreman_bootdisk 18.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2021-11-25 10:29+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/"
 ")\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
-msgstr ""
+msgstr "* - これらのブートディスクタイプは無効にされています。管理 - 設定 で有効にすることができます。"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、OS、ブートローダーまたは PXELinux テンプレートに変更がある場合はイメージを再生成する必要があります。"
@@ -54,6 +54,9 @@ msgstr "ブートディスクのダウンロードは %s アーキテクチャ�
 
 msgid "Boot disk embedded template"
 msgstr "ブートディスクで組み込まれるテンプレート"
+
+msgid "Boot disk help"
+msgstr ""
 
 msgid "Boot disks"
 msgstr "ブートディスク"
@@ -161,13 +164,13 @@ msgid "Host images"
 msgstr "ホストイメージ"
 
 msgid "Host is not in build mode"
-msgstr ""
+msgstr "ホストがビルドモードではありません"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "ホストはビルドモードではないため、テンプレートはレンダリングすることができません"
 
 msgid "Host is not in build mode."
-msgstr ""
+msgstr "ホストがビルドモードではありません。"
 
 msgid "ISO build failed"
 msgstr "ISO ビルドに失敗しました"
@@ -195,6 +198,9 @@ msgstr "インストールメディアファイルは、完全なホストのイ
 
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr "許可されているブートディスクタイプのリスト、タイプを削除して無効にします"
+
+msgid "Not available"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "チェーンロードが実行されると、OS ブートローダーとインストーラーは Foreman で設定されたインストールメディアから直接ダウンロードされ、プロビジョニングスクリプト (kickstart/preseed) は Foreman からダウンロードされます。"

@@ -9,7 +9,7 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.0.0\n"
+"Project-Id-Version: foreman_bootdisk 18.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-09-24 07:25+0000\n"
 "Last-Translator: Transifex Bot <>\n"
@@ -55,6 +55,9 @@ msgstr "Téléchargement du disque de démarrage non disponible pour l'architect
 
 msgid "Boot disk embedded template"
 msgstr "Modèle intégré au disque de démarrage"
+
+msgid "Boot disk help"
+msgstr ""
 
 msgid "Boot disks"
 msgstr "Disques de démarrage"
@@ -196,6 +199,9 @@ msgstr "Les fichiers du media d'installation vont être cachés pour les images 
 
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr "Liste des types de disques de démarrage autorisés, supprimer le type pour le désactiver"
+
+msgid "Not available"
+msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Une fois liés, le chargeur de démarrage (bootloader) du système et l'installeur sont téléchargés directement depuis le media d'installation configuré dans Foreman. Le script de provisioning (kickstart/preseed) est également téléchargé depuis Foreman."

@@ -8,7 +8,7 @@
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.0.0\n"
+"Project-Id-Version: foreman_bootdisk 18.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-09-24 07:25+0000\n"
 "Last-Translator: Transifex Bot <>\n"
@@ -55,6 +55,9 @@ msgstr "Descarga de disco de arranque no disponible para la arquitectura %s"
 
 msgid "Boot disk embedded template"
 msgstr "Plantilla inserta en el disco de arranque"
+
+msgid "Boot disk help"
+msgstr ""
 
 msgid "Boot disks"
 msgstr "Discos de arranque"
@@ -195,6 +198,9 @@ msgid "Installation media files will be cached for full host images"
 msgstr "Archivos de medios de instalación se almacenarán en caché para imágenes completas de host"
 
 msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
+
+msgid "Not available"
 msgstr ""
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
