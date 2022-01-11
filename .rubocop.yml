@@ -28,3 +28,6 @@ Naming:
 Rails/SkipsModelValidations:
   Exclude:
     - 'db/migrate/**/*'
+
+Rails/ContentTag:
+  Enabled: false
