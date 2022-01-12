@@ -76,8 +76,8 @@ module ForemanBootdisk
         format.json do
           render json: {
             bootdiskOptions: {
-              bootdiskDownloadable: !!host.bootdisk_downloadable?,
-              architectureName: host.architecture.name,
+              bootdiskDownloadable: !!host&.bootdisk_downloadable?,
+              architectureName: host&.architecture&.name,
               actions: bootdisk_allowed_actions(host),
             },
           }, status: :ok
@@ -106,7 +106,7 @@ module ForemanBootdisk
     end
 
     def bootdisk_allowed_actions(host)
-      return [] unless host.bootdisk_downloadable?
+      return [] unless host&.bootdisk_downloadable?
 
       allowed = %w[host full_host].each_with_object([]) do |action, actions|
         opts = {
