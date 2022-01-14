@@ -2,7 +2,7 @@
 
 class ChangeTemplatekindToBootdisk < ActiveRecord::Migration[4.2]
   class FakeConfigTemplate < ApplicationRecord
-    self.table_name = if defined? ConfigTemplate
+    self.table_name = if ActiveRecord::Base.connection.data_source_exists?("config_templates")
                         'config_templates'
                       else
                         'templates'
