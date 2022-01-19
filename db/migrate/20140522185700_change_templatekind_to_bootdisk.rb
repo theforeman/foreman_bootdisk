@@ -7,6 +7,7 @@ class ChangeTemplatekindToBootdisk < ActiveRecord::Migration[4.2]
                       else
                         'config_templates'
                       end
+    self.inheritance_column = :_type_disabled
   end
 
   def self.up
@@ -15,10 +16,8 @@ class ChangeTemplatekindToBootdisk < ActiveRecord::Migration[4.2]
     tmpl_h = Setting.find_by(name: 'bootdisk_host_template').try(:value)
     tmpl_g = Setting.find_by(name: 'bootdisk_generic_host_template').try(:value)
 
-    (FakeConfigTemplate.unscoped.where('name LIKE ?', '%Boot disk%') |
-      FakeConfigTemplate.unscoped.where(name: [tmpl_h, tmpl_g].compact)).each do |tmpl|
-      tmpl.update_attribute(:template_kind_id, kind.id)
-    end
+    FakeConfigTemplate.unscoped.where('name LIKE ?', '%Boot disk%').update_all(template_kind_id: kind.id)
+    FakeConfigTemplate.unscoped.where(name: [tmpl_h, tmpl_g].compact).update_all(template_kind_id: kind.id)
   end
 
   def self.down
