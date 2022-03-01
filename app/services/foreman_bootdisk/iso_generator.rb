@@ -170,8 +170,7 @@ module ForemanBootdisk
       # Also we cannot rely on systemd-tmpfiles-clean as private temporary files are not subject
       # of scheduled cleanups. Let's clean bootdisks from prevous requests manually by finding
       # and deleting all directories created 30 minutes ago.
-      delete_older_than = Time.now.to_i - (60 * 30)
-      Rails.root.glob('tmp/bootdisk-iso-*').select { |f| File.ctime(f) < delete_older_than }.each { |f| FileUtils.rm_f(f) }
+      Rails.root.glob('tmp/bootdisk-iso-*').select { |f| File.ctime(f) < (Time.now.getlocal - 30.minutes) }.each { |f| FileUtils.rm_rf(f) }
     end
 
     def self.build_mkiso_command(output_file:, source_directory:, extra_commands:)
