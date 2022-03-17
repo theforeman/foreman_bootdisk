@@ -14,8 +14,8 @@ module ForemanBootdisk
         optional :mac, String, 'MAC address of the host', default: 'MAC address of the current host'
         optional :action, String, 'Bootloader to use', default: 'iPXE'
         returns String, desc: 'URL for boot chain'
-        example 'bootdisk_chain_url #=> "http://foreman.some.host.fqdn/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55"'
-        example 'bootdisk_chain_url("00:11:22:33:44:55") #=> "http://foreman.some.host.fqdn/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55"'
+        example 'bootdisk_chain_url #=> "http://foreman.example.com/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55"'
+        example 'bootdisk_chain_url("00:11:22:33:44:55") #=> "http://foreman.example.com/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55"'
       end
       def bootdisk_chain_url(mac = host.try(:mac), action = 'iPXE')
         url = foreman_url(action)

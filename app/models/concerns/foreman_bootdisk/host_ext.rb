@@ -24,7 +24,7 @@ module ForemanBootdisk
     end
 
     def bootdisk?
-      managed? && bootdisk_build? && SETTINGS[:unattended]
+      managed? && bootdisk_build?
     end
 
     def bootdisk_downloadable?
@@ -36,7 +36,7 @@ module ForemanBootdisk
     end
 
     def can_be_built?
-      super || (managed? && SETTINGS[:unattended] && bootdisk_build? && !build?)
+      super || (managed? && bootdisk_build? && !build?)
     end
 
     apipie_update :class do

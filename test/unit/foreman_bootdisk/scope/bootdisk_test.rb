@@ -11,11 +11,11 @@ module ForemanBootdisk
 
       describe '#bootdisk_chain_url' do
         test 'should render bootdisk chain url' do
-          assert_equal "http://foreman.some.host.fqdn/unattended/iPXE?mac=#{URI.encode_www_form_component(host.mac)}", scope.bootdisk_chain_url
+          assert_equal "http://foreman.example.com/unattended/iPXE?mac=#{URI.encode_www_form_component(host.mac)}", scope.bootdisk_chain_url
         end
 
         test 'should render bootdisk chain url with custom mac' do
-          assert_equal 'http://foreman.some.host.fqdn/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55', scope.bootdisk_chain_url('00:11:22:33:44:55')
+          assert_equal 'http://foreman.example.com/unattended/iPXE?mac=00%3A11%3A22%3A33%3A44%3A55', scope.bootdisk_chain_url('00:11:22:33:44:55')
         end
       end
 

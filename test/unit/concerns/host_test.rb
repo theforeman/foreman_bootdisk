@@ -26,18 +26,14 @@ module ForemanBootdisk
     end
 
     test 'host should have bootdisk' do
-      if unattended?
-        h = FactoryBot.build(:host, :managed,
-                             provision_method: 'bootdisk')
-        assert h.bootdisk?
-      end
+      h = FactoryBot.build(:host, :managed,
+                           provision_method: 'bootdisk')
+      assert h.bootdisk?
     end
 
     test 'host should not have bootdisk' do
-      if unattended?
-        h = FactoryBot.create(:host)
-        assert_not(h.bootdisk?)
-      end
+      h = FactoryBot.create(:host)
+      assert_not(h.bootdisk?)
     end
 
     context '#bootdisk_downloadable?' do

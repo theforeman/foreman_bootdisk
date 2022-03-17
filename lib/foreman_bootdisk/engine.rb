@@ -38,7 +38,7 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 3.1'
+        requires_foreman '>= 3.3'
         # Add Global files for extending foreman-core components and routes
         register_global_js_file 'global'
 
@@ -77,7 +77,7 @@ module ForemanBootdisk
     config.to_prepare do
       begin
         Host::Managed.prepend ForemanBootdisk::HostExt
-        Host::Managed.include ForemanBootdisk::Orchestration::Compute if SETTINGS[:unattended]
+        Host::Managed.include ForemanBootdisk::Orchestration::Compute
         HostsHelper.prepend ForemanBootdisk::HostsHelperExt
         SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
         Foreman::Model::Vmware.prepend ForemanBootdisk::ComputeResources::Vmware if Foreman::Model::Vmware.available?
