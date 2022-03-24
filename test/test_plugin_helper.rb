@@ -14,7 +14,6 @@ module ForemanBootdiskTestHelper
   def setup_bootdisk
     ForemanBootdisk::Scope::Bootdisk.any_instance.stubs(:bootdisk_chain_url).returns('http://smart-proxy.example.com/unattended/iPXE?mac=')
     setup_routes
-    setup_settings
     setup_templates
   end
 
@@ -27,10 +26,6 @@ module ForemanBootdiskTestHelper
 
   def setup_routes
     @routes = ForemanBootdisk::Engine.routes
-  end
-
-  def setup_settings
-    Setting::Bootdisk.load_defaults
   end
 
   def setup_templates
