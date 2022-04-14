@@ -1,8 +1,13 @@
+<%#
+name: Boot disk iPXE - generic static host
+snippet: false
+model: ProvisioningTemplate
+kind: Bootdisk
+description: |
+  Generic host template with interactive static IP configuration. Tokens
+  must be disabled in order to access templates via MAC addresses.
+-%>
 #!ipxe
-#
-# Generic host template with interactive static IP configuration. Tokens
-# must be disabled in order to access templates via MAC addresses.
-#
 
 <% (0..32).each do |i| -%>
 :net<%= i %>

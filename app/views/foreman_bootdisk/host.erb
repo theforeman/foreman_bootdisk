@@ -1,8 +1,13 @@
+<%#
+name: Boot disk iPXE - host
+snippet: false
+model: ProvisioningTemplate
+kind: Bootdisk
+description: |
+  Example foreman_bootdisk host template
+  This template is rendered for use inside a host-specific boot disk.
+-%>
 #!ipxe
-# Example foreman_bootdisk host template
-# This template is rendered for use inside a host-specific boot disk.
-#
-# Copy this template to customize it, the original is read-only.
 
 <%
 interface = @host.provision_interface
