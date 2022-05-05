@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { DropdownItem, DropdownGroup } from '@patternfly/react-core';
+import {
+  BanIcon,
+  BuildIcon,
+  BuilderImageIcon,
+  OutlinedQuestionCircleIcon,
+} from '@patternfly/react-icons';
 
 import { get } from 'foremanReact/redux/API';
 import { foremanUrl } from 'foremanReact/common/helpers';
@@ -23,6 +29,19 @@ const HostBootdiskButtons = () => {
   const isLoading = useSelector(selectIsLoading);
   const options = useSelector(selectBootdiskOptions);
 
+  const iconComponent = icon => {
+    switch (icon) {
+      case 'host':
+        return <BuildIcon />;
+      case 'full_host':
+        return <BuilderImageIcon />;
+      case 'help':
+        return <OutlinedQuestionCircleIcon />;
+      default:
+        return <></>;
+    }
+  };
+
   useEffect(() => {
     dispatch(
       get({
@@ -40,6 +59,7 @@ const HostBootdiskButtons = () => {
         href={foremanUrl(action.link)}
         isDisabled={action.disabled}
         description={action.description}
+        icon={iconComponent(action?.icon)}
       >
         {action.title}
       </DropdownItem>
@@ -55,6 +75,7 @@ const HostBootdiskButtons = () => {
           options.architectureName
         )}
         tooltipProps={{ entryDelay: 0, exitDelay: 0 }}
+        icon={<BanIcon />}
       >
         {__('Not available')}
       </DropdownItem>

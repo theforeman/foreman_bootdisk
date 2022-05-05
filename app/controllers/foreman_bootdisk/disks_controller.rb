@@ -123,14 +123,16 @@ module ForemanBootdisk
           title: title,
           link: "/bootdisk/disks/#{action}s/#{host.id}",
           disabled:  disable_full_host ? true : false,
-          description: disable_full_host ? _('Host is not in build mode') : nil
+          description: disable_full_host ? _('Host is not in build mode') : nil,
+          icon: action,
         }
       end
       return allowed unless User.current.allowed_to?({controller: 'foreman_bootdisk/disks', action: 'help'})
 
       allowed.push({
         title: _('Boot disk help'),
-        link: '/bootdisk/disks/help'
+        link: '/bootdisk/disks/help',
+        icon: 'help'
       })
     end
   end
