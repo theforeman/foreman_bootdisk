@@ -24,7 +24,7 @@ jobs:
   test_ruby:
     runs-on: ubuntu-latest
     needs: rubocop
-    timeout-minutes: 30config/routes/mount_engine.rb
+    timeout-minutes: 30
     env:
       BUNDLE_WITHOUT: journald:development:console:libvirt
     services:
