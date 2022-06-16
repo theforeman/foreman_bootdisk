@@ -6,6 +6,7 @@ require 'gettext_i18n_rails'
 
 module ForemanBootdisk
   class Engine < ::Rails::Engine
+    engine_name 'foreman_bootdisk'
     isolate_namespace ForemanBootdisk
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
