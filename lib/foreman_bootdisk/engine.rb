@@ -150,8 +150,6 @@ module ForemanBootdisk
       begin
         Host::Managed.prepend ForemanBootdisk::HostExt
         Host::Managed.include ForemanBootdisk::Orchestration::Compute
-        HostsHelper.prepend ForemanBootdisk::HostsHelperExt
-        SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
         Foreman::Model::Vmware.prepend ForemanBootdisk::ComputeResources::Vmware if Foreman::Model::Vmware.available?
       rescue StandardError => e
         Rails.logger.warn "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e})"
