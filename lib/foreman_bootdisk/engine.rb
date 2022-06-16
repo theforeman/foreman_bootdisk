@@ -140,6 +140,12 @@ module ForemanBootdisk
       Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
 
+    # Temporary workaround fix for helpers
+    initializer 'foreman_bootdisk.rails_loading_workaround' do
+      HostsHelper.prepend ForemanBootdisk::HostsHelperExt
+      SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
+    end
+
     config.to_prepare do
       begin
         Host::Managed.prepend ForemanBootdisk::HostExt
