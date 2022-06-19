@@ -6,6 +6,7 @@ require 'gettext_i18n_rails'
 
 module ForemanBootdisk
   class Engine < ::Rails::Engine
+    engine_name 'foreman_bootdisk'
     isolate_namespace ForemanBootdisk
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
@@ -139,12 +140,16 @@ module ForemanBootdisk
       Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
 
+    # Temporary workaround fix for helpers
+    initializer 'foreman_bootdisk.rails_loading_workaround' do
+      HostsHelper.prepend ForemanBootdisk::HostsHelperExt
+      SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
+    end
+
     config.to_prepare do
       begin
         Host::Managed.prepend ForemanBootdisk::HostExt
         Host::Managed.include ForemanBootdisk::Orchestration::Compute
-        HostsHelper.prepend ForemanBootdisk::HostsHelperExt
-        SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
         Foreman::Model::Vmware.prepend ForemanBootdisk::ComputeResources::Vmware if Foreman::Model::Vmware.available?
       rescue StandardError => e
         Rails.logger.warn "#{ForemanBootdisk::ENGINE_NAME}: skipping engine hook (#{e})"
