@@ -38,7 +38,7 @@ const HostBootdiskButtons = () => {
       case 'help':
         return <OutlinedQuestionCircleIcon />;
       default:
-        return <></>;
+        return null;
     }
   };
 
@@ -59,7 +59,7 @@ const HostBootdiskButtons = () => {
         href={foremanUrl(action.link)}
         isDisabled={action.disabled}
         description={action.description}
-        icon={iconComponent(action?.icon)}
+        icon={iconComponent(action.icon)}
       >
         {action.title}
       </DropdownItem>
