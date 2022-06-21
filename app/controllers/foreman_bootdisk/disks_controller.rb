@@ -121,7 +121,7 @@ module ForemanBootdisk
         disable_full_host = action == 'full_host' && !host.build?
         actions << {
           title: title,
-          link: "/bootdisk/disks/#{action}s/#{host.id}",
+          link: "/disks/#{action}s/#{host.id}",
           disabled:  disable_full_host ? true : false,
           description: disable_full_host ? _('Host is not in build mode') : nil,
           icon: action,
@@ -131,7 +131,7 @@ module ForemanBootdisk
 
       allowed.push({
         title: _('Boot disk help'),
-        link: '/bootdisk/disks/help',
+        link: '/disks/help',
         icon: 'help'
       })
     end
