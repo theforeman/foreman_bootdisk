@@ -46,7 +46,7 @@ const HostBootdiskButtons = () => {
     dispatch(
       get({
         key: HOST_BOOTDISK_BUTTONS_REQUEST_KEY,
-        url: foremanUrl(`/bootdisk/disks/bootdisk_options/${hostId}`),
+        url: foremanUrl(`/disks/bootdisk_options/${hostId}`),
       })
     );
   }, [dispatch, hostId]);

@@ -9,10 +9,6 @@ module ForemanBootdisk
         include ::Api::Version2
         include AllowedActions
 
-        resource_description do
-          api_base_url '/bootdisk/api'
-        end
-
         before_action :bootdisk_type_allowed?, only: :generic
         before_action :find_resource, only: :host
         skip_after_action :log_response_body
