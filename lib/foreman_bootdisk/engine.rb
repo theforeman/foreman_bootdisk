@@ -49,7 +49,6 @@ module ForemanBootdisk
           "#{ForemanBootdisk::Engine.root}/app/lib/foreman_bootdisk/scope/*.rb"
         ]
         provision_method 'bootdisk', N_('Boot disk based')
-        template_labels 'Bootdisk' => N_('Boot disk embedded template')
         allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
 
         extend_page "subnets/index" do |cx|
