@@ -21,6 +21,10 @@ def ensure_bootdisk_template(name, content)
   tmpl.locked = true
   tmpl.organizations = Organization.unscoped.all if SETTINGS[:organizations_enabled]
   tmpl.locations = Location.unscoped.all if SETTINGS[:locations_enabled]
+
+  metadata = Template.parse_metadata(content)
+  tmpl.description = metadata['description']
+
   tmpl.save!(validate: false) if tmpl.changes.present?
 end
 
