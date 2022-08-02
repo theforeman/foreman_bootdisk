@@ -16,7 +16,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.5
+          ruby-version: 2.7
           bundler-cache: true
       - name: Run rubocop
         if: github.event_name != 'push'
@@ -36,7 +36,7 @@ jobs:
       fail-fast: false
       matrix:
         foreman-core-branch: [develop]
-        ruby-version: [2.5]
+        ruby-version: [2.7]
     steps:
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential libcurl4-openssl-dev zlib1g-dev libpq-dev
