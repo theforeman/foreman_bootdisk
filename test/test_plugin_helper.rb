@@ -29,7 +29,10 @@ module ForemanBootdiskTestHelper
   end
 
   def setup_templates
-    load File.join(File.dirname(__FILE__), '..', 'db', 'seeds.d', '50-bootdisk_templates.rb')
+    FactoryBot.create(:provisioning_template, :name => "Boot disk Grub2 EFI - generic host", :template => File.read(File.expand_path(File.join("..", "static_fixtures", "generic_efi_host.erb"), __FILE__)))
+    FactoryBot.create(:provisioning_template, :name => "Boot disk iPXE - generic host", :template => File.read(File.expand_path(File.join("..", "static_fixtures", "generic_host.erb"), __FILE__)))
+    FactoryBot.create(:provisioning_template, :name => "Boot disk iPXE - generic static host", :template => File.read(File.expand_path(File.join("..", "static_fixtures", "generic_static_host.erb"), __FILE__)))
+    FactoryBot.create(:provisioning_template, :name => "Boot disk iPXE - host", :template => File.read(File.expand_path(File.join("..", "static_fixtures", "host.erb"), __FILE__)))
   end
 
   def setup_referer
