@@ -14,10 +14,10 @@ module ForemanBootdisk
         skip_after_action :log_response_body
 
         # no-op, but required for apipie documentation
-        api :GET, '', N_('Boot disks')
+        api :GET, '/bootdisk', N_('Boot disks')
         def index; end
 
-        api :GET, '/generic', N_('Download generic image')
+        api :GET, '/bootdisk/generic', N_('Download generic image')
         def generic
           # EFI not supported for iPXE generic bootdisk
           tmpl = ForemanBootdisk::Renderer.new.generic_template_render
@@ -26,7 +26,7 @@ module ForemanBootdisk
           end
         end
 
-        api :GET, '/hosts/:host_id', N_('Download host image')
+        api :GET, '/bootdisk/hosts/:host_id', N_('Download host image')
         param :full, :bool, required: false, desc: N_('True for full, false for basic reusable image')
         param :host_id, :identifier_dottable, required: true
         def host

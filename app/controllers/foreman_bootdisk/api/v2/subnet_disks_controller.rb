@@ -16,10 +16,10 @@ module ForemanBootdisk
         skip_after_action :log_response_body
 
         # no-op, but required for apipie documentation
-        api :GET, '', N_('Subnet boot disks')
+        api :GET, '/bootdisk', N_('Subnet boot disks')
         def index; end
 
-        api :GET, '/subnets/:subnet_id', N_('Download subnet generic image')
+        api :GET, '/bootdisk/subnets/:subnet_id', N_('Download subnet generic image')
         param :subnet_id, :identifier_dottable, required: true
         def subnet
           subnet = @subnet_disk
