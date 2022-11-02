@@ -10,7 +10,7 @@ module ForemanBootdisk
     isolate_namespace ForemanBootdisk
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
-    config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
+    config.autoload_paths += Dir["#{config.root}/app/helpers"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/lib"]
 
@@ -26,6 +26,12 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.apipie' do
       Apipie.configuration.checksum_path += ['/bootdisk/api/']
+    end
+
+    # Temporary workaround fix for helpers
+    initializer 'foreman_bootdisk.rails_loading_workaround' do
+      HostsHelper.prepend ForemanBootdisk::HostsHelperExt
+      SubnetsHelper.include ForemanBootdisk::SubnetsHelperExt
     end
 
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
@@ -137,12 +143,6 @@ module ForemanBootdisk
       locale_dir = File.join(File.expand_path('../..', __dir__), 'locale')
       locale_domain = 'foreman_bootdisk'
       Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
-    end
-
-    # Temporary workaround fix for helpers
-    initializer 'foreman_bootdisk.rails_loading_workaround' do
-      HostsHelper.prepend ForemanBootdisk::HostsHelperExt
-      SubnetsHelper.prepend ForemanBootdisk::SubnetsHelperExt
     end
 
     config.to_prepare do

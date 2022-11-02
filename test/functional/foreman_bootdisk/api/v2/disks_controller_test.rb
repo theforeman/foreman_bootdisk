@@ -74,9 +74,9 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
 
     test 'path - /api/hosts/:host_id routes to #host' do
       expected_path = if Rails::VERSION::MAJOR >= 5
-                        "/api/v2/hosts/#{@host.id}"
+                        "/api/v2/bootdisk/hosts/#{@host.id}"
                       else
-                        "/api/hosts/#{@host.id}"
+                        "/api/bootdisk/hosts/#{@host.id}"
                       end
       assert_routing expected_path,
                      format: 'json',
@@ -87,7 +87,7 @@ class ForemanBootdisk::Api::V2::DisksControllerTest < ActionController::TestCase
     end
 
     test 'path - /api/generic routes to #generic' do
-      assert_routing '/api/generic',
+      assert_routing '/api/bootdisk/generic',
                      format: 'json',
                      apiv: 'v2',
                      controller: 'foreman_bootdisk/api/v2/disks',
