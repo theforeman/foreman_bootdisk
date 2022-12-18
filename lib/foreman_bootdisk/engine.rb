@@ -124,7 +124,7 @@ module ForemanBootdisk
               description: N_("Installation media files will be cached for full host images")
 
             setting "bootdisk_allowed_types",
-              type: :string,
+              type: :array,
               default: Setting::Bootdisk.bootdisk_types,
               full_name: N_("Allowed bootdisk types"),
               description: N_("List of allowed bootdisk types, remove type to disable it")
