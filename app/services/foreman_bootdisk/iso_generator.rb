@@ -217,7 +217,7 @@ module ForemanBootdisk
           else
             http_object = Net::HTTP
           end
-          http_object.start(uri.host, uri.port) do |http|
+          http_object.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
             request = Net::HTTP::Get.new(uri.request_uri, 'Accept-Encoding' => 'plain')
 
             http.request(request) do |response|
