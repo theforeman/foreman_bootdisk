@@ -8,23 +8,25 @@
 # Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 20"
+"15-2016\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/foreman/foreman/l"
 "anguage/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 100000"
+"0 == 0 ? 1 : 2;\n"
 
 msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
-msgstr ""
+msgstr "* - Estes tipos de bootdisk foram desativados, você pode habilitá-los em Administer - Settings."
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr "Uma variante da imagem por host que contém o carregador de instalação do SO incorporado no disco.  Isso pode ser útil se houver falha no carregamento da cadeia em certos hardwares, mas tem o ponto negativo de que a imagem deve ser regenerada para qualquer mudança no SO, no carregador de instalação ou nos modelos PXELinux."
+msgstr "Uma variante da imagem por host que contém o carregador de instalação do SO incorporado no disco. Isso pode ser útil se houver falha no carregamento da cadeia em certos hardwares, mas tem o ponto negativo de que a imagem deve ser regenerada para qualquer mudança no SO, no carregador de instalação ou nos templates PXELinux."
 
 msgid "Action with sub plans"
 msgstr "Ação com subplanos "
@@ -33,7 +35,7 @@ msgid "All images are usable as either ISOs or as disk images, including being w
 msgstr "Todas as imagens são utilizáveis como ISOs ou como imagens de disco, incluindo o que está sendo gravado em um disco USB com `dd`."
 
 msgid "Allowed bootdisk types"
-msgstr ""
+msgstr "Tipos de bootdisk permitidos"
 
 msgid "Attach ISO image to CDROM drive for %s"
 msgstr "Anexar imagem ISO ao drive de CD-ROM para %s"
@@ -45,7 +47,7 @@ msgid "Boot disk"
 msgstr "Disco de boot"
 
 msgid "Boot disk Help"
-msgstr ""
+msgstr "Ajuda do disco de inicialização"
 
 msgid "Boot disk based"
 msgstr "Baseado em disco de inicialização"
@@ -53,17 +55,11 @@ msgstr "Baseado em disco de inicialização"
 msgid "Boot disk download not available for %s architecture"
 msgstr "Download do disco de inicialização não disponível para arquitetura %s"
 
-msgid "Boot disk embedded template"
-msgstr "Modelo incorporado ao disco de inicialização"
-
 msgid "Boot disk help"
-msgstr ""
+msgstr "Ajuda de disco de inicialização"
 
 msgid "Boot disks"
 msgstr "Discos de inicialização"
-
-msgid "Both IP and Subnet must be set"
-msgstr "É necessário definir o IP e a sub-rede"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Comando para gerar imagem ISO usar genisoimage ou mkisofs"
@@ -84,7 +80,7 @@ msgid "Download subnet generic image"
 msgstr "Fazer download da imagem genérica da sub-rede"
 
 msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
-msgstr ""
+msgstr "Certifique-se de que{file} seja legível (ou atualize a configuração \"Grub2 directory\")"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr "Falha ao anexar imagem ISO para drive de CD-ROM da instância: %{name}: %{message}"
@@ -99,16 +95,16 @@ msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr "Falha ao formatar a imagem ESP via mkfs.msdos"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr "Falha ao gerar imagem ISO para instância %{name}: %{message}"
+msgstr "Falha na geração da imagem ISO, por exemplo %{name}: %{message}"
 
 msgid "Failed to render boot disk template"
-msgstr "Falha ao renderizar modelo de disco de inicialização"
+msgstr "Falha ao renderizar template de disco de inicialização"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr "Falha ao fazer upload da imagem ISO para instância: %{name}: %{message}"
+msgstr "Falha no carregamento de imagem ISO, por exemplo %{name}: %{message}"
 
 msgid "Full host '%s' image"
-msgstr "Imagem '%s' de host completo"
+msgstr "Imagem de host completa"
 
 msgid "Full host image"
 msgstr "Imagem de host completa"
@@ -117,7 +113,7 @@ msgid "Generating ISO image for %s"
 msgstr "Gerando imagem ISO para %s"
 
 msgid "Generic Grub2 EFI image template"
-msgstr "Modelo genérico de imagem do Grub2 EFI"
+msgstr "Template genérico de imagem do Grub2 EFI"
 
 msgid "Generic image"
 msgstr "Imagem genérica"
@@ -126,7 +122,7 @@ msgid "Generic image template"
 msgstr "Modelo de imagem genérica"
 
 msgid "Generic images"
-msgstr ""
+msgstr "Imagem genérica"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Imagens genéricas são imagens de disco reutilizáveis que funcionam para qualquer host registrado em Foreman. Elas exigem um serviço básico de DHCP e DNS para funcionar e entrar em contato com o servidor, mas não exigem reservas de DHCP ou endereços IP estáticos."
@@ -134,26 +130,8 @@ msgstr "Imagens genéricas são imagens de disco reutilizáveis que funcionam pa
 msgid "Grub2 directory"
 msgstr "Diretório do Grub2"
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr "Template do Grub2 para uso em discos de boot de hosts genéricos"
-
 msgid "Host '%s' image"
-msgstr "Imagem '%s' de host"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr "O disco de inicialização de host não funciona com IPv6 estático"
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr "O host não tem um endereço IPv4 ou IPv6 definido"
-
-msgid "Host has no domain defined"
-msgstr "Host não tem um domínio definido"
-
-msgid "Host has no provisioning interface defined"
-msgstr "Host não tem interface de provisionamento definida"
-
-msgid "Host has no subnet defined"
-msgstr "Host não tem uma subrede definida"
+msgstr "Imagem de host"
 
 msgid "Host image"
 msgstr "Imagem de host"
@@ -162,16 +140,16 @@ msgid "Host image template"
 msgstr "Modelo de imagem do host"
 
 msgid "Host images"
-msgstr ""
+msgstr "Imagem de host"
 
 msgid "Host is not in build mode"
-msgstr ""
+msgstr "O host não está em modo de construção"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "Host não está no modo de construção, portanto o modelo não pode ser processado"
 
 msgid "Host is not in build mode."
-msgstr ""
+msgstr "O host não está em modo de construção."
 
 msgid "ISO build failed"
 msgstr "Construção da ISO falhou"
@@ -180,7 +158,7 @@ msgid "ISO generation command"
 msgstr "Comando de geração ISO"
 
 msgid "ISO hybrid conversion failed: %s"
-msgstr "Falha na conversão da ISO híbrida: %s"
+msgstr "Conversão da ISO híbrida falhou"
 
 msgid "ISOLINUX directory"
 msgstr "Diretório ISOLINUX"
@@ -198,10 +176,10 @@ msgid "Installation media files will be cached for full host images"
 msgstr "Arquivos de mídia de instalação serão armazenados em cache para imagens completas de host"
 
 msgid "List of allowed bootdisk types, remove type to disable it"
-msgstr ""
+msgstr "Lista de tipos de bootdisk permitidos, remova o tipo para desativá-lo"
 
 msgid "Not available"
-msgstr ""
+msgstr "Não disponível"
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Uma vez carregado em série, o bootloader do SO e instalador são baixados diretamente da mídia de instalação configurado em Foreman, e o script de provisionamento (kickstart /preseed) é baixado do Foreman."
@@ -237,13 +215,13 @@ msgid "SYSLINUX directory"
 msgstr "Diretório SYSLINUX"
 
 msgid "Subnet '%s' generic image"
-msgstr "Imagem genérica '%s' da sub-rede"
+msgstr "Sub-rede '%s' imagem genérica"
 
 msgid "Subnet boot disks"
 msgstr "Discos de inicialização da sub-rede"
 
 msgid "Subnet generic image"
-msgstr ""
+msgstr "Imagem genérica da subrede"
 
 msgid "Subnet image"
 msgstr "Imagem da sub-rede"
@@ -258,16 +236,16 @@ msgid "The OS install continues using the installation media configured in Forem
 msgstr "A instalação do SO continua utilizando a mídia de instalação configurado no Foreman, normalmente irá configurar uma rede estática, dependendo de como o template do SO iPXE está configurado."
 
 msgid "These images are more generic than previous images. You can find them at subnet index page."
-msgstr ""
+msgstr "Estas imagens são mais genéricas do que as imagens anteriores. Você pode encontrá-las na página de índice da sub-rede."
 
 msgid "These images are used for host. You can find them at host detail page."
-msgstr ""
+msgstr "Estas imagens são utilizadas para hospedar. Você pode encontrá-las na página de detalhes do anfitrião."
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr "Esta imagem é genérica para todos os hosts com um provisionamento NIC naquela sub-rede."
 
 msgid "This type of bootdisk is not allowed. Please contact administrator."
-msgstr ""
+msgstr "Este tipo de bootdisk não é permitido. Favor entrar em contato com o administrador."
 
 msgid "True for full, false for basic reusable image"
 msgstr "Verdadeiro para completo, falso para imagem reutilizável básica"
@@ -276,13 +254,13 @@ msgid "Unable to find template specified by %s setting"
 msgstr "Impossível encontrar template especificado pela configuração %s"
 
 msgid "Unable to generate disk %{kind} template: %{error}"
-msgstr "Não foi possível gerar o disco de template %{kind}: %{error}"
+msgstr "Incapaz de gerar disco %{kind} modelo: %{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
 msgstr "Não foi possível gerar o template de disco, template %{kind} não encontrado."
 
 msgid "Unable to mcopy %{file}"
-msgstr ""
+msgstr "Incapaz de copiar %{file}"
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "Fazer upload da imagem ISO para o armazenamento de dados para %s"
@@ -292,6 +270,9 @@ msgstr "Vários tipos de discos de inicialização podem ser criados para fornec
 
 msgid "iPXE directory"
 msgstr "Diretório iPXE"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Template iPXE para uso em discos de boot de hosts genéricos"

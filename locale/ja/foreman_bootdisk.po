@@ -7,10 +7,10 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-11-25 10:29+0000\n"
-"Last-Translator: Amit Upadhye <aupadhye@redhat.com>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
 "Language-Team: Japanese (http://www.transifex.com/foreman/foreman/language/ja/"
 ")\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgid "* - These bootdisk types were disabled, you can enable them in Administer
 msgstr "* - これらのブートディスクタイプは無効にされています。管理 - 設定 で有効にすることができます。"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、OS、ブートローダーまたは PXELinux テンプレートに変更がある場合はイメージを再生成する必要があります。"
+msgstr "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、イメージを OS、ブートローダーまたは PXELinux テンプレートに変更がある場合にイメージを再生成する必要があります。"
 
 msgid "Action with sub plans"
 msgstr "サブプランによるアクション"
@@ -52,23 +52,17 @@ msgstr "ブートディスクベース"
 msgid "Boot disk download not available for %s architecture"
 msgstr "ブートディスクのダウンロードは %s アーキテクチャーには使用できません"
 
-msgid "Boot disk embedded template"
-msgstr "ブートディスクで組み込まれるテンプレート"
-
 msgid "Boot disk help"
-msgstr ""
+msgstr "ブートディスクヘルプ"
 
 msgid "Boot disks"
 msgstr "ブートディスク"
-
-msgid "Both IP and Subnet must be set"
-msgstr "IP とサブネットの両方を設定する必要があります"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "ISO イメージを生成するためのコマンドです。genisoimage または mkisofs を使用します"
 
 msgid "Creating new image failed, install truncate utility"
-msgstr "新しいイメージの作成に失敗しました。truncate ユーティリティーをインストールしてください"
+msgstr "新しいイメージの作成に失敗しました。truncate ユーティリティをインストールしてください"
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "%s の CDROM ドライブから ISO イメージをデタッチ"
@@ -133,26 +127,8 @@ msgstr "汎用イメージは、Foreman に登録されたすべてのホスト�
 msgid "Grub2 directory"
 msgstr "Grub2 ディレクトリー"
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr "汎用の EFI ホストブートディスクに使用する Grub2 テンプレート"
-
 msgid "Host '%s' image"
 msgstr "ホスト '%s' イメージ"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr "ホストのブートディスクは静的 IPv6 で機能しません"
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr "ホストには IPv4 または IPv6 アドレスが定義されていません"
-
-msgid "Host has no domain defined"
-msgstr "ホストにはドメインが定義されていません"
-
-msgid "Host has no provisioning interface defined"
-msgstr "ホストにプロビジョニングインターフェースが定義されていません"
-
-msgid "Host has no subnet defined"
-msgstr "ホストにはサブネットが定義されていません"
 
 msgid "Host image"
 msgstr "ホストイメージ"
@@ -200,7 +176,7 @@ msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr "許可されているブートディスクタイプのリスト、タイプを削除して無効にします"
 
 msgid "Not available"
-msgstr ""
+msgstr "利用できません"
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "チェーンロードが実行されると、OS ブートローダーとインストーラーは Foreman で設定されたインストールメディアから直接ダウンロードされ、プロビジョニングスクリプト (kickstart/preseed) は Foreman からダウンロードされます。"
@@ -209,13 +185,13 @@ msgid "Path to directory containing grubx64.efi and shimx64.efi"
 msgstr "grubx64.efi および shimx64.efi が含まれるディレクトリーへのパス"
 
 msgid "Path to directory containing iPXE images"
-msgstr "iPXE イメージを含むディレクトリーへのパス"
+msgstr "iPXE イメージを含むディレクトリーのパス"
 
 msgid "Path to directory containing isolinux images"
 msgstr "isolinux イメージを含むディレクトリーへのパス"
 
 msgid "Path to directory containing syslinux images"
-msgstr "syslinux イメージを含むディレクトリーへのパス"
+msgstr "syslinux イメージを含むディレクトリーのパス"
 
 msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr "ホストごとのイメージには、Foreman に登録された特定ホストについてのデータが含まれ、これは完全に静的なネットワークをセットアップするため、DHCP の要件が排除されます。ネットワークの設定後、Foreman からチェーンロードが実行され、現在の OS 設定やビルド状態の情報がサーバーから取得されます。"
@@ -291,6 +267,9 @@ msgstr "さまざまなタイプのブートディスクを作成して、PXE �
 
 msgid "iPXE directory"
 msgstr "iPXE ディレクトリー"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "汎用のホストブートディスクに使用する iPXE テンプレート"

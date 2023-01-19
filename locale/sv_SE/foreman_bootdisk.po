@@ -6,10 +6,10 @@
 # johnny.westerlund <johnny.westerlund@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: johnny.westerlund <johnny.westerlund@gmail.com>, 2014\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/foreman/foreman/lang"
 "uage/sv_SE/)\n"
 "MIME-Version: 1.0\n"
@@ -51,17 +51,11 @@ msgstr ""
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
-msgid "Boot disk embedded template"
-msgstr ""
-
 msgid "Boot disk help"
 msgstr ""
 
 msgid "Boot disks"
 msgstr "Startdiskar"
-
-msgid "Both IP and Subnet must be set"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Kommando för att generera ISO-avbildningar, använd genisoimage eller mkisofs"
@@ -132,26 +126,8 @@ msgstr ""
 msgid "Grub2 directory"
 msgstr ""
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
 msgid "Host '%s' image"
 msgstr "Värden '%s' avbildning"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
-
-msgid "Host has no domain defined"
-msgstr "Värden har ingen domän definierad"
-
-msgid "Host has no provisioning interface defined"
-msgstr ""
-
-msgid "Host has no subnet defined"
-msgstr "Värden har inget subnät definierat"
 
 msgid "Host image"
 msgstr ""
@@ -289,6 +265,9 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr ""
 
 msgid "iPXE directory"
+msgstr ""
+
+msgid "iPXE template to use for generic EFI host boot disks"
 msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"

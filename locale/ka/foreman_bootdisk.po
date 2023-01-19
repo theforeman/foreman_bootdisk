@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_bootdisk package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian (http://www.transifex.com/foreman/foreman/language/ka/"
+")\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
+msgstr "* - ეს ჩატვირთვადი დისკის ეს ტიპები გათიშულია. მათი ჩართვისთვის გადადით \"ადმინისტრირება - მორგება\"."
+
+msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
+msgstr "თითო ჰოსტის ასლის ვარიანტი, რომელიც შეიცავს დისკზე ჩაშენებულ OS-ის ჩამტვირთველს. ეს შეიძლება იყოს სასარგებლო, თუ საწყისი ჩატვირთვა ვერ ხერხდება გარკვეულ აპარატურაზე, მაგრამ აქვს უარყოფითი მხარე, რომ ასლი OS, bootloader ან PXELinux შაბლონების ნებისმიერი ცვლილებისას თავიდან უნდა იყოს რეგენერირებული."
+
+msgid "Action with sub plans"
+msgstr "ქმედება ქვე-გეგმებით"
+
+msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
+msgstr "ყველა ასლი გამოყენებადია, როგორც ISO ან როგორც დისკის ასლი. მათ შორის ჩაწერილი USB დისკზე `dd`-ით."
+
+msgid "Allowed bootdisk types"
+msgstr "ჩატვირთვადი დისკის დაშვებული ტიპები"
+
+msgid "Attach ISO image to CDROM drive for %s"
+msgstr "%s-სთვის ISO ასლის CDROM წამყვანზე მიბმა"
+
+msgid "Back"
+msgstr "უკან"
+
+msgid "Boot disk"
+msgstr "ჩატვირთვადი დისკი"
+
+msgid "Boot disk Help"
+msgstr "ჩატვირთვადი დისკის დახმარება"
+
+msgid "Boot disk based"
+msgstr "ჩატვირთვადი დისკი ბაზირებულია"
+
+msgid "Boot disk download not available for %s architecture"
+msgstr "ჩატვირთვადი დისკის გადმოწერა მიუწვდომელია არქიტექტურისთვის: %s"
+
+msgid "Boot disk help"
+msgstr "ჩატვირთვადი დისკის დახმარება"
+
+msgid "Boot disks"
+msgstr "ჩატვირთვადი დისკები"
+
+msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgstr "ISO ასლის შექმნის ბრძანება. genisoimage ან mkisofs"
+
+msgid "Creating new image failed, install truncate utility"
+msgstr "ახალი ასლის შექმნის შეცდომა. დააყენეთ პროგრამა truncate"
+
+msgid "Detach ISO image from CDROM drive for %s"
+msgstr "%s-სთვის ISO-ი ასლის CDROM-ი წამყვანიდან მოხსნა"
+
+msgid "Download generic image"
+msgstr "ზოგადი ასლის გადმოწერა"
+
+msgid "Download host image"
+msgstr "ჰოსტის ასლის გადმოწერა"
+
+msgid "Download subnet generic image"
+msgstr "ქვექსელის ჩატვირთვადი დისკის გადმოწერა"
+
+msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
+msgstr "დარწმუნდით, რომ %{file} კითხვადია (ან განაახლეთ პარამეტრი \"Grub2-ის საქაღალდე\")"
+
+msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
+msgstr "ISO ასლის CDROM-ში ჩადების შეცდომა %{name}-სთვის: %{message}"
+
+msgid "Failed to create a directory within the ESP image"
+msgstr "ESP ასლში საქაღალდის შექმნის შეცდომა"
+
+msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
+msgstr "ISO ასლის CDROM-დან გამოღების შეცდომა %{name}-სთვის: %{message}"
+
+msgid "Failed to format the ESP image via mkfs.msdos"
+msgstr "ESP ასლის mkfs.msdos-ით დაფორმატების შეცოა"
+
+msgid "Failed to generate ISO image for instance %{name}: %{message}"
+msgstr "ISO ფაილის შექმნის შეცდომა %{name}-სთვის: %{message}"
+
+msgid "Failed to render boot disk template"
+msgstr "ჩატვირთვადი დისკის შაბლონის რენდერის შეცდომა"
+
+msgid "Failed to upload ISO image for instance %{name}: %{message}"
+msgstr "ISO ფაილის ატვირთვის შეცდომა %{name}-სთვის: %{message}"
+
+msgid "Full host '%s' image"
+msgstr "ჰოსტსის სრული %s ასლი"
+
+msgid "Full host image"
+msgstr "ჰოსტის სრული ასლი"
+
+msgid "Generating ISO image for %s"
+msgstr "%s-სთვის ISO ასლის გენერაცია"
+
+msgid "Generic Grub2 EFI image template"
+msgstr "Grub2 EFI ზოგადი ასლის შაბლონი"
+
+msgid "Generic image"
+msgstr "ზოგადი ასლი"
+
+msgid "Generic image template"
+msgstr "ზოგადი ასლის შაბლონი"
+
+msgid "Generic images"
+msgstr "ზოგადი ასლი"
+
+msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
+msgstr "ზოგადი ასლები წარმოადგენენ დისკის მრავალჯერად ასლს, რომელიც მუშაობს Foreman-ში რეგისტრირებული ნებისმიერი ჰოსტისთვის. მას ფუნქციონირებისთვის უბრალო DHCP და DNS სერვისები სჭირდება სერვერთან დასაკავშირებლად, მაგრამ არ საჭიროებს DHCP დაჯავშნას ან სტატიკური IP მისამართებს."
+
+msgid "Grub2 directory"
+msgstr "Grub2 საქაღალდე"
+
+msgid "Host '%s' image"
+msgstr "ჰოსტის %s ასლი"
+
+msgid "Host image"
+msgstr "ჰოსტის ასლი"
+
+msgid "Host image template"
+msgstr "ჰოსტის ასლის შაბლონი"
+
+msgid "Host images"
+msgstr "ჰოსტის ასლები"
+
+msgid "Host is not in build mode"
+msgstr "ჰოსტის აგების რეჟიმში არაა"
+
+msgid "Host is not in build mode, so the template cannot be rendered"
+msgstr "ჰოსტი აგებს რეჟიმში არაა, ამიტომ შაბლონის რენდერი შეუძლებელია"
+
+msgid "Host is not in build mode."
+msgstr "ჰოსტის აგების რეჟიმში არაა."
+
+msgid "ISO build failed"
+msgstr "ISO-ის აგების შეცდომა"
+
+msgid "ISO generation command"
+msgstr "ISO-ის გენერაციის ბრძანება"
+
+msgid "ISO hybrid conversion failed: %s"
+msgstr "ISO-ის ჰიბრიდული გარდაქმნის პრობლემა: %s"
+
+msgid "ISOLINUX directory"
+msgstr "ISOLINUX საქაღალდე"
+
+msgid "Import Puppet classes"
+msgstr "Puppet-ის კლასების შემოტანა"
+
+msgid "Import facts"
+msgstr "ფაქტების შემოტანა"
+
+msgid "Installation media caching"
+msgstr "დასაყენებელი დისკის კეში"
+
+msgid "Installation media files will be cached for full host images"
+msgstr "ინსტალაციის ფაილები დაქეშილი იქნება ჰოსტის სრული ასლებისთვის"
+
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr "ჩატვირთვადი დისკების ნებადართული ტიპები. გამოსართავად უბრალოდ წაშალეთ ის"
+
+msgid "Not available"
+msgstr "ხელმიუწვდომელია"
+
+msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
+msgstr "საწყისი ჩატვირთვის შემდეგ, OS-ის ჩამტვირთველი და ინსტალერი ჩამოიტვირთება უშუალოდ Foreman-ში მორგებული საინსტალაციო მედიიდან, ხოლო უზრუნველყოფის სკრიპტი (kickstart/preseed) ჩამოიტვირთება Foreman-დან."
+
+msgid "Path to directory containing grubx64.efi and shimx64.efi"
+msgstr "ბილიკი grubx64.efi-ისდა shimx64.efi ფაილების შემცველ საქაღალდემდე"
+
+msgid "Path to directory containing iPXE images"
+msgstr "ბილიკი iPXE-ის ასლების შემცველ საქაღალდემდე"
+
+msgid "Path to directory containing isolinux images"
+msgstr "ბილიკი isolinux-ის ასლების შემცველ საქაღალდემდე"
+
+msgid "Path to directory containing syslinux images"
+msgstr "ბილიკი syslinux-ის ასლების შემცველ საქაღალდემდე"
+
+msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
+msgstr "თითოული ჰოსტის ასლი შეიცავს მონაცემებს კონკრეტული ჰოსტის შესახებ, რომელიც რეგისტრირებულია Foreman-ში და დაყენებულია სრულად სტატიკური ქსელის პარამეტრები, DHCP-ის თავიდან ასაცილებლად.   ქსელის კონფიგურაციის შემდეგ, ისინი იტვირთება Foreman-დან, იღებენ OS-ის მიმდინარე კონფიგურაციას და ქმნიან მდგომარეობას სერვერიდან."
+
+msgid "Please ensure the ipxe-bootimgs package is installed."
+msgstr "დარწმუნდით, რომ ipxe-bootimgs პაკეტი დაყენებულია."
+
+msgid "Please ensure the isolinux/syslinux package(s) are installed."
+msgstr "დარწმუნდით, რომ isolnux/syslinux-ის პაკეტები დაყენებულია."
+
+msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
+msgstr "Foreman-ის დამატება, რომელიც ქმნის iPXE-ზე დაფუძნებულ ჩატვირთვად დისკებს ჰოსტების სამუშაოდ PXE ინფრასტრუქტურის გარეშე მოსამზადებლად."
+
+msgid "Remote action:"
+msgstr "დაშორებული ქმედება:"
+
+msgid "SYSLINUX directory"
+msgstr "SYSLINUX საქაღალდე"
+
+msgid "Subnet '%s' generic image"
+msgstr "ქვექსელის %s ზოგადი ასლის გადმოწერა"
+
+msgid "Subnet boot disks"
+msgstr "ქვექსელის ჩატვირთვადი დისკი"
+
+msgid "Subnet generic image"
+msgstr "ქვექსელის ზოგადი ასლი"
+
+msgid "Subnet image"
+msgstr "ქვექსელის ასლი"
+
+msgid "Subnet images are similar to generic images, but chain-loading is done via the TFTP Smart Proxy assigned to the Subnet of the host. The smart proxy must have the \"Templates\" module enabled and configured."
+msgstr "ქვექსელის ასლები მსგავსია ზოგადი ასლების, მაგრამ საწყისი ჩატვირთვა ხდება TFTP Smart Proxy-ის მეშვეობით, რომელიც მინიჭებულია ჰოსტის ქვექსელზე. ჭკვიან პროქსის უნდა ჰქონდეს ჩართული და მორგებული მოდული „შაბლონები“."
+
+msgid "TFTP feature not enabled for subnet %s"
+msgstr "ქვექსელისთვის %s TFTP ჩართული არაა"
+
+msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
+msgstr "ოს-ის დაყენება გრძელდება Foreman-ში მორგებული დასაყენებელი მედიის გამოყენებით და ის ჩვეულებრივ აკონფიგურირებს სტატიკური ქსელს, იმისდა მიხედვით, თუ როგორ არის მორგებული OS iPXE შაბლონი."
+
+msgid "These images are more generic than previous images. You can find them at subnet index page."
+msgstr "ეს ასლები უფრო ზოგადია, ვიდრე ძველი ასლები. ისინი ქვექსელის ინდექსის გვერდზე შეგიძლიათ იპოვოთ."
+
+msgid "These images are used for host. You can find them at host detail page."
+msgstr "ეს ასლები ჰოსტისთვის გამოიყენება. მათი პოვნა ჰოსტის დეტალების გვერდზე შეგიძლიათ."
+
+msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
+msgstr "ეს ასლი საერთოა ამ ქვექსელის ყველა სამუშაოდ მომზადების ინტერფეისის მქონე ჰოსტებისთვის."
+
+msgid "This type of bootdisk is not allowed. Please contact administrator."
+msgstr "ჩატვირთვადი დისკი მხარდაუჭერელია. დაუკავშირდით ადმინისტრატორს."
+
+msgid "True for full, false for basic reusable image"
+msgstr "ჩართეთ სრული, გამორთეთ მრავალჯერადი ასლისთვის"
+
+msgid "Unable to find template specified by %s setting"
+msgstr "%s პარამეტრით მითითებული შაბლონის პოვნა შეუძლებელია"
+
+msgid "Unable to generate disk %{kind} template: %{error}"
+msgstr "დისკის %{kind} შაბლონის %{error} გენერაციის შეცდომა"
+
+msgid "Unable to generate disk template, %{kind} template not found."
+msgstr "დისკის შაბლონის გენერაციის პრობლემა. შაბლონი %{kind} არ არსებობს."
+
+msgid "Unable to mcopy %{file}"
+msgstr "%{file}-ის mcropy შეუძლებელია"
+
+msgid "Upload ISO image to datastore for %s"
+msgstr "%s-სთვის ISO ასლის საცავზე ატვირთვა"
+
+msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
+msgstr "სხვადასხვა ტიპის ჩატვირთვის დისკები შეიძლება შეიქმნას ჰოსტების სამუშაოდ მოსამზადებლად PXE სერვისების გარეშე. ჩატვირთვის დისკები შეიძლება მიმაგრდეს ჰოსტზე (ფიზიკური ან ვირტუალური), რომელიც იტვირთება დისკიდან, დაუკავშირდება Foreman-ს და იწყებს OS-ის ინსტალაციას."
+
+msgid "iPXE directory"
+msgstr "iPXE საქაღალდე"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
+
+msgid "iPXE template to use for generic host boot disks"
+msgstr "ჰოსტის ჩატვირთვადი დისკებსისთვის გამოსაყენებელი iPXE შაბლონი"
+
+msgid "iPXE template to use for host-specific boot disks"
+msgstr "iPXE შაბლონი მომხმარებლის მიერ მითითებული ჩატვირთვადი დისკებისთვის"
