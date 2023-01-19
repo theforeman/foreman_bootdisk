@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 18:05+0100\n"
-"PO-Revision-Date: 2021-11-30 18:05+0100\n"
+"POT-Creation-Date: 2023-01-05 20:17+0100\n"
+"PO-Revision-Date: 2023-01-05 20:17+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -22,38 +22,38 @@ msgstr ""
 msgid "This type of bootdisk is not allowed. Please contact administrator."
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:21
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:17
 #: ../app/views/foreman_bootdisk/disks/help.html.erb:1
 msgid "Boot disks"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:24
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:20
 msgid "Download generic image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:33
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:29
 msgid "Download host image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:34
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:30
 msgid "True for full, false for basic reusable image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:46
+#: ../app/controllers/foreman_bootdisk/api/v2/disks_controller.rb:42
 #: ../app/controllers/foreman_bootdisk/disks_controller.rb:126
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:90
 msgid "Host is not in build mode"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:23
+#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:19
 msgid "Subnet boot disks"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:26
+#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:22
 msgid "Download subnet generic image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:30
+#: ../app/controllers/foreman_bootdisk/api/v2/subnet_disks_controller.rb:26
 #: ../app/controllers/foreman_bootdisk/subnet_disks_controller.rb:15
 msgid "TFTP feature not enabled for subnet %s"
 msgstr ""
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Full host '%s' image"
 msgstr ""
 
-#: ../app/controllers/foreman_bootdisk/disks_controller.rb:132
+#: ../app/controllers/foreman_bootdisk/disks_controller.rb:133
 msgid "Boot disk help"
 msgstr ""
 
@@ -88,13 +88,13 @@ msgstr ""
 
 #: ../app/helpers/bootdisk_links_helper.rb:40
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:20
-#: ../app/models/setting/bootdisk.rb:30
-#: ../webpack/src/extensions/host/HostBootdiskButtons.js:65
+#: ../app/models/setting/bootdisk.rb:6 ../lib/foreman_bootdisk/engine.rb:66
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:86
 msgid "Boot disk"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:21
-#: ../webpack/src/extensions/host/HostBootdiskButtons.js:54
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:74
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
@@ -147,86 +147,6 @@ msgstr ""
 
 #: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:100
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:13
-msgid "Path to directory containing iPXE images"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:13
-msgid "iPXE directory"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:14
-msgid "Path to directory containing isolinux images"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:14
-msgid "ISOLINUX directory"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:15
-msgid "Path to directory containing syslinux images"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:15
-msgid "SYSLINUX directory"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:16
-msgid "Path to directory containing grubx64.efi and shimx64.efi"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:16
-msgid "Grub2 directory"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:17
-msgid "iPXE template to use for host-specific boot disks"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:18
-msgid "Host image template"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:19
-msgid "iPXE template to use for generic host boot disks"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:20
-msgid "Generic image template"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:21
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:22
-msgid "Generic Grub2 EFI image template"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:23
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:23
-msgid "ISO generation command"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:24
-msgid "Installation media files will be cached for full host images"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:24
-msgid "Installation media caching"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:25
-msgid "List of allowed bootdisk types, remove type to disable it"
-msgstr ""
-
-#: ../app/models/setting/bootdisk.rb:25
-msgid "Allowed bootdisk types"
 msgstr ""
 
 #: ../app/services/foreman_bootdisk/iso_generator.rb:16
@@ -379,39 +299,91 @@ msgid ""
 "ttings."
 msgstr ""
 
-#: ../app/views/foreman_bootdisk/host.erb:9
-msgid "Host has no provisioning interface defined"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:10
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:11
-msgid "Host has no subnet defined"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:12
-msgid "Host has no domain defined"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:19
-msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
-
-#: ../app/views/foreman_bootdisk/host.erb:21
-msgid "Both IP and Subnet must be set"
-msgstr ""
-
-#: ../lib/foreman_bootdisk/engine.rb:60
+#: ../lib/foreman_bootdisk/engine.rb:57
 msgid "Boot disk based"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:61
-msgid "Boot disk embedded template"
+#: ../lib/foreman_bootdisk/engine.rb:78
+msgid "iPXE directory"
 msgstr ""
 
-#: ../webpack/src/extensions/host/HostBootdiskButtons.js:59
+#: ../lib/foreman_bootdisk/engine.rb:79
+msgid "Path to directory containing iPXE images"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:84
+msgid "ISOLINUX directory"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:85
+msgid "Path to directory containing isolinux images"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:90
+msgid "SYSLINUX directory"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:91
+msgid "Path to directory containing syslinux images"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:96
+msgid "Grub2 directory"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:97
+msgid "Path to directory containing grubx64.efi and shimx64.efi"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:103
+msgid "Host image template"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:104
+msgid "iPXE template to use for host-specific boot disks"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:110
+msgid "Generic image template"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:111
+msgid "iPXE template to use for generic host boot disks"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:117
+msgid "Generic Grub2 EFI image template"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:118
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:123
+msgid "ISO generation command"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:124
+msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:129
+msgid "Installation media caching"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:130
+msgid "Installation media files will be cached for full host images"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:135
+msgid "Allowed bootdisk types"
+msgstr ""
+
+#: ../lib/foreman_bootdisk/engine.rb:136
+msgid "List of allowed bootdisk types, remove type to disable it"
+msgstr ""
+
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:80
 msgid "Not available"
 msgstr ""
 

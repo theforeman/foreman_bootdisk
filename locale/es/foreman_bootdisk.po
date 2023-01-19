@@ -8,20 +8,21 @@
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014\n"
 "Language-Team: Spanish (http://www.transifex.com/foreman/foreman/language/es/)"
 "\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 :"
+" 2;\n"
 
 msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
-msgstr ""
+msgstr "* - Estos tipos de discos de arranque estaban desactivados, puede activarlos en Administrar - Configuración."
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "Una variante de la imagen por host que contiene el cargador de arranque del sistema operativo incluido en el disco. Esto puede resultar útil si se produce un error en el hardware de la cadena de arranque. No obstante, tiene la particularidad de que la imagen debe regenerarse para cualquier cambio que se produzca en el sistema operativo, en el cargador de arranque o en las plantillas PXELinux."
@@ -33,10 +34,10 @@ msgid "All images are usable as either ISOs or as disk images, including being w
 msgstr "Todas las imágenes pueden utilizarse como ISO o como imágenes de disco, incluso tras copiarlas en un disco USB con `dd`"
 
 msgid "Allowed bootdisk types"
-msgstr ""
+msgstr "Tipos de discos de arranque permitidos"
 
 msgid "Attach ISO image to CDROM drive for %s"
-msgstr "Adjuntar imagen ISO a la unidad CDROM para %s"
+msgstr "Adjuntar la imagen ISO a la unidad de CDROM para %s"
 
 msgid "Back"
 msgstr "Atrás"
@@ -45,34 +46,28 @@ msgid "Boot disk"
 msgstr "Disco de arranque"
 
 msgid "Boot disk Help"
-msgstr ""
+msgstr "Ayuda para el disco de arranque"
 
 msgid "Boot disk based"
 msgstr "Basado en el disco de arranque"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr "Descarga de disco de arranque no disponible para la arquitectura %s"
-
-msgid "Boot disk embedded template"
-msgstr "Plantilla inserta en el disco de arranque"
+msgstr "La descarga del disco de arranque no está disponible para la arquitectura %s "
 
 msgid "Boot disk help"
-msgstr ""
+msgstr "Ayuda para el disco de arranque"
 
 msgid "Boot disks"
 msgstr "Discos de arranque"
-
-msgid "Both IP and Subnet must be set"
-msgstr "Tanto la IP como la subred deben estar configuradas"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Comando para generar una imagen ISO, use genisoimage o mkisofs"
 
 msgid "Creating new image failed, install truncate utility"
-msgstr "Error en la creación de la nueva imagen, instale la utilidad para truncar"
+msgstr "Error en la creación de la nueva imagen; instale la herramienta para truncar"
 
 msgid "Detach ISO image from CDROM drive for %s"
-msgstr "Separar imagen ISO de la unidad CDROM para %s"
+msgstr "Extraer la imagen ISO de la unidad de CDROM para %s"
 
 msgid "Download generic image"
 msgstr "Descargar imagen genérica"
@@ -84,37 +79,37 @@ msgid "Download subnet generic image"
 msgstr "Descargar imagen genérica de la subred"
 
 msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
-msgstr ""
+msgstr "Asegúrese de que %{file} es legible (o actualice la configuración del \"directorio Grub2\")"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr "Ocurrió un error al adjuntar la imagen ISP a la unidad CDROM de la instancia %{name}: %{message}"
+msgstr "Fallo al adjuntar la imagen ISO a la unidad de CDROM de la instancia %{name}: %{message}"
 
 msgid "Failed to create a directory within the ESP image"
 msgstr "Ocurrió un error al crear un directorio dentro de la imagen ESP"
 
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
-msgstr "Ocurrió un error al separar la imagen ISO de la unidad CDROM de la instancia %{name}: %{message}"
+msgstr "Fallo al separar la imagen ISO de la unidad de CDROM de la instancia %{name}: %{message}"
 
 msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr "Ocurrió un error al formatear la imagen ESP a través de mkfs.msdos"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr "Ocurrió un error al generar la imagen ISP para la instancia %{name}: %{message}"
+msgstr "Fallo al generar la imagen ISO para el ejemplo %{name}: %{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "Ocurrió un error al mostrar la plantilla del disco de arranque"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr "Ocurrió un error al subir la imagen ISP para la instancia %{name}: %{message}"
+msgstr "Fallo en la carga de la imagen ISO por ejemplo %{name}: %{message}"
 
 msgid "Full host '%s' image"
-msgstr "Imagen completa de host '%s'"
+msgstr "Imagen completa del host '%s'"
 
 msgid "Full host image"
 msgstr "Imagen completa de host"
 
 msgid "Generating ISO image for %s"
-msgstr "Generando imagen para %s"
+msgstr "Generación de la imagen ISO para %s"
 
 msgid "Generic Grub2 EFI image template"
 msgstr "Plantilla de imagen EFI genérica de Grub2"
@@ -126,7 +121,7 @@ msgid "Generic image template"
 msgstr "Plantilla de imagen genérica"
 
 msgid "Generic images"
-msgstr ""
+msgstr "Imágenes genéricas"
 
 msgid "Generic images are a reusable disk image that works for any host registered in Foreman.  It requires a basic DHCP and DNS service to function and contact the server, but does not require DHCP reservations or static IP addresses."
 msgstr "Las imágenes genéricas son imágenes de disco reutilizables que funcionan con cualquier host registrado en Foreman. Requiere un servicio básico DCHP y DNS para funcionar y comunicarse con el servidor, pero no necesita reservas DHCP o direcciones IP estáticas."
@@ -134,26 +129,8 @@ msgstr "Las imágenes genéricas son imágenes de disco reutilizables que funcio
 msgid "Grub2 directory"
 msgstr "Directorio Grub2"
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr "Plantilla Grub2 para usar en discos de arranque de host EFI genéricos"
-
 msgid "Host '%s' image"
-msgstr "Imagen del host '%s'"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr "El disco de arranque del host no funciona con IPv6 estática"
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr "El host no tiene definida una dirección IPv4 o IPv6"
-
-msgid "Host has no domain defined"
-msgstr "El host no tiene dominio definido"
-
-msgid "Host has no provisioning interface defined"
-msgstr "El host no tiene interfaz de provisión definido"
-
-msgid "Host has no subnet defined"
-msgstr "El host no tiene subred definida"
+msgstr "Anfitrión '%s' imagen"
 
 msgid "Host image"
 msgstr "Imágen de host"
@@ -162,16 +139,16 @@ msgid "Host image template"
 msgstr "Plantilla de imagen de host"
 
 msgid "Host images"
-msgstr ""
+msgstr "Imágenes del anfitrión"
 
 msgid "Host is not in build mode"
-msgstr ""
+msgstr "El host no está en modo de construcción"
 
 msgid "Host is not in build mode, so the template cannot be rendered"
 msgstr "El host no está en modo build, así que no se puede producir la plantilla"
 
 msgid "Host is not in build mode."
-msgstr ""
+msgstr "El host no está en modo de construcción."
 
 msgid "ISO build failed"
 msgstr "Error en la construcción del ISO"
@@ -180,7 +157,7 @@ msgid "ISO generation command"
 msgstr "Comando de generación ISO"
 
 msgid "ISO hybrid conversion failed: %s"
-msgstr "Error en la conversión del ISO híbrido"
+msgstr "La conversión híbrida ISO ha fallado: %s"
 
 msgid "ISOLINUX directory"
 msgstr "Directorio ISOLINUX"
@@ -198,10 +175,10 @@ msgid "Installation media files will be cached for full host images"
 msgstr "Archivos de medios de instalación se almacenarán en caché para imágenes completas de host"
 
 msgid "List of allowed bootdisk types, remove type to disable it"
-msgstr ""
+msgstr "Lista de tipos de discos de arranque permitidos, elimine el tipo para desactivarlo"
 
 msgid "Not available"
-msgstr ""
+msgstr "No disponible"
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "Una vez encadenado, el bootloader del SO y el instalador se descargan directamente desde el medio de instalación configurado en Formena, y el script de provisión (kickstart/preseed) se descarga desde Foreman."
@@ -237,13 +214,13 @@ msgid "SYSLINUX directory"
 msgstr "Directorio SYSLINUX"
 
 msgid "Subnet '%s' generic image"
-msgstr "Imagen genérica de la subred %s"
+msgstr "Subnet '%s' imagen genérica"
 
 msgid "Subnet boot disks"
 msgstr "Discos de arranque de la subred"
 
 msgid "Subnet generic image"
-msgstr ""
+msgstr "Imagen genérica de la subred"
 
 msgid "Subnet image"
 msgstr "Imagen de la subred"
@@ -252,46 +229,49 @@ msgid "Subnet images are similar to generic images, but chain-loading is done vi
 msgstr "Las  imágenes de la subred son similares a imágenes genéricas. No obstante, la carga de la cadena se lleva a cabo a través del proxy inteligente TFTP asignado a la subred del host. El proxy inteligente debe tener el módulo \"Plantillas\" habilitado y configurado."
 
 msgid "TFTP feature not enabled for subnet %s"
-msgstr "Funcionalidad TFTP no habilitada para la subred %s"
+msgstr "La función TFTP no está habilitada para la subred %s"
 
 msgid "The OS install continues using the installation media configured in Foreman, and it will typically configure static networking, depending on how the OS iPXE template is configured."
 msgstr "La instalación del SO sigue usando el medio de instalación configurado en Foreman, y típicamente configura red estática, según como se configura la plantilla iPXE del SO."
 
 msgid "These images are more generic than previous images. You can find them at subnet index page."
-msgstr ""
+msgstr "Estas imágenes son más genéricas que las anteriores. Puede encontrarlas en la página del índice de subredes."
 
 msgid "These images are used for host. You can find them at host detail page."
-msgstr ""
+msgstr "Estas imágenes se utilizan para el anfitrión. Puede encontrarlas en la página de detalles del anfitrión."
 
 msgid "This image is generic for all hosts with a provisioning NIC on that subnet."
 msgstr "Esta imagen es genérica para todos los hosts con un NIC de aprovisionamiento en dicha subred."
 
 msgid "This type of bootdisk is not allowed. Please contact administrator."
-msgstr ""
+msgstr "Este tipo de disco de arranque no está permitido. Por favor, póngase en contacto con el administrador."
 
 msgid "True for full, false for basic reusable image"
 msgstr "Verdadero para completo, falso para imagen básica reutilizable"
 
 msgid "Unable to find template specified by %s setting"
-msgstr "No ha sido posible encontrar la plantilla especificada por el parámetro de configuración %s"
+msgstr "No se puede encontrar la plantilla especificada en %s "
 
 msgid "Unable to generate disk %{kind} template: %{error}"
-msgstr "No se pudo generar la plantilla del disco %{kind}: %{error}"
+msgstr "No se ha podido generar el disco %{kind} plantilla: %{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr "No se pudo generar la plantilla del disco, no se encontró la plantilla %{kind}"
+msgstr "No se ha podido generar la plantilla de disco, %{kind} plantilla no encontrada."
 
 msgid "Unable to mcopy %{file}"
-msgstr ""
+msgstr "No se puede mcopiar %{file}"
 
 msgid "Upload ISO image to datastore for %s"
-msgstr "Subir imagen ISP al almacén de datos para %s"
+msgstr "Subir la imagen ISO al datastore para %s"
 
 msgid "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation."
 msgstr "Se puede crear varios tipos de discos de arranque para provisionar hosts sin necesidad de servicios PXE. Los discos de arranque pueden engancharse al host (físico o virtual) que arranca desde el disco, se conecta a Foreman y comienza la instalación del SO."
 
 msgid "iPXE directory"
 msgstr "Directorio iPXE"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Plantilla iPXE para usar en discos de arranque de host genéricos"

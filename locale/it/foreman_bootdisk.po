@@ -5,17 +5,18 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian (http://www.transifex.com/foreman/foreman/language/it/)"
 "\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 :"
+" 2;\n"
 
 msgid "* - These bootdisk types were disabled, you can enable them in Administer - Settings."
 msgstr ""
@@ -50,17 +51,11 @@ msgstr ""
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
-msgid "Boot disk embedded template"
-msgstr ""
-
 msgid "Boot disk help"
 msgstr ""
 
 msgid "Boot disks"
 msgstr "Dischi d'avvio"
-
-msgid "Both IP and Subnet must be set"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Comando per generare l'immagine ISO, usare genisoimage o mkisofs"
@@ -131,26 +126,8 @@ msgstr "Le immagini generiche sono immagini del disco riutilizzabili idonee per 
 msgid "Grub2 directory"
 msgstr ""
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
 msgid "Host '%s' image"
 msgstr "Immagine '%s' dell'host"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
-
-msgid "Host has no domain defined"
-msgstr "L'host non presenta alcun dominio"
-
-msgid "Host has no provisioning interface defined"
-msgstr ""
-
-msgid "Host has no subnet defined"
-msgstr "L'host non presenta alcuna sottorete"
 
 msgid "Host image"
 msgstr "Immagine host"
@@ -288,6 +265,9 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr "È possibile creare diversi tipi di dischi d'avvio per il provisioning degli host senza la necessità di utilizzare i servizi PXE. I dischi d'avvio possono essere collegati all'host (fisici o virtuali) che esegue l'avvio dal disco, contatta Foreman e inizia l'installazione del sistema operativo."
 
 msgid "iPXE directory"
+msgstr ""
+
+msgid "iPXE template to use for generic EFI host boot disks"
 msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"

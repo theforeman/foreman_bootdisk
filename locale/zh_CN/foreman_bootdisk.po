@@ -5,10 +5,10 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-11-25 10:30+0000\n"
-"Last-Translator: Amit Upadhye <aupadhye@redhat.com>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/foreman/foreman/langu"
 "age/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -50,17 +50,11 @@ msgstr "基于引导磁盘"
 msgid "Boot disk download not available for %s architecture"
 msgstr "引导磁盘下载不适用于 %s 架构"
 
-msgid "Boot disk embedded template"
-msgstr "引导磁盘内嵌的模板"
-
 msgid "Boot disk help"
-msgstr ""
+msgstr "引导磁盘帮助"
 
 msgid "Boot disks"
 msgstr "引导盘"
-
-msgid "Both IP and Subnet must be set"
-msgstr "必须设置 IP 和子网"
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "创建 ISO 镜像的命令，使用 genisoimage 或 mkisofs"
@@ -81,28 +75,28 @@ msgid "Download subnet generic image"
 msgstr "下载子网通用镜像"
 
 msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
-msgstr "确保 %{file} 是可读的（或更新 \"Grub2 directory\" 设置）"
+msgstr "确保 %%{file} 是可读的（或更新 \"Grub2 directory\" 设置）"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr "将 ISO 镜像附加到实例 %{name} 的 CDROM 驱动失败：%{message}"
+msgstr "将 ISO 镜像附加到实例 %%{name} 的 CDROM 驱动失败：%%{message}"
 
 msgid "Failed to create a directory within the ESP image"
 msgstr "无法在 ESP 镜像中创建目录"
 
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
-msgstr "未能成功将 ISO 镜像从实例 %{name} 的 CDROM 驱动中断开：%{message}"
+msgstr "未能成功将 ISO 镜像从实例 %%{name} 的 CDROM 驱动中断开：%%{message}"
 
 msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr "无法通过 mkfs.msdos 格式化 ESP 镜像"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr "为实例 %{name} 生成 ISO 镜像：%{message}"
+msgstr "为实例 %%{name} 生成 ISO 镜像：%%{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "未能提供引导磁盘模板"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr "为实例 %{name} 上传 ISO 镜像失败：%{message}"
+msgstr "为实例 %%{name} 上传 ISO 镜像失败：%%{message}"
 
 msgid "Full host '%s' image"
 msgstr "完整主机 '%s' 镜像"
@@ -131,26 +125,8 @@ msgstr "通用镜像是可重复使用的磁盘镜像，适用于在 Foreman 中
 msgid "Grub2 directory"
 msgstr "Grub2 目录"
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr "通用 EFI 主机启动磁盘使用的 Grub2 模板"
-
 msgid "Host '%s' image"
 msgstr "主机 '%s' 镜像"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr "主机启动盘不适用于静态 IPv6"
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr "主机没有定义的 IPv4 或 IPv6 地址"
-
-msgid "Host has no domain defined"
-msgstr "主机没有定义的域"
-
-msgid "Host has no provisioning interface defined"
-msgstr "主机没有定义的置备接口"
-
-msgid "Host has no subnet defined"
-msgstr "主机没有定义的子网"
 
 msgid "Host image"
 msgstr "主机镜像"
@@ -186,7 +162,7 @@ msgid "Import Puppet classes"
 msgstr "导入 Puppet 类"
 
 msgid "Import facts"
-msgstr "匯入詳情"
+msgstr "导入事实"
 
 msgid "Installation media caching"
 msgstr "安装介质缓存"
@@ -198,7 +174,7 @@ msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr "允许的启动盘类型列表，删除类型以将其禁用"
 
 msgid "Not available"
-msgstr ""
+msgstr "不可用"
 
 msgid "Once chainloaded, the OS bootloader and installer are downloaded directly from the installation media configured in Foreman, and the provisioning script (kickstart/preseed) is downloaded from Foreman."
 msgstr "链式加载后，将直接从 Foreman 中配置的安装介质中下载 OS Bootloader 和安装程序，并从 Foreman 中下载预配置脚本（kickstart / preseed）。"
@@ -225,7 +201,7 @@ msgid "Please ensure the isolinux/syslinux package(s) are installed."
 msgstr "请确保已安装了 isolinux/syslinux 软件包。"
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
-msgstr "能建立基於 iPXE 的開機磁碟的 Foreman 外掛程式，以在不需要 PXE 設備的情況下佈建主機。"
+msgstr "Foreman 插件可创建基于 iPXE 的启动磁盘来配置主机，而无需 PXE 基础结构。"
 
 msgid "Remote action:"
 msgstr "远程操作："
@@ -267,19 +243,19 @@ msgid "This type of bootdisk is not allowed. Please contact administrator."
 msgstr "不允许使用这种类型的引导盘。请与管理员联系。"
 
 msgid "True for full, false for basic reusable image"
-msgstr "True 全部，false 代表基本的可重复使用的镜像"
+msgstr "True 代表全部，false 代表基本的可重复使用的镜像"
 
 msgid "Unable to find template specified by %s setting"
 msgstr "找不到由 %s 设置指定的模板"
 
 msgid "Unable to generate disk %{kind} template: %{error}"
-msgstr "无法生成磁盘 %{kind} 模板 : %{error}"
+msgstr "无法生成磁盘 %%{kind} 模板 : %%{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr "无法生成磁盘模板，未找到 %{kind} 模板。"
+msgstr "无法生成磁盘模板，未找到 %%{kind} 模板。"
 
 msgid "Unable to mcopy %{file}"
-msgstr "无法 mcopy %{file}"
+msgstr "无法 mcopy %%{file}"
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "为 %s 将 ISO 镜像上传至数据存储"
@@ -289,6 +265,9 @@ msgstr "可以创建不同类型的启动磁盘来置备主机，而无需 PXE �
 
 msgid "iPXE directory"
 msgstr "iPXE 目录"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "通用主机引导磁盘使用的 iPXE 模板"

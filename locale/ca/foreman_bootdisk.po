@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the foreman_bootdisk package.
 #
 # Translators:
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
 "Language-Team: Catalan (http://www.transifex.com/foreman/foreman/language/ca/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -52,17 +52,11 @@ msgstr ""
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
-msgid "Boot disk embedded template"
-msgstr ""
-
 msgid "Boot disk help"
 msgstr ""
 
 msgid "Boot disks"
 msgstr "Discs d'arrencada"
-
-msgid "Both IP and Subnet must be set"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "L'ordre per generar la imatge ISO, utilitzeu genisoimage o mkisofs"
@@ -133,26 +127,8 @@ msgstr ""
 msgid "Grub2 directory"
 msgstr ""
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
 msgid "Host '%s' image"
 msgstr ""
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
-
-msgid "Host has no domain defined"
-msgstr "L'amfitrió no té definit cap domini"
-
-msgid "Host has no provisioning interface defined"
-msgstr "L'amfitrió no té definida cap interfície d'aprovisionament"
-
-msgid "Host has no subnet defined"
-msgstr "L'amfitrió no té definida cap subxarxa"
 
 msgid "Host image"
 msgstr "Imatge d'amfitrió"
@@ -291,6 +267,9 @@ msgstr ""
 
 msgid "iPXE directory"
 msgstr "Directori iPXE"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr ""

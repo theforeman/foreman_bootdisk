@@ -7,10 +7,10 @@
 # Yulia <yulia.poyarkova@redhat.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015\n"
 "Language-Team: Russian (http://www.transifex.com/foreman/foreman/language/ru/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -54,17 +54,11 @@ msgstr ""
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
-msgid "Boot disk embedded template"
-msgstr ""
-
 msgid "Boot disk help"
 msgstr ""
 
 msgid "Boot disks"
 msgstr "Загрузочные диски"
-
-msgid "Both IP and Subnet must be set"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Команда создания ISO-образа. Используйте genisoimage или mkisofs"
@@ -135,26 +129,8 @@ msgstr "Общий образ - это образ диска работающи�
 msgid "Grub2 directory"
 msgstr ""
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
 msgid "Host '%s' image"
 msgstr "Образ узла '%s'"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
-
-msgid "Host has no domain defined"
-msgstr "Узел не имеет объявленного домена"
-
-msgid "Host has no provisioning interface defined"
-msgstr "Узел не имеет объявленного интерфейса подготовки"
-
-msgid "Host has no subnet defined"
-msgstr "Подсеть не определена"
 
 msgid "Host image"
 msgstr "Образ узла"
@@ -292,6 +268,9 @@ msgid "Various types of boot disks can be created to provision hosts without the
 msgstr "Типы вариантов загрузочных дисков, которые могут быть созданы для подготовленных узлов без служб PXE. Загрузочные диски могут быть прикреплены к узлу (физическому или виртуальному), который загружается соединяясь с Foreman и начинающих установку ОС."
 
 msgid "iPXE directory"
+msgstr ""
+
+msgid "iPXE template to use for generic EFI host boot disks"
 msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"

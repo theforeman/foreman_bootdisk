@@ -8,10 +8,10 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 18.1.0\n"
+"Project-Id-Version: foreman_bootdisk 21.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-09-24 07:25+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2014-02-13 12:12+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2015-2017\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/foreman/fore"
 "man/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -53,17 +53,11 @@ msgstr "Boot disk based"
 msgid "Boot disk download not available for %s architecture"
 msgstr "Boot disk download not available for %s architecture"
 
-msgid "Boot disk embedded template"
-msgstr "Boot disk embedded template"
-
 msgid "Boot disk help"
 msgstr ""
 
 msgid "Boot disks"
 msgstr "Boot disks"
-
-msgid "Both IP and Subnet must be set"
-msgstr ""
 
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "Command to generate ISO image, use genisoimage or mkisofs"
@@ -134,26 +128,8 @@ msgstr "Generic images are a reusable disk image that works for any host registe
 msgid "Grub2 directory"
 msgstr ""
 
-msgid "Grub2 template to use for generic EFI host boot disks"
-msgstr ""
-
 msgid "Host '%s' image"
 msgstr "Host '%s' image"
-
-msgid "Host bootdisk does not work with static IPv6"
-msgstr ""
-
-msgid "Host has no IPv4 or IPv6 address defined"
-msgstr ""
-
-msgid "Host has no domain defined"
-msgstr "Host has no domain defined"
-
-msgid "Host has no provisioning interface defined"
-msgstr "Host has no provisioning interface defined"
-
-msgid "Host has no subnet defined"
-msgstr "Host has no subnet defined"
 
 msgid "Host image"
 msgstr "Host image"
@@ -292,6 +268,9 @@ msgstr "Various types of boot disks can be created to provision hosts without th
 
 msgid "iPXE directory"
 msgstr "iPXE directory"
+
+msgid "iPXE template to use for generic EFI host boot disks"
+msgstr ""
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "iPXE template to use for generic host boot disks"
