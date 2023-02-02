@@ -125,7 +125,7 @@ module ForemanBootdisk
           f.write(opts[:grub])
         end
         efibootimg = File.join(wd, 'build', 'efiboot.img')
-        system_or_exception("truncate -s 4M #{efibootimg}", N_('Creating new image failed, install truncate utility'))
+        system_or_exception("truncate -s 6M #{efibootimg}", N_('Creating new image failed, install truncate utility'))
         system_or_exception("mkfs.msdos #{efibootimg}", N_('Failed to format the ESP image via mkfs.msdos'))
         system_or_exception("mmd -i #{efibootimg} '::/EFI'", N_('Failed to create a directory within the ESP image'))
         system_or_exception("mmd -i #{efibootimg} '::/EFI/BOOT'", N_('Failed to create a directory within the ESP image'))
