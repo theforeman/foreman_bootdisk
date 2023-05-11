@@ -36,9 +36,10 @@ module ForemanBootdisk
 
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_bootdisk do
-        requires_foreman '>= 3.4'
+        requires_foreman '>= 3.7'
         # Add Global files for extending foreman-core components and routes
         register_global_js_file 'global'
+        register_gettext
 
         security_block :bootdisk do |_map|
           permission :download_bootdisk, 'foreman_bootdisk/disks': %i[generic host full_host help bootdisk_options],
@@ -137,12 +138,6 @@ module ForemanBootdisk
           end
         end
       end
-    end
-
-    initializer 'foreman_bootdisk.register_gettext', after: :load_config_initializers do |_app|
-      locale_dir = File.join(File.expand_path('../..', __dir__), 'locale')
-      locale_domain = 'foreman_bootdisk'
-      Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
 
     config.to_prepare do
