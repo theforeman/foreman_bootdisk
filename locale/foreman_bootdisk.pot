@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-05 20:17+0100\n"
-"PO-Revision-Date: 2023-01-05 20:17+0100\n"
+"POT-Creation-Date: 2023-05-15 15:36+0200\n"
+"PO-Revision-Date: 2023-05-15 15:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../app/helpers/bootdisk_links_helper.rb:40
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:20
-#: ../app/models/setting/bootdisk.rb:6 ../lib/foreman_bootdisk/engine.rb:66
+#: ../app/models/setting/bootdisk.rb:6 ../lib/foreman_bootdisk/engine.rb:68
 #: ../webpack/src/extensions/host/HostBootdiskButtons.js:86
 msgid "Boot disk"
 msgstr ""
@@ -299,87 +299,87 @@ msgid ""
 "ttings."
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:57
+#: ../lib/foreman_bootdisk/engine.rb:59
 msgid "Boot disk based"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:78
+#: ../lib/foreman_bootdisk/engine.rb:80
 msgid "iPXE directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:79
+#: ../lib/foreman_bootdisk/engine.rb:81
 msgid "Path to directory containing iPXE images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:84
+#: ../lib/foreman_bootdisk/engine.rb:86
 msgid "ISOLINUX directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:85
+#: ../lib/foreman_bootdisk/engine.rb:87
 msgid "Path to directory containing isolinux images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:90
+#: ../lib/foreman_bootdisk/engine.rb:92
 msgid "SYSLINUX directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:91
+#: ../lib/foreman_bootdisk/engine.rb:93
 msgid "Path to directory containing syslinux images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:96
+#: ../lib/foreman_bootdisk/engine.rb:98
 msgid "Grub2 directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:97
+#: ../lib/foreman_bootdisk/engine.rb:99
 msgid "Path to directory containing grubx64.efi and shimx64.efi"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:103
+#: ../lib/foreman_bootdisk/engine.rb:105
 msgid "Host image template"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:104
+#: ../lib/foreman_bootdisk/engine.rb:106
 msgid "iPXE template to use for host-specific boot disks"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:110
+#: ../lib/foreman_bootdisk/engine.rb:112
 msgid "Generic image template"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:111
+#: ../lib/foreman_bootdisk/engine.rb:113
 msgid "iPXE template to use for generic host boot disks"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:117
+#: ../lib/foreman_bootdisk/engine.rb:119
 msgid "Generic Grub2 EFI image template"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:118
+#: ../lib/foreman_bootdisk/engine.rb:120
 msgid "iPXE template to use for generic EFI host boot disks"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:123
+#: ../lib/foreman_bootdisk/engine.rb:125
 msgid "ISO generation command"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:124
+#: ../lib/foreman_bootdisk/engine.rb:126
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:129
+#: ../lib/foreman_bootdisk/engine.rb:131
 msgid "Installation media caching"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:130
+#: ../lib/foreman_bootdisk/engine.rb:132
 msgid "Installation media files will be cached for full host images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:135
+#: ../lib/foreman_bootdisk/engine.rb:137
 msgid "Allowed bootdisk types"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:136
+#: ../lib/foreman_bootdisk/engine.rb:138
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr ""
 

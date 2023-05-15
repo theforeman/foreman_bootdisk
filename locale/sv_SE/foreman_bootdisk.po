@@ -6,11 +6,11 @@
 # johnny.westerlund <johnny.westerlund@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.3\n"
+"Project-Id-Version: foreman_bootdisk 21.0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: johnny.westerlund <johnny.westerlund@gmail.com>, 2014\n"
-"Language-Team: Swedish (Sweden) (http://www.transifex.com/foreman/foreman/lang"
+"Language-Team: Swedish (Sweden) (http://app.transifex.com/foreman/foreman/lang"
 "uage/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
