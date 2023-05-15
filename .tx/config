@@ -1,8 +1,10 @@
 [main]
-host = https://www.transifex.com
+host = https://app.transifex.com
 
-[foreman.foreman_bootdisk]
-file_filter = locale/<lang>/foreman_bootdisk.edit.po
-source_file = locale/foreman_bootdisk.pot
-source_lang = en
-type = PO
+[o:foreman:p:foreman:r:foreman_bootdisk]
+file_filter   = locale/<lang>/foreman_bootdisk.edit.po
+source_file   = locale/foreman_bootdisk.pot
+source_lang   = en
+type          = PO
+minimum_perc  = 0
+resource_name = foreman_bootdisk
