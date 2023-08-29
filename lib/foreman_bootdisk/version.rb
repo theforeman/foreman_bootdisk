@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module ForemanBootdisk
-  VERSION = '21.0.4'
+  VERSION = '21.1.0'
 end
