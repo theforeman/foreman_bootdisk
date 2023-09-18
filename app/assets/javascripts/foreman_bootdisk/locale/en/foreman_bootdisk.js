@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 21.0.4",
+        "Project-Id-Version": "foreman_bootdisk 21.1.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:09+0000",
         "Last-Translator": "Dominic Cleal <dcleal@redhat.com>",

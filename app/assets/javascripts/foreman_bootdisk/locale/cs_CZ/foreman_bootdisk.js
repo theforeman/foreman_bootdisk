@@ -3,19 +3,20 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 1.0.0",
+        "Project-Id-Version": "foreman_bootdisk 21.1.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-05-15 15:36+0200",
-        "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "Czech",
-        "Language": "cs_CZ",
+        "POT-Creation-Date": "2023-09-18 14:01+0200",
+        "PO-Revision-Date": "2014-02-13 12:12+0000",
+        "Last-Translator": "Pavel Borecki <pavel.borecki@gmail.com>, 2018-2020",
+        "Language-Team": "Czech (Czech Republic) (http://app.transifex.com/foreman/foreman/language/cs_CZ/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
+        "Language": "cs_CZ",
+        "Plural-Forms": "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;",
         "lang": "cs_CZ",
         "domain": "foreman_bootdisk",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;"
       },
       "This type of bootdisk is not allowed. Please contact administrator.": [
         ""
@@ -51,7 +52,7 @@
         ""
       ],
       "Host '%s' image": [
-        ""
+        "Obraz stroje „%s“"
       ],
       "Full host '%s' image": [
         ""
@@ -63,7 +64,7 @@
         ""
       ],
       "Boot disk": [
-        ""
+        "Disk pro zavádění systému"
       ],
       "Boot disk download not available for %s architecture": [
         ""
@@ -75,10 +76,10 @@
         ""
       ],
       "Generic image": [
-        ""
+        "Obecný obraz"
       ],
       "Unable to find template specified by %s setting": [
-        ""
+        "Nedaří se nalézt šablonu určenou nastavením %s"
       ],
       "Generating ISO image for %s": [
         ""
@@ -135,13 +136,13 @@
         ""
       ],
       "ISO build failed": [
-        ""
+        "Sestavení ISO se nezdařilo"
       ],
       "ISO hybrid conversion failed: %s": [
         ""
       ],
       "Back": [
-        ""
+        "Zpět"
       ],
       "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation.": [
         ""
@@ -156,7 +157,7 @@
         ""
       ],
       "Host image": [
-        ""
+        "Obraz stroje"
       ],
       "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server.": [
         ""
@@ -195,25 +196,25 @@
         ""
       ],
       "Boot disk based": [
-        ""
+        "Založeno na zaváděcím disku"
       ],
       "iPXE directory": [
-        ""
+        "iPXE složka"
       ],
       "Path to directory containing iPXE images": [
-        ""
+        "Popis umístění složky obsahující iPXE obrazy"
       ],
       "ISOLINUX directory": [
-        ""
+        "ISOLINUX složka"
       ],
       "Path to directory containing isolinux images": [
         ""
       ],
       "SYSLINUX directory": [
-        ""
+        "složka se SYSLINUX"
       ],
       "Path to directory containing syslinux images": [
-        ""
+        "Popis umístění obsahující syslinux obrazy"
       ],
       "Grub2 directory": [
         ""
@@ -222,13 +223,13 @@
         ""
       ],
       "Host image template": [
-        ""
+        "Šablona obrazu stroje"
       ],
       "iPXE template to use for host-specific boot disks": [
         ""
       ],
       "Generic image template": [
-        ""
+        "Šablona obecného obrazu"
       ],
       "iPXE template to use for generic host boot disks": [
         ""
@@ -240,13 +241,13 @@
         ""
       ],
       "ISO generation command": [
-        ""
+        "příkaz pro vytváření ISO obrazu"
       ],
       "Command to generate ISO image, use genisoimage or mkisofs": [
-        ""
+        "Příkaz pro vytvoření ISO obrazu, použijte genisoimage nebo mkisofs"
       ],
       "Installation media caching": [
-        ""
+        "Mezipaměť pro instalační médium"
       ],
       "Installation media files will be cached for full host images": [
         ""
@@ -261,16 +262,16 @@
         ""
       ],
       "Remote action:": [
-        ""
+        "Akce na protějšku:"
       ],
       "Import Puppet classes": [
-        ""
+        "Importovat Puppet třídy"
       ],
       "Import facts": [
-        ""
+        "Importovat fakta"
       ],
       "Action with sub plans": [
-        ""
+        "Akce s dílčími plány"
       ],
       "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure.": [
         ""

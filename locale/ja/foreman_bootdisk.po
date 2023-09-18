@@ -5,9 +5,10 @@
 # Translators:
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
+# 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 21.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
@@ -23,7 +24,7 @@ msgid "* - These bootdisk types were disabled, you can enable them in Administer
 msgstr "* - これらのブートディスクタイプは無効にされています。管理 - 設定 で有効にすることができます。"
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、イメージを OS、ブートローダーまたは PXELinux テンプレートに変更がある場合にイメージを再生成する必要があります。"
+msgstr "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、OS、ブートローダーまたは PXELinux テンプレートに変更がある場合はイメージを再生成する必要があります。"
 
 msgid "Action with sub plans"
 msgstr "サブプランによるアクション"
@@ -62,7 +63,7 @@ msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr "ISO イメージを生成するためのコマンドです。genisoimage または mkisofs を使用します"
 
 msgid "Creating new image failed, install truncate utility"
-msgstr "新しいイメージの作成に失敗しました。truncate ユーティリティをインストールしてください"
+msgstr "新しいイメージの作成に失敗しました。truncate ユーティリティーをインストールしてください"
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "%s の CDROM ドライブから ISO イメージをデタッチ"
@@ -77,28 +78,28 @@ msgid "Download subnet generic image"
 msgstr "サブネットの汎用イメージのダウンロード"
 
 msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
-msgstr "%{file} が読み取り可能であることを確認します (または「Grub2 ディレクトリー」設定を更新します)"
+msgstr "%%{file} が読み取り可能であることを確認します (または「Grub2 ディレクトリー」設定を更新します)"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr "インスタンス %{name} の CDROM ドライブへの ISO イメージの割り当てに失敗しました: %{message}"
+msgstr "インスタンス %%{name} の CDROM ドライブへの ISO イメージの割り当てに失敗しました: %%{message}"
 
 msgid "Failed to create a directory within the ESP image"
 msgstr "ESP のイメージ内にディレクトリーを作成できませんでした"
 
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
-msgstr "インスタンス %{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %{message}"
+msgstr "インスタンス %%{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %%{message}"
 
 msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr "mkfs.msdos で ESPイメージをフォーマットできませんでした"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr "インスタンス %{name} の ISO イメージの生成に失敗しました: %{message}"
+msgstr "インスタンス %%{name} の ISO イメージの生成に失敗しました: %%{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "ブートディスクテンプレートのレンダリングに失敗しました"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr "インスタンス %{name} の ISO イメージのアップロードに失敗しました: %{message}"
+msgstr "インスタンス %%{name} の ISO イメージのアップロードに失敗しました: %%{message}"
 
 msgid "Full host '%s' image"
 msgstr "完全ホスト '%s' イメージ"
@@ -185,13 +186,13 @@ msgid "Path to directory containing grubx64.efi and shimx64.efi"
 msgstr "grubx64.efi および shimx64.efi が含まれるディレクトリーへのパス"
 
 msgid "Path to directory containing iPXE images"
-msgstr "iPXE イメージを含むディレクトリーのパス"
+msgstr "iPXE イメージを含むディレクトリーへのパス"
 
 msgid "Path to directory containing isolinux images"
 msgstr "isolinux イメージを含むディレクトリーへのパス"
 
 msgid "Path to directory containing syslinux images"
-msgstr "syslinux イメージを含むディレクトリーのパス"
+msgstr "syslinux イメージを含むディレクトリーへのパス"
 
 msgid "Per-host images contain data about a particular host registered in Foreman and set up fully static networking, avoiding the requirement for DHCP.  After networking is configured, they chainload from Foreman, picking up the current OS configuration and build state from the server."
 msgstr "ホストごとのイメージには、Foreman に登録された特定ホストについてのデータが含まれ、これは完全に静的なネットワークをセットアップするため、DHCP の要件が排除されます。ネットワークの設定後、Foreman からチェーンロードが実行され、現在の OS 設定やビルド状態の情報がサーバーから取得されます。"
@@ -251,13 +252,13 @@ msgid "Unable to find template specified by %s setting"
 msgstr "%s 設定で指定されているテンプレートが見つかりません"
 
 msgid "Unable to generate disk %{kind} template: %{error}"
-msgstr "ディスクの %{kind} テンプレートを生成できません: %{error}"
+msgstr "ディスクの %%{kind} テンプレートを生成できません: %%{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr "ディスクテンプレートを生成できません。%{kind} テンプレートが見つかりません。"
+msgstr "ディスクテンプレートを生成できません。%%{kind} テンプレートが見つかりません。"
 
 msgid "Unable to mcopy %{file}"
-msgstr "%{file} を mcopy できません"
+msgstr "%%{file} を mcopy できません"
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "ISO イメージの %s のデータストアへのアップロード"
@@ -269,7 +270,7 @@ msgid "iPXE directory"
 msgstr "iPXE ディレクトリー"
 
 msgid "iPXE template to use for generic EFI host boot disks"
-msgstr ""
+msgstr "汎用の EFI ホストブートディスクに使用する iPXE テンプレート"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "汎用のホストブートディスクに使用する iPXE テンプレート"

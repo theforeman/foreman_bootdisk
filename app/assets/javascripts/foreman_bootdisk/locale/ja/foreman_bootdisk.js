@@ -3,9 +3,9 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 21.0.4",
+        "Project-Id-Version": "foreman_bootdisk 21.1.0",
         "Report-Msgid-Bugs-To": "",
-        "POT-Creation-Date": "2023-01-05 20:17+0100",
+        "POT-Creation-Date": "2023-09-18 14:01+0200",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015",
         "Language-Team": "Japanese (http://app.transifex.com/foreman/foreman/language/ja/)",
@@ -94,25 +94,25 @@
         "%s の CDROM ドライブから ISO イメージをデタッチ"
       ],
       "Failed to generate ISO image for instance %{name}: %{message}": [
-        "インスタンス %{name} の ISO イメージの生成に失敗しました: %{message}"
+        "インスタンス %%{name} の ISO イメージの生成に失敗しました: %%{message}"
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
-        "インスタンス %{name} の ISO イメージのアップロードに失敗しました: %{message}"
+        "インスタンス %%{name} の ISO イメージのアップロードに失敗しました: %%{message}"
       ],
       "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}": [
-        "インスタンス %{name} の CDROM ドライブへの ISO イメージの割り当てに失敗しました: %{message}"
+        "インスタンス %%{name} の CDROM ドライブへの ISO イメージの割り当てに失敗しました: %%{message}"
       ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
-        "インスタンス %{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %{message}"
+        "インスタンス %%{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %%{message}"
       ],
       "Host is not in build mode, so the template cannot be rendered": [
         "ホストはビルドモードではないため、テンプレートはレンダリングすることができません"
       ],
       "Unable to generate disk template, %{kind} template not found.": [
-        "ディスクテンプレートを生成できません。%{kind} テンプレートが見つかりません。"
+        "ディスクテンプレートを生成できません。%%{kind} テンプレートが見つかりません。"
       ],
       "Unable to generate disk %{kind} template: %{error}": [
-        "ディスクの %{kind} テンプレートを生成できません: %{error}"
+        "ディスクの %%{kind} テンプレートを生成できません: %%{error}"
       ],
       "Please ensure the isolinux/syslinux package(s) are installed.": [
         "isolinux/syslinux パッケージがインストールされていることを確認してください。"
@@ -121,7 +121,7 @@
         "ipxe-bootimgs パッケージがインストールされていることを確認してください。"
       ],
       "Creating new image failed, install truncate utility": [
-        "新しいイメージの作成に失敗しました。truncate ユーティリティをインストールしてください"
+        "新しいイメージの作成に失敗しました。truncate ユーティリティーをインストールしてください"
       ],
       "Failed to format the ESP image via mkfs.msdos": [
         "mkfs.msdos で ESPイメージをフォーマットできませんでした"
@@ -130,10 +130,10 @@
         "ESP のイメージ内にディレクトリーを作成できませんでした"
       ],
       "Ensure %{file} is readable (or update \\\"Grub2 directory\\\" setting)": [
-        "%{file} が読み取り可能であることを確認します (または「Grub2 ディレクトリー」設定を更新します)"
+        "%%{file} が読み取り可能であることを確認します (または「Grub2 ディレクトリー」設定を更新します)"
       ],
       "Unable to mcopy %{file}": [
-        "%{file} を mcopy できません"
+        "%%{file} を mcopy できません"
       ],
       "ISO build failed": [
         "ISO ビルドに失敗しました"
@@ -169,7 +169,7 @@
         "完全ホストイメージ"
       ],
       "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates.": [
-        "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、イメージを OS、ブートローダーまたは PXELinux テンプレートに変更がある場合にイメージを再生成する必要があります。"
+        "OS ブートローダーがディスク内に組み込まれているホスト別イメージのバリアントです。これは、特定のハードウェアでチェーンロードが失敗した場合に役立ちますが、不利な点として、OS、ブートローダーまたは PXELinux テンプレートに変更がある場合はイメージを再生成する必要があります。"
       ],
       "Generic images": [
         "汎用イメージ"
@@ -202,7 +202,7 @@
         "iPXE ディレクトリー"
       ],
       "Path to directory containing iPXE images": [
-        "iPXE イメージを含むディレクトリーのパス"
+        "iPXE イメージを含むディレクトリーへのパス"
       ],
       "ISOLINUX directory": [
         "ISOLINUX ディレクトリー"
@@ -214,7 +214,7 @@
         "SYSLINUX ディレクトリー"
       ],
       "Path to directory containing syslinux images": [
-        "syslinux イメージを含むディレクトリーのパス"
+        "syslinux イメージを含むディレクトリーへのパス"
       ],
       "Grub2 directory": [
         "Grub2 ディレクトリー"
@@ -238,7 +238,7 @@
         "Grub2 EFI の汎用イメージテンプレート"
       ],
       "iPXE template to use for generic EFI host boot disks": [
-        ""
+        "汎用の EFI ホストブートディスクに使用する iPXE テンプレート"
       ],
       "ISO generation command": [
         "ISO 生成コマンド"

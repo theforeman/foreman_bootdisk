@@ -3,9 +3,9 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 21.0.4",
+        "Project-Id-Version": "foreman_bootdisk 21.1.0",
         "Report-Msgid-Bugs-To": "",
-        "POT-Creation-Date": "2023-01-05 20:17+0100",
+        "POT-Creation-Date": "2023-09-18 14:01+0200",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
         "Language-Team": "Chinese (China) (http://app.transifex.com/foreman/foreman/language/zh_CN/)",
@@ -238,7 +238,7 @@
         "通用 Grub2 EFI 镜像模板"
       ],
       "iPXE template to use for generic EFI host boot disks": [
-        ""
+        "通用 EFI 主机启动磁盘使用的 iPXE 模板"
       ],
       "ISO generation command": [
         "ISO 生成命令"
