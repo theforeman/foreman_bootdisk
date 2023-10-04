@@ -256,7 +256,7 @@ msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr "Impossible de générer le modèle %{kind} de disque : %{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr "Impossible de générer le modèle de disque, le modèle%{kind} est introuvable."
+msgstr "Impossible de générer le modèle de disque, le modèle %{kind} est introuvable."
 
 msgid "Unable to mcopy %{file}"
 msgstr "Impossible de mcopier %{file}"
