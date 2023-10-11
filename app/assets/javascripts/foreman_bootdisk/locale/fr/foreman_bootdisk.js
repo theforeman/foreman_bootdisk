@@ -5,7 +5,6 @@
       "": {
         "Project-Id-Version": "foreman_bootdisk 21.1.0",
         "Report-Msgid-Bugs-To": "",
-        "POT-Creation-Date": "2023-09-18 14:01+0200",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "0868a4d1af5275b3f70b0a6dac4c99a4, 2015",
         "Language-Team": "French (http://app.transifex.com/foreman/foreman/language/fr/)",
@@ -109,7 +108,7 @@
         "L'hôte n'est pas en mode build, c'est pourquoi le modèle ne peut être rendu"
       ],
       "Unable to generate disk template, %{kind} template not found.": [
-        "Impossible de générer le modèle de disque, le modèle%{kind} est introuvable."
+        "Impossible de générer le modèle de disque, le modèle %{kind} est introuvable."
       ],
       "Unable to generate disk %{kind} template: %{error}": [
         "Impossible de générer le modèle %{kind} de disque : %{error}"
