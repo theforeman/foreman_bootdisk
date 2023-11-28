@@ -40,7 +40,11 @@ module ForemanBootdisk
           'connected' => true,
           'allow_guest_control' => true
         }
+	vm = find_vm_by_uuid(vm_uuid)
+	vm.stop if vm.ready?
+	vm.reload
         client.vm_reconfig_cdrom options
+	vm.start if !vm.ready?
       end
 
       def iso_detach(vm_uuid)
