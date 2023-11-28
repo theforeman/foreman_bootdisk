@@ -5,7 +5,6 @@
       "": {
         "Project-Id-Version": "foreman_bootdisk 21.0.4",
         "Report-Msgid-Bugs-To": "",
-        "POT-Creation-Date": "2023-01-05 20:17+0100",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014",
         "Language-Team": "Spanish (http://app.transifex.com/foreman/foreman/language/es/)",
