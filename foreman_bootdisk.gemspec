@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
               ['LICENSE', 'README.md'] +
               ['package.json']
 
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 2.7', '< 4'
 
   s.add_development_dependency 'theforeman-rubocop'
 end
