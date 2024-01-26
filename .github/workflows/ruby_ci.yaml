@@ -10,11 +10,6 @@ concurrency:
   group: ${{ github.head_ref }}
   cancel-in-progress: true
 
-env:
-  RAILS_ENV: test
-  DATABASE_URL: postgresql://postgres:@localhost/test
-  DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
-
 jobs:
   rubocop:
     uses: theforeman/actions/.github/workflows/rubocop.yml@v0
