@@ -32,13 +32,15 @@ module ForemanBootdisk
       end
 
       def iso_attach(iso, vm_uuid)
+        controller = controller_config(vm_uuid)
         options = {
           'instance_uuid' => vm_uuid,
           'iso' => "foreman_isos/#{iso}",
           'datastore' => bootdisk_datastore(vm_uuid),
           'start_connected' => true,
           'connected' => true,
-          'allow_guest_control' => true
+          'allow_guest_control' => true,
+          'controller_key' => controller[:key]
         }
 	vm = find_vm_by_uuid(vm_uuid)
 	vm.stop if vm.ready?
@@ -54,6 +56,12 @@ module ForemanBootdisk
           'connected' => false,
         }
         client.vm_reconfig_cdrom options
+      end
+
+      def controller_config(vm_uuid)
+        options = OpenStruct.new(server_id: vm_uuid, attributes: {type: RbVmomi::VIM.VirtualAHCIController.class})
+        client.add_vm_controller(options)
+        client.get_vm_first_sata_controller(vm_uuid)
       end
     end
   end
