@@ -10,7 +10,7 @@ require 'uri'
 # requires syslinux, ipxe/ipxe-bootimgs, genisoimage, isohybrid
 module ForemanBootdisk
   class ISOGenerator
-    extend Foreman::HTTPProxy
+    extend Foreman::HttpProxy
 
     def self.generate_full_host(host, opts = {}, &block)
       raise Foreman::Exception.new(N_('Host is not in build mode, so the template cannot be rendered')) unless host.build?
