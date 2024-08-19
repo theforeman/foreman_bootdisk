@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 21.2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -267,7 +267,7 @@ msgid "iPXE directory"
 msgstr "iPXE 目录"
 
 msgid "iPXE template to use for generic EFI host boot disks"
-msgstr ""
+msgstr "通用 EFI 主机启动磁盘使用的 iPXE 模板"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "通用主机引导磁盘使用的 iPXE 模板"
