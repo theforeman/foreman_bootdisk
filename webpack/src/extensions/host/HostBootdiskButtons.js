@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { DropdownItem, DropdownGroup } from '@patternfly/react-core';
+import { DropdownItem, DropdownGroup } from '@patternfly/react-core/deprecated';
 import {
   BanIcon,
   BuildIcon,
