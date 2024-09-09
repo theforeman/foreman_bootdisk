@@ -45,8 +45,10 @@ module ForemanBootdisk
           ApipieDSL.configuration.dsl_classes_matchers += [
             "#{ForemanBootdisk::Engine.root}/app/lib/foreman_bootdisk/scope/*.rb"
           ]
+
           provision_method 'bootdisk', N_('Boot disk based')
-          allowed_template_helpers :bootdisk_chain_url, :bootdisk_raise
+
+          extend_template_helpers ForemanBootdisk::TemplateHelpers
 
           extend_page "subnets/index" do |cx|
             cx.add_pagelet :subnet_index_action_buttons, name: 'Bootdisk', partial: 'subnets/bootdisk_action_buttons'
