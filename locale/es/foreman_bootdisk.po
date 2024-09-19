@@ -3,15 +3,17 @@
 # This file is distributed under the same license as the foreman_bootdisk package.
 #
 # Translators:
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014-2015
 # Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
-"Last-Translator: Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2014\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarde"
+"n.nl>, 2024\n"
 "Language-Team: Spanish (http://app.transifex.com/foreman/foreman/language/es/)"
 "\n"
 "MIME-Version: 1.0\n"
@@ -26,9 +28,6 @@ msgstr "* - Estos tipos de discos de arranque estaban desactivados, puede activa
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "Una variante de la imagen por host que contiene el cargador de arranque del sistema operativo incluido en el disco. Esto puede resultar útil si se produce un error en el hardware de la cadena de arranque. No obstante, tiene la particularidad de que la imagen debe regenerarse para cualquier cambio que se produzca en el sistema operativo, en el cargador de arranque o en las plantillas PXELinux."
-
-msgid "Action with sub plans"
-msgstr "Acción con subplanes"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Todas las imágenes pueden utilizarse como ISO o como imágenes de disco, incluso tras copiarlas en un disco USB con `dd`"
@@ -52,7 +51,7 @@ msgid "Boot disk based"
 msgstr "Basado en el disco de arranque"
 
 msgid "Boot disk download not available for %s architecture"
-msgstr "La descarga del disco de arranque no está disponible para la arquitectura %s "
+msgstr "La descarga del disco de arranque no está disponible para la arquitectura %s"
 
 msgid "Boot disk help"
 msgstr "Ayuda para el disco de arranque"
@@ -162,12 +161,6 @@ msgstr "La conversión híbrida ISO ha fallado: %s"
 msgid "ISOLINUX directory"
 msgstr "Directorio ISOLINUX"
 
-msgid "Import Puppet classes"
-msgstr "Importar clases Puppet"
-
-msgid "Import facts"
-msgstr "Importar datos"
-
 msgid "Installation media caching"
 msgstr "Habilitando caché de medios de instalación"
 
@@ -206,9 +199,6 @@ msgstr "Asegúrese de que el(los) paquete(s) isolinux/syslinux estén instalados
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin para Foreman que crea discos de arranque iPXE para provisionar hosts sin necesidad de infraestructura PXE"
-
-msgid "Remote action:"
-msgstr "Acción remota:"
 
 msgid "SYSLINUX directory"
 msgstr "Directorio SYSLINUX"
@@ -250,7 +240,7 @@ msgid "True for full, false for basic reusable image"
 msgstr "Verdadero para completo, falso para imagen básica reutilizable"
 
 msgid "Unable to find template specified by %s setting"
-msgstr "No se puede encontrar la plantilla especificada en %s "
+msgstr "No se puede encontrar la plantilla especificada en %s"
 
 msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr "No se ha podido generar el disco %{kind} plantilla: %{error}"
