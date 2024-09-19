@@ -6,17 +6,17 @@
 # Christina Gurski <Gurski_christina@yahoo.de>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2014,2016
 # Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
-# Patrick Dolinic, 2021
+# pdolinic, 2021
 # Paul Puschmann, 2014
 # abf90805572190d649c59f7a021d76cb, 2014
 # simon11 <transifex@stieger.co>, 2014
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
-"Last-Translator: Patrick Dolinic, 2021\n"
+"Last-Translator: pdolinic, 2021\n"
 "Language-Team: German (http://app.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,9 +29,6 @@ msgstr "* - Diese Bootdisk-Typen wurden deaktiviert, Sie können sie unter Verwa
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "Eine Variante des Abbildes pro Host mit im im Medium eingebetteten Betriebssystem-Bootloader. Dies ist hilfreich, falls Chainloading auf einer bestimmten Hardware fehlschlägt, hat jedoch den Nachteil, dass das Abbild bei jeglicher Änderung von Betriebssystem, Bootloader oder PXELinux-Vorlagen neu generiert werden muss."
-
-msgid "Action with sub plans"
-msgstr "Aktion mit Unterplänen"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Alle Abbilder können entweder als ISOs oder als Festplattenabbilder verwendet werden und auch mit `dd` auf eine USB-Festplatte geschrieben."
@@ -165,12 +162,6 @@ msgstr "ISO-Hybrid-Konvertierung fehlgeschlagen: %s"
 msgid "ISOLINUX directory"
 msgstr "ISOLINUX-Verzeichnis"
 
-msgid "Import Puppet classes"
-msgstr "Puppet-Klassen importieren"
-
-msgid "Import facts"
-msgstr "Fakten importieren"
-
 msgid "Installation media caching"
 msgstr "Installationsmedien-Dateien Caching"
 
@@ -209,9 +200,6 @@ msgstr "Bitte die Installation des/der ISOLINUX/SYSLINUX Paket(e) sicherstellen.
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin für Foreman, welches iPXE-basierte Startmedien erstellt, um Hosts ohne die Notwendigkeit einer PXE-Infrastruktur bereitzustellen."
-
-msgid "Remote action:"
-msgstr "Entfernte Aktion:"
 
 msgid "SYSLINUX directory"
 msgstr "SYSLINUX-Verzeichnis"

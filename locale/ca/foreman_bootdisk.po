@@ -7,7 +7,7 @@
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017\n"
@@ -23,9 +23,6 @@ msgid "* - These bootdisk types were disabled, you can enable them in Administer
 msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
-
-msgid "Action with sub plans"
 msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
@@ -160,12 +157,6 @@ msgstr ""
 msgid "ISOLINUX directory"
 msgstr ""
 
-msgid "Import Puppet classes"
-msgstr ""
-
-msgid "Import facts"
-msgstr ""
-
 msgid "Installation media caching"
 msgstr ""
 
@@ -203,9 +194,6 @@ msgid "Please ensure the isolinux/syslinux package(s) are installed."
 msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
-msgstr ""
-
-msgid "Remote action:"
 msgstr ""
 
 msgid "SYSLINUX directory"

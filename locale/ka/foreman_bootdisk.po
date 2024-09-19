@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -22,9 +22,6 @@ msgstr "* - ეს ჩატვირთვადი დისკის ეს �
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "თითო ჰოსტის ასლის ვარიანტი, რომელიც შეიცავს დისკზე ჩაშენებულ OS-ის ჩამტვირთველს. ეს შეიძლება იყოს სასარგებლო, თუ საწყისი ჩატვირთვა ვერ ხერხდება გარკვეულ აპარატურაზე, მაგრამ აქვს უარყოფითი მხარე, რომ ასლი OS, bootloader ან PXELinux შაბლონების ნებისმიერი ცვლილებისას თავიდან უნდა იყოს რეგენერირებული."
-
-msgid "Action with sub plans"
-msgstr "ქმედება ქვე-გეგმებით"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "ყველა ასლი გამოყენებადია, როგორც ISO ან როგორც დისკის ასლი. მათ შორის ჩაწერილი USB დისკზე `dd`-ით."
@@ -158,12 +155,6 @@ msgstr "ISO-ის ჰიბრიდული გარდაქმნის �
 msgid "ISOLINUX directory"
 msgstr "ISOLINUX საქაღალდე"
 
-msgid "Import Puppet classes"
-msgstr "Puppet-ის კლასების შემოტანა"
-
-msgid "Import facts"
-msgstr "ფაქტების შემოტანა"
-
 msgid "Installation media caching"
 msgstr "დასაყენებელი დისკის კეში"
 
@@ -202,9 +193,6 @@ msgstr "დარწმუნდით, რომ isolnux/syslinux-ის პა
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Foreman-ის დამატება, რომელიც ქმნის iPXE-ზე დაფუძნებულ ჩატვირთვად დისკებს ჰოსტების სამუშაოდ PXE ინფრასტრუქტურის გარეშე მოსამზადებლად."
-
-msgid "Remote action:"
-msgstr "დაშორებული ქმედება:"
 
 msgid "SYSLINUX directory"
 msgstr "SYSLINUX საქაღალდე"

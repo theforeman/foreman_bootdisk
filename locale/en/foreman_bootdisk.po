@@ -1,14 +1,16 @@
-# foreman_bootdisk
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_bootdisk package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# This file is distributed under the same license as foreman_bootdisk.
-#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2014-02-13 12:09+0000\n"
-"Last-Translator: Dominic Cleal <dcleal@redhat.com>\n"
-"Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
+"PO-Revision-Date: 2024-09-19 13:05+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,9 +21,6 @@ msgid "* - These bootdisk types were disabled, you can enable them in Administer
 msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
-
-msgid "Action with sub plans"
 msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
@@ -156,12 +155,6 @@ msgstr ""
 msgid "ISOLINUX directory"
 msgstr ""
 
-msgid "Import Puppet classes"
-msgstr ""
-
-msgid "Import facts"
-msgstr ""
-
 msgid "Installation media caching"
 msgstr ""
 
@@ -199,9 +192,6 @@ msgid "Please ensure the isolinux/syslinux package(s) are installed."
 msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
-msgstr ""
-
-msgid "Remote action:"
 msgstr ""
 
 msgid "SYSLINUX directory"

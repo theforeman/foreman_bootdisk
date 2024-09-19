@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -22,9 +22,6 @@ msgid "* - These bootdisk types were disabled, you can enable them in Administer
 msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
-msgstr ""
-
-msgid "Action with sub plans"
 msgstr ""
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
@@ -159,12 +156,6 @@ msgstr ""
 msgid "ISOLINUX directory"
 msgstr ""
 
-msgid "Import Puppet classes"
-msgstr "Importa classi Puppet"
-
-msgid "Import facts"
-msgstr "Importa gli eventi"
-
 msgid "Installation media caching"
 msgstr ""
 
@@ -203,9 +194,6 @@ msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin per Foreman in grado di creare i dischi d'avvio basati su iPXE per il provisioning degli host, senza utilizzare infrastrutture PXE."
-
-msgid "Remote action:"
-msgstr "Azione remota:"
 
 msgid "SYSLINUX directory"
 msgstr ""

@@ -6,13 +6,15 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2015
 # Claer <transiblu@claer.hammock.fr>, 2014-2016
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2015
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
-"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2015\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarde"
+"n.nl>, 2024\n"
 "Language-Team: French (http://app.transifex.com/foreman/foreman/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,9 +28,6 @@ msgstr "* - Ces types de disques de démarrage ont été désactivés, vous pouv
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "Une variante des images par hôte qui contient le chargeur de démarrage de l'OS dans le disque. Cela peut être utile si le chainage échoue sur certains matériels, mais l'inconvénient est que l'image doit être régénérée à chaque changement du système,du chargeur de démarrage ou des modèles."
-
-msgid "Action with sub plans"
-msgstr "Action avec sous-plans"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "Toutes les images sont utilisables soit comme ISO soit comme images disque, y compris pour écriture sur disque USB avec 'dd'."
@@ -162,12 +161,6 @@ msgstr "La conversion de l'image ISO hybride a échoué: %s"
 msgid "ISOLINUX directory"
 msgstr "Répertoire ISOLINUX"
 
-msgid "Import Puppet classes"
-msgstr "Importer des classes Puppet"
-
-msgid "Import facts"
-msgstr "Importer des faits"
-
 msgid "Installation media caching"
 msgstr "Mise en cache des médias d'installation"
 
@@ -206,9 +199,6 @@ msgstr "Veillez à ce que le ou les paquetages isolinux/syslinux soient install�
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Plugin pour Foreman qui crée le démarrage des disques iPXE-bases pour provisionner les hôtes sans l'aide de l'infrastructure PXE."
-
-msgid "Remote action:"
-msgstr "Action distante :"
 
 msgid "SYSLINUX directory"
 msgstr "Répertoire SYSLINUX"
@@ -256,7 +246,7 @@ msgid "Unable to generate disk %{kind} template: %{error}"
 msgstr "Impossible de générer le modèle %{kind} de disque : %{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr "Impossible de générer le modèle de disque, le modèle %%{kind} est introuvable."
+msgstr "Impossible de générer le modèle de disque, le modèle %{kind} est introuvable."
 
 msgid "Unable to mcopy %{file}"
 msgstr "Impossible de mcopier %{file}"
@@ -271,7 +261,7 @@ msgid "iPXE directory"
 msgstr "Répertoire iPXE"
 
 msgid "iPXE template to use for generic EFI host boot disks"
-msgstr ""
+msgstr "Modèle iPXE à utiliser pour les disques d'amorçage génériques de l'hôte EFI"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "Modèle iPXE à appliquer pour les disques de boot génériques"

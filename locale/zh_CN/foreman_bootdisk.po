@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -22,9 +22,6 @@ msgstr "* - 这些 bootdisk 类型已被禁用，您可以在 Administer - Setti
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "单个主机镜像的变体，其磁盘内包含 OS 引导装载程序。当某些硬件上的连锁装载失败之时，这可能有用，但是也存在缺点，即 OS、引导状态程序或 PXELinux 模板发生任何变化时都必须重新生成该镜像。"
-
-msgid "Action with sub plans"
-msgstr "有子计划的操作"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "所有镜像都可用作 ISO 或磁盘镜像，包括使用 `dd` 写入 USB 磁盘。"
@@ -158,12 +155,6 @@ msgstr "ISO 混合转换失败：%s"
 msgid "ISOLINUX directory"
 msgstr "ISOLINUX 目录"
 
-msgid "Import Puppet classes"
-msgstr "导入 Puppet 类"
-
-msgid "Import facts"
-msgstr "导入事实"
-
 msgid "Installation media caching"
 msgstr "安装介质缓存"
 
@@ -202,9 +193,6 @@ msgstr "请确保已安装了 isolinux/syslinux 软件包。"
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "Foreman 插件可创建基于 iPXE 的启动磁盘来配置主机，而无需 PXE 基础结构。"
-
-msgid "Remote action:"
-msgstr "远程操作："
 
 msgid "SYSLINUX directory"
 msgstr "SYSLINUX 目录"
@@ -267,7 +255,7 @@ msgid "iPXE directory"
 msgstr "iPXE 目录"
 
 msgid "iPXE template to use for generic EFI host boot disks"
-msgstr ""
+msgstr "通用 EFI 主机启动磁盘使用的 iPXE 模板"
 
 msgid "iPXE template to use for generic host boot disks"
 msgstr "通用主机引导磁盘使用的 iPXE 模板"

@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 21.0.4\n"
+"Project-Id-Version: foreman_bootdisk 22.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -22,9 +22,6 @@ msgstr ""
 
 msgid "A variant of the per-host image which contains the OS bootloader embedded inside the disk.  This may be useful if chainloading fails on certain hardware, but has the downside that the image must be regenerated for any change in the OS, bootloader or PXELinux templates."
 msgstr "個別主機映像檔的變體，磁碟中嵌入了 OS 的開機載入程式。這對於在特定硬體上的 chainloading 失敗時特別有幫助，不過缺點就是若要對 OS、開機載入程式或 PXELinux 範本進行任何更改，映像檔就必須重新產生。"
-
-msgid "Action with sub plans"
-msgstr "有子計畫的動作"
 
 msgid "All images are usable as either ISOs or as disk images, including being written to a USB disk with `dd`."
 msgstr "所有映像檔皆能作為 ISO 或是磁碟映像檔使用，包括以 `dd` 寫入一個 USB 磁碟中。"
@@ -158,12 +155,6 @@ msgstr ""
 msgid "ISOLINUX directory"
 msgstr ""
 
-msgid "Import Puppet classes"
-msgstr "匯入 Puppet 類別"
-
-msgid "Import facts"
-msgstr "匯入詳情"
-
 msgid "Installation media caching"
 msgstr ""
 
@@ -202,9 +193,6 @@ msgstr ""
 
 msgid "Plugin for Foreman that creates iPXE-based boot disks to provision hosts without the need for PXE infrastructure."
 msgstr "能建立基於 iPXE 的開機磁碟的 Foreman 外掛程式，以在不需要 PXE 設備的情況下佈建主機。"
-
-msgid "Remote action:"
-msgstr "遠端動作："
 
 msgid "SYSLINUX directory"
 msgstr ""
