@@ -40,9 +40,5 @@ module ForemanBootdisk
     def bootdisk_raise(*args)
       raise ::Foreman::Exception.new(*args)
     end
-
-    def template_name
-      "Foreman Bootdisk"
-    end
   end
 end
