@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 22.0.0\n"
+"Project-Id-Version: foreman_bootdisk 22.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -72,28 +72,28 @@ msgid "Download subnet generic image"
 msgstr "下载子网通用镜像"
 
 msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
-msgstr "确保 %%{file} 是可读的（或更新 \"Grub2 directory\" 设置）"
+msgstr "确保 %{file} 是可读的（或更新 \"Grub2 directory\" 设置）"
 
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
-msgstr "将 ISO 镜像附加到实例 %%{name} 的 CDROM 驱动失败：%%{message}"
+msgstr "将 ISO 镜像附加到实例 %{name} 的 CDROM 驱动失败：%{message}"
 
 msgid "Failed to create a directory within the ESP image"
 msgstr "无法在 ESP 镜像中创建目录"
 
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
-msgstr "未能成功将 ISO 镜像从实例 %%{name} 的 CDROM 驱动中断开：%%{message}"
+msgstr "未能成功将 ISO 镜像从实例 %{name} 的 CDROM 驱动中断开：%{message}"
 
 msgid "Failed to format the ESP image via mkfs.msdos"
 msgstr "无法通过 mkfs.msdos 格式化 ESP 镜像"
 
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
-msgstr "为实例 %%{name} 生成 ISO 镜像：%%{message}"
+msgstr "为实例 %{name} 生成 ISO 镜像：%{message}"
 
 msgid "Failed to render boot disk template"
 msgstr "未能提供引导磁盘模板"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
-msgstr "为实例 %%{name} 上传 ISO 镜像失败：%%{message}"
+msgstr "为实例 %{name} 上传 ISO 镜像失败：%{message}"
 
 msgid "Full host '%s' image"
 msgstr "完整主机 '%s' 镜像"
@@ -237,13 +237,13 @@ msgid "Unable to find template specified by %s setting"
 msgstr "找不到由 %s 设置指定的模板"
 
 msgid "Unable to generate disk %{kind} template: %{error}"
-msgstr "无法生成磁盘 %%{kind} 模板 : %%{error}"
+msgstr "无法生成磁盘 %{kind} 模板 : %{error}"
 
 msgid "Unable to generate disk template, %{kind} template not found."
-msgstr "无法生成磁盘模板，未找到 %%{kind} 模板。"
+msgstr "无法生成磁盘模板，未找到 %{kind} 模板。"
 
 msgid "Unable to mcopy %{file}"
-msgstr "无法 mcopy %%{file}"
+msgstr "无法 mcopy %{file}"
 
 msgid "Upload ISO image to datastore for %s"
 msgstr "为 %s 将 ISO 镜像上传至数据存储"

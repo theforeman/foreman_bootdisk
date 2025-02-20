@@ -3,10 +3,10 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 22.0.0",
+        "Project-Id-Version": "foreman_bootdisk 22.0.2",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
-        "Last-Translator": "Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024",
+        "Last-Translator": "Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024-2025",
         "Language-Team": "French (http://app.transifex.com/foreman/foreman/language/fr/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",

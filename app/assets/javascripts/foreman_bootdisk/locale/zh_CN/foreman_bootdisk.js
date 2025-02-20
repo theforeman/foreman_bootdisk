@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 22.0.0",
+        "Project-Id-Version": "foreman_bootdisk 22.0.2",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
@@ -72,28 +72,28 @@
         "下载子网通用镜像"
       ],
       "Ensure %{file} is readable (or update \\\"Grub2 directory\\\" setting)": [
-        "确保 %%{file} 是可读的（或更新 \\\"Grub2 directory\\\" 设置）"
+        "确保 %{file} 是可读的（或更新 \\\"Grub2 directory\\\" 设置）"
       ],
       "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}": [
-        "将 ISO 镜像附加到实例 %%{name} 的 CDROM 驱动失败：%%{message}"
+        "将 ISO 镜像附加到实例 %{name} 的 CDROM 驱动失败：%{message}"
       ],
       "Failed to create a directory within the ESP image": [
         "无法在 ESP 镜像中创建目录"
       ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
-        "未能成功将 ISO 镜像从实例 %%{name} 的 CDROM 驱动中断开：%%{message}"
+        "未能成功将 ISO 镜像从实例 %{name} 的 CDROM 驱动中断开：%{message}"
       ],
       "Failed to format the ESP image via mkfs.msdos": [
         "无法通过 mkfs.msdos 格式化 ESP 镜像"
       ],
       "Failed to generate ISO image for instance %{name}: %{message}": [
-        "为实例 %%{name} 生成 ISO 镜像：%%{message}"
+        "为实例 %{name} 生成 ISO 镜像：%{message}"
       ],
       "Failed to render boot disk template": [
         "未能提供引导磁盘模板"
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
-        "为实例 %%{name} 上传 ISO 镜像失败：%%{message}"
+        "为实例 %{name} 上传 ISO 镜像失败：%{message}"
       ],
       "Full host '%s' image": [
         "完整主机 '%s' 镜像"
@@ -237,13 +237,13 @@
         "找不到由 %s 设置指定的模板"
       ],
       "Unable to generate disk %{kind} template: %{error}": [
-        "无法生成磁盘 %%{kind} 模板 : %%{error}"
+        "无法生成磁盘 %{kind} 模板 : %{error}"
       ],
       "Unable to generate disk template, %{kind} template not found.": [
-        "无法生成磁盘模板，未找到 %%{kind} 模板。"
+        "无法生成磁盘模板，未找到 %{kind} 模板。"
       ],
       "Unable to mcopy %{file}": [
-        "无法 mcopy %%{file}"
+        "无法 mcopy %{file}"
       ],
       "Upload ISO image to datastore for %s": [
         "为 %s 将 ISO 镜像上传至数据存储"
