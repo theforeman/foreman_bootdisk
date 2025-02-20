@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 22:35+0100\n"
-"PO-Revision-Date: 2023-11-28 22:35+0100\n"
+"POT-Creation-Date: 2025-02-20 10:46+0100\n"
+"PO-Revision-Date: 2025-02-20 10:46+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../app/helpers/bootdisk_links_helper.rb:40
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:20
-#: ../app/models/setting/bootdisk.rb:6 ../lib/foreman_bootdisk/engine.rb:67
+#: ../app/models/setting/bootdisk.rb:6 ../lib/foreman_bootdisk/engine.rb:59
 #: ../webpack/src/extensions/host/HostBootdiskButtons.js:86
 msgid "Boot disk"
 msgstr ""
@@ -299,108 +299,92 @@ msgid ""
 "ttings."
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:58
+#: ../lib/foreman_bootdisk/engine.rb:49
 msgid "Boot disk based"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:79
+#: ../lib/foreman_bootdisk/engine.rb:71
 msgid "iPXE directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:80
+#: ../lib/foreman_bootdisk/engine.rb:72
 msgid "Path to directory containing iPXE images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:85
+#: ../lib/foreman_bootdisk/engine.rb:77
 msgid "ISOLINUX directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:86
+#: ../lib/foreman_bootdisk/engine.rb:78
 msgid "Path to directory containing isolinux images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:91
+#: ../lib/foreman_bootdisk/engine.rb:83
 msgid "SYSLINUX directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:92
+#: ../lib/foreman_bootdisk/engine.rb:84
 msgid "Path to directory containing syslinux images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:97
+#: ../lib/foreman_bootdisk/engine.rb:89
 msgid "Grub2 directory"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:98
+#: ../lib/foreman_bootdisk/engine.rb:90
 msgid "Path to directory containing grubx64.efi and shimx64.efi"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:104
+#: ../lib/foreman_bootdisk/engine.rb:96
 msgid "Host image template"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:105
+#: ../lib/foreman_bootdisk/engine.rb:97
 msgid "iPXE template to use for host-specific boot disks"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:111
+#: ../lib/foreman_bootdisk/engine.rb:103
 msgid "Generic image template"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:112
+#: ../lib/foreman_bootdisk/engine.rb:104
 msgid "iPXE template to use for generic host boot disks"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:118
+#: ../lib/foreman_bootdisk/engine.rb:110
 msgid "Generic Grub2 EFI image template"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:119
+#: ../lib/foreman_bootdisk/engine.rb:111
 msgid "iPXE template to use for generic EFI host boot disks"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:124
+#: ../lib/foreman_bootdisk/engine.rb:116
 msgid "ISO generation command"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:125
+#: ../lib/foreman_bootdisk/engine.rb:117
 msgid "Command to generate ISO image, use genisoimage or mkisofs"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:130
+#: ../lib/foreman_bootdisk/engine.rb:122
 msgid "Installation media caching"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:131
+#: ../lib/foreman_bootdisk/engine.rb:123
 msgid "Installation media files will be cached for full host images"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:136
+#: ../lib/foreman_bootdisk/engine.rb:128
 msgid "Allowed bootdisk types"
 msgstr ""
 
-#: ../lib/foreman_bootdisk/engine.rb:137
+#: ../lib/foreman_bootdisk/engine.rb:129
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr ""
 
 #: ../webpack/src/extensions/host/HostBootdiskButtons.js:80
 msgid "Not available"
-msgstr ""
-
-#: action_names.rb:2
-msgid "Remote action:"
-msgstr ""
-
-#: action_names.rb:3
-msgid "Import Puppet classes"
-msgstr ""
-
-#: action_names.rb:4
-msgid "Import facts"
-msgstr ""
-
-#: action_names.rb:5
-msgid "Action with sub plans"
 msgstr ""
 
 #: gemspec.rb:4
