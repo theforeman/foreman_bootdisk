@@ -26,7 +26,7 @@ module ForemanBootdisk
     initializer 'foreman_bootdisk.register_plugin', before: :finisher_hook do |app|
       app.reloader.to_prepare do
         Foreman::Plugin.register :foreman_bootdisk do
-          requires_foreman '>= 3.13'
+          requires_foreman '>= 3.15'
           # Add Global files for extending foreman-core components and routes
           register_global_js_file 'global'
           register_gettext
