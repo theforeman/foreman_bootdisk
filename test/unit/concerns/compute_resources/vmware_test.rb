@@ -62,6 +62,7 @@ module ForemanBootdisk
         attrs_out = {
           cpus: '1',
           provision_method: 'bootdisk',
+          firmware: 'bios',
           cdroms: [mock_cdrom],
           boot_order: %w[cdrom disk],
           boot_retry: 10000
