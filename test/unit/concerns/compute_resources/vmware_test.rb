@@ -35,7 +35,7 @@ module ForemanBootdisk
         mock_client.expects(:servers).returns(mock_servers)
         mock_servers.expects(:new).with do |opts|
           assert_equal opts[:boot_order], %w[cdrom disk]
-          assert_equal opts[:boot_retry], 10
+          assert_equal opts[:boot_retry], 10000
           assert_includes opts[:cdroms], mock_cdrom
         end
         @cr.expects(:new_cdrom).returns(mock_cdrom)
@@ -64,7 +64,7 @@ module ForemanBootdisk
           provision_method: 'bootdisk',
           cdroms: [mock_cdrom],
           boot_order: %w[cdrom disk],
-          boot_retry: 10
+          boot_retry: 10000
         }
         assert_equal attrs_out, @cr.parse_args(attrs_in)
       end
