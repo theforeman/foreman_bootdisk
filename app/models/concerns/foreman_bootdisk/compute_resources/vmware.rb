@@ -12,7 +12,7 @@ module ForemanBootdisk
         if args[:provision_method] == 'bootdisk'
           args[:cdroms] = [new_cdrom]
           args[:boot_order] = %w[cdrom disk]
-          args[:boot_retry] = 10
+          args[:boot_retry] = 10 * 1000 # boot_retry is in ms. Shortest is 10s
         end
         args
       end
