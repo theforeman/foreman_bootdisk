@@ -133,6 +133,7 @@ module ForemanBootdisk
           File.join(wd, 'build', 'grub-hdd.cfg').to_s => 'GRUB.CFG',
           File.join(Setting[:bootdisk_grub2_dir], 'grubx64.efi').to_s => 'GRUBX64.EFI',
           File.join(Setting[:bootdisk_grub2_dir], 'shimx64.efi').to_s => 'BOOTX64.EFI',
+          File.join(Setting[:bootdisk_grub2_dir], 'mmx64.efi').to_s => 'MMX64.EFI',
         }.each do |src, dest|
           raise(Foreman::Exception.new(N_('Ensure %{file} is readable (or update "Grub2 directory" setting)'), file: src)) unless File.exist?(src)
           raise(Foreman::Exception.new(N_('Unable to mcopy %{file}'), file: src)) unless system("mcopy -m -i #{efibootimg} '#{src}' '#{"::/EFI/BOOT/#{dest}"}'")
