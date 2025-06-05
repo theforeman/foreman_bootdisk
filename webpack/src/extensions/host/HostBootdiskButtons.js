@@ -60,6 +60,7 @@ const HostBootdiskButtons = () => {
         isDisabled={action.disabled}
         description={action.description}
         icon={iconComponent(action.icon)}
+        ouiaId={`bootdisk button ${i}`}
       >
         {action.title}
       </DropdownItem>
@@ -68,6 +69,7 @@ const HostBootdiskButtons = () => {
     content = (
       <DropdownItem
         key="bootdisk-unavailable"
+        ouiaId="bootdisk button unavailable"
         component="button"
         href="#"
         tooltip={sprintf(
