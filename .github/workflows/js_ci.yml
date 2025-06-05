@@ -1,0 +1,14 @@
+name: JS
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test_js:
+    name: JavaScript
+    uses: theforeman/actions/.github/workflows/foreman_plugin_js.yml@v0
+    with:
+      plugin: foreman_bootdisk
