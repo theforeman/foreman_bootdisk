@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { DropdownItem, DropdownGroup } from '@patternfly/react-core/deprecated';
+import {
+  DropdownItem,
+  DropdownGroup,
+  DropdownList,
+  Divider,
+} from '@patternfly/react-core';
 import {
   BanIcon,
   BuildIcon,
@@ -22,6 +27,7 @@ import {
   selectIsLoading,
   selectBootdiskOptions,
 } from './HostBootdiskButtonsSelectors';
+import './HostBootdiskButtons.scss';
 
 const HostBootdiskButtons = () => {
   const dispatch = useDispatch();
@@ -56,7 +62,7 @@ const HostBootdiskButtons = () => {
     content = options.actions.map((action, i) => (
       <DropdownItem
         key={`bootdisk-${i}`}
-        href={foremanUrl(action.link)}
+        to={foremanUrl(action.link)}
         isDisabled={action.disabled}
         description={action.description}
         icon={iconComponent(action.icon)}
@@ -71,12 +77,15 @@ const HostBootdiskButtons = () => {
         key="bootdisk-unavailable"
         ouiaId="bootdisk button unavailable"
         component="button"
-        href="#"
-        tooltip={sprintf(
-          __('Boot disk download not available for %s architecture'),
-          options.architectureName
-        )}
-        tooltipProps={{ entryDelay: 0, exitDelay: 0 }}
+        to="#"
+        tooltipProps={{
+          content: sprintf(
+            __('Boot disk download not available for %s architecture'),
+            options.architectureName
+          ),
+          entryDelay: 0,
+          exitDelay: 0,
+        }}
         icon={<BanIcon />}
       >
         {__('Not available')}
@@ -85,9 +94,19 @@ const HostBootdiskButtons = () => {
   }
 
   return (
-    <DropdownGroup label={__('Boot disk')} key="bootdisk-group">
-      {isLoading ? <Loading showText={false} /> : content}
-    </DropdownGroup>
+    <>
+      <Divider component="li" />
+      <DropdownGroup
+        className="bootdisk-group-group"
+        label={__('Boot disk')}
+        key="bootdisk-group"
+      >
+        <DropdownList>
+          {isLoading ? <Loading showText={false} /> : content}
+        </DropdownList>
+      </DropdownGroup>
+      <Divider key="separator" />
+    </>
   );
 };
 
