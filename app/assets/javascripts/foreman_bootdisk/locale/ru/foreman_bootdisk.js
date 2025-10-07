@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 22.0.2",
+        "Project-Id-Version": "foreman_bootdisk 23.1.2",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "Vladimir Pavlov <v.pavlov@i-teco.ru>, 2015",

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 10:46+0100\n"
-"PO-Revision-Date: 2025-02-20 10:46+0100\n"
+"POT-Creation-Date: 2025-10-07 14:17+0200\n"
+"PO-Revision-Date: 2025-10-07 14:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -89,12 +89,12 @@ msgstr ""
 #: ../app/helpers/bootdisk_links_helper.rb:40
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:20
 #: ../app/models/setting/bootdisk.rb:6 ../lib/foreman_bootdisk/engine.rb:59
-#: ../webpack/src/extensions/host/HostBootdiskButtons.js:86
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:101
 msgid "Boot disk"
 msgstr ""
 
 #: ../app/helpers/concerns/foreman_bootdisk/hosts_helper_ext.rb:21
-#: ../webpack/src/extensions/host/HostBootdiskButtons.js:74
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:83
 msgid "Boot disk download not available for %s architecture"
 msgstr ""
 
@@ -182,19 +182,19 @@ msgstr ""
 msgid "Failed to create a directory within the ESP image"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:137
+#: ../app/services/foreman_bootdisk/iso_generator.rb:138
 msgid "Ensure %{file} is readable (or update \"Grub2 directory\" setting)"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:138
+#: ../app/services/foreman_bootdisk/iso_generator.rb:139
 msgid "Unable to mcopy %{file}"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:160
+#: ../app/services/foreman_bootdisk/iso_generator.rb:161
 msgid "ISO build failed"
 msgstr ""
 
-#: ../app/services/foreman_bootdisk/iso_generator.rb:163
+#: ../app/services/foreman_bootdisk/iso_generator.rb:164
 msgid "ISO hybrid conversion failed: %s"
 msgstr ""
 
@@ -383,7 +383,7 @@ msgstr ""
 msgid "List of allowed bootdisk types, remove type to disable it"
 msgstr ""
 
-#: ../webpack/src/extensions/host/HostBootdiskButtons.js:80
+#: ../webpack/src/extensions/host/HostBootdiskButtons.js:91
 msgid "Not available"
 msgstr ""
 

@@ -9,7 +9,7 @@
 # Sergio Ocón-Cárdenas, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 22.0.2\n"
+"Project-Id-Version: foreman_bootdisk 23.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarde"
