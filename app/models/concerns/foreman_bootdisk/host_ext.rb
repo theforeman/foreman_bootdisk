@@ -31,6 +31,10 @@ module ForemanBootdisk
       architecture.blank? || intel_arch?
     end
 
+    def bootdisk_rebuild_requires_poweroff
+      true
+    end
+
     def intel_arch?
       /i.86|x86[_-]64/ =~ architecture.name
     end
