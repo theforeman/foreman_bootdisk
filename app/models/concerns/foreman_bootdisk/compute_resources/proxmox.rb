@@ -27,7 +27,6 @@ module ForemanBootdisk
         disks = server.disks.map { |disk| disk.split(":")[0] }.join(";")
         server.update({ ide2: "#{volume.volid},media=cdrom" })
         server.update({ boot: "order=ide2;#{disks}" })
-        server.reboot
       end
 
       def iso_detach(vm_uuid)
