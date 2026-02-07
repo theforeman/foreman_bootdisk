@@ -20,6 +20,15 @@ module ForemanBootdisk
         storage.volumes.any? { |v| v.volid.include? File.basename(iso) }
       end
 
+      def iso_delete(iso, vm_uuid)
+        server = find_vm_by_uuid(vm_uuid)
+
+        # delete the iso file from proxmox server
+        storage = storages(server.node_id, 'iso')[0]
+        volume = storage.volumes.detect { |v| v.volid.include? File.basename(iso) }
+        volume&.destroy
+      end
+
       def iso_attach(iso, vm_uuid)
         server = find_vm_by_uuid(vm_uuid)
         storage = storages(server.node_id, 'iso')[0]
@@ -31,18 +40,10 @@ module ForemanBootdisk
 
       def iso_detach(vm_uuid)
         server = find_vm_by_uuid(vm_uuid)
-
-        # get volid to delete iso after detaching from vm
-        volid = server.volumes.get(CDROM_VOLUME).volid
         server.update({ ide2: "none,media=cdrom" })
 
         # cdrom will be ejected on next power off
         server.detach(CDROM_VOLUME)
-
-        # delete the iso file from proxmox server
-        storage = storages(server.node_id, 'iso')[0]
-        volume = storage.volumes.detect { |v| v.volid.include? volid }
-        volume.destroy
       end
     end
   end
