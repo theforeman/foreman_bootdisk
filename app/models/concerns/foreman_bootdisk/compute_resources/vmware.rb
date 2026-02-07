@@ -31,6 +31,16 @@ module ForemanBootdisk
         client.upload_iso options
       end
 
+      def iso_delete(iso, vm_uuid)
+        options = {
+          'local_path' => iso,
+          'datacenter' => dc.name,
+          'datastore' => bootdisk_datastore(vm_uuid),
+          'upload_directory' => 'foreman_isos'
+        }
+        client.destroy_iso options
+      end
+
       def iso_attach(iso, vm_uuid)
         controller = controller_config(vm_uuid)
         options = {
