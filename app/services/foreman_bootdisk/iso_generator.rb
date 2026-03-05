@@ -205,7 +205,7 @@ module ForemanBootdisk
         file.binmode
 
         if use_cache && !(contents = Rails.cache.fetch(uri, raw: true)).nil?
-          ForemanBootdisk.logger.info("Retrieved #{uri} from local cache (use foreman-rake tmp:cache:clear to empty)")
+          ForemanBootdisk.logger.info("Retrieved #{uri} from local cache")
           file.write(contents)
         else
           ForemanBootdisk.logger.info("Fetching #{uri}")
