@@ -31,7 +31,7 @@ module ForemanBootdisk
                        action: [self, :setGenerateIsoImage])
           queue.create(name: _('Upload ISO image to datastore for %s') % self, priority: 6,
                        action: [self, :setIsoImage])
-          queue.create(name: _('Attach ISO image to CDROM drive for %s') % self, priority: 1001,
+          queue.create(name: _('Attach ISO image to CDROM drive for %s') % self, priority: 900,
                        action: [self, :setAttachIsoImage])
         # Detach ISO image when host sends 'built' HTTP POST request
         elsif old&.build? && !build?
