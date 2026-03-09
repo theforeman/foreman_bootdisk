@@ -3,10 +3,10 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 23.1.2",
+        "Project-Id-Version": "foreman_bootdisk 23.2.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
-        "Last-Translator": "pdolinic, 2021",
+        "Last-Translator": "Bernhard Suttner <bernhard.suttner@atix.de>, 2026",
         "Language-Team": "German (http://app.transifex.com/foreman/foreman/language/de/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -48,7 +48,7 @@
         "Startmedium Download nicht verfügbar für Architektur %s"
       ],
       "Boot disk help": [
-        ""
+        "Hilfe zur Bootdiskette"
       ],
       "Boot disks": [
         "Startmedien"

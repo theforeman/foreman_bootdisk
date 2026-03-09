@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the foreman_bootdisk package.
 #
 # Translators:
+# Bernhard Suttner <bernhard.suttner@atix.de>, 2026
 # Christina Gurski <Gurski_christina@yahoo.de>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2014,2016
 # Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
@@ -13,10 +14,10 @@
 # simon11 <transifex@stieger.co>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.1.2\n"
+"Project-Id-Version: foreman_bootdisk 23.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
-"Last-Translator: pdolinic, 2021\n"
+"Last-Translator: Bernhard Suttner <bernhard.suttner@atix.de>, 2026\n"
 "Language-Team: German (http://app.transifex.com/foreman/foreman/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +56,7 @@ msgid "Boot disk download not available for %s architecture"
 msgstr "Startmedium Download nicht verfügbar für Architektur %s"
 
 msgid "Boot disk help"
-msgstr ""
+msgstr "Hilfe zur Bootdiskette"
 
 msgid "Boot disks"
 msgstr "Startmedien"
