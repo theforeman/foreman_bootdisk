@@ -37,6 +37,8 @@ module ForemanBootdisk
         elsif old&.build? && !build?
           queue.create(name: _('Detach ISO image from CDROM drive for %s') % self, priority: 52,
                        action: [self, :setDetachIsoImage])
+          queue.create(name: _('Delete ISO image for %s') % self, priority: 53,
+                       action: [self, :setDeleteIsoImage])
         end
         true
       end
@@ -57,6 +59,10 @@ module ForemanBootdisk
 
       def bootdisk_upload_iso
         compute_resource.iso_upload(bootdisk_isofile, uuid)
+      end
+
+      def bootdisk_delete_iso
+        compute_resource.iso_delete(bootdisk_isofile, uuid)
       end
 
       def bootdisk_attach_iso
@@ -101,6 +107,16 @@ module ForemanBootdisk
       end
 
       def delDetachIsoImage; end
+
+      def setDeleteIsoImage
+        logger.info format('Delete ISO image for %s', name)
+        bootdisk_delete_iso
+      rescue StandardError => e
+        failure format(_('Failed to delete ISO image of instance %{name}: %{message}'), name: name, message: e.message), e
+      end
+
+      def delDeleteIsoImage; end
+
     end
   end
 end
