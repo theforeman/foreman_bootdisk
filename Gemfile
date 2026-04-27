@@ -2,6 +2,6 @@
 
 source 'http://rubygems.org'
 
-gem 'theforeman-rubocop', '~> 0.1.0.pre', groups: %i[development rubocop]
-
 gemspec
+
+gem 'theforeman-rubocop', '~> 0.1.2', groups: %i[development rubocop]
