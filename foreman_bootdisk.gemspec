@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
               ['LICENSE', 'README.md'] +
               ['package.json']
 
-  s.required_ruby_version = '>= 2.7', '< 4'
+  s.required_ruby_version = '>= 3.0', '< 4'
 end
