@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   rubocop:
-    uses: theforeman/actions/.github/workflows/rubocop.yml@v0
+    uses: theforeman/actions/.github/workflows/rubocop.yml@v1
     with:
       command: bundle exec rubocop --parallel --format github
 
