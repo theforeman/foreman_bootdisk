@@ -4,9 +4,11 @@ import { addGlobalFill } from 'foremanReact/components/common/Fill/GlobalFill';
 
 import HostBootdiskButtons from './src/extensions/host/HostBootdiskButtons';
 
+const HOST_BOOTDISK_BUTTONS_WEIGHT = 300;
+
 addGlobalFill(
   'host-details-kebab',
   'host-bootdisk-buttons',
   <HostBootdiskButtons key="host-bootdisk-buttons" />,
-  300
+  HOST_BOOTDISK_BUTTONS_WEIGHT
 );
