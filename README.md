@@ -27,7 +27,7 @@ Debian users can install the "ruby-foreman-bootdisk" package.
 
 * iPXE images are required
 * syslinux is required
-* genisoimage/mkisofs and isohybrid are required
+* xorrisofs (or genisoimage/mkisofs) and isohybrid are required
 
 gPXE images are unsupported due to lack of initrd support.
 
@@ -328,7 +328,10 @@ the Foreman UI.
 * _iPXE directory_ (`bootdisk_ipxe_dir`) points to the directory containing
   ipxe.lkrn
 * _ISO generation command_ (`bootdisk_mkiso_command`) is the name of
-  genisoimage/mkisofs on your OS
+  xorrisofs, genisoimage, or mkisofs on your OS. Defaults to `xorrisofs`
+  since EL10 dropped genisoimage/cdrkit; EL9 and earlier can still be
+  pointed at `genisoimage` or `mkisofs` if preferred, all three names
+  resolve to the same underlying tool where `xorriso` is installed
 * _SYSLINUX directory_ (`bootdisk_syslinux_dir`) points to the directory
   containing syslinux images
 

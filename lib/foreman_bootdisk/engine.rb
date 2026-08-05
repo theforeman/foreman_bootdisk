@@ -112,9 +112,9 @@ module ForemanBootdisk
 
               setting "bootdisk_mkiso_command",
                 type: :string,
-                default: "genisoimage",
+                default: "xorrisofs",
                 full_name: N_("ISO generation command"),
-                description: N_("Command to generate ISO image, use genisoimage or mkisofs")
+                description: N_("Command to generate ISO image, use xorrisofs, genisoimage or mkisofs")
 
               setting "bootdisk_cache_media",
                 type: :boolean,

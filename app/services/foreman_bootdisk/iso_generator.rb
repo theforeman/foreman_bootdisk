@@ -7,7 +7,7 @@ require 'uri'
 
 # Generates an iPXE ISO hybrid image
 #
-# requires syslinux, ipxe/ipxe-bootimgs, genisoimage, isohybrid
+# requires syslinux, ipxe/ipxe-bootimgs, xorrisofs (or genisoimage/mkisofs), isohybrid
 module ForemanBootdisk
   class ISOGenerator
     extend Foreman::HttpProxy

@@ -52,7 +52,7 @@ module ForemanBootdisk
     describe '#generate' do
       test 'generates an iso image' do
         ForemanBootdisk::ISOGenerator.expects(:system).with(
-          regexp_matches(/genisoimage -o .*output.iso -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table .*build/)
+          regexp_matches(/xorrisofs -o .*output.iso -iso-level 2 -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table .*build/)
         ).returns(true)
         ForemanBootdisk::ISOGenerator.expects(:system).with('isohybrid', anything).returns(true)
         ForemanBootdisk::ISOGenerator.generate do |iso|
