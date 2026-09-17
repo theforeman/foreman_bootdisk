@@ -13,13 +13,32 @@ module ForemanBootdisk
                                        provision_method: 'bootdisk')
     end
 
+    test 'returns selected iso upload storage from compute attributes' do
+      @proxmox_host.compute_attributes = { 'iso_upload_storage' => 'iso-storage' }
+
+      assert_equal 'iso-storage', @proxmox_host.send(:bootdisk_iso_upload_storage)
+    end
+
+    test 'iso upload storage is unavailable while deleting' do
+      @proxmox_host.compute_attributes = { 'iso_upload_storage' => 'iso-storage' }
+      @proxmox_host.save!
+
+      host = Host::Managed.find(@proxmox_host.id)
+      host.compute_resource.expects(:iso_delete).with(anything, anything)
+
+      assert_nil host.send(:bootdisk_iso_upload_storage)
+      host.send(:setDeleteIsoImage)
+    end
+
     test 'provisioning a host with provision method bootdisk in proxmox should upload iso' do
-      @proxmox_cr.expects(:iso_upload)
+      @proxmox_host.compute_attributes = { 'iso_upload_storage' => 'iso-storage' }
+      @proxmox_cr.expects(:iso_upload).with(anything, anything, storage_id: 'iso-storage')
       @proxmox_host.send(:setIsoImage)
     end
 
     test 'provisioning a host with provision method bootdisk in proxmox should attach iso' do
-      @proxmox_cr.expects(:iso_attach)
+      @proxmox_host.compute_attributes = { 'iso_upload_storage' => 'iso-storage' }
+      @proxmox_cr.expects(:iso_attach).with(anything, anything, storage_id: 'iso-storage')
       @proxmox_host.send(:setAttachIsoImage)
     end
 

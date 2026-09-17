@@ -21,7 +21,7 @@ module ForemanBootdisk
         find_vm_by_uuid(vm_uuid).volumes.first.datastore
       end
 
-      def iso_upload(iso, vm_uuid)
+      def iso_upload(iso, vm_uuid, **_options)
         options = {
           'local_path' => iso,
           'datacenter' => dc.name,
@@ -41,7 +41,7 @@ module ForemanBootdisk
         client.destroy_iso options
       end
 
-      def iso_attach(iso, vm_uuid)
+      def iso_attach(iso, vm_uuid, **_options)
         controller = controller_config(vm_uuid)
         options = {
           'instance_uuid' => vm_uuid,

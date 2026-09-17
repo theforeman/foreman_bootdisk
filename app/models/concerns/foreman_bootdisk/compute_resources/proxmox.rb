@@ -9,31 +9,34 @@ module ForemanBootdisk
         super + [:bootdisk]
       end
 
-      def iso_upload(iso, vm_uuid)
+      def iso_upload(iso, vm_uuid, storage_id: nil)
         server = find_vm_by_uuid(vm_uuid)
-        server.ssh_options = { password: fog_credentials[:proxmox_password] }
-        server.ssh_ip_address = proxmox_host
-        server.username = client.credentials[:current_user].split('@').first
-        server.scp_upload(iso, '/var/lib/vz/template/iso/')
-        server.reload
-        storage = storages(server.node_id, 'iso')[0]
-        storage.volumes.any? { |v| v.volid.include? File.basename(iso) }
+        upload_iso(server.node_id, storage_id, iso)
       end
 
       def iso_delete(iso, vm_uuid)
         server = find_vm_by_uuid(vm_uuid)
+        filename = File.basename(iso)
 
-        # delete the iso file from proxmox server
-        storage = storages(server.node_id, 'iso')[0]
-        volume = storage.volumes.detect { |v| v.volid.include? File.basename(iso) }
-        volume&.destroy
+        volumes = storages(server.node_id, 'iso').filter_map do |storage|
+          storage.volumes.find { |volume| File.basename(volume.volid) == filename }
+        end
+
+        if volumes.many?
+          raise ::Foreman::Exception,
+                format(_('Found multiple ISO images named %{iso}'), iso: filename)
+        end
+
+        volumes.first&.destroy
       end
 
-      def iso_attach(iso, vm_uuid)
+      def iso_attach(iso, vm_uuid, storage_id: nil)
         server = find_vm_by_uuid(vm_uuid)
-        storage = storages(server.node_id, 'iso')[0]
-        volume = storage.volumes.detect { |v| v.volid.include? File.basename(iso) }
-        disks = server.disks.map { |disk| disk.split(":")[0] }.join(";")
+        storage = storages(server.node_id, 'iso').find { |candidate| candidate.identity == storage_id }
+        volume = storage&.volumes&.detect { |v| v.volid.include? File.basename(iso) }
+        raise ::Foreman::Exception, format(_('Could not find ISO %{iso} on storage %{storage}'), iso: File.basename(iso), storage: storage_id) unless volume
+
+        disks = server.disks.map { |disk| disk.split(':')[0] }.join(';')
         server.update({ ide2: "#{volume.volid},media=cdrom" })
         server.update({ boot: "order=ide2;#{disks}" })
       end

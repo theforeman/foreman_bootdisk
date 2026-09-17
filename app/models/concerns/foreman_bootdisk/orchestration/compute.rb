@@ -58,7 +58,7 @@ module ForemanBootdisk
       end
 
       def bootdisk_upload_iso
-        compute_resource.iso_upload(bootdisk_isofile, uuid)
+        compute_resource.iso_upload(bootdisk_isofile, uuid, storage_id: bootdisk_iso_upload_storage)
       end
 
       def bootdisk_delete_iso
@@ -66,11 +66,15 @@ module ForemanBootdisk
       end
 
       def bootdisk_attach_iso
-        compute_resource.iso_attach(File.basename(bootdisk_isofile), uuid)
+        compute_resource.iso_attach(File.basename(bootdisk_isofile), uuid, storage_id: bootdisk_iso_upload_storage)
       end
 
       def bootdisk_detach_iso
         compute_resource.iso_detach(uuid)
+      end
+
+      def bootdisk_iso_upload_storage
+        compute_attributes&.with_indifferent_access&.dig(:iso_upload_storage)
       end
 
       def setGenerateIsoImage
