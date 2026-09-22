@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 23.2.0",
+        "Project-Id-Version": "foreman_bootdisk 24.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
@@ -53,11 +53,17 @@
       "Boot disks": [
         "引导盘"
       ],
-      "Command to generate ISO image, use genisoimage or mkisofs": [
-        "创建 ISO 镜像的命令，使用 genisoimage 或 mkisofs"
+      "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
+        ""
+      ],
+      "Could not find ISO %{iso} on storage %{storage}": [
+        ""
       ],
       "Creating new image failed, install truncate utility": [
         "创建新镜像失败，安装截断实用程序"
+      ],
+      "Delete ISO image for %s": [
+        ""
       ],
       "Detach ISO image from CDROM drive for %s": [
         "为 %s 从 CDROM 驱动取消附加 ISO 镜像"
@@ -80,6 +86,9 @@
       "Failed to create a directory within the ESP image": [
         "无法在 ESP 镜像中创建目录"
       ],
+      "Failed to delete ISO image of instance %{name}: %{message}": [
+        ""
+      ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "未能成功将 ISO 镜像从实例 %{name} 的 CDROM 驱动中断开：%{message}"
       ],
@@ -94,6 +103,9 @@
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
         "为实例 %{name} 上传 ISO 镜像失败：%{message}"
+      ],
+      "Found multiple ISO images named %{iso}": [
+        ""
       ],
       "Full host '%s' image": [
         "完整主机 '%s' 镜像"

@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.2.0\n"
+"Project-Id-Version: foreman_bootdisk 24.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -53,11 +53,17 @@ msgstr "ჩატვირთვადი დისკის დახმარ�
 msgid "Boot disks"
 msgstr "ჩატვირთვადი დისკები"
 
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr "ISO ასლის შექმნის ბრძანება. genisoimage ან mkisofs"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
+msgstr ""
+
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
 
 msgid "Creating new image failed, install truncate utility"
 msgstr "ახალი ასლის შექმნის შეცდომა. დააყენეთ პროგრამა truncate"
+
+msgid "Delete ISO image for %s"
+msgstr ""
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "%s-სთვის ISO-ი ასლის CDROM-ი წამყვანიდან მოხსნა"
@@ -80,6 +86,9 @@ msgstr "ISO ასლის CDROM-ში ჩადების შეცდო�
 msgid "Failed to create a directory within the ESP image"
 msgstr "ESP ასლში საქაღალდის შექმნის შეცდომა"
 
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
+msgstr ""
+
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr "ISO ასლის CDROM-დან გამოღების შეცდომა %{name}-სთვის: %{message}"
 
@@ -94,6 +103,9 @@ msgstr "ჩატვირთვადი დისკის შაბლონ�
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr "ISO ფაილის ატვირთვის შეცდომა %{name}-სთვის: %{message}"
+
+msgid "Found multiple ISO images named %{iso}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr "ჰოსტსის სრული %s ასლი"

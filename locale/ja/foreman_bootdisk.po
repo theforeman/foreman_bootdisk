@@ -8,7 +8,7 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.2.0\n"
+"Project-Id-Version: foreman_bootdisk 24.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2015\n"
@@ -56,11 +56,17 @@ msgstr "ブートディスクヘルプ"
 msgid "Boot disks"
 msgstr "ブートディスク"
 
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr "ISO イメージを生成するためのコマンドです。genisoimage または mkisofs を使用します"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
+msgstr ""
+
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
 
 msgid "Creating new image failed, install truncate utility"
 msgstr "新しいイメージの作成に失敗しました。truncate ユーティリティーをインストールしてください"
+
+msgid "Delete ISO image for %s"
+msgstr ""
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "%s の CDROM ドライブから ISO イメージをデタッチ"
@@ -83,6 +89,9 @@ msgstr "インスタンス %{name} の CDROM ドライブへの ISO イメージ
 msgid "Failed to create a directory within the ESP image"
 msgstr "ESP のイメージ内にディレクトリーを作成できませんでした"
 
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
+msgstr ""
+
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr "インスタンス %{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %{message}"
 
@@ -97,6 +106,9 @@ msgstr "ブートディスクテンプレートのレンダリングに失敗し
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr "インスタンス %{name} の ISO イメージのアップロードに失敗しました: %{message}"
+
+msgid "Found multiple ISO images named %{iso}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr "完全ホスト '%s' イメージ"

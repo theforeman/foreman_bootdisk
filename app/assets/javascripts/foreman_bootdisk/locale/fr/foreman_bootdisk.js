@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 23.2.0",
+        "Project-Id-Version": "foreman_bootdisk 24.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "0868a4d1af5275b3f70b0a6dac4c99a4, 2015",
@@ -53,11 +53,17 @@
       "Boot disks": [
         "Disques de démarrage"
       ],
-      "Command to generate ISO image, use genisoimage or mkisofs": [
-        "Commande servant à générer l'image ISO, utiliser genisoimage ou mkisofs"
+      "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
+        ""
+      ],
+      "Could not find ISO %{iso} on storage %{storage}": [
+        ""
       ],
       "Creating new image failed, install truncate utility": [
         "La création d'une nouvelle image a échoué, installer l'utilitaire de troncation"
+      ],
+      "Delete ISO image for %s": [
+        ""
       ],
       "Detach ISO image from CDROM drive for %s": [
         "Attachement de l'image ISO au lecteur CDROM pour %s"
@@ -80,6 +86,9 @@
       "Failed to create a directory within the ESP image": [
         "Echec de la création d'un répertoire dans l'image ESP"
       ],
+      "Failed to delete ISO image of instance %{name}: %{message}": [
+        ""
+      ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name} : %{message}"
       ],
@@ -94,6 +103,9 @@
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
         "Impossible d'envoyer l'image ISO pour l'instance %%{name} : %{message}"
+      ],
+      "Found multiple ISO images named %{iso}": [
+        ""
       ],
       "Full host '%s' image": [
         "Image complète de l'hôte %s"

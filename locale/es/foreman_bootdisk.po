@@ -9,7 +9,7 @@
 # Sergio Ocón-Cárdenas, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.2.0\n"
+"Project-Id-Version: foreman_bootdisk 24.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarde"
@@ -59,11 +59,17 @@ msgstr "Ayuda para el disco de arranque"
 msgid "Boot disks"
 msgstr "Discos de arranque"
 
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr "Comando para generar una imagen ISO, use genisoimage o mkisofs"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
+msgstr ""
+
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
 
 msgid "Creating new image failed, install truncate utility"
 msgstr "Error en la creación de la nueva imagen; instale la herramienta para truncar"
+
+msgid "Delete ISO image for %s"
+msgstr ""
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "Extraer la imagen ISO de la unidad de CDROM para %s"
@@ -86,6 +92,9 @@ msgstr "Fallo al adjuntar la imagen ISO a la unidad de CDROM de la instancia %{n
 msgid "Failed to create a directory within the ESP image"
 msgstr "Ocurrió un error al crear un directorio dentro de la imagen ESP"
 
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
+msgstr ""
+
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr "Fallo al separar la imagen ISO de la unidad de CDROM de la instancia %{name}: %{message}"
 
@@ -100,6 +109,9 @@ msgstr "Ocurrió un error al mostrar la plantilla del disco de arranque"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr "Fallo en la carga de la imagen ISO por ejemplo %{name}: %{message}"
+
+msgid "Found multiple ISO images named %{iso}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr "Imagen completa del host '%s'"

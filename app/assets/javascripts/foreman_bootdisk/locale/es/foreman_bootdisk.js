@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 23.2.0",
+        "Project-Id-Version": "foreman_bootdisk 24.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024",
@@ -53,11 +53,17 @@
       "Boot disks": [
         "Discos de arranque"
       ],
-      "Command to generate ISO image, use genisoimage or mkisofs": [
-        "Comando para generar una imagen ISO, use genisoimage o mkisofs"
+      "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
+        ""
+      ],
+      "Could not find ISO %{iso} on storage %{storage}": [
+        ""
       ],
       "Creating new image failed, install truncate utility": [
         "Error en la creación de la nueva imagen; instale la herramienta para truncar"
+      ],
+      "Delete ISO image for %s": [
+        ""
       ],
       "Detach ISO image from CDROM drive for %s": [
         "Extraer la imagen ISO de la unidad de CDROM para %s"
@@ -80,6 +86,9 @@
       "Failed to create a directory within the ESP image": [
         "Ocurrió un error al crear un directorio dentro de la imagen ESP"
       ],
+      "Failed to delete ISO image of instance %{name}: %{message}": [
+        ""
+      ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "Fallo al separar la imagen ISO de la unidad de CDROM de la instancia %{name}: %{message}"
       ],
@@ -94,6 +103,9 @@
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
         "Fallo en la carga de la imagen ISO por ejemplo %{name}: %{message}"
+      ],
+      "Found multiple ISO images named %{iso}": [
+        ""
       ],
       "Full host '%s' image": [
         "Imagen completa del host '%s'"

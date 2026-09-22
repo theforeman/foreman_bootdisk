@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 23.2.0",
+        "Project-Id-Version": "foreman_bootdisk 24.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
@@ -53,11 +53,17 @@
       "Boot disks": [
         "부팅 디스크 "
       ],
-      "Command to generate ISO image, use genisoimage or mkisofs": [
-        "ISO 이미지를 생성하기 위한 명령, genisoimage 또는 mkisofs 사용 "
+      "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
+        ""
+      ],
+      "Could not find ISO %{iso} on storage %{storage}": [
+        ""
       ],
       "Creating new image failed, install truncate utility": [
         "새 이미지 생성에 실패했습니다. truncate 유틸리티를 설치하세요."
+      ],
+      "Delete ISO image for %s": [
+        ""
       ],
       "Detach ISO image from CDROM drive for %s": [
         "ISO 이미지를 %s의 CDROM 드라이브에서 분리합니다."
@@ -80,6 +86,9 @@
       "Failed to create a directory within the ESP image": [
         "ESP 이미지 내에 디렉토리를 생성하지 못했습니다."
       ],
+      "Failed to delete ISO image of instance %{name}: %{message}": [
+        ""
+      ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "인스턴스 %{name}의 CDROM 드라이브에서 ISO 이미지를 첨부하지 못했습니다: %{message}"
       ],
@@ -94,6 +103,9 @@
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
         "인스턴스 %{name}의 ISO 이미지를 업로드하지 못했습니다: %{message}"
+      ],
+      "Found multiple ISO images named %{iso}": [
+        ""
       ],
       "Full host '%s' image": [
         "전체 호스트 '%s' 이미지 "

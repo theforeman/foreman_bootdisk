@@ -8,7 +8,7 @@
 # Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.2.0\n"
+"Project-Id-Version: foreman_bootdisk 24.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 20"
@@ -58,11 +58,17 @@ msgstr "Ajuda de disco de inicialização"
 msgid "Boot disks"
 msgstr "Discos de inicialização"
 
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr "Comando para gerar imagem ISO usar genisoimage ou mkisofs"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
+msgstr ""
+
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
 
 msgid "Creating new image failed, install truncate utility"
 msgstr "Falha ao criar nova imagem, instale o utilitário truncado"
+
+msgid "Delete ISO image for %s"
+msgstr ""
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "Desmontar imagem ISO da unidade de CDROM para %s"
@@ -85,6 +91,9 @@ msgstr "Falha ao anexar a imagem ISO ao drive de CD-ROM da instância %{name}: %
 msgid "Failed to create a directory within the ESP image"
 msgstr "Falha ao criar um diretório na imagem ESP"
 
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
+msgstr ""
+
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr "Falha em destacar a imagem ISO da unidade de CDROM da instância %{name}: %{message}"
 
@@ -99,6 +108,9 @@ msgstr "Falha ao renderizar template de disco de inicialização"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr "Falha no carregamento da imagem ISO, por exemplo %{name}: %{message}"
+
+msgid "Found multiple ISO images named %{iso}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr "Hospedagem completa '%s' imagem"

@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.2.0\n"
+"Project-Id-Version: foreman_bootdisk 24.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -53,10 +53,16 @@ msgstr ""
 msgid "Boot disks"
 msgstr "開機磁碟"
 
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr "請使用 genisoimage 或是 mkisofs 來作為產生 ISO 映像檔的指令"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
+msgstr ""
+
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
 
 msgid "Creating new image failed, install truncate utility"
+msgstr ""
+
+msgid "Delete ISO image for %s"
 msgstr ""
 
 msgid "Detach ISO image from CDROM drive for %s"
@@ -80,6 +86,9 @@ msgstr ""
 msgid "Failed to create a directory within the ESP image"
 msgstr ""
 
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
+msgstr ""
+
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
@@ -93,6 +102,9 @@ msgid "Failed to render boot disk template"
 msgstr "轉譯開機磁碟範本失敗"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
+msgstr ""
+
+msgid "Found multiple ISO images named %{iso}"
 msgstr ""
 
 msgid "Full host '%s' image"
