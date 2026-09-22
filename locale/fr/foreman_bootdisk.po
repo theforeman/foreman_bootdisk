@@ -10,7 +10,7 @@
 # Pierre-Emmanuel Dutang <dutangp@gmail.com>, 2014,2016-2017
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_bootdisk 23.2.0\n"
+"Project-Id-Version: foreman_bootdisk 24.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2014-02-13 12:12+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2015\n"
@@ -58,11 +58,17 @@ msgstr "Aide sur le disque de démarrage"
 msgid "Boot disks"
 msgstr "Disques de démarrage"
 
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
-msgstr "Commande servant à générer l'image ISO, utiliser genisoimage ou mkisofs"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
+msgstr ""
+
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
 
 msgid "Creating new image failed, install truncate utility"
 msgstr "La création d'une nouvelle image a échoué, installer l'utilitaire de troncation"
+
+msgid "Delete ISO image for %s"
+msgstr ""
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "Attachement de l'image ISO au lecteur CDROM pour %s"
@@ -85,6 +91,9 @@ msgstr "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name}
 msgid "Failed to create a directory within the ESP image"
 msgstr "Echec de la création d'un répertoire dans l'image ESP"
 
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
+msgstr ""
+
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name} : %{message}"
 
@@ -99,6 +108,9 @@ msgstr "Impossible d'appliquer le modèle de disque de boot"
 
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr "Impossible d'envoyer l'image ISO pour l'instance %%{name} : %{message}"
+
+msgid "Found multiple ISO images named %{iso}"
+msgstr ""
 
 msgid "Full host '%s' image"
 msgstr "Image complète de l'hôte %s"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_bootdisk 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-09 12:46+0000\n"
-"PO-Revision-Date: 2026-03-09 12:46+0000\n"
+"POT-Creation-Date: 2026-09-22 17:34+0000\n"
+"PO-Revision-Date: 2026-09-22 17:34+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -111,6 +111,14 @@ msgstr ""
 msgid "Generic image"
 msgstr ""
 
+#: ../app/models/concerns/foreman_bootdisk/compute_resources/proxmox.rb:27
+msgid "Found multiple ISO images named %{iso}"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/compute_resources/proxmox.rb:37
+msgid "Could not find ISO %{iso} on storage %{storage}"
+msgstr ""
+
 #: ../app/models/concerns/foreman_bootdisk/host_ext.rb:12
 #: ../app/services/foreman_bootdisk/renderer.rb:53
 #: ../app/services/foreman_bootdisk/renderer.rb:60
@@ -133,20 +141,28 @@ msgstr ""
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:73
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:40
+msgid "Delete ISO image for %s"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:83
 msgid "Failed to generate ISO image for instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:82
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:92
 msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:91
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:101
 msgid "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}"
 msgstr ""
 
-#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:100
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:110
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
+msgstr ""
+
+#: ../app/models/concerns/foreman_bootdisk/orchestration/compute.rb:119
+msgid "Failed to delete ISO image of instance %{name}: %{message}"
 msgstr ""
 
 #: ../app/services/foreman_bootdisk/iso_generator.rb:16
@@ -364,7 +380,7 @@ msgid "ISO generation command"
 msgstr ""
 
 #: ../lib/foreman_bootdisk/engine.rb:117
-msgid "Command to generate ISO image, use genisoimage or mkisofs"
+msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
 msgstr ""
 
 #: ../lib/foreman_bootdisk/engine.rb:122

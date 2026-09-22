@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_bootdisk": {
       "": {
-        "Project-Id-Version": "foreman_bootdisk 23.2.0",
+        "Project-Id-Version": "foreman_bootdisk 24.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2014-02-13 12:12+0000",
         "Last-Translator": "johnny.westerlund <johnny.westerlund@gmail.com>, 2014",
@@ -53,10 +53,16 @@
       "Boot disks": [
         "Startdiskar"
       ],
-      "Command to generate ISO image, use genisoimage or mkisofs": [
-        "Kommando för att generera ISO-avbildningar, använd genisoimage eller mkisofs"
+      "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
+        ""
+      ],
+      "Could not find ISO %{iso} on storage %{storage}": [
+        ""
       ],
       "Creating new image failed, install truncate utility": [
+        ""
+      ],
+      "Delete ISO image for %s": [
         ""
       ],
       "Detach ISO image from CDROM drive for %s": [
@@ -80,6 +86,9 @@
       "Failed to create a directory within the ESP image": [
         ""
       ],
+      "Failed to delete ISO image of instance %{name}: %{message}": [
+        ""
+      ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         ""
       ],
@@ -93,6 +102,9 @@
         ""
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
+        ""
+      ],
+      "Found multiple ISO images named %{iso}": [
         ""
       ],
       "Full host '%s' image": [
