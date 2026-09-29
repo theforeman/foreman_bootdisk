@@ -54,16 +54,16 @@
         "ブートディスク"
       ],
       "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
-        ""
+        "ISO イメージを生成するコマンド (xorrisofs、genisoimage、または mkisofs を使用します)"
       ],
       "Could not find ISO %{iso} on storage %{storage}": [
-        ""
+        "ストレージ %{storage} 上に ISO %{iso} が見つかりませんでした"
       ],
       "Creating new image failed, install truncate utility": [
         "新しいイメージの作成に失敗しました。truncate ユーティリティーをインストールしてください"
       ],
       "Delete ISO image for %s": [
-        ""
+        "%s の ISO イメージを削除する"
       ],
       "Detach ISO image from CDROM drive for %s": [
         "%s の CDROM ドライブから ISO イメージをデタッチ"
@@ -87,7 +87,7 @@
         "ESP のイメージ内にディレクトリーを作成できませんでした"
       ],
       "Failed to delete ISO image of instance %{name}: %{message}": [
-        ""
+        "インスタンス %{name} の ISO イメージの削除に失敗しました: %{message}"
       ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "インスタンス %{name} の CDROM ドライブから ISO イメージのデタッチに失敗しました: %{message}"
@@ -105,7 +105,7 @@
         "インスタンス %{name} の ISO イメージのアップロードに失敗しました: %{message}"
       ],
       "Found multiple ISO images named %{iso}": [
-        ""
+        "%{iso} という名前の複数の ISO イメージが見つかりました"
       ],
       "Full host '%s' image": [
         "完全ホスト '%s' イメージ"

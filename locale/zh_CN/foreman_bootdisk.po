@@ -54,16 +54,16 @@ msgid "Boot disks"
 msgstr "引导盘"
 
 msgid "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs"
-msgstr ""
+msgstr "生成 ISO 镜像的命令，请使用 xorrisofs、genisoimage 或 mkisofs"
 
 msgid "Could not find ISO %{iso} on storage %{storage}"
-msgstr ""
+msgstr "无法在存储 %{storage} 中找到 ISO %{iso} "
 
 msgid "Creating new image failed, install truncate utility"
 msgstr "创建新镜像失败，安装截断实用程序"
 
 msgid "Delete ISO image for %s"
-msgstr ""
+msgstr "删除 %s 的ISO 镜像 "
 
 msgid "Detach ISO image from CDROM drive for %s"
 msgstr "为 %s 从 CDROM 驱动取消附加 ISO 镜像"
@@ -87,7 +87,7 @@ msgid "Failed to create a directory within the ESP image"
 msgstr "无法在 ESP 镜像中创建目录"
 
 msgid "Failed to delete ISO image of instance %{name}: %{message}"
-msgstr ""
+msgstr "删除实例 %{name} 的 ISO 镜像失败：%{message}"
 
 msgid "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}"
 msgstr "未能成功将 ISO 镜像从实例 %{name} 的 CDROM 驱动中断开：%{message}"
@@ -105,7 +105,7 @@ msgid "Failed to upload ISO image for instance %{name}: %{message}"
 msgstr "为实例 %{name} 上传 ISO 镜像失败：%{message}"
 
 msgid "Found multiple ISO images named %{iso}"
-msgstr ""
+msgstr "找到名为 %{iso} 的多个 ISO 镜像"
 
 msgid "Full host '%s' image"
 msgstr "完整主机 '%s' 镜像"
