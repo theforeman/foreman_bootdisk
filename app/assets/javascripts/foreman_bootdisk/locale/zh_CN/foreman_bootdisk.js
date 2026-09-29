@@ -54,16 +54,16 @@
         "引导盘"
       ],
       "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
-        ""
+        "生成 ISO 镜像的命令，请使用 xorrisofs、genisoimage 或 mkisofs"
       ],
       "Could not find ISO %{iso} on storage %{storage}": [
-        ""
+        "无法在存储 %{storage} 中找到 ISO %{iso} "
       ],
       "Creating new image failed, install truncate utility": [
         "创建新镜像失败，安装截断实用程序"
       ],
       "Delete ISO image for %s": [
-        ""
+        "删除 %s 的ISO 镜像 "
       ],
       "Detach ISO image from CDROM drive for %s": [
         "为 %s 从 CDROM 驱动取消附加 ISO 镜像"
@@ -87,7 +87,7 @@
         "无法在 ESP 镜像中创建目录"
       ],
       "Failed to delete ISO image of instance %{name}: %{message}": [
-        ""
+        "删除实例 %{name} 的 ISO 镜像失败：%{message}"
       ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "未能成功将 ISO 镜像从实例 %{name} 的 CDROM 驱动中断开：%{message}"
@@ -105,7 +105,7 @@
         "为实例 %{name} 上传 ISO 镜像失败：%{message}"
       ],
       "Found multiple ISO images named %{iso}": [
-        ""
+        "找到名为 %{iso} 的多个 ISO 镜像"
       ],
       "Full host '%s' image": [
         "完整主机 '%s' 镜像"

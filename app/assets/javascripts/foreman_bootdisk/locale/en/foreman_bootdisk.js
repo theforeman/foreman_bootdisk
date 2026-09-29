@@ -5,7 +5,7 @@
       "": {
         "Project-Id-Version": "foreman_bootdisk 1.0.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2026-09-22 17:34+0000",
+        "PO-Revision-Date": "2026-09-29 10:59+0000",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
         "Language-Team": "LANGUAGE <LL@li.org>",
         "Language": "",

@@ -30,7 +30,7 @@
         "Types de disques de démarrage autorisés"
       ],
       "Attach ISO image to CDROM drive for %s": [
-        "Attachement de l'image ISO au lecteur CDROM pour %s"
+        " Attachement de l'image ISO au lecteur CDROM pour %s"
       ],
       "Back": [
         "Précédent"
@@ -54,16 +54,16 @@
         "Disques de démarrage"
       ],
       "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
-        ""
+        "Commande pour générer une image ISO : utilisez xorrisofs, genisoimage ou mkisofs"
       ],
       "Could not find ISO %{iso} on storage %{storage}": [
-        ""
+        "Impossible de trouver l'ISO%{iso} en stockage %{storage}"
       ],
       "Creating new image failed, install truncate utility": [
         "La création d'une nouvelle image a échoué, installer l'utilitaire de troncation"
       ],
       "Delete ISO image for %s": [
-        ""
+        "Supprimer l'image ISO pour %s "
       ],
       "Detach ISO image from CDROM drive for %s": [
         "Attachement de l'image ISO au lecteur CDROM pour %s"
@@ -81,31 +81,31 @@
         "S'assurer que %{file} est lisible (ou mettre à jour le paramètre \\\"répertoire Grub2\\\")"
       ],
       "Failed to attach ISO image to CDROM drive of instance %{name}: %{message}": [
-        "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name} : %{message}"
+        "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name}: %{message}"
       ],
       "Failed to create a directory within the ESP image": [
         "Echec de la création d'un répertoire dans l'image ESP"
       ],
       "Failed to delete ISO image of instance %{name}: %{message}": [
-        ""
+        "Échec de la suppression de l'image ISO de l'instance %{name} : %{message}"
       ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
-        "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name} : %{message}"
+        "Impossible d'attacher l'image ISO au lecteur CDROM de l'instance %{name}: %{message}"
       ],
       "Failed to format the ESP image via mkfs.msdos": [
         "Le formatage de l'image ESP via mkfs.msdos a échoué"
       ],
       "Failed to generate ISO image for instance %{name}: %{message}": [
-        "Impossible de créer l'image ISO pour l'instance %%{name} : %{message}"
+        "Impossible de créer l'image ISO pour l'instance %{name}: %{message}"
       ],
       "Failed to render boot disk template": [
         "Impossible d'appliquer le modèle de disque de boot"
       ],
       "Failed to upload ISO image for instance %{name}: %{message}": [
-        "Impossible d'envoyer l'image ISO pour l'instance %%{name} : %{message}"
+        "Impossible d'envoyer l'image ISO pour l'instance %{name}: %{message}"
       ],
       "Found multiple ISO images named %{iso}": [
-        ""
+        "Plusieurs images ISO nommées ont été trouvées. %{iso}"
       ],
       "Full host '%s' image": [
         "Image complète de l'hôte %s"
@@ -258,7 +258,7 @@
         "Impossible de mcopier %{file}"
       ],
       "Upload ISO image to datastore for %s": [
-        "Envoi de l'image ISO sur la banque de données pour %s"
+        "Envoi de l'image ISO sur la banque de données pour %s "
       ],
       "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation.": [
         "Différents types de disque de démarrage peuvent être créés pour provisionner les hôtes sans requérir à PXE. Les disques de démarrage peuvent être attachés à un hôte (physique ou virtuel) qui démarre depuis le disque, contacte Foreman puis lance l'installation du système d'exploitation."

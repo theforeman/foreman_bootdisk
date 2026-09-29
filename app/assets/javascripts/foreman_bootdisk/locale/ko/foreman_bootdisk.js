@@ -54,16 +54,16 @@
         "부팅 디스크 "
       ],
       "Command to generate ISO image, use xorrisofs, genisoimage or mkisofs": [
-        ""
+        "ISO 이미지를 생성하려면 xorrisofs, genisoimage 또는 mkisofs 명령을 사용하십시오."
       ],
       "Could not find ISO %{iso} on storage %{storage}": [
-        ""
+        "스토리지 %{storage}에서 ISO %{iso}을/를 찾을 수 없습니다"
       ],
       "Creating new image failed, install truncate utility": [
         "새 이미지 생성에 실패했습니다. truncate 유틸리티를 설치하세요."
       ],
       "Delete ISO image for %s": [
-        ""
+        "%s의 ISO 이미지 삭제"
       ],
       "Detach ISO image from CDROM drive for %s": [
         "ISO 이미지를 %s의 CDROM 드라이브에서 분리합니다."
@@ -87,7 +87,7 @@
         "ESP 이미지 내에 디렉토리를 생성하지 못했습니다."
       ],
       "Failed to delete ISO image of instance %{name}: %{message}": [
-        ""
+        "인스턴스 %{name}의 ISO 이미지를 삭제하지 못했습니다: %{message}"
       ],
       "Failed to detach ISO image from CDROM drive of instance %{name}: %{message}": [
         "인스턴스 %{name}의 CDROM 드라이브에서 ISO 이미지를 첨부하지 못했습니다: %{message}"
@@ -105,7 +105,7 @@
         "인스턴스 %{name}의 ISO 이미지를 업로드하지 못했습니다: %{message}"
       ],
       "Found multiple ISO images named %{iso}": [
-        ""
+        "이름이 %{iso}인 여러 ISO 이미지가 발견되었습니다"
       ],
       "Full host '%s' image": [
         "전체 호스트 '%s' 이미지 "
