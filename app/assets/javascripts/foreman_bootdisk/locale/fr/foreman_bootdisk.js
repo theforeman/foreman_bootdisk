@@ -30,7 +30,7 @@
         "Types de disques de démarrage autorisés"
       ],
       "Attach ISO image to CDROM drive for %s": [
-        " Attachement de l'image ISO au lecteur CDROM pour %s"
+        "Attachement de l'image ISO au lecteur CDROM pour %s"
       ],
       "Back": [
         "Précédent"
@@ -258,7 +258,7 @@
         "Impossible de mcopier %{file}"
       ],
       "Upload ISO image to datastore for %s": [
-        "Envoi de l'image ISO sur la banque de données pour %s "
+        "Envoi de l'image ISO sur la banque de données pour %s"
       ],
       "Various types of boot disks can be created to provision hosts without the need for PXE services.  Boot disks can be attached to the host (physical or virtual) which boots from the disk, contacts Foreman and begins the OS installation.": [
         "Différents types de disque de démarrage peuvent être créés pour provisionner les hôtes sans requérir à PXE. Les disques de démarrage peuvent être attachés à un hôte (physique ou virtuel) qui démarre depuis le disque, contacte Foreman puis lance l'installation du système d'exploitation."
