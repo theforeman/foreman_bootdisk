@@ -6,6 +6,10 @@ on:
       - master
   pull_request:
 
+concurrency:
+  group: ${{ github.ref_name }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   test_js:
     name: JavaScript

@@ -343,6 +343,13 @@ permissions to be present to allow host and subnet image downloading:
 * `view_hosts`
 * `view_subnets`
 
+# Development
+
+Run lint and tests from a [Foreman](https://github.com/theforeman/foreman) checkout with this plugin linked (see Foreman docs). Plugin id for npm scripts: `foreman_bootdisk`; Ruby rake task: `test:foreman_bootdisk`.
+
+* [Plugin testing](https://github.com/theforeman/foreman/blob/develop/developer_docs/how_to_create_a_plugin.asciidoc#testing)
+* [Running tests in plugins](https://github.com/theforeman/foreman/blob/develop/developer_docs/foreman_dev_setup.asciidoc#running-tests-in-plugins)
+
 # Issues
 
 Report issues on the Redmine project: [foreman_bootdisk](http://projects.theforeman.org/projects/bootdisk/issues/new)
