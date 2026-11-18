@@ -59,6 +59,16 @@ module ForemanBootdisk
           assert_not_nil iso
         end
       end
+
+      test 'removes the build directory once the image is generated' do
+        ForemanBootdisk::ISOGenerator.expects(:system).twice.returns(true)
+        build = nil
+        ForemanBootdisk::ISOGenerator.generate do |iso|
+          build = File.join(File.dirname(iso), 'build')
+          assert File.directory?(build)
+        end
+        assert_not File.exist?(build)
+      end
     end
 
     describe '#iso9660_filename' do

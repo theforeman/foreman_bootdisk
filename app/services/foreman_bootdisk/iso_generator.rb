@@ -166,7 +166,7 @@ module ForemanBootdisk
       yield iso
     ensure
       # Clean the working directory (not the ISO file itself)
-      FileUtils.rm_f(File.join(wd, 'build'))
+      FileUtils.rm_rf(File.join(wd, 'build'))
       # Temporary directory cannot be cleaned in-process due to asynchronous send_file call.
       # Also we cannot rely on systemd-tmpfiles-clean as private temporary files are not subject
       # of scheduled cleanups. Let's clean bootdisks from prevous requests manually by finding
